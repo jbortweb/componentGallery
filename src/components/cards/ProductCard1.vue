@@ -1,7 +1,29 @@
 <template>
   <div
-    class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 w-full max-w-sm mx-auto"
+    class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 w-full max-w-sm mx-auto relative group"
   >
+    <!-- Code button -->
+    <button
+      @click="openCodeModal"
+      class="absolute top-3 right-3 z-20 w-10 h-10 bg-blue-600/90 hover:bg-blue-500 rounded-lg flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-200 backdrop-blur-sm shadow-lg border border-blue-400/30"
+      title="Ver código del componente"
+      aria-label="Ver código del componente"
+    >
+      <svg
+        class="w-5 h-5 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+        />
+      </svg>
+    </button>
+
     <!-- Premium Badge -->
     <div class="relative">
       <img
@@ -16,7 +38,7 @@
           PREMIUM
         </span>
       </div>
-      <div class="absolute top-4 right-4">
+      <div class="absolute top-4 right-14">
         <button
           class="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors"
         >
@@ -76,14 +98,35 @@
         Comprar Ahora
       </button>
     </div>
+
+    <!-- Code Modal -->
+    <CodeModal
+      ref="codeModal"
+      cardType="Product Card"
+      cardVariant="Premium Style"
+      :codeContent="cardCode"
+    />
   </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
+import CodeModal from "../CodeModal.vue";
+import { cardCodes } from "../../data/cardCodes.js";
+
 defineProps({
   product: {
     type: Object,
     required: true,
   },
 });
+
+const codeModal = ref(null);
+const cardCode = cardCodes.ProductCard1;
+
+const openCodeModal = () => {
+  if (codeModal.value) {
+    codeModal.value.openModal();
+  }
+};
 </script>

@@ -1,7 +1,29 @@
 <template>
   <div
-    class="bg-gray-800 rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 w-full border border-gray-700"
+    class="bg-gray-800 rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 w-full border border-gray-700 relative group"
   >
+    <!-- Code button -->
+    <button
+      @click="openCodeModal"
+      class="absolute top-3 right-3 z-10 w-10 h-10 bg-green-600/90 hover:bg-green-500 rounded-lg flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-200 backdrop-blur-sm shadow-lg border border-green-400/30"
+      title="Ver código del componente"
+      aria-label="Ver código del componente"
+    >
+      <svg
+        class="w-5 h-5 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+        />
+      </svg>
+    </button>
+
     <div class="p-4">
       <!-- Header estilo terminal -->
       <div class="flex items-center justify-between mb-3">
@@ -103,14 +125,35 @@
         </button>
       </div>
     </div>
+
+    <!-- Code Modal -->
+    <CodeModal
+      ref="codeModal"
+      cardType="Profile Card"
+      cardVariant="Terminal Style"
+      :codeContent="cardCode"
+    />
   </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
+import CodeModal from "../CodeModal.vue";
+import { cardCodes } from "../../data/cardCodes.js";
+
 defineProps({
   profile: {
     type: Object,
     required: true,
   },
 });
+
+const codeModal = ref(null);
+const cardCode = cardCodes.ProfileCard3;
+
+const openCodeModal = () => {
+  if (codeModal.value) {
+    codeModal.value.openModal();
+  }
+};
 </script>

@@ -26,7 +26,7 @@
           :title="getCurrentTitle()"
           :description="getCurrentDescription()"
           :itemsPerView="3"
-          :autoPlay="true"
+          :autoPlay="false"
           :autoPlayInterval="6000"
         >
           <template #default="{ item, index }">
@@ -45,7 +45,7 @@
           :title="getCurrentTitle()"
           :description="getCurrentDescription()"
           :itemsPerView="2"
-          :autoPlay="true"
+          :autoPlay="false"
           :autoPlayInterval="6000"
         >
           <template #default="{ item, index }">

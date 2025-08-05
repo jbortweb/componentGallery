@@ -67,7 +67,7 @@ export const cardData = {
       name: "Ana García",
       role: "Frontend Developer",
       company: "Tech Solutions",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=200&h=200&fit=crop&crop=face",
+      avatar: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=200&h=200&fit=crop&crop=face",
       bio: "Apasionada del desarrollo web con 5 años de experiencia en React y Vue.js",
       skills: ["Vue.js", "React", "TypeScript", "Tailwind CSS"],
       social: {

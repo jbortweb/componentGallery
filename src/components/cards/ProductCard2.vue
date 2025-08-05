@@ -1,7 +1,29 @@
 <template>
   <div
-    class="bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:scale-105 w-full max-w-sm mx-auto border border-gray-100"
+    class="bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:scale-105 w-full max-w-sm mx-auto border border-gray-100 relative group"
   >
+    <!-- Code button -->
+    <button
+      @click="openCodeModal"
+      class="absolute top-3 right-3 z-30 w-10 h-10 bg-orange-600/90 hover:bg-orange-500 rounded-lg flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-200 backdrop-blur-sm shadow-lg border border-orange-400/30"
+      title="Ver código del componente"
+      aria-label="Ver código del componente"
+    >
+      <svg
+        class="w-5 h-5 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+        />
+      </svg>
+    </button>
+
     <div class="relative">
       <div
         class="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-red-500/20 z-10"
@@ -92,14 +114,35 @@
         </button>
       </div>
     </div>
+
+    <!-- Code Modal -->
+    <CodeModal
+      ref="codeModal"
+      cardType="Product Card"
+      cardVariant="Orange Style"
+      :codeContent="cardCode"
+    />
   </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
+import CodeModal from "../CodeModal.vue";
+import { cardCodes } from "../../data/cardCodes.js";
+
 defineProps({
   product: {
     type: Object,
     required: true,
   },
 });
+
+const codeModal = ref(null);
+const cardCode = cardCodes.ProductCard2;
+
+const openCodeModal = () => {
+  if (codeModal.value) {
+    codeModal.value.openModal();
+  }
+};
 </script>

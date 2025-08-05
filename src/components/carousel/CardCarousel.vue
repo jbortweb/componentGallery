@@ -24,7 +24,7 @@
       >
         <div
           v-if="canGoPrev"
-          class="transform -rotate-8 hover:rotate-0 transition-transform duration-300 cursor-pointer"
+          class="transform -rotate-8 transition-transform duration-300 cursor-pointer"
           @click="prevSlide"
         >
           <div class="w-96 scale-90">
@@ -37,8 +37,8 @@
 
       <!-- Current Card (Center) -->
       <div class="z-20 transform transition-all duration-500 ease-in-out">
-        <div class="hover:scale-105 transition-transform duration-300">
-          <div class="w-72">
+        <div class="transition-transform duration-300">
+          <div class="w-96">
             <slot
               :item="items[currentIndex]"
               :index="currentIndex"
@@ -57,7 +57,7 @@
       >
         <div
           v-if="canGoNext"
-          class="transform rotate-8 hover:rotate-0 transition-transform duration-300 cursor-pointer"
+          class="transform rotate-8 transition-transform duration-300 cursor-pointer"
           @click="nextSlide"
         >
           <div class="w-96 scale-90">
