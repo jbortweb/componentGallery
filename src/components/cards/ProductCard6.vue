@@ -24,8 +24,9 @@
     <!-- Code button -->
     <button
       @click="showCode"
-      class="absolute top-4 right-4 bg-cyan-600 hover:bg-cyan-500 text-white p-2 rounded-lg transition-all duration-300 hover:scale-110 border border-cyan-400/50 z-50 shadow-lg shadow-cyan-500/50"
+      class="absolute top-4 right-4 bg-cyan-600 hover:bg-cyan-500 text-white p-3 rounded-lg transition-all duration-300 hover:scale-110 border border-cyan-400/50 z-50 shadow-lg shadow-cyan-500/50 cursor-pointer"
       aria-label="Ver código del componente ProductCard6"
+      title="Ver código del componente"
     >
       <svg
         class="w-4 h-4"

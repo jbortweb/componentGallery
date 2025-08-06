@@ -5,8 +5,9 @@
     <!-- Code button -->
     <button
       @click="showCode"
-      class="absolute top-4 right-4 bg-white/20 text-white p-2 rounded-lg transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-white/20 z-10"
+      class="absolute top-4 right-4 bg-white/20 text-white p-3 rounded-lg transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-white/20 z-10 cursor-pointer"
       aria-label="Ver código del componente ProductCard3"
+      title="Ver código del componente"
     >
       <svg
         class="w-4 h-4"

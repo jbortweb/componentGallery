@@ -12,8 +12,9 @@
     <!-- Code button -->
     <button
       @click="showCode"
-      class="absolute top-4 right-4 bg-cyan-600/80 hover:bg-cyan-500 text-white p-2 rounded-lg transition-all duration-300 hover:scale-110 border border-cyan-400/30 z-10 shadow-lg"
+      class="absolute top-4 right-4 bg-cyan-600/80 hover:bg-cyan-500 text-white p-3 rounded-lg transition-all duration-300 hover:scale-110 border border-cyan-400/30 z-10 shadow-lg cursor-pointer"
       aria-label="Ver código del componente ProfileCard6"
+      title="Ver código del componente"
     >
       <svg
         class="w-4 h-4"

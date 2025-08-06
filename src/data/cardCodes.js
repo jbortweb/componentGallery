@@ -1,10 +1,7 @@
 export const cardCodes = {
   // Profile Cards
   ProfileCard1: `<template>
-  <div class="relative group w-full perspective-1000">
-    <!-- Code button -->
-    
-
+  <div class="relative group w-96 perspective-1000">
     <!-- Glassmorphism Card -->
     <div
       class="relative bg-gradient-to-br from-purple-400/20 via-pink-400/20 to-blue-400/20 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:rotate-1 group-hover:shadow-purple-500/25"
@@ -153,8 +150,6 @@ export const cardCodes = {
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { cardCodes } from "~/data/cardCodes.js";
 
 defineProps({
   profile: {
@@ -267,7 +262,7 @@ defineProps({
 </style>`,
 
   ProfileCard2: `<template>
-  <div class="relative group w-full">
+  <div class="relative group w-96">
     
     <!-- Neumorphism Card -->
     <div
@@ -375,8 +370,6 @@ defineProps({
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { cardCodes } from '../../data/cardCodes.js';
 
 defineProps({
   profile: {
@@ -441,7 +434,7 @@ defineProps({
 </style>`,
 
   ProfileCard3: `<template>
-  <div class="relative group w-full">
+  <div class="relative group w-96">
 
     <!-- Cyberpunk Card -->
     <div
@@ -602,8 +595,7 @@ defineProps({
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { cardCodes } from "../../data/cardCodes.js";
+
 
 defineProps({
   profile: {
@@ -850,7 +842,7 @@ defineProps({
 </style>`,
   ProfileCard4: `<template>
   <div
-    class="profile-card-4 group relative bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-6 border border-orange-200/50 shadow-lg hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 overflow-hidden"
+    class="profile-card-4 group relative bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-6 border border-orange-200/50 shadow-lg hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 overflow-hidden w-96"
   >
     <!-- Warm background elements -->
     <div
@@ -982,9 +974,6 @@ defineProps({
 </template>
 
 <script setup>
-import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { cardCodes } from "../../data/cardCodes.js";
 
 defineProps({
   profile: {
@@ -1118,8 +1107,7 @@ defineProps({
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { cardCodes } from "../../data/cardCodes.js";
+
 
 defineProps({
   profile: {
@@ -1131,7 +1119,7 @@ defineProps({
 </script>`,
   ProfileCard6: `<template>
   <div
-    class="profile-card-6 group relative bg-gradient-to-br from-slate-900 via-gray-900 to-black rounded-2xl p-6 border border-gray-700/50 shadow-2xl overflow-hidden transition-all duration-500 hover:shadow-cyan-500/20 hover:border-cyan-500/30"
+    class="profile-card-6 group relative bg-gradient-to-br from-slate-900 via-gray-900 to-black rounded-2xl p-6 border border-gray-700/50 shadow-2xl overflow-hidden transition-all duration-500 hover:shadow-cyan-500/20 hover:border-cyan-500/30 w-96"
   >
     <!-- Tech grid background -->
     <div class="absolute inset-0 opacity-5">
@@ -1270,9 +1258,6 @@ defineProps({
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { cardCodes } from "../../data/cardCodes.js";
-
 defineProps({
   profile: {
     type: Object,
@@ -1550,8 +1535,7 @@ const formatDate = (dateString) => {
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { cardCodes } from "../../data/cardCodes.js";
+
 
 defineProps({
   article: {
@@ -1690,8 +1674,7 @@ const formatDate = (dateString) => {
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { cardCodes } from "../../data/cardCodes.js";
+
 
 defineProps({
   article: {
@@ -1842,8 +1825,7 @@ const formatDate = (dateString) => {
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { cardCodes } from "../../data/cardCodes.js";
+
 
 defineProps({
   article: {
@@ -1982,8 +1964,7 @@ defineProps({
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { cardCodes } from "../../data/cardCodes.js";
+
 
 defineProps({
   article: {
@@ -2164,8 +2145,7 @@ defineProps({
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { cardCodes } from "../../data/cardCodes.js";
+
 
 defineProps({
   article: {
@@ -2264,8 +2244,7 @@ defineProps({
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { cardCodes } from "../../data/cardCodes.js";
+
 
 defineProps({
   product: {
@@ -2374,8 +2353,7 @@ defineProps({
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { cardCodes } from "../../data/cardCodes.js";
+
 
 defineProps({
   product: {
@@ -2456,8 +2434,7 @@ defineProps({
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { cardCodes } from "../../data/cardCodes.js";
+
 
 defineProps({
   product: {
@@ -2494,7 +2471,6 @@ defineProps({
         style="animation-delay: 2s"
       ></div>
     </div>
-
     <!-- Product image with smooth hover effect -->
     <div class="relative mb-6">
       <img
@@ -2548,13 +2524,10 @@ defineProps({
         </button>
       </div>
     </div>
-
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { cardCodes } from "../../data/cardCodes.js";
 
 defineProps({
   product: {
@@ -2562,7 +2535,6 @@ defineProps({
     required: true,
   },
 });
-
 </script>
 
 <style scoped>
@@ -2677,8 +2649,7 @@ defineProps({
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { cardCodes } from "../../data/cardCodes.js";
+
 
 defineProps({
   product: {
@@ -2718,27 +2689,6 @@ defineProps({
         class="scan-line absolute w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scan"
       ></div>
     </div>
-
-    <!-- Code button -->
-    <button
-      @click="showCode"
-      class="absolute top-4 right-4 bg-cyan-600 hover:bg-cyan-500 text-white p-2 rounded-lg transition-all duration-300 hover:scale-110 border border-cyan-400/50 z-50 shadow-lg shadow-cyan-500/50"
-      aria-label="Ver código del componente ProductCard6"
-    >
-      <svg
-        class="w-4 h-4"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        ></path>
-      </svg>
-    </button>
 
     <div class="relative z-10 p-6">
       <!-- Neon product image -->
@@ -2845,13 +2795,12 @@ defineProps({
         mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
         mask-composite: xor;
       "
-    ></div
+    ></div>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { cardCodes } from "../../data/cardCodes.js";
+
 
 defineProps({
   product: {

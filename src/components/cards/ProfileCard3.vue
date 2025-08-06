@@ -3,7 +3,7 @@
     <!-- Code button -->
     <button
       @click="openCodeModal"
-      class="absolute top-4 right-4 z-30 w-10 h-10 bg-gray-900/80 hover:bg-gray-800/90 rounded-lg flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-300 border border-cyan-500/50"
+      class="absolute top-4 right-4 z-30 w-10 h-10 bg-gray-900/80 hover:bg-gray-800/90 rounded-lg flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-300 border border-cyan-500/50 cursor-pointer"
       title="Ver código del componente"
       aria-label="Ver código del componente"
     >
