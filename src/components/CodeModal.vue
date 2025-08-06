@@ -2,7 +2,7 @@
   <!-- Modal usando dialog nativo -->
   <dialog
     ref="modal"
-    class="backdrop:bg-black/50 backdrop:backdrop-blur-sm bg-transparent border-none p-4 max-w-4xl w-[90vw] max-h-[90vh] rounded-2xl shadow-2xl m-auto"
+    class="backdrop:bg-black/50 backdrop:backdrop-blur-sm bg-transparent border-none p-4 max-w-4xl w-[90vw] max-h-[90vh] rounded-2xl shadow-2xl m-auto mt-2"
     @click="handleBackdropClick"
   >
     <div class="bg-white rounded-2xl overflow-hidden">

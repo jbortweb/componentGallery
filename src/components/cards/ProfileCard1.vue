@@ -1,113 +1,301 @@
 <template>
-  <div
-    class="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 w-full max-w-sm mx-auto border-2 border-purple-100"
-  >
-    <!-- Header con pattern -->
-    <div
-      class="h-32 bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 relative overflow-hidden"
+  <div class="relative group w-full perspective-1000">
+    <!-- Code button -->
+    <button
+      @click="openCodeModal"
+      class="absolute top-4 right-4 z-30 w-10 h-10 bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-300 shadow-lg border border-white/30"
+      title="Ver código del componente"
+      aria-label="Ver código del componente"
     >
-      <div class="absolute inset-0 bg-black/10"></div>
-      <div class="absolute top-4 right-4">
-        <div class="w-6 h-6 bg-white/30 rounded-full"></div>
+      <svg
+        class="w-5 h-5 text-pink-500"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+        />
+      </svg>
+    </button>
+
+    <!-- Glassmorphism Card -->
+    <div
+      class="relative bg-gradient-to-br from-purple-400/20 via-pink-400/20 to-blue-400/20 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:rotate-1 group-hover:shadow-purple-500/25"
+    >
+      <!-- Animated background blobs -->
+      <div class="absolute inset-0 overflow-hidden rounded-3xl">
+        <div
+          class="absolute -top-10 -left-10 w-32 h-32 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-20 animate-blob"
+        ></div>
+        <div
+          class="absolute -bottom-10 -right-10 w-32 h-32 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full opacity-20 animate-blob animation-delay-2000"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full opacity-10 animate-blob animation-delay-4000"
+        ></div>
       </div>
-      <div class="absolute bottom-4 left-4">
-        <div class="flex space-x-1">
-          <div class="w-2 h-2 bg-white/50 rounded-full"></div>
-          <div class="w-2 h-2 bg-white/30 rounded-full"></div>
-          <div class="w-2 h-2 bg-white/20 rounded-full"></div>
+
+      <!-- Content -->
+      <div class="relative z-10">
+        <!-- Floating Avatar -->
+        <div class="flex justify-center mb-6">
+          <div class="relative">
+            <div
+              class="w-24 h-24 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-1 group-hover:scale-110 transition-transform duration-300"
+            >
+              <img
+                :src="profile.avatar"
+                :alt="profile.name"
+                class="w-full h-full rounded-full object-cover border-4 border-white/50"
+              />
+            </div>
+            <!-- Status indicator -->
+            <div
+              class="absolute -bottom-1 -right-1 w-8 h-8 bg-green-400 rounded-full border-4 border-white/50 flex items-center justify-center animate-pulse"
+            >
+              <div class="w-3 h-3 bg-white rounded-full"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info Section -->
+        <div class="text-center mb-6">
+          <h3 class="text-2xl font-bold text-pink-500 mb-2 animate-fade-in-up">
+            {{ profile.name }}
+          </h3>
+          <p
+            class="text-pink-500 text-lg mb-1 animate-fade-in-up animation-delay-200"
+          >
+            {{ profile.role }}
+          </p>
+          <p
+            class="text-pink-500/60 text-sm animate-fade-in-up animation-delay-400"
+          >
+            @ {{ profile.company }}
+          </p>
+        </div>
+
+        <!-- Bio with typing effect -->
+        <div class="mb-6 animate-fade-in-up animation-delay-600">
+          <p
+            class="text-pink-500/80 text-sm text-center leading-relaxed line-clamp-3"
+          >
+            {{ profile.bio }}
+          </p>
+        </div>
+
+        <!-- Floating Skills -->
+        <div class="mb-6 animate-fade-in-up animation-delay-800">
+          <div class="flex flex-wrap justify-center gap-2">
+            <span
+              v-for="(skill, index) in profile.skills.slice(0, 4)"
+              :key="skill"
+              :style="{ animationDelay: `${index * 200}ms` }"
+              class="bg-white/20 backdrop-blur-sm text-pink-500 text-xs px-3 py-2 rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 animate-float"
+            >
+              {{ skill }}
+            </span>
+          </div>
+        </div>
+
+        <!-- Social Links with hover effects -->
+        <div
+          class="flex justify-center space-x-4 mb-6 animate-fade-in-up animation-delay-1000"
+        >
+          <a
+            v-if="profile.social.linkedin"
+            :href="profile.social.linkedin"
+            class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-blue-500/50 hover:scale-110 transition-all duration-300 group/social"
+          >
+            <svg
+              class="w-5 h-5 text-pink-500 group-hover/social:animate-bounce"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              />
+            </svg>
+          </a>
+          <a
+            v-if="profile.social.github"
+            :href="profile.social.github"
+            class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 group/social"
+          >
+            <svg
+              class="w-5 h-5 text-pink-500 group-hover/social:animate-bounce"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+          </a>
+          <a
+            v-if="profile.social.twitter"
+            :href="profile.social.twitter"
+            class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-blue-400/50 hover:scale-110 transition-all duration-300 group/social"
+          >
+            <svg
+              class="w-5 h-5 text-pink-500 group-hover/social:animate-bounce"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Glowing Connect Button -->
+        <div class="animate-fade-in-up animation-delay-1200">
+          <button
+            class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-pink-500 py-3 px-6 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 relative overflow-hidden group/btn"
+          >
+            <span class="relative z-10 text-white">Conectar</span>
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"
+            ></div>
+          </button>
         </div>
       </div>
     </div>
 
-    <!-- Avatar -->
-    <div class="relative -mt-16 flex justify-center">
-      <div class="relative">
-        <img
-          :src="profile.avatar"
-          :alt="profile.name"
-          class="w-24 h-24 rounded-full border-4 border-white object-cover shadow-lg"
-        />
-        <div
-          class="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 border-2 border-white rounded-full"
-        ></div>
-      </div>
-    </div>
-
-    <div class="px-6 pb-6 pt-4 text-center">
-      <h3 class="text-2xl font-bold text-gray-900 mb-1">{{ profile.name }}</h3>
-      <p class="text-purple-600 font-semibold text-sm mb-1">
-        {{ profile.role }}
-      </p>
-      <p class="text-gray-500 text-sm mb-4">{{ profile.company }}</p>
-
-      <p class="text-gray-600 text-sm mb-6 leading-relaxed">
-        {{ profile.bio }}
-      </p>
-
-      <!-- Skills con badges circulares -->
-      <div class="flex flex-wrap justify-center gap-2 mb-6">
-        <span
-          v-for="skill in profile.skills.slice(0, 3)"
-          :key="skill"
-          class="bg-gradient-to-r from-purple-100 to-pink-100 text-purple-800 px-3 py-1 rounded-full text-xs font-semibold"
-        >
-          {{ skill }}
-        </span>
-      </div>
-
-      <!-- Social links con iconos coloridos -->
-      <div class="flex justify-center space-x-4 mb-4">
-        <a
-          v-if="profile.social.linkedin"
-          :href="profile.social.linkedin"
-          class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-lg"
-        >
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              fill-rule="evenodd"
-              d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
-            />
-          </svg>
-        </a>
-        <a
-          v-if="profile.social.github"
-          :href="profile.social.github"
-          class="w-10 h-10 bg-gradient-to-br from-gray-700 to-gray-800 text-white rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-lg"
-        >
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              fill-rule="evenodd"
-              d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"
-            />
-          </svg>
-        </a>
-        <a
-          v-if="profile.social.twitter"
-          :href="profile.social.twitter"
-          class="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-500 text-white rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-lg"
-        >
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"
-            />
-          </svg>
-        </a>
-      </div>
-
-      <button
-        class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-4 rounded-2xl font-bold hover:from-purple-600 hover:to-pink-600 transition-all duration-200 shadow-lg hover:shadow-xl"
-      >
-        Conectar
-      </button>
-    </div>
+    <!-- Code Modal -->
+    <CodeModal
+      ref="codeModal"
+      cardType="Profile Card"
+      cardVariant="Glassmorphism Style"
+      :codeContent="cardCode"
+    />
   </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
+import CodeModal from "../CodeModal.vue";
+import { cardCodes } from "../../data/cardCodes.js";
+
 defineProps({
   profile: {
     type: Object,
     required: true,
   },
 });
+
+const codeModal = ref(null);
+const cardCode = cardCodes.ProfileCard1;
+
+const openCodeModal = () => {
+  if (codeModal.value) {
+    codeModal.value.openModal();
+  }
+};
 </script>
+
+<style scoped>
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Custom animations */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-800 {
+  animation-delay: 800ms;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+.animation-delay-1200 {
+  animation-delay: 1200ms;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2000ms;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4000ms;
+}
+</style>

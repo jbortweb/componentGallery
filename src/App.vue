@@ -205,12 +205,21 @@ import CardCarousel from "./components/carousel/CardCarousel.vue";
 import ProductCard1 from "./components/cards/ProductCard1.vue";
 import ProductCard2 from "./components/cards/ProductCard2.vue";
 import ProductCard3 from "./components/cards/ProductCard3.vue";
+import ProductCard4 from "./components/cards/ProductCard4.vue";
+import ProductCard5 from "./components/cards/ProductCard5.vue";
+import ProductCard6 from "./components/cards/ProductCard6.vue";
 import ProfileCard1 from "./components/cards/ProfileCard1.vue";
 import ProfileCard2 from "./components/cards/ProfileCard2.vue";
 import ProfileCard3 from "./components/cards/ProfileCard3.vue";
+import ProfileCard4 from "./components/cards/ProfileCard4.vue";
+import ProfileCard5 from "./components/cards/ProfileCard5.vue";
+import ProfileCard6 from "./components/cards/ProfileCard6.vue";
 import ArticleCard1 from "./components/cards/ArticleCard1.vue";
 import ArticleCard2 from "./components/cards/ArticleCard2.vue";
 import ArticleCard3 from "./components/cards/ArticleCard3.vue";
+import ArticleCard4 from "./components/cards/ArticleCard4.vue";
+import ArticleCard5 from "./components/cards/ArticleCard5.vue";
+import ArticleCard6 from "./components/cards/ArticleCard6.vue";
 import { cardData } from "./data/cardData.js";
 
 // Reactive state
@@ -224,9 +233,30 @@ const currentItems = computed(() => {
 // Function to get the appropriate card component based on category and index
 const getCardComponent = (category, index) => {
   const cardComponents = {
-    products: [ProductCard1, ProductCard2, ProductCard3],
-    profiles: [ProfileCard1, ProfileCard2, ProfileCard3],
-    articles: [ArticleCard1, ArticleCard2, ArticleCard3],
+    products: [
+      ProductCard1,
+      ProductCard2,
+      ProductCard3,
+      ProductCard4,
+      ProductCard5,
+      ProductCard6,
+    ],
+    profiles: [
+      ProfileCard1,
+      ProfileCard2,
+      ProfileCard3,
+      ProfileCard4,
+      ProfileCard5,
+      ProfileCard6,
+    ],
+    articles: [
+      ArticleCard1,
+      ArticleCard2,
+      ArticleCard3,
+      ArticleCard4,
+      ArticleCard5,
+      ArticleCard6,
+    ],
   };
 
   const components = cardComponents[category] || [];

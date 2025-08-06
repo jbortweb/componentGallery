@@ -1,7 +1,29 @@
 <template>
   <div
-    class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 w-full max-w-sm mx-auto border border-orange-100"
+    class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 w-full max-w-sm mx-auto border border-orange-100 relative group"
   >
+    <!-- Code button -->
+    <button
+      @click="openCodeModal"
+      class="absolute top-4 right-4 z-30 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-300 shadow-lg border border-orange-200"
+      title="Ver código del componente"
+      aria-label="Ver código del componente"
+    >
+      <svg
+        class="w-5 h-5 text-gray-700"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+        />
+      </svg>
+    </button>
+
     <div class="p-6">
       <!-- Header con diseño magazine -->
       <div class="flex items-center justify-between mb-4">
@@ -113,16 +135,37 @@
         </button>
       </div>
     </div>
+
+    <!-- Code Modal -->
+    <CodeModal
+      ref="codeModal"
+      cardType="Article Card"
+      cardVariant="Magazine Style"
+      :codeContent="cardCode"
+    />
   </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
+import CodeModal from "../CodeModal.vue";
+import { cardCodes } from "../../data/cardCodes.js";
+
 defineProps({
   article: {
     type: Object,
     required: true,
   },
 });
+
+const codeModal = ref(null);
+const cardCode = cardCodes.ArticleCard2;
+
+const openCodeModal = () => {
+  if (codeModal.value) {
+    codeModal.value.openModal();
+  }
+};
 
 const formatDate = (dateString) => {
   const date = new Date(dateString);
