@@ -150,11 +150,21 @@
     <div
       class="absolute bottom-20 left-8 w-2 h-2 bg-red-300 rounded-full opacity-60 group-hover:opacity-90 group-hover:scale-150 transition-all duration-500 delay-300"
     ></div>
+
+    <!-- Code Modal -->
+    <CodeModal
+      ref="codeModal"
+      cardType="Profile Card"
+      cardVariant="Warm Geometric Style"
+      :codeContent="cardCode"
+    />
   </div>
 </template>
 
 <script setup>
-import { inject } from "vue";
+import { ref } from "vue";
+import CodeModal from "../CodeModal.vue";
+import { cardCodes } from "../../data/cardCodes.js";
 
 defineProps({
   profile: {
@@ -163,9 +173,12 @@ defineProps({
   },
 });
 
-const showCodeModal = inject("showCodeModal");
+const codeModal = ref(null);
+const cardCode = cardCodes.ProfileCard4;
 
 const showCode = () => {
-  showCodeModal("ProfileCard4");
+  if (codeModal.value) {
+    codeModal.value.openModal();
+  }
 };
 </script>

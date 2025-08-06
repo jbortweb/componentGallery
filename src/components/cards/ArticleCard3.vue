@@ -17,6 +17,27 @@
         </div>
       </div>
 
+      <!-- Code button -->
+      <button
+        @click="showCode"
+        class="absolute top-4 right-4 bg-green-600 hover:bg-green-500 text-white p-2 rounded-full transition-all duration-300 hover:scale-110 shadow-lg z-10"
+        aria-label="Ver código del componente ArticleCard3"
+      >
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+          ></path>
+        </svg>
+      </button>
+
       <!-- Image con overlay dark -->
       <div class="relative mb-6 rounded-xl overflow-hidden">
         <img
@@ -115,16 +136,37 @@
         </button>
       </div>
     </div>
+
+    <!-- Code Modal -->
+    <CodeModal
+      ref="codeModal"
+      cardType="Article Card"
+      cardVariant="Dark Terminal Style"
+      :codeContent="cardCode"
+    />
   </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
+import CodeModal from "../CodeModal.vue";
+import { cardCodes } from "../../data/cardCodes.js";
+
 defineProps({
   article: {
     type: Object,
     required: true,
   },
 });
+
+const codeModal = ref(null);
+const cardCode = cardCodes.ArticleCard3;
+
+const showCode = () => {
+  if (codeModal.value) {
+    codeModal.value.openModal();
+  }
+};
 
 const formatDate = (dateString) => {
   const date = new Date(dateString);

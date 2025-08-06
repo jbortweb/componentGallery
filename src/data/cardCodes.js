@@ -1393,88 +1393,120 @@ const formatDate = (dateString) => {
 </script>`,
 
   ArticleCard3: `<template>
-  <div class="bg-gray-900 rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 w-full border border-gray-700">
-    <div class="p-5">
-      <!-- Terminal header -->
-      <div class="flex items-center justify-between mb-4">
-        <div class="flex items-center space-x-2">
-          <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-          <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-          <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+  <div
+    class="bg-gray-900 rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 w-full max-w-sm mx-auto border border-gray-800"
+  >
+    <div class="p-6">
+      <!-- Header dark mode -->
+      <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center space-x-3">
+          <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+          <span
+            class="text-green-400 text-xs font-mono uppercase tracking-wider"
+            >Published</span
+          >
         </div>
-        <span class="text-green-400 text-xs font-mono">~/articles/{{ article.id }}.md</span>
+        <div class="text-gray-400 text-xs font-mono">
+          {{ formatDate(article.date) }}
+        </div>
       </div>
 
-      <!-- Article content -->
-      <div class="space-y-4">
-        <!-- Title -->
-        <div>
-          <div class="text-green-400 text-xs font-mono mb-1">$ cat title.txt</div>
-          <h3 class="text-green-300 text-lg font-bold font-mono line-clamp-2">
-            {{ article.title }}
-          </h3>
+      <!-- Image con overlay dark -->
+      <div class="relative mb-6 rounded-xl overflow-hidden">
+        <img
+          :src="article.image"
+          :alt="article.title"
+          class="w-full h-32 object-cover"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"
+        ></div>
+        <div class="absolute top-3 right-3">
+          <span
+            class="bg-cyan-500 text-gray-900 px-2 py-1 rounded text-xs font-bold"
+          >
+            {{ article.readTime }}
+          </span>
         </div>
+      </div>
 
-        <!-- Image terminal style -->
-        <div class="border border-gray-700 rounded-lg overflow-hidden bg-gray-800">
-          <div class="bg-gray-800 px-3 py-1 border-b border-gray-700">
-            <span class="text-cyan-400 text-xs font-mono">$ display preview.jpg</span>
+      <!-- Content -->
+      <h3 class="text-white text-xl font-bold mb-3 leading-tight">
+        {{ article.title }}
+      </h3>
+      <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+        {{ article.excerpt }}
+      </p>
+
+      <!-- Tags dark mode -->
+      <div class="flex flex-wrap gap-2 mb-6">
+        <span
+          v-for="tag in article.tags.slice(0, 2)"
+          :key="tag"
+          class="bg-gray-800 border border-gray-700 text-cyan-400 px-3 py-1 rounded-lg text-xs font-medium"
+        >
+          {{ tag }}
+        </span>
+      </div>
+
+      <!-- Author info dark -->
+      <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center">
+          <div
+            class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center"
+          >
+            <span class="text-white text-sm font-bold">{{
+              article.author.charAt(0)
+            }}</span>
           </div>
-          <img
-            :src="article.image"
-            :alt="article.title"
-            class="w-full h-32 object-cover"
-          />
-        </div>
-
-        <!-- Excerpt -->
-        <div>
-          <div class="text-cyan-400 text-xs font-mono mb-1">$ head -n 3 content.md</div>
-          <p class="text-gray-300 text-sm font-mono leading-relaxed line-clamp-2">
-            {{ article.excerpt }}
-          </p>
-        </div>
-
-        <!-- Metadata -->
-        <div class="grid grid-cols-2 gap-4">
-          <div>
-            <div class="text-purple-400 text-xs font-mono">$ whoami</div>
-            <div class="text-yellow-400 text-sm font-mono">{{ article.author }}</div>
-          </div>
-          <div>
-            <div class="text-purple-400 text-xs font-mono">$ date</div>
-            <div class="text-yellow-400 text-sm font-mono">{{ formatDate(article.date) }}</div>
+          <div class="ml-3">
+            <p class="text-white font-semibold text-sm">{{ article.author }}</p>
+            <p class="text-gray-400 text-xs">Tech Writer</p>
           </div>
         </div>
+      </div>
 
-        <!-- Tags as file listing -->
-        <div>
-          <div class="text-cyan-400 text-xs font-mono mb-2">$ ls tags/</div>
-          <div class="flex flex-wrap gap-2">
-            <span
-              v-for="tag in article.tags.slice(0, 3)"
-              :key="tag"
-              class="bg-gray-800 text-green-400 text-xs px-2 py-1 rounded border border-gray-600 font-mono"
+      <!-- Stats dark mode -->
+      <div
+        class="flex items-center justify-between pt-4 border-t border-gray-800"
+      >
+        <div class="flex items-center space-x-4">
+          <div class="flex items-center">
+            <svg
+              class="w-4 h-4 text-red-400 mr-2"
+              fill="currentColor"
+              viewBox="0 0 20 20"
             >
-              {{ tag.toLowerCase().replace(' ', '_') }}.tag
-            </span>
+              <path
+                fill-rule="evenodd"
+                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+              />
+            </svg>
+            <span class="text-gray-300 text-sm">{{ article.likes }}</span>
+          </div>
+          <div class="flex items-center">
+            <svg
+              class="w-4 h-4 text-cyan-400 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+              />
+            </svg>
+            <span class="text-gray-300 text-sm">{{ article.comments }}</span>
           </div>
         </div>
 
-        <!-- Stats -->
-        <div class="flex justify-between text-xs font-mono">
-          <div class="text-red-400">❤️ {{ article.likes }} likes</div>
-          <div class="text-blue-400">💬 {{ article.comments }} comments</div>
-          <div class="text-yellow-400">⏱️ {{ article.readTime }}</div>
-        </div>
-
-        <!-- Action -->
-        <div>
-          <div class="text-green-400 text-xs font-mono mb-2">$ ./read_article.sh</div>
-          <button class="w-full bg-green-600 hover:bg-green-700 text-black py-2 px-4 rounded font-mono font-bold transition-all duration-200 text-sm">
-            [ENTER] READ_FULL_ARTICLE
-          </button>
-        </div>
+        <button
+          class="bg-cyan-500 hover:bg-cyan-400 text-gray-900 px-4 py-2 rounded-lg font-bold text-sm transition-all duration-200 shadow-lg"
+        >
+          Read →
+        </button>
       </div>
     </div>
   </div>
@@ -1490,10 +1522,10 @@ defineProps({
 
 const formatDate = (dateString) => {
   const date = new Date(dateString);
-  return date.toLocaleDateString('es-ES', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric'
+  return date.toLocaleDateString("es-ES", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
   });
 };
 </script>`,
@@ -1788,22 +1820,9 @@ defineProps({
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import CodeModal from '../CodeModal.vue'
-import { cardCodes } from '../../data/cardCodes.js'
-
 defineProps({
   product: { type: Object, required: true }
-})
-
-const codeModal = ref(null)
-const cardCode = cardCodes.ProductCard6
-
-const showCode = () => {
-  if (codeModal.value) {
-    codeModal.value.openModal()
-  }
-}
+});
 </script>
 
 <style scoped>
@@ -1832,230 +1851,648 @@ const showCode = () => {
 
   // Nuevas Profile Cards
   ProfileCard4: `<template>
-  <div class="profile-card-4 group relative bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-6 border border-orange-200/50">
-    <!-- Code button -->
-    <button @click="showCode" class="absolute top-4 right-4 bg-orange-600 text-white p-2 rounded-full z-10">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-      </svg>
-    </button>
+  <div
+    class="profile-card-4 group relative bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-6 border border-orange-200/50 shadow-lg hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 overflow-hidden"
+  >
+    <!-- Warm background elements -->
+    <div
+      class="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-orange-400/20 to-red-400/20 rounded-full blur-xl group-hover:scale-125 transition-transform duration-500"
+    ></div>
+    <div
+      class="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-tr from-yellow-400/20 to-orange-400/20 rounded-full blur-xl group-hover:scale-125 transition-transform duration-500 delay-100"
+    ></div>
 
-    <div class="text-center">
-      <img :src="profile.avatar" :alt="profile.name" class="w-24 h-24 rounded-full mx-auto mb-4" />
-      <h3 class="text-xl font-bold text-gray-800">{{ profile.name }}</h3>
-      <p class="text-orange-600 font-semibold">{{ profile.role }}</p>
+    <!-- Profile section with warm colors -->
+    <div class="relative z-10 text-center mb-6">
+      <div class="relative inline-block">
+        <!-- Avatar with subtle glow effect -->
+        <div class="relative w-24 h-24 mx-auto mb-4">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-400 rounded-full opacity-50 blur-lg group-hover:opacity-70 transition-opacity duration-300"
+          ></div>
+          <img
+            :src="profile.avatar"
+            :alt="profile.name"
+            class="relative w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+
+        <!-- Status indicator -->
+        <div
+          class="absolute -top-1 -right-1 w-6 h-6 bg-green-400 border-2 border-white rounded-full flex items-center justify-center"
+        >
+          <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+        </div>
+      </div>
+
+      <h3
+        class="text-xl font-bold text-gray-800 group-hover:text-orange-600 transition-colors duration-300"
+      >
+        {{ profile.name }}
+      </h3>
+
+      <p class="text-orange-600 font-semibold text-sm mb-1">
+        {{ profile.role }}
+      </p>
       <p class="text-gray-600 text-sm">{{ profile.company }}</p>
-      <p class="text-gray-700 text-sm mt-4">{{ profile.bio }}</p>
     </div>
+
+    <!-- Bio section -->
+    <div class="relative z-10 mb-6">
+      <p class="text-gray-700 text-sm leading-relaxed text-center px-2">
+        {{ profile.bio }}
+      </p>
+    </div>
+
+    <!-- Skills with warm badges -->
+    <div class="relative z-10 mb-6">
+      <div class="flex flex-wrap gap-2 justify-center">
+        <span
+          v-for="skill in profile.skills.slice(0, 3)"
+          :key="skill"
+          class="px-3 py-1 bg-gradient-to-r from-orange-100 to-red-100 text-orange-700 text-xs font-medium rounded-full border border-orange-200 group-hover:from-orange-200 group-hover:to-red-200 transition-colors duration-300"
+        >
+          {{ skill }}
+        </span>
+        <span
+          v-if="profile.skills.length > 3"
+          class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full border border-gray-200"
+        >
+          +{{ profile.skills.length - 3 }}
+        </span>
+      </div>
+    </div>
+
+    <!-- Social links with warm theme -->
+    <div class="relative z-10 flex justify-center space-x-3">
+      <a
+        v-for="(url, platform) in profile.social"
+        :key="platform"
+        :href="url"
+        class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-100 to-red-100 border border-orange-200 flex items-center justify-center text-orange-600 hover:from-orange-200 hover:to-red-200 hover:text-orange-700 hover:scale-110 transition-all duration-300 shadow-sm hover:shadow-md group/social"
+        :aria-label="\`Perfil de \${platform}\`"
+      >
+        <!-- Icons for different platforms -->
+        <svg
+          v-if="platform === 'linkedin'"
+          class="w-5 h-5"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
+          />
+        </svg>
+        <svg
+          v-else-if="platform === 'github'"
+          class="w-5 h-5"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 0a10 10 0 00-3.16 19.49c.5.1.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0110 4.84c.85.004 1.71.115 2.51.337 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0010 0z"
+          />
+        </svg>
+        <svg
+          v-else-if="platform === 'twitter'"
+          class="w-5 h-5"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M6.29 18.25c7.55 0 11.67-6.25 11.67-11.67v-.53c.8-.59 1.49-1.3 2.04-2.13-.75.33-1.54.55-2.36.65a4.12 4.12 0 001.8-2.27c-.8.48-1.68.81-2.6 1a4.1 4.1 0 00-7 3.74 11.65 11.65 0 01-8.45-4.3 4.1 4.1 0 001.27 5.49A4.07 4.07 0 01.8 7.7v.05a4.1 4.1 0 003.3 4.03 4.1 4.1 0 01-1.86.07 4.1 4.1 0 003.83 2.85A8.23 8.23 0 010 16.4a11.62 11.62 0 006.29 1.84"
+          />
+        </svg>
+        <svg v-else class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+          <path
+            fill-rule="evenodd"
+            d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Floating decorative elements -->
+    <div
+      class="absolute top-16 right-6 w-3 h-3 bg-orange-300 rounded-full opacity-50 group-hover:opacity-80 group-hover:scale-125 transition-all duration-500 delay-200"
+    ></div>
+    <div
+      class="absolute bottom-20 left-8 w-2 h-2 bg-red-300 rounded-full opacity-60 group-hover:opacity-90 group-hover:scale-150 transition-all duration-500 delay-300"
+    ></div>
   </div>
 </template>
 
 <script setup>
-import { inject } from 'vue'
-
 defineProps({
-  profile: { type: Object, required: true }
-})
-
-const showCodeModal = inject('showCodeModal')
-const showCode = () => showCodeModal('ProfileCard4')
+  profile: {
+    type: Object,
+    required: true,
+  },
+});
 </script>`,
 
   ProfileCard5: `<template>
-  <div class="profile-card-5 group relative bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+  <div class="profile-card-5 group relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+    <!-- Minimalist top accent -->
     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
-    
-    <!-- Code button -->
-    <button @click="showCode" class="absolute top-4 right-4 bg-indigo-600 text-white p-2 rounded-full z-10">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-      </svg>
-    </button>
 
-    <div class="text-center">
-      <img :src="profile.avatar" :alt="profile.name" class="w-28 h-28 rounded-full mx-auto mb-6" />
-      <h3 class="text-2xl font-bold text-gray-900 mb-2">{{ profile.name }}</h3>
-      <p class="text-indigo-600 font-semibold">{{ profile.role }}</p>
-      <p class="text-gray-500 text-sm">{{ profile.company }}</p>
-      <p class="text-gray-600 mt-4">{{ profile.bio }}</p>
+    <div class="p-8">
+      <!-- Professional header -->
+      <div class="text-center mb-8">
+        <div class="relative inline-block mb-6">
+          <!-- Professional avatar -->
+          <img 
+            :src="profile.avatar" 
+            :alt="profile.name"
+            class="w-28 h-28 rounded-full object-cover shadow-lg border-4 border-white group-hover:scale-105 transition-transform duration-300"
+          />
+          <!-- Professional status -->
+          <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 border-4 border-white rounded-full flex items-center justify-center shadow-lg">
+            <div class="w-3 h-3 bg-white rounded-full"></div>
+          </div>
+        </div>
+
+        <!-- Name and title -->
+        <h3 class="text-2xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors duration-300">
+          {{ profile.name }}
+        </h3>
+        
+        <div class="space-y-1">
+          <p class="text-indigo-600 font-semibold">{{ profile.role }}</p>
+          <p class="text-gray-500 text-sm">{{ profile.company }}</p>
+        </div>
+      </div>
+
+      <!-- Professional bio -->
+      <div class="mb-8">
+        <p class="text-gray-600 text-center leading-relaxed">
+          {{ profile.bio }}
+        </p>
+      </div>
+
+      <!-- Skills with modern design -->
+      <div class="mb-8">
+        <h4 class="text-sm font-semibold text-gray-900 mb-3 uppercase tracking-wide">Especialidades</h4>
+        <div class="flex flex-wrap gap-2">
+          <span 
+            v-for="skill in profile.skills" 
+            :key="skill"
+            class="px-3 py-1 bg-gray-100 hover:bg-indigo-100 text-gray-700 hover:text-indigo-700 text-xs font-medium rounded-lg transition-colors duration-300 border border-transparent hover:border-indigo-200"
+          >
+            {{ skill }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Professional contact -->
+      <div class="flex justify-center space-x-4">
+        <a 
+          v-for="(url, platform) in profile.social" 
+          :key="platform"
+          :href="url"
+          class="w-12 h-12 rounded-full bg-gray-50 hover:bg-indigo-50 border border-gray-200 hover:border-indigo-200 flex items-center justify-center text-gray-600 hover:text-indigo-600 transition-all duration-300 hover:scale-110 group/social"
+          :aria-label="\`Conectar en \${platform}\`"
+        >
+          <!-- Professional platform icons -->
+          <svg v-if="platform === 'linkedin'" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"/>
+          </svg>
+          <svg v-else-if="platform === 'github'" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 0a10 10 0 00-3.16 19.49c.5.1.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0110 4.84c.85.004 1.71.115 2.51.337 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0010 0z"/>
+          </svg>
+          <svg v-else-if="platform === 'twitter'" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M6.29 18.25c7.55 0 11.67-6.25 11.67-11.67v-.53c.8-.59 1.49-1.3 2.04-2.13-.75.33-1.54.55-2.36.65a4.12 4.12 0 001.8-2.27c-.8.48-1.68.81-2.6 1a4.1 4.1 0 00-7 3.74 11.65 11.65 0 01-8.45-4.3 4.1 4.1 0 001.27 5.49A4.07 4.07 0 01.8 7.7v.05a4.1 4.1 0 003.3 4.03 4.1 4.1 0 01-1.86.07 4.1 4.1 0 003.83 2.85A8.23 8.23 0 010 16.4a11.62 11.62 0 006.29 1.84"/>
+          </svg>
+          <svg v-else class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+            <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+      </div>
     </div>
+
+    <!-- Subtle hover effect -->
+    <div class="absolute inset-0 border border-transparent group-hover:border-indigo-200 rounded-2xl transition-colors duration-500"></div>
   </div>
 </template>
 
 <script setup>
-import { inject } from 'vue'
-
 defineProps({
-  profile: { type: Object, required: true }
-})
-
-const showCodeModal = inject('showCodeModal')
-const showCode = () => showCodeModal('ProfileCard5')
+  profile: {
+    type: Object,
+    required: true
+  }
+});
 </script>`,
 
   ProfileCard6: `<template>
-  <div class="profile-card-6 group relative bg-gradient-to-br from-slate-900 via-gray-900 to-black rounded-2xl p-6 border border-gray-700/50">
-    <!-- Code button -->
-    <button @click="showCode" class="absolute top-4 right-4 bg-cyan-600/80 text-white p-2 rounded-lg z-10">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-      </svg>
-    </button>
-
-    <div class="space-y-4">
-      <div class="flex items-center space-x-2 mb-4">
-        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-        <span class="text-cyan-400 text-xs font-mono">profile.exe</span>
-      </div>
-      
-      <img :src="profile.avatar" :alt="profile.name" class="w-24 h-24 rounded-full mx-auto border-2 border-cyan-500/50" />
-      <div class="text-center">
-        <h3 class="text-xl font-bold text-white font-mono">{{ profile.name }}</h3>
-        <p class="text-gray-300 font-mono text-sm">{{ profile.role }}</p>
-        <p class="text-gray-500 font-mono text-xs">{{ profile.company }}</p>
+  <div class="profile-card-6 group relative bg-gradient-to-br from-slate-900 via-gray-900 to-black rounded-2xl p-6 border border-gray-700/50 shadow-2xl overflow-hidden transition-all duration-500 hover:shadow-cyan-500/20 hover:border-cyan-500/30">
+    <!-- Tech grid background -->
+    <div class="absolute inset-0 opacity-5">
+      <div class="grid grid-cols-12 grid-rows-12 h-full w-full">
+        <div v-for="i in 144" :key="i" class="border border-cyan-500/10"></div>
       </div>
     </div>
+
+    <!-- Tech-style profile -->
+    <div class="relative z-10">
+      <!-- Header with terminal styling -->
+      <div class="mb-6">
+        <div class="flex items-center space-x-2 mb-4">
+          <div class="flex space-x-1">
+            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+          </div>
+          <span class="text-cyan-400 text-xs font-mono">profile.exe</span>
+        </div>
+        
+        <!-- Avatar with tech frame -->
+        <div class="relative w-24 h-24 mx-auto mb-4">
+          <div class="absolute inset-0 border-2 border-cyan-500/50 rounded-full"></div>
+          <div class="absolute -inset-1 border border-cyan-400/30 rounded-full"></div>
+          <img 
+            :src="profile.avatar" 
+            :alt="profile.name"
+            class="w-full h-full rounded-full object-cover border-2 border-gray-700 group-hover:border-cyan-500/50 transition-colors duration-300"
+          />
+          
+          <!-- Status indicator -->
+          <div class="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 border-2 border-gray-900 rounded-full flex items-center justify-center">
+            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- User info in terminal style -->
+      <div class="space-y-3 mb-6">
+        <div class="text-center">
+          <p class="text-cyan-400 font-mono text-xs mb-1">$ whoami</p>
+          <h3 class="text-xl font-bold text-white font-mono group-hover:text-cyan-300 transition-colors duration-300">
+            {{ profile.name }}
+          </h3>
+        </div>
+
+        <div class="text-center">
+          <p class="text-cyan-400 font-mono text-xs mb-1">$ cat role.txt</p>
+          <p class="text-gray-300 font-mono text-sm">{{ profile.role }}</p>
+          <p class="text-gray-500 font-mono text-xs">{{ profile.company }}</p>
+        </div>
+
+        <div class="bg-gray-900/50 border border-cyan-500/30 rounded-lg p-3">
+          <p class="text-cyan-400 font-mono text-xs mb-2">$ cat bio.md</p>
+          <p class="text-gray-300 text-sm font-mono leading-relaxed">
+            {{ profile.bio }}
+          </p>
+        </div>
+      </div>
+
+      <!-- Skills as command output -->
+      <div class="mb-6">
+        <p class="text-cyan-400 font-mono text-xs mb-2">$ ls skills/</p>
+        <div class="flex flex-wrap gap-2">
+          <span 
+            v-for="skill in profile.skills" 
+            :key="skill"
+            class="px-3 py-1 bg-gray-800/80 text-cyan-300 text-xs font-mono rounded border border-cyan-500/30 hover:border-cyan-400/50 hover:bg-gray-700/80 transition-all duration-300"
+          >
+            {{ skill.toLowerCase().replace(' ', '_') }}.js
+          </span>
+        </div>
+      </div>
+
+      <!-- Social connections -->
+      <div>
+        <p class="text-cyan-400 font-mono text-xs mb-3">$ ls connections/</p>
+        <div class="flex justify-center space-x-3">
+          <a 
+            v-for="(url, platform) in profile.social" 
+            :key="platform"
+            :href="url"
+            class="w-10 h-10 bg-gray-800/80 hover:bg-cyan-900/50 border border-cyan-500/30 hover:border-cyan-400/50 rounded-lg flex items-center justify-center text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:scale-110 group/social"
+            :aria-label="\`\${platform}.link\`"
+          >
+            <!-- Tech-style icons -->
+            <svg v-if="platform === 'linkedin'" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"/>
+            </svg>
+            <svg v-else-if="platform === 'github'" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 0a10 10 0 00-3.16 19.49c.5.1.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0110 4.84c.85.004 1.71.115 2.51.337 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0010 0z"/>
+            </svg>
+            <svg v-else class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+              <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subtle tech border glow -->
+    <div class="absolute inset-0 rounded-2xl border border-transparent bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: xor;"></div>
   </div>
 </template>
 
 <script setup>
-import { inject } from 'vue'
-
 defineProps({
-  profile: { type: Object, required: true }
-})
-
-const showCodeModal = inject('showCodeModal')
-const showCode = () => showCodeModal('ProfileCard6')
+  profile: {
+    type: Object,
+    required: true
+  }
+});
 </script>`,
 
   // Nuevas Article Cards
   ArticleCard4: `<template>
-  <div class="article-card-4 group relative bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 rounded-2xl shadow-lg border border-emerald-200/50">
-    <!-- Code button -->
-    <button @click="showCode" class="absolute top-4 right-4 bg-emerald-600 text-white p-2 rounded-full z-10">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-      </svg>
-    </button>
+  <div class="article-card-4 group relative bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 rounded-2xl shadow-lg border border-emerald-200/50 overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+    <!-- Nature-inspired background elements -->
+    <div class="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-emerald-200/30 to-teal-200/30 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-500"></div>
+    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-tr from-cyan-200/20 to-emerald-200/20 rounded-full blur-2xl group-hover:scale-110 transition-transform duration-500 delay-100"></div>
 
-    <img :src="article.image" :alt="article.title" class="w-full h-48 object-cover rounded-t-2xl" />
-    <div class="p-6">
-      <div class="flex items-center justify-between mb-4">
-        <span class="text-emerald-700 text-xs bg-emerald-100 px-3 py-1 rounded-full">{{ article.tags[0] }}</span>
-        <span class="text-emerald-600 text-xs">{{ article.readTime }}</span>
+    <!-- Article image with nature effect -->
+    <div class="relative mb-6">
+      <div class="overflow-hidden rounded-t-2xl">
+        <img 
+          :src="article.image" 
+          :alt="article.title"
+          class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/20 via-transparent to-transparent"></div>
       </div>
-      <h3 class="text-xl font-bold text-gray-800 mb-3">{{ article.title }}</h3>
-      <p class="text-gray-600 text-sm mb-4">{{ article.excerpt }}</p>
-      <div class="flex items-center justify-between">
+      
+      <!-- Floating leaves decoration -->
+      <div class="absolute top-4 left-4 opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+        <div class="leaf w-6 h-6 bg-emerald-400/40 rounded-full transform rotate-12 group-hover:rotate-45 transition-transform duration-500"></div>
+      </div>
+      <div class="absolute bottom-4 right-4 opacity-40 group-hover:opacity-80 transition-opacity duration-500 delay-100">
+        <div class="leaf w-4 h-4 bg-teal-400/50 rounded-full transform -rotate-12 group-hover:-rotate-45 transition-transform duration-500"></div>
+      </div>
+    </div>
+
+    <div class="p-6 pt-0">
+      <!-- Header with organic style -->
+      <div class="flex items-center justify-between mb-4">
         <div class="flex items-center space-x-2">
-          <div class="w-8 h-8 bg-emerald-400 rounded-full flex items-center justify-center text-white text-xs">
+          <div class="flex -space-x-1">
+            <span 
+              v-for="tag in article.tags.slice(0, 2)" 
+              :key="tag"
+              class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-medium rounded-full border border-emerald-200 group-hover:bg-emerald-200 transition-colors duration-300"
+            >
+              {{ tag }}
+            </span>
+          </div>
+        </div>
+        <div class="text-xs text-emerald-600 font-medium">{{ article.readTime }}</div>
+      </div>
+
+      <!-- Title with organic typography -->
+      <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-emerald-700 transition-colors duration-300">
+        {{ article.title }}
+      </h3>
+
+      <!-- Excerpt -->
+      <p class="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
+        {{ article.excerpt }}
+      </p>
+
+      <!-- Author info with nature theme -->
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-xs shadow-sm">
             {{ article.author.charAt(0) }}
           </div>
           <div>
-            <p class="text-sm font-medium">{{ article.author }}</p>
+            <p class="text-sm font-medium text-gray-800">{{ article.author }}</p>
             <p class="text-xs text-gray-500">{{ article.date }}</p>
           </div>
         </div>
+
+        <!-- Engagement stats -->
+        <div class="flex items-center space-x-4 text-xs text-gray-500">
+          <div class="flex items-center space-x-1 hover:text-emerald-600 transition-colors duration-300">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+            </svg>
+            <span>{{ article.likes }}</span>
+          </div>
+          <div class="flex items-center space-x-1 hover:text-emerald-600 transition-colors duration-300">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+            <span>{{ article.comments }}</span>
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- Organic border effect -->
+    <div class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 group-hover:w-full transition-all duration-700 ease-out rounded-full"></div>
   </div>
 </template>
 
 <script setup>
-import { inject } from 'vue'
-
 defineProps({
-  article: { type: Object, required: true }
-})
+  article: { 
+    type: Object, 
+    required: true 
+  }
+});
+</script>
 
-const showCodeModal = inject('showCodeModal')
-const showCode = () => showCodeModal('ArticleCard4')
-</script>`,
+<style scoped>
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+</style>`,
 
   ArticleCard5: `<template>
-  <div class="article-card-5 group relative bg-white rounded-none shadow-xl border-l-4 border-red-500">
+  <div class="article-card-5 group relative bg-white rounded-none shadow-xl border-l-4 border-red-500 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:border-red-600">
+    <!-- Magazine-style header stripe -->
     <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500"></div>
-    
-    <!-- Code button -->
-    <button @click="showCode" class="absolute top-4 right-4 bg-red-600 text-white p-2 z-10">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-      </svg>
-    </button>
 
     <div class="p-6 pt-8">
-      <div class="flex items-center space-x-2 mb-4">
-        <div class="w-1 h-16 bg-red-500"></div>
-        <div>
-          <span class="bg-red-500 text-white text-xs font-bold uppercase px-2 py-1">{{ article.tags[0] }}</span>
-          <p class="text-xs text-gray-500 uppercase mt-1">{{ article.readTime }} Read</p>
-        </div>
-      </div>
-      
-      <h3 class="text-2xl font-black text-gray-900 mb-4 uppercase">{{ article.title }}</h3>
-      <img :src="article.image" :alt="article.title" class="w-full h-48 object-cover mb-6" />
-      <p class="text-sm text-gray-600 mb-4">{{ article.excerpt }}</p>
-      
-      <div class="border-t-2 border-red-500 pt-4 flex items-center justify-between">
-        <div class="flex items-center space-x-3">
-          <div class="w-12 h-12 bg-red-500 text-white font-black text-lg flex items-center justify-center">
-            {{ article.author.split(' ').map(n => n[0]).join('') }}
-          </div>
-          <div>
-            <p class="font-bold text-gray-900 uppercase text-sm">{{ article.author }}</p>
-            <p class="text-xs text-gray-500 uppercase">{{ article.date }}</p>
+      <!-- Magazine-style header -->
+      <div class="flex items-start justify-between mb-4">
+        <div class="flex items-center space-x-2">
+          <div class="w-1 h-16 bg-red-500"></div>
+          <div class="space-y-1">
+            <div class="flex space-x-2">
+              <span 
+                v-for="tag in article.tags.slice(0, 1)" 
+                :key="tag"
+                class="px-2 py-1 bg-red-500 text-white text-xs font-bold uppercase tracking-wide"
+              >
+                {{ tag }}
+              </span>
+            </div>
+            <p class="text-xs text-gray-500 uppercase tracking-wide font-semibold">{{ article.readTime }} Read</p>
           </div>
         </div>
+        <div class="text-right">
+          <p class="text-xs text-gray-400 uppercase">{{ article.date }}</p>
+        </div>
       </div>
+
+      <!-- Bold magazine title -->
+      <h3 class="text-2xl font-black text-gray-900 mb-4 leading-tight group-hover:text-red-700 transition-colors duration-300 uppercase tracking-tight">
+        {{ article.title }}
+      </h3>
+
+      <!-- Magazine-style image -->
+      <div class="relative mb-6 -mx-6">
+        <img 
+          :src="article.image" 
+          :alt="article.title"
+          class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <!-- Bold overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+        <div class="absolute bottom-4 left-6 right-6">
+          <p class="text-white text-sm leading-relaxed font-medium">
+            {{ article.excerpt }}
+          </p>
+        </div>
+      </div>
+
+      <!-- Magazine-style author section -->
+      <div class="border-t-2 border-red-500 pt-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div class="w-12 h-12 bg-red-500 text-white font-black text-lg flex items-center justify-center">
+              {{ article.author.split(' ').map(n => n[0]).join('') }}
+            </div>
+            <div>
+              <p class="font-bold text-gray-900 uppercase text-sm tracking-wide">{{ article.author }}</p>
+              <p class="text-xs text-gray-500 uppercase font-semibold">Contributing Writer</p>
+            </div>
+          </div>
+
+          <!-- Bold engagement stats -->
+          <div class="flex items-center space-x-4">
+            <div class="text-center">
+              <p class="text-xl font-black text-red-500">{{ article.likes }}</p>
+              <p class="text-xs text-gray-500 uppercase font-bold">Likes</p>
+            </div>
+            <div class="text-center">
+              <p class="text-xl font-black text-red-500">{{ article.comments }}</p>
+              <p class="text-xs text-gray-500 uppercase font-bold">Comments</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Magazine corner fold effect -->
+      <div class="absolute top-0 right-0 w-8 h-8 bg-gray-200 transform rotate-45 translate-x-4 -translate-y-4 group-hover:bg-red-100 transition-colors duration-300"></div>
     </div>
+
+    <!-- Magazine spine effect -->
+    <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-red-600 via-red-500 to-red-400 group-hover:w-2 transition-all duration-300"></div>
   </div>
 </template>
 
 <script setup>
-import { inject } from 'vue'
-
 defineProps({
-  article: { type: Object, required: true }
-})
-
-const showCodeModal = inject('showCodeModal')
-const showCode = () => showCodeModal('ArticleCard5')
+  article: { 
+    type: Object, 
+    required: true 
+  }
+});
 </script>`,
 
   ArticleCard6: `<template>
-  <div class="article-card-6 group relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-2xl border border-purple-500/30">
-    <!-- Code button -->
-    <button @click="showCode" class="absolute top-4 right-4 bg-purple-600/80 text-white p-2 rounded-lg z-10">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-      </svg>
-    </button>
-
-    <div class="p-6">
-      <div class="flex items-center space-x-3 mb-4">
-        <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-        <span class="text-purple-400 text-xs font-mono uppercase">Article.exe</span>
+  <div class="article-card-6 group relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-2xl border border-purple-500/30 shadow-2xl overflow-hidden transition-all duration-500 hover:shadow-purple-500/25 hover:border-purple-400/50">
+    <!-- Futuristic grid overlay -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="grid grid-cols-6 grid-rows-6 h-full w-full">
+        <div v-for="i in 36" :key="i" class="border border-purple-400/20 animate-pulse" :style="\`animation-delay: \${i * 0.1}s\`"></div>
       </div>
-      
-      <img :src="article.image" :alt="article.title" class="w-full h-40 object-cover rounded-lg border border-purple-500/50 mb-6" />
-      
+    </div>
+
+    <!-- Digital scan lines -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent animate-pulse"></div>
+
+    <div class="relative z-10 p-6">
+      <!-- Futuristic header -->
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center space-x-3">
+          <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+          <div class="text-purple-400 text-xs font-mono uppercase tracking-wider">Article.exe</div>
+        </div>
+        <div class="flex items-center space-x-2 text-xs text-purple-300 font-mono">
+          <span>Runtime:</span>
+          <span class="text-purple-400">{{ article.readTime }}</span>
+        </div>
+      </div>
+
+      <!-- Holographic image -->
+      <div class="relative mb-6">
+        <div class="absolute inset-0 bg-purple-500/20 blur-xl rounded-lg group-hover:bg-purple-400/30 transition-colors duration-500"></div>
+        <img 
+          :src="article.image" 
+          :alt="article.title"
+          class="relative z-10 w-full h-40 object-cover rounded-lg border border-purple-500/50 shadow-lg filter contrast-125 saturate-110 group-hover:shadow-purple-500/50 transition-all duration-500"
+        />
+        <!-- Holographic overlay -->
+        <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/10 via-cyan-500/10 to-pink-500/10 rounded-lg mix-blend-overlay"></div>
+        
+        <!-- Corner brackets -->
+        <div class="absolute top-2 left-2 w-4 h-4 border-l-2 border-t-2 border-purple-400 opacity-70"></div>
+        <div class="absolute top-2 right-2 w-4 h-4 border-r-2 border-t-2 border-purple-400 opacity-70"></div>
+        <div class="absolute bottom-2 left-2 w-4 h-4 border-l-2 border-b-2 border-purple-400 opacity-70"></div>
+        <div class="absolute bottom-2 right-2 w-4 h-4 border-r-2 border-b-2 border-purple-400 opacity-70"></div>
+      </div>
+
+      <!-- Digital content -->
       <div class="space-y-4">
-        <div class="flex space-x-2">
-          <span class="text-purple-300 text-xs font-mono bg-purple-900/50 px-2 py-1 border border-purple-500/30 rounded">
-            #{{ article.tags[0].toLowerCase().replace(' ', '_') }}
-          </span>
+        <!-- Tags as system labels -->
+        <div class="flex items-center space-x-2">
+          <span class="text-purple-400 text-xs font-mono">Tags:</span>
+          <div class="flex space-x-2">
+            <span 
+              v-for="tag in article.tags.slice(0, 2)" 
+              :key="tag"
+              class="px-2 py-1 bg-purple-900/50 text-purple-300 text-xs font-mono border border-purple-500/30 rounded hover:border-purple-400/50 transition-colors duration-300"
+            >
+              #{{ tag.toLowerCase().replace(' ', '_') }}
+            </span>
+          </div>
         </div>
-        
-        <h3 class="text-xl font-bold text-white font-mono">{{ article.title }}</h3>
-        
+
+        <!-- Glitch title effect -->
+        <div class="relative">
+          <h3 class="text-xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300 font-mono leading-tight">
+            {{ article.title }}
+          </h3>
+          <!-- Glitch overlay -->
+          <h3 class="absolute inset-0 text-xl font-bold text-purple-400 font-mono opacity-0 group-hover:opacity-50 transition-opacity duration-300 transform translate-x-px translate-y-px mix-blend-difference">
+            {{ article.title }}
+          </h3>
+        </div>
+
+        <!-- Terminal-style description -->
         <div class="bg-black/30 border border-purple-500/30 rounded-lg p-4">
-          <p class="text-gray-300 text-sm font-mono">{{ article.excerpt }}</p>
+          <div class="flex items-center space-x-2 mb-2">
+            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            <span class="text-purple-400 text-xs font-mono ml-auto">content.txt</span>
+          </div>
+          <p class="text-gray-300 text-sm font-mono leading-relaxed">
+            > {{ article.excerpt }}
+          </p>
         </div>
-        
+
+        <!-- Author and stats in terminal style -->
         <div class="flex items-center justify-between pt-4 border-t border-purple-500/30">
           <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-cyan-600 rounded flex items-center justify-center text-white font-mono text-xs">
+            <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-cyan-600 rounded border border-purple-400/50 flex items-center justify-center text-white font-mono font-bold text-xs shadow-lg">
               {{ article.author.split(' ').map(n => n[0]).join('') }}
             </div>
             <div>
@@ -2063,20 +2500,33 @@ const showCode = () => showCodeModal('ArticleCard5')
               <p class="text-gray-400 text-xs font-mono">{{ article.date }}</p>
             </div>
           </div>
+
+          <!-- Digital stats -->
+          <div class="flex items-center space-x-4 text-xs font-mono">
+            <div class="flex items-center space-x-1 text-purple-400 hover:text-purple-300 transition-colors duration-300">
+              <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+              <span>{{ article.likes }}</span>
+            </div>
+            <div class="flex items-center space-x-1 text-cyan-400 hover:text-cyan-300 transition-colors duration-300">
+              <div class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" style="animation-delay: 0.5s"></div>
+              <span>{{ article.comments }}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Animated border effect -->
+    <div class="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r from-purple-500 via-cyan-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: xor;"></div>
   </div>
 </template>
 
 <script setup>
-import { inject } from 'vue'
-
 defineProps({
-  article: { type: Object, required: true }
-})
-
-const showCodeModal = inject('showCodeModal')
-const showCode = () => showCodeModal('ArticleCard6')
+  article: { 
+    type: Object, 
+    required: true 
+  }
+});
 </script>`
 };
