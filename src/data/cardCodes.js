@@ -1500,119 +1500,335 @@ const formatDate = (dateString) => {
 
   // Nuevas Product Cards
   ProductCard4: `<template>
-  <div class="product-card-4 group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-900/80 via-blue-900/80 to-indigo-900/80 backdrop-blur-sm border border-purple-500/20 p-6 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25">
+  <div
+    class="product-card-4 group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-900/80 via-blue-900/80 to-indigo-900/80 backdrop-blur-sm border border-purple-500/20 p-6 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/25 hover:border-purple-400/40"
+  >
     <!-- Animated background pattern -->
     <div class="absolute inset-0 opacity-10">
-      <div class="h-full w-full bg-gradient-to-r from-transparent via-purple-400/20 to-transparent animate-pulse"></div>
+      <div
+        class="h-full w-full bg-gradient-to-r from-transparent via-purple-400/20 to-transparent animate-pulse"
+      ></div>
     </div>
-    
-    <!-- Code button -->
-    <button 
-      @click="showCode"
-      class="absolute top-4 right-4 bg-purple-600/80 hover:bg-purple-500 text-white p-2 rounded-lg transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-purple-400/30 z-10"
-    >
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-      </svg>
-    </button>
 
-    <!-- Product content with holographic effects -->
-    <div class="relative z-10">
-      <img :src="product.image" :alt="product.title" class="w-full h-48 object-cover rounded-xl" />
-      <h3 class="text-xl font-bold text-white mt-4">{{ product.title }}</h3>
-      <p class="text-gray-300 text-sm">{{ product.description }}</p>
-      <div class="flex justify-between items-center mt-4">
-        <span class="text-2xl font-bold text-white">{{ product.price }}</span>
-        <button class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-xl">Comprar</button>
+    <!-- Floating particles effect -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div
+        class="particle absolute top-1/4 left-1/4 w-1 h-1 bg-purple-400 rounded-full animate-bounce"
+        style="animation-delay: 0s"
+      ></div>
+      <div
+        class="particle absolute top-3/4 right-1/4 w-1 h-1 bg-blue-400 rounded-full animate-bounce"
+        style="animation-delay: 1s"
+      ></div>
+      <div
+        class="particle absolute bottom-1/4 left-3/4 w-1 h-1 bg-indigo-400 rounded-full animate-bounce"
+        style="animation-delay: 2s"
+      ></div>
+    </div>
+
+    <!-- Product image with smooth hover effect -->
+    <div class="relative mb-6">
+      <img
+        :src="product.image"
+        :alt="product.title"
+        class="relative z-20 w-full h-48 object-cover rounded-xl border border-purple-400/30 shadow-lg group-hover:shadow-purple-500/50 transition-shadow duration-500"
+      />
+    </div>
+
+    <!-- Product content -->
+    <div class="relative z-10 space-y-4">
+      <div class="flex items-center justify-between">
+        <span
+          class="px-3 py-1 text-xs font-semibold bg-purple-500/30 text-purple-200 rounded-full border border-purple-400/50"
+          >{{ product.category }}</span
+        >
+        <div class="flex items-center space-x-1 text-yellow-400">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+            />
+          </svg>
+          <span class="text-sm font-medium text-white">{{
+            product.rating
+          }}</span>
+        </div>
+      </div>
+
+      <h3
+        class="text-xl font-bold text-white group-hover:text-purple-200 transition-colors duration-300"
+      >
+        {{ product.title }}
+      </h3>
+
+      <p class="text-gray-300 text-sm leading-relaxed">
+        {{ product.description }}
+      </p>
+
+      <div
+        class="flex items-center justify-between pt-4 border-t border-purple-500/20"
+      >
+        <div class="space-y-1">
+          <p class="text-2xl font-bold text-white">{{ product.price }}</p>
+          <p class="text-xs text-gray-400">{{ product.reviews }} reseñas</p>
+        </div>
+
+        <button
+          class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg shadow-purple-500/25 border border-purple-400/30"
+        >
+          Comprar
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { inject } from 'vue'
-
 defineProps({
-  product: { type: Object, required: true }
-})
+  product: {
+    type: Object,
+    required: true,
+  },
+});
+</script>
 
-const showCodeModal = inject('showCodeModal')
-const showCode = () => showCodeModal('ProductCard4')
-</script>`,
+<style scoped>
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.particle {
+  animation: float 3s ease-in-out infinite;
+}
+</style>`,
 
   ProductCard5: `<template>
   <div class="product-card-5 group relative bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+    <!-- Minimalist top accent -->
     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900"></div>
-    
-    <!-- Code button -->
-    <button @click="showCode" class="absolute top-4 right-4 bg-gray-900 hover:bg-gray-700 text-white p-2 rounded-full">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-      </svg>
-    </button>
 
-    <div class="p-6">
-      <img :src="product.image" :alt="product.title" class="w-full h-52 object-cover rounded-2xl" />
-      <div class="mt-6">
-        <span class="text-xs text-gray-500 uppercase">{{ product.category }}</span>
-        <h3 class="text-2xl font-bold text-gray-900 mt-2">{{ product.title }}</h3>
-        <p class="text-gray-600 text-sm mt-2">{{ product.description }}</p>
-        <div class="flex justify-between items-center mt-6">
-          <p class="text-3xl font-bold text-gray-900">{{ product.price }}</p>
-          <button class="bg-gray-900 text-white px-8 py-3 rounded-full">Añadir</button>
-        </div>
+    <!-- Clean product image -->
+    <div class="p-6 pb-4">
+      <div class="relative overflow-hidden rounded-2xl bg-gray-50 group-hover:bg-gray-100 transition-colors duration-300">
+        <img 
+          :src="product.image" 
+          :alt="product.title"
+          class="w-full h-52 object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <!-- Minimal overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
     </div>
+
+    <!-- Product content with clean typography -->
+    <div class="px-6 pb-6 space-y-4">
+      <!-- Category and rating -->
+      <div class="flex items-center justify-between">
+        <span class="text-xs font-medium text-gray-500 uppercase tracking-wider">{{ product.category }}</span>
+        <div class="flex items-center space-x-1">
+          <div class="flex space-x-1">
+            <div v-for="star in 5" :key="star" class="w-3 h-3">
+              <svg 
+                :class="star <= Math.floor(product.rating) ? 'text-gray-900' : 'text-gray-200'" 
+                fill="currentColor" 
+                viewBox="0 0 20 20"
+              >
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            </div>
+          </div>
+          <span class="text-sm font-medium text-gray-600 ml-2">{{ product.rating }}</span>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <h3 class="text-2xl font-bold text-gray-900 leading-tight group-hover:text-gray-700 transition-colors duration-300">
+        {{ product.title }}
+      </h3>
+
+      <!-- Description -->
+      <p class="text-gray-600 text-sm leading-relaxed line-clamp-2">
+        {{ product.description }}
+      </p>
+
+      <!-- Reviews count -->
+      <p class="text-xs text-gray-400">{{ product.reviews }} reseñas verificadas</p>
+
+      <!-- Price and action -->
+      <div class="flex items-end justify-between pt-4">
+        <div>
+          <p class="text-3xl font-bold text-gray-900">{{ product.price }}</p>
+        </div>
+        
+        <button class="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+          Añadir
+        </button>
+      </div>
+    </div>
+
+    <!-- Subtle hover line animation -->
+    <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-500 ease-out"></div>
   </div>
 </template>
 
 <script setup>
-import { inject } from 'vue'
-
 defineProps({
-  product: { type: Object, required: true }
-})
+  product: {
+    type: Object,
+    required: true
+  }
+});
+</script>
 
-const showCodeModal = inject('showCodeModal')
-const showCode = () => showCodeModal('ProductCard5')
-</script>`,
+<style scoped>
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+</style>`,
 
   ProductCard6: `<template>
-  <div class="product-card-6 group relative bg-black rounded-2xl overflow-hidden border border-cyan-500/30">
+  <div class="product-card-6 group relative bg-black rounded-2xl overflow-hidden border border-cyan-500/30 transition-all duration-500 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/20">
+    <!-- Neon grid background -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="grid grid-cols-8 grid-rows-8 h-full w-full">
+        <div v-for="i in 64" :key="i" class="border border-cyan-500/20 animate-pulse" :style="\`animation-delay: \${i * 0.1}s\`"></div>
+      </div>
+    </div>
+
+    <!-- Scanning line effect -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="scan-line absolute w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scan"></div>
+    </div>
+
     <!-- Code button -->
-    <button @click="showCode" class="absolute top-4 right-4 bg-cyan-600/80 text-white p-2 rounded-lg z-10">
+    <button @click="showCode" class="absolute top-4 right-4 bg-cyan-600 hover:bg-cyan-500 text-white p-2 rounded-lg transition-all duration-300 hover:scale-110 border border-cyan-400/50 z-50 shadow-lg shadow-cyan-500/50" aria-label="Ver código del componente ProductCard6">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
       </svg>
     </button>
 
-    <div class="p-6">
-      <img :src="product.image" :alt="product.title" class="w-full h-48 object-cover rounded-xl border border-cyan-500/50" />
-      <div class="mt-6 space-y-4">
-        <span class="text-cyan-400 text-xs font-mono uppercase">{{ product.category }}</span>
-        <h3 class="text-xl font-bold text-white font-mono">{{ product.title }}</h3>
-        <div class="bg-gray-900/50 border border-cyan-500/30 rounded-lg p-3">
-          <p class="text-gray-300 text-sm font-mono">{{ product.description }}</p>
+    <div class="relative z-10 p-6">
+      <!-- Neon product image -->
+      <div class="relative mb-6">
+        <div class="absolute inset-0 bg-cyan-500/20 blur-xl rounded-xl group-hover:bg-cyan-400/30 transition-colors duration-500"></div>
+        <img :src="product.image" :alt="product.title" class="relative z-10 w-full h-48 object-cover rounded-xl border border-cyan-500/50 shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-400/30 transition-all duration-500 filter contrast-125 saturate-110" />
+        <!-- Holographic overlay -->
+        <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 via-purple-500/10 to-pink-500/10 rounded-xl mix-blend-overlay"></div>
+        
+        <!-- Corner accents -->
+        <div class="absolute top-2 left-2 w-4 h-4 border-l-2 border-t-2 border-cyan-400"></div>
+        <div class="absolute top-2 right-2 w-4 h-4 border-r-2 border-t-2 border-cyan-400"></div>
+        <div class="absolute bottom-2 left-2 w-4 h-4 border-l-2 border-b-2 border-cyan-400"></div>
+        <div class="absolute bottom-2 right-2 w-4 h-4 border-r-2 border-b-2 border-cyan-400"></div>
+      </div>
+
+      <!-- Cyberpunk content -->
+      <div class="space-y-4">
+        <!-- Category and status -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+            <span class="text-cyan-400 text-xs font-mono uppercase tracking-wider">{{ product.category }}</span>
+          </div>
+          <div class="flex items-center space-x-2 text-cyan-300">
+            <span class="text-xs font-mono">RATING:</span>
+            <span class="text-sm font-bold text-cyan-400">{{ product.rating }}/5</span>
+          </div>
         </div>
-        <div class="flex justify-between items-center">
-          <p class="text-2xl font-bold text-cyan-400 font-mono">{{ product.price }}</p>
-          <button class="bg-gradient-to-r from-cyan-600 to-purple-600 text-white px-6 py-3 rounded-lg font-mono">BUY.exe</button>
+
+        <!-- Glitch title effect -->
+        <div class="relative">
+          <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300 font-mono">
+            {{ product.title }}
+          </h3>
+          <!-- Glitch overlay -->
+          <h3 class="absolute inset-0 text-xl font-bold text-cyan-400 font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-x-0.5 translate-y-0.5 mix-blend-multiply">
+            {{ product.title }}
+          </h3>
+        </div>
+
+        <!-- Description with terminal styling -->
+        <div class="bg-gray-900/50 border border-cyan-500/30 rounded-lg p-3">
+          <div class="flex items-center space-x-2 mb-2">
+            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            <span class="text-cyan-400 text-xs font-mono ml-auto">product.info</span>
+          </div>
+          <p class="text-gray-300 text-sm font-mono leading-relaxed">
+            > {{ product.description }}
+          </p>
+        </div>
+
+        <!-- Price and action with neon effect -->
+        <div class="flex items-center justify-between pt-4 border-t border-cyan-500/30">
+          <div class="space-y-1">
+            <p class="text-2xl font-bold text-cyan-400 font-mono glow-text">{{ product.price }}</p>
+            <p class="text-xs text-gray-400 font-mono">{{ product.reviews }} reviews.log</p>
+          </div>
+          
+          <button class="bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-500 hover:to-purple-500 text-white px-6 py-3 rounded-lg font-mono font-semibold transition-all duration-300 hover:scale-105 border border-cyan-400/50 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-400/50">
+            BUY.exe
+          </button>
         </div>
       </div>
     </div>
+
+    <!-- Animated border glow -->
+    <div class="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse" style="mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: xor;"></div>
   </div>
 </template>
 
 <script setup>
-import { inject } from 'vue'
+import { ref } from 'vue'
+import CodeModal from '../CodeModal.vue'
+import { cardCodes } from '../../data/cardCodes.js'
 
 defineProps({
   product: { type: Object, required: true }
 })
 
-const showCodeModal = inject('showCodeModal')
-const showCode = () => showCodeModal('ProductCard6')
-</script>`,
+const codeModal = ref(null)
+const cardCode = cardCodes.ProductCard6
+
+const showCode = () => {
+  if (codeModal.value) {
+    codeModal.value.openModal()
+  }
+}
+</script>
+
+<style scoped>
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(400px); }
+}
+
+.animate-scan {
+  animation: scan 3s ease-in-out infinite;
+}
+
+.glow-text {
+  text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+}
+
+/* Cyberpunk grid animation */
+.grid div:nth-child(odd) {
+  animation-duration: 2s;
+}
+
+.grid div:nth-child(even) {
+  animation-duration: 3s;
+}
+</style>`,
 
   // Nuevas Profile Cards
   ProfileCard4: `<template>

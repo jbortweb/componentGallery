@@ -1,6 +1,6 @@
 <template>
   <div
-    class="product-card-4 group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-900/80 via-blue-900/80 to-indigo-900/80 backdrop-blur-sm border border-purple-500/20 p-6 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25"
+    class="product-card-4 group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-900/80 via-blue-900/80 to-indigo-900/80 backdrop-blur-sm border border-purple-500/20 p-6 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/25 hover:border-purple-400/40"
   >
     <!-- Animated background pattern -->
     <div class="absolute inset-0 opacity-10">
@@ -28,7 +28,7 @@
     <!-- Code button -->
     <button
       @click="showCode"
-      class="absolute top-4 right-4 bg-purple-600/80 hover:bg-purple-500 text-white p-2 rounded-lg transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-purple-400/30 z-10"
+      class="absolute top-4 right-4 bg-purple-600/80 hover:bg-purple-500 text-white p-2 rounded-lg transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-purple-400/30 z-50"
       aria-label="Ver código del componente ProductCard4"
     >
       <svg
@@ -46,21 +46,13 @@
       </svg>
     </button>
 
-    <!-- Product image with holographic effect -->
-    <div
-      class="relative mb-6 group-hover:transform group-hover:rotateY-12 transition-transform duration-500"
-    >
-      <div
-        class="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500"
-      ></div>
+    <!-- Product image with smooth hover effect -->
+    <div class="relative mb-6">
       <img
         :src="product.image"
         :alt="product.title"
-        class="relative z-10 w-full h-48 object-cover rounded-xl border border-purple-400/30 shadow-lg group-hover:shadow-purple-500/50 transition-shadow duration-500"
+        class="relative z-20 w-full h-48 object-cover rounded-xl border border-purple-400/30 shadow-lg group-hover:shadow-purple-500/50 transition-shadow duration-500"
       />
-      <div
-        class="absolute inset-0 bg-gradient-to-t from-purple-900/50 via-transparent to-transparent rounded-xl"
-      ></div>
     </div>
 
     <!-- Product content -->
@@ -108,19 +100,20 @@
       </div>
     </div>
 
-    <!-- Glowing border effect -->
-    <div
-      class="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r from-purple-500 via-blue-500 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-      style="
-        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        mask-composite: xor;
-      "
-    ></div>
+    <!-- Code Modal -->
+    <CodeModal
+      ref="codeModal"
+      cardType="Product Card"
+      cardVariant="Holographic Purple Style"
+      :codeContent="cardCode"
+    />
   </div>
 </template>
 
 <script setup>
-import { inject } from "vue";
+import { ref } from "vue";
+import CodeModal from "../CodeModal.vue";
+import { cardCodes } from "../../data/cardCodes.js";
 
 defineProps({
   product: {
@@ -129,10 +122,13 @@ defineProps({
   },
 });
 
-const showCodeModal = inject("showCodeModal");
+const codeModal = ref(null);
+const cardCode = cardCodes.ProductCard4;
 
 const showCode = () => {
-  showCodeModal("ProductCard4");
+  if (codeModal.value) {
+    codeModal.value.openModal();
+  }
 };
 </script>
 
@@ -149,10 +145,5 @@ const showCode = () => {
 
 .particle {
   animation: float 3s ease-in-out infinite;
-}
-
-/* Holographic effect */
-.group:hover .group-hover\:rotateY-12 {
-  transform: perspective(1000px) rotateY(12deg);
 }
 </style>

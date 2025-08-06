@@ -90,10 +90,10 @@
         <!-- Terminal Bio -->
         <div class="mb-6">
           <div
-            class="bg-black/50 border border-green-500/30 rounded p-4 font-mono text-sm h-40"
+            class="bg-black/50 border border-green-500/30 rounded p-4 font-mono text-sm min-h-32"
           >
             <div class="text-green-400 mb-2">&gt; cat bio.txt</div>
-            <p class="text-green-300 leading-relaxed typewriter terminal-text">
+            <p class="text-green-300 leading-relaxed terminal-bio">
               {{ profile.bio }}
             </p>
             <div class="text-green-400 mt-2 animate-blink">█</div>
@@ -415,6 +415,15 @@ const openCodeModal = () => {
   border-right: 2px solid #00ff00;
   white-space: nowrap;
   animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Terminal bio text with proper word wrapping */
+.terminal-bio {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  hyphens: auto;
+  max-width: 100%;
 }
 
 @keyframes typing {
