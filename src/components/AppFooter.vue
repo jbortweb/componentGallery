@@ -153,12 +153,13 @@
       <div class="mt-8 border-t border-gray-800 pt-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <p class="text-gray-400 text-sm">
-            © {{ currentYear }} Component Gallery. Todos los derechos
-            reservados.
+            Este proyecto es de código abierto y damos la bienvenida a
+            colaboraciones. ¡Tu participación es valiosa!
           </p>
-          <div class="mt-4 md:mt-0 flex space-x-6">
+          <div class="mt-4 md:mt-0 flex items-center space-x-2">
+            <img src="/logo.svg" alt="Vite" class="w-10 h-10" />
             <span class="text-gray-400 text-sm">
-              Construido con Vue 3 + Vite + Tailwind CSS
+              Construido por jbortweb con Vue 3 + Tailwind
             </span>
           </div>
         </div>
@@ -168,7 +169,5 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
-
-const currentYear = computed(() => new Date().getFullYear());
+// No se necesitan imports ni variables reactivas
 </script>

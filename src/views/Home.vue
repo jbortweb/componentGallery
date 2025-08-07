@@ -3,7 +3,7 @@
     class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50"
   >
     <!-- Hero Section -->
-    <section class="relative py-20 sm:py-32">
+    <section class="relative py-20 sm:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
           <h1 class="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
@@ -72,7 +72,7 @@
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              18 Componentes de Cards
+              Componentes de Cards
             </h3>
             <p class="text-gray-600 mb-4">
               Tarjetas de productos, perfiles y artículos con diseños únicos y
