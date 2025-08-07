@@ -1,7 +1,29 @@
 <template>
   <div
-    class="bg-gray-900 rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 w-full max-w-sm mx-auto border border-gray-800"
+    class="bg-gray-900 rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 w-full max-w-sm mx-auto border border-gray-800 relative"
   >
+    <!-- Code button -->
+    <button
+      @click="showCode"
+      class="absolute top-4 right-4 bg-green-600 hover:bg-green-500 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg z-40 cursor-pointer"
+      aria-label="Ver código del componente ArticleCard3"
+      title="Ver código del componente"
+    >
+      <svg
+        class="w-4 h-4"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+        ></path>
+      </svg>
+    </button>
+
     <div class="p-6">
       <!-- Header dark mode -->
       <div class="flex items-center justify-between mb-6">
@@ -16,28 +38,6 @@
           {{ formatDate(article.date) }}
         </div>
       </div>
-
-      <!-- Code button -->
-      <button
-        @click="showCode"
-        class="absolute top-4 right-4 bg-green-600 hover:bg-green-500 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg z-10 cursor-pointer"
-        aria-label="Ver código del componente ArticleCard3"
-        title="Ver código del componente"
-      >
-        <svg
-          class="w-4 h-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-          ></path>
-        </svg>
-      </button>
 
       <!-- Image con overlay dark -->
       <div class="relative mb-6 rounded-xl overflow-hidden">
@@ -130,11 +130,14 @@
           </div>
         </div>
 
-        <button
-          class="bg-cyan-500 hover:bg-cyan-400 text-gray-900 px-4 py-2 rounded-lg font-bold text-sm transition-all duration-200 shadow-lg"
+        <a
+          :href="article.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-cyan-500 hover:bg-cyan-400 text-gray-900 px-4 py-2 rounded-lg font-bold text-sm transition-all duration-200 shadow-lg inline-block cursor-pointer"
         >
-          Read →
-        </button>
+          Leer más
+        </a>
       </div>
     </div>
 

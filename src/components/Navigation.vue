@@ -5,7 +5,7 @@
         <!-- Logo/Title -->
         <div class="flex items-center">
           <h1 class="text-2xl font-bold text-gray-900">
-            <span class="text-blue-600">Card</span>Gallery
+            <span class="text-blue-600">Component</span>Gallery
           </h1>
         </div>
 

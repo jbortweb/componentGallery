@@ -10,7 +10,7 @@
     <!-- Code button -->
     <button
       @click="showCode"
-      class="absolute top-4 right-4 bg-indigo-600 hover:bg-indigo-500 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg z-10 cursor-pointer"
+      class="absolute top-4 right-4 bg-indigo-600 hover:bg-indigo-500 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg z-20 cursor-pointer"
       aria-label="Ver código del componente ProfileCard5"
       title="Ver código del componente"
     >
@@ -86,18 +86,21 @@
       </div>
 
       <!-- Professional contact -->
-      <div class="flex justify-center space-x-4">
+      <div class="flex justify-center space-x-4 relative z-10">
         <a
           v-for="(url, platform) in profile.social"
           :key="platform"
           :href="url"
-          class="w-12 h-12 rounded-full bg-gray-50 hover:bg-indigo-50 border border-gray-200 hover:border-indigo-200 flex items-center justify-center text-gray-600 hover:text-indigo-600 transition-all duration-300 hover:scale-110 group/social"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-12 h-12 rounded-full bg-gray-50 hover:bg-indigo-50 border border-gray-200 hover:border-indigo-200 flex items-center justify-center text-gray-600 hover:text-indigo-600 transition-all duration-300 hover:scale-110 group/social cursor-pointer"
           :aria-label="`Conectar en ${platform}`"
+          @click.stop
         >
           <!-- Professional platform icons -->
           <svg
             v-if="platform === 'linkedin'"
-            class="w-5 h-5"
+            class="w-5 h-5 pointer-events-none"
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -107,7 +110,7 @@
           </svg>
           <svg
             v-else-if="platform === 'github'"
-            class="w-5 h-5"
+            class="w-5 h-5 pointer-events-none"
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -117,7 +120,7 @@
           </svg>
           <svg
             v-else-if="platform === 'twitter'"
-            class="w-5 h-5"
+            class="w-5 h-5 pointer-events-none"
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -125,7 +128,12 @@
               d="M6.29 18.25c7.55 0 11.67-6.25 11.67-11.67v-.53c.8-.59 1.49-1.3 2.04-2.13-.75.33-1.54.55-2.36.65a4.12 4.12 0 001.8-2.27c-.8.48-1.68.81-2.6 1a4.1 4.1 0 00-7 3.74 11.65 11.65 0 01-8.45-4.3 4.1 4.1 0 001.27 5.49A4.07 4.07 0 01.8 7.7v.05a4.1 4.1 0 003.3 4.03 4.1 4.1 0 01-1.86.07 4.1 4.1 0 003.83 2.85A8.23 8.23 0 010 16.4a11.62 11.62 0 006.29 1.84"
             />
           </svg>
-          <svg v-else class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+          <svg
+            v-else
+            class="w-5 h-5 pointer-events-none"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
             <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
             <path
               fill-rule="evenodd"

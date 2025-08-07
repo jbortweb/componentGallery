@@ -4,7 +4,7 @@
   >
     <!-- Code button -->
     <button
-      @click="openCodeModal"
+      @click="showCode"
       class="absolute top-3 right-3 z-30 w-10 h-10 bg-orange-600/90 hover:bg-orange-500 rounded-lg flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-200 backdrop-blur-sm shadow-lg border border-orange-400/30 cursor-pointer"
       title="Ver código del componente"
       aria-label="Ver código del componente"
@@ -140,7 +140,7 @@ defineProps({
 const codeModal = ref(null);
 const cardCode = cardCodes.ProductCard2;
 
-const openCodeModal = () => {
+const showCode = () => {
   if (codeModal.value) {
     codeModal.value.openModal();
   }

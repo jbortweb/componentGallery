@@ -114,6 +114,7 @@
             v-for="(url, platform) in profile.social"
             :key="platform"
             :href="url"
+            target="_blank"
             class="w-10 h-10 bg-gray-800/80 hover:bg-cyan-900/50 border border-cyan-500/30 hover:border-cyan-400/50 rounded-lg flex items-center justify-center text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:scale-110 group/social"
             :aria-label="`${platform}.link`"
           >

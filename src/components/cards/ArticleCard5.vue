@@ -121,6 +121,26 @@
             </div>
           </div>
         </div>
+
+        <!-- Magazine-style action buttons -->
+        <div class="mt-6 flex justify-between items-center">
+          <a
+            :href="article.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-red-500 hover:bg-red-600 text-white px-8 py-3 font-black text-sm uppercase tracking-wide transition-all duration-300 hover:scale-105 shadow-lg cursor-pointer"
+          >
+            Leer más
+          </a>
+          <a
+            :href="article.secondaryUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-red-500 hover:text-red-600 font-bold text-sm uppercase tracking-wide transition-colors duration-300 cursor-pointer"
+          >
+            + Artículos
+          </a>
+        </div>
       </div>
 
       <!-- Magazine corner fold effect -->

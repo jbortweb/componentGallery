@@ -99,6 +99,7 @@
         v-for="(url, platform) in profile.social"
         :key="platform"
         :href="url"
+        target="_blank"
         class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-100 to-red-100 border border-orange-200 flex items-center justify-center text-orange-600 hover:from-orange-200 hover:to-red-200 hover:text-orange-700 hover:scale-110 transition-all duration-300 shadow-sm hover:shadow-md group/social"
         :aria-label="`Perfil de ${platform}`"
       >

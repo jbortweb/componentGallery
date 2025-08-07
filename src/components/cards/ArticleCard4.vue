@@ -141,6 +141,26 @@
           </div>
         </div>
       </div>
+
+      <!-- Action buttons -->
+      <div class="mt-6 flex justify-between items-center">
+        <a
+          :href="article.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer"
+        >
+          Leer más
+        </a>
+        <a
+          :href="article.secondaryUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-emerald-600 hover:text-emerald-700 text-sm font-medium transition-colors duration-300 cursor-pointer"
+        >
+          Ver más artículos
+        </a>
+      </div>
     </div>
 
     <!-- Organic border effect -->

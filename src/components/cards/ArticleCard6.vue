@@ -22,12 +22,12 @@
     <!-- Code button -->
     <button
       @click="showCode"
-      class="absolute top-4 right-4 bg-purple-600/80 hover:bg-purple-500 text-white p-3 rounded-lg transition-all duration-300 hover:scale-110 border border-purple-400/50 z-10 shadow-lg cursor-pointer"
+      class="absolute top-4 right-4 bg-purple-600/80 hover:bg-purple-500 text-white p-3 rounded-lg transition-all duration-300 hover:scale-110 border border-purple-400/50 z-60 shadow-lg cursor-pointer"
       aria-label="Ver código del componente ArticleCard6"
       title="Ver código del componente"
     >
       <svg
-        class="w-4 h-4"
+        class="w-4 h-4 pointer-events-none"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -46,9 +46,7 @@
       <div class="flex items-center justify-between mb-4">
         <div class="flex items-center space-x-3">
           <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-          <div
-            class="text-purple-400 text-xs font-mono uppercase tracking-wider"
-          >
+          <div class="text-white text-xs font-mono uppercase tracking-wider">
             Article.exe
           </div>
         </div>
@@ -99,23 +97,17 @@
             <span
               v-for="tag in article.tags.slice(0, 2)"
               :key="tag"
-              class="px-2 py-1 bg-purple-900/50 text-purple-300 text-xs font-mono border border-purple-500/30 rounded hover:border-purple-400/50 transition-colors duration-300"
+              class="px-2 py-1 bg-purple-900/50 text-purple-300 group-hover:text-white text-xs font-mono border border-purple-500/30 rounded hover:border-purple-400/50 transition-colors duration-300"
             >
               #{{ tag.toLowerCase().replace(" ", "_") }}
             </span>
           </div>
         </div>
 
-        <!-- Glitch title effect -->
+        <!-- Simple title without glitch effect -->
         <div class="relative">
           <h3
-            class="text-xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300 font-mono leading-tight"
-          >
-            {{ article.title }}
-          </h3>
-          <!-- Glitch overlay -->
-          <h3
-            class="absolute inset-0 text-xl font-bold text-purple-400 font-mono opacity-0 group-hover:opacity-50 transition-opacity duration-300 transform translate-x-px translate-y-px mix-blend-difference"
+            class="text-xl font-bold text-white group-hover:text-white transition-colors duration-300 font-mono leading-tight"
           >
             {{ article.title }}
           </h3>
@@ -131,7 +123,9 @@
               >content.txt</span
             >
           </div>
-          <p class="text-gray-300 text-sm font-mono leading-relaxed">
+          <p
+            class="text-gray-300 group-hover:text-white text-sm font-mono leading-relaxed"
+          >
             > {{ article.excerpt }}
           </p>
         </div>
@@ -152,28 +146,54 @@
               }}
             </div>
             <div>
-              <p class="text-purple-300 font-mono text-sm">
+              <p
+                class="text-purple-300 group-hover:text-white font-mono text-sm"
+              >
                 {{ article.author }}
               </p>
-              <p class="text-gray-400 text-xs font-mono">{{ article.date }}</p>
+              <p class="text-gray-400 group-hover:text-white text-xs font-mono">
+                {{ article.date }}
+              </p>
             </div>
           </div>
 
           <!-- Digital metrics -->
           <div class="flex items-center space-x-4 text-xs font-mono">
             <div
-              class="flex items-center space-x-1 text-purple-400 hover:text-purple-300 transition-colors duration-300"
+              class="flex items-center space-x-1 text-purple-400 group-hover:text-white transition-colors duration-300"
             >
               <span class="glow-text">♥</span>
               <span>{{ article.likes }}</span>
             </div>
             <div
-              class="flex items-center space-x-1 text-purple-400 hover:text-purple-300 transition-colors duration-300"
+              class="flex items-center space-x-1 text-purple-400 group-hover:text-white transition-colors duration-300"
             >
               <span class="glow-text">◊</span>
               <span>{{ article.comments }}</span>
             </div>
           </div>
+        </div>
+
+        <!-- Holographic action interface -->
+        <div
+          class="mt-6 flex justify-between items-center border-t border-purple-800/50 pt-4"
+        >
+          <a
+            :href="article.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="relative bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-white px-6 py-2 rounded-lg font-mono text-sm transition-all duration-300 shadow-lg hover:shadow-purple-500/25 glow-text cursor-pointer"
+          >
+            [LEER_MÁS]
+          </a>
+          <a
+            :href="article.secondaryUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-purple-400 hover:text-white font-mono text-xs transition-colors duration-300 glow-text cursor-pointer"
+          >
+            >_ EXPLORAR
+          </a>
         </div>
       </div>
     </div>

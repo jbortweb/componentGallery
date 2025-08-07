@@ -89,6 +89,7 @@ export const cardCodes = {
           <a
             v-if="profile.social.linkedin"
             :href="profile.social.linkedin"
+            target="_blank"
             class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-blue-500/50 hover:scale-110 transition-all duration-300 group/social"
           >
             <svg
@@ -104,6 +105,7 @@ export const cardCodes = {
           <a
             v-if="profile.social.github"
             :href="profile.social.github"
+            target="_blank"
             class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 group/social"
           >
             <svg
@@ -119,6 +121,7 @@ export const cardCodes = {
           <a
             v-if="profile.social.twitter"
             :href="profile.social.twitter"
+            target="_blank"
             class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-blue-400/50 hover:scale-110 transition-all duration-300 group/social"
           >
             <svg
@@ -333,6 +336,7 @@ defineProps({
           <a
             v-if="profile.social.linkedin"
             :href="profile.social.linkedin"
+            target="_blank"
             class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center shadow-neumorphism hover:shadow-neumorphism-inset active:shadow-neumorphism-pressed transition-all duration-200 transform hover:-translate-y-1 group/social"
           >
             <svg class="w-5 h-5 text-blue-600 group-hover/social:scale-110 transition-transform duration-200" fill="currentColor" viewBox="0 0 24 24">
@@ -342,6 +346,7 @@ defineProps({
           <a
             v-if="profile.social.github"
             :href="profile.social.github"
+            target="_blank"
             class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center shadow-neumorphism hover:shadow-neumorphism-inset active:shadow-neumorphism-pressed transition-all duration-200 transform hover:-translate-y-1 group/social"
           >
             <svg class="w-5 h-5 text-gray-800 group-hover/social:scale-110 transition-transform duration-200" fill="currentColor" viewBox="0 0 24 24">
@@ -351,6 +356,7 @@ defineProps({
           <a
             v-if="profile.social.twitter"
             :href="profile.social.twitter"
+            target="_blank"
             class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center shadow-neumorphism hover:shadow-neumorphism-inset active:shadow-neumorphism-pressed transition-all duration-200 transform hover:-translate-y-1 group/social"
           >
             <svg class="w-5 h-5 text-blue-400 group-hover/social:scale-110 transition-transform duration-200" fill="currentColor" viewBox="0 0 24 24">
@@ -536,6 +542,7 @@ defineProps({
           <a
             v-if="profile.social.linkedin"
             :href="profile.social.linkedin"
+            target="_blank"
             class="w-10 h-10 border border-blue-500/50 rounded flex items-center justify-center hover:border-blue-400 hover:shadow-neon-blue transition-all duration-300 transform hover:scale-110 group/social"
           >
             <svg
@@ -551,6 +558,7 @@ defineProps({
           <a
             v-if="profile.social.github"
             :href="profile.social.github"
+            target="_blank"
             class="w-10 h-10 border border-purple-500/50 rounded flex items-center justify-center hover:border-purple-400 hover:shadow-neon-purple transition-all duration-300 transform hover:scale-110 group/social"
           >
             <svg
@@ -566,6 +574,7 @@ defineProps({
           <a
             v-if="profile.social.twitter"
             :href="profile.social.twitter"
+            target="_blank"
             class="w-10 h-10 border border-cyan-500/50 rounded flex items-center justify-center hover:border-cyan-400 hover:shadow-neon-cyan transition-all duration-300 transform hover:scale-110 group/social"
           >
             <svg
@@ -918,6 +927,7 @@ defineProps({
         v-for="(url, platform) in profile.social"
         :key="platform"
         :href="url"
+        target="_blank"
         class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-100 to-red-100 border border-orange-200 flex items-center justify-center text-orange-600 hover:from-orange-200 hover:to-red-200 hover:text-orange-700 hover:scale-110 transition-all duration-300 shadow-sm hover:shadow-md group/social"
         :aria-label="'Perfil de ' + platform"
       >
@@ -1052,6 +1062,7 @@ defineProps({
           v-for="(url, platform) in profile.social"
           :key="platform"
           :href="url"
+          target="_blank"
           class="w-12 h-12 rounded-full bg-gray-50 hover:bg-indigo-50 border border-gray-200 hover:border-indigo-200 flex items-center justify-center text-gray-600 hover:text-indigo-600 transition-all duration-300 hover:scale-110 group/social"
           :aria-label="'Conectar en ' + platform"
         >
@@ -1209,6 +1220,7 @@ defineProps({
             v-for="(url, platform) in profile.social"
             :key="platform"
             :href="url"
+            target="_blank"
             class="w-10 h-10 bg-gray-800/80 hover:bg-cyan-900/50 border border-cyan-500/30 hover:border-cyan-400/50 rounded-lg flex items-center justify-center text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:scale-110 group/social"
             :aria-label="platform + '.link'"
           >
@@ -1383,20 +1395,20 @@ defineProps({
           </div>
         </div>
 
-        <button
-          class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200"
+        <a
+          :href="article.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200 inline-block cursor-pointer"
         >
           Leer más
-        </button>
+        </a>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { cardCodes } from "../../data/cardCodes.js";
 
 defineProps({
   article: {
@@ -1524,11 +1536,14 @@ const formatDate = (dateString) => {
           </div>
         </div>
 
-        <button
-          class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm hover:from-orange-600 hover:to-red-600 transition-all duration-200 shadow-lg"
+        <a
+          :href="article.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm hover:from-orange-600 hover:to-red-600 transition-all duration-200 shadow-lg inline-block cursor-pointer"
         >
-          Leer
-        </button>
+          Leer más
+        </a>
       </div>
     </div>
   </div>
@@ -1814,6 +1829,26 @@ const formatDate = (dateString) => {
           </div>
         </div>
       </div>
+
+      <!-- Action buttons -->
+      <div class="mt-6 flex justify-between items-center">
+        <a
+          :href="article.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer"
+        >
+          Leer más
+        </a>
+        <a
+          :href="article.secondaryUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-emerald-600 hover:text-emerald-700 text-sm font-medium transition-colors duration-300 cursor-pointer"
+        >
+          Ver más artículos
+        </a>
+      </div>
     </div>
 
     <!-- Organic border effect -->
@@ -1950,6 +1985,26 @@ defineProps({
         </div>
       </div>
 
+      <!-- Magazine action buttons -->
+      <div class="mt-6 pt-4 border-t-2 border-red-500 flex justify-between items-center">
+        <a
+          :href="article.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded font-black text-sm uppercase tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 cursor-pointer"
+        >
+          LEER MÁS
+        </a>
+        <a
+          :href="article.secondaryUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-red-500 hover:text-red-600 font-bold text-sm uppercase tracking-wide transition-colors duration-300 cursor-pointer"
+        >
+          + ARTÍCULOS
+        </a>
+      </div>
+
       <!-- Magazine corner fold effect -->
       <div
         class="absolute top-0 right-0 w-8 h-8 bg-gray-200 transform rotate-45 translate-x-4 -translate-y-4 group-hover:bg-red-100 transition-colors duration-300"
@@ -1985,7 +2040,7 @@ defineProps({
           v-for="i in 36"
           :key="i"
           class="border border-purple-400/20 animate-pulse"
-          :style="{ animationDelay: (i * 0.1) + 's' }"
+          :style="{ 'animation-delay': (i * 0.1) + 's' }"
         ></div>
       </div>
     </div>
@@ -1995,14 +2050,13 @@ defineProps({
       class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent animate-pulse"
     ></div>
 
+
     <div class="relative z-10 p-6">
       <!-- Futuristic header -->
       <div class="flex items-center justify-between mb-4">
         <div class="flex items-center space-x-3">
           <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-          <div
-            class="text-purple-400 text-xs font-mono uppercase tracking-wider"
-          >
+          <div class="text-white text-xs font-mono uppercase tracking-wider">
             Article.exe
           </div>
         </div>
@@ -2053,23 +2107,17 @@ defineProps({
             <span
               v-for="tag in article.tags.slice(0, 2)"
               :key="tag"
-              class="px-2 py-1 bg-purple-900/50 text-purple-300 text-xs font-mono border border-purple-500/30 rounded hover:border-purple-400/50 transition-colors duration-300"
+              class="px-2 py-1 bg-purple-900/50 text-purple-300 group-hover:text-white text-xs font-mono border border-purple-500/30 rounded hover:border-purple-400/50 transition-colors duration-300"
             >
               #{{ tag.toLowerCase().replace(" ", "_") }}
             </span>
           </div>
         </div>
 
-        <!-- Glitch title effect -->
+        <!-- Simple title without glitch effect -->
         <div class="relative">
           <h3
-            class="text-xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300 font-mono leading-tight"
-          >
-            {{ article.title }}
-          </h3>
-          <!-- Glitch overlay -->
-          <h3
-            class="absolute inset-0 text-xl font-bold text-purple-400 font-mono opacity-0 group-hover:opacity-50 transition-opacity duration-300 transform translate-x-px translate-y-px mix-blend-difference"
+            class="text-xl font-bold text-white group-hover:text-white transition-colors duration-300 font-mono leading-tight"
           >
             {{ article.title }}
           </h3>
@@ -2085,7 +2133,9 @@ defineProps({
               >content.txt</span
             >
           </div>
-          <p class="text-gray-300 text-sm font-mono leading-relaxed">
+          <p
+            class="text-gray-300 group-hover:text-white text-sm font-mono leading-relaxed"
+          >
             > {{ article.excerpt }}
           </p>
         </div>
@@ -2106,28 +2156,52 @@ defineProps({
               }}
             </div>
             <div>
-              <p class="text-purple-300 font-mono text-sm">
+              <p
+                class="text-purple-300 group-hover:text-white font-mono text-sm"
+              >
                 {{ article.author }}
               </p>
-              <p class="text-gray-400 text-xs font-mono">{{ article.date }}</p>
+              <p class="text-gray-400 group-hover:text-white text-xs font-mono">
+                {{ article.date }}
+              </p>
             </div>
           </div>
 
           <!-- Digital metrics -->
           <div class="flex items-center space-x-4 text-xs font-mono">
             <div
-              class="flex items-center space-x-1 text-purple-400 hover:text-purple-300 transition-colors duration-300"
+              class="flex items-center space-x-1 text-purple-400 group-hover:text-white transition-colors duration-300"
             >
               <span class="glow-text">♥</span>
               <span>{{ article.likes }}</span>
             </div>
             <div
-              class="flex items-center space-x-1 text-purple-400 hover:text-purple-300 transition-colors duration-300"
+              class="flex items-center space-x-1 text-purple-400 group-hover:text-white transition-colors duration-300"
             >
               <span class="glow-text">◊</span>
               <span>{{ article.comments }}</span>
             </div>
           </div>
+        </div>
+
+        <!-- Holographic action interface -->
+        <div class="mt-6 flex justify-between items-center border-t border-purple-800/50 pt-4">
+          <a
+            :href="article.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="relative bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-white px-6 py-2 rounded-lg font-mono text-sm transition-all duration-300 shadow-lg hover:shadow-purple-500/25 glow-text cursor-pointer"
+          >
+            [LEER_MÁS]
+          </a>
+          <a
+            :href="article.secondaryUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-purple-400 hover:text-white font-mono text-xs transition-colors duration-300 glow-text cursor-pointer"
+          >
+            >_ EXPLORAR
+          </a>
         </div>
       </div>
     </div>
@@ -2139,13 +2213,11 @@ defineProps({
         mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
         mask-composite: xor;
       "
-    ></div>eContent="cardCode"
-    />
+    ></div>
   </div>
 </template>
 
 <script setup>
-
 
 defineProps({
   article: {
@@ -2153,6 +2225,7 @@ defineProps({
     required: true,
   },
 });
+
 </script>
 
 <style scoped>

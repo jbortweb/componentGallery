@@ -67,13 +67,13 @@ export const cardData = {
       name: "Ana García",
       role: "Frontend Developer",
       company: "Tech Solutions",
-      avatar: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=200&h=200&fit=crop&crop=face",
+      avatar: "/mia.webp",
       bio: "Apasionada del desarrollo web con 5 años de experiencia en React y Vue.js",
       skills: ["Vue.js", "React", "TypeScript", "Tailwind CSS"],
       social: {
-        linkedin: "https://linkedin.com/in/anagarcia",
-        github: "https://github.com/anagarcia",
-        twitter: "https://twitter.com/anagarcia"
+        linkedin: "https://www.linkedin.com/in/jordi-bort/",
+        github: "https://github.com/jbortweb",
+        twitter: "https://twitter.com/"
       }
     },
     {
@@ -81,13 +81,13 @@ export const cardData = {
       name: "Carlos Mendoza",
       role: "UI/UX Designer",
       company: "Design Studio",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face",
+      avatar: "/mia.webp",
       bio: "Diseñador creativo especializado en experiencias digitales intuitivas",
       skills: ["Figma", "Adobe XD", "Prototyping", "User Research"],
       social: {
-        linkedin: "https://linkedin.com/in/carlosmendoza",
-        dribbble: "https://dribbble.com/carlosmendoza",
-        behance: "https://behance.net/carlosmendoza"
+        linkedin: "https://www.linkedin.com/in/jordi-bort/",
+        dribbble: "https://portafoliojbortweb.netlify.app/",
+        behance: "https://portafoliojbortweb.netlify.app/"
       }
     },
     {
@@ -95,13 +95,13 @@ export const cardData = {
       name: "María López",
       role: "Data Scientist",
       company: "AI Innovations",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face",
+      avatar: "/mia.webp",
       bio: "Experta en machine learning y análisis de datos con enfoque en IA",
       skills: ["Python", "TensorFlow", "SQL", "Data Visualization"],
       social: {
-        linkedin: "https://linkedin.com/in/marialopez",
-        github: "https://github.com/marialopez",
-        kaggle: "https://kaggle.com/marialopez"
+        linkedin: "https://www.linkedin.com/in/jordi-bort/",
+        github: "https://github.com/jbortweb",
+        kaggle: "https://portafoliojbortweb.netlify.app/"
       }
     },
     {
@@ -109,13 +109,13 @@ export const cardData = {
       name: "David Rodriguez",
       role: "DevOps Engineer",
       company: "Cloud Systems",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face",
+      avatar: "/mia.webp",
       bio: "Especialista en infraestructura cloud y automatización de procesos",
       skills: ["AWS", "Docker", "Kubernetes", "Terraform"],
       social: {
-        linkedin: "https://linkedin.com/in/davidrodriguez",
-        github: "https://github.com/davidrodriguez",
-        twitter: "https://twitter.com/davidrodriguez"
+        linkedin: "https://www.linkedin.com/in/jordi-bort/",
+        github: "https://github.com/jbortweb",
+        twitter: "https://twitter.com/"
       }
     },
     {
@@ -123,13 +123,13 @@ export const cardData = {
       name: "Laura Chen",
       role: "Product Manager",
       company: "StartupXYZ",
-      avatar: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=200&h=200&fit=crop&crop=face",
+      avatar: "/mia.webp",
       bio: "Product Manager con experiencia en productos digitales y metodologías ágiles",
       skills: ["Product Strategy", "Agile", "User Research", "Analytics"],
       social: {
-        linkedin: "https://linkedin.com/in/laurachen",
-        twitter: "https://twitter.com/laurachen",
-        medium: "https://medium.com/@laurachen"
+        linkedin: "https://www.linkedin.com/in/jordi-bort/",
+        twitter: "https://twitter.com/",
+        medium: "https://portafoliojbortweb.netlify.app/"
       }
     },
     {
@@ -137,13 +137,13 @@ export const cardData = {
       name: "Miguel Santos",
       role: "Backend Developer",
       company: "Enterprise Corp",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face",
+      avatar: "/mia.webp",
       bio: "Desarrollador backend especializado en arquitecturas escalables y microservicios",
       skills: ["Node.js", "Python", "PostgreSQL", "MongoDB"],
       social: {
-        linkedin: "https://linkedin.com/in/miguelsantos",
-        github: "https://github.com/miguelsantos",
-        stackoverflow: "https://stackoverflow.com/users/miguelsantos"
+        linkedin: "https://www.linkedin.com/in/jordi-bort/",
+        github: "https://github.com/jbortweb",
+        stackoverflow: "https://portafoliojbortweb.netlify.app/"
       }
     }
   ],
@@ -159,7 +159,9 @@ export const cardData = {
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop",
       tags: ["Web Development", "Technology", "Frontend"],
       likes: 156,
-      comments: 23
+      comments: 23,
+      url: "https://portafoliojbortweb.netlify.app/",
+      secondaryUrl: "https://vida-laboral.netlify.app/"
     },
     {
       id: 2,
@@ -172,7 +174,9 @@ export const cardData = {
       image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=400&h=250&fit=crop",
       tags: ["CSS", "Tailwind", "Responsive Design"],
       likes: 203,
-      comments: 31
+      comments: 31,
+      url: "https://portafoliojbortweb.netlify.app/",
+      secondaryUrl: "https://vida-laboral.netlify.app/"
     },
     {
       id: 3,
@@ -185,7 +189,9 @@ export const cardData = {
       image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop",
       tags: ["Vue.js", "JavaScript", "Frontend"],
       likes: 294,
-      comments: 45
+      comments: 45,
+      url: "https://portafoliojbortweb.netlify.app/",
+      secondaryUrl: "https://vida-laboral.netlify.app/"
     },
     {
       id: 4,
@@ -198,7 +204,9 @@ export const cardData = {
       image: "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=400&h=250&fit=crop",
       tags: ["AI", "Machine Learning", "Python"],
       likes: 387,
-      comments: 67
+      comments: 67,
+      url: "https://portafoliojbortweb.netlify.app/",
+      secondaryUrl: "https://vida-laboral.netlify.app/"
     },
     {
       id: 5,
@@ -211,7 +219,9 @@ export const cardData = {
       image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=400&h=250&fit=crop",
       tags: ["DevOps", "CI/CD", "Automation"],
       likes: 245,
-      comments: 38
+      comments: 38,
+      url: "https://portafoliojbortweb.netlify.app/",
+      secondaryUrl: "https://vida-laboral.netlify.app/"
     },
     {
       id: 6,
@@ -224,7 +234,9 @@ export const cardData = {
       image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop",
       tags: ["Security", "Web Development", "Best Practices"],
       likes: 178,
-      comments: 29
+      comments: 29,
+      url: "https://portafoliojbortweb.netlify.app/",
+      secondaryUrl: "https://vida-laboral.netlify.app/"
     }
   ]
 };

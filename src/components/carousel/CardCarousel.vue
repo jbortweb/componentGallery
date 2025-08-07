@@ -13,10 +13,7 @@
     </div>
 
     <!-- 3D Carousel Container -->
-    <div
-      class="relative py-20 flex items-center justify-center overflow-visible"
-      style="height: 420px"
-    >
+    <div class="relative flex items-center justify-center overflow-visible">
       <!-- Previous Card (Left) -->
       <div
         class="absolute left-36 z-10 transform transition-all duration-500 ease-in-out"

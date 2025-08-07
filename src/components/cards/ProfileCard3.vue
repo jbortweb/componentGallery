@@ -2,7 +2,7 @@
   <div class="relative group w-full">
     <!-- Code button -->
     <button
-      @click="openCodeModal"
+      @click="showCode"
       class="absolute top-4 right-4 z-30 w-10 h-10 bg-gray-900/80 hover:bg-gray-800/90 rounded-lg flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-300 border border-cyan-500/50 cursor-pointer"
       title="Ver código del componente"
       aria-label="Ver código del componente"
@@ -122,6 +122,7 @@
           <a
             v-if="profile.social.linkedin"
             :href="profile.social.linkedin"
+            target="_blank"
             class="w-10 h-10 border border-blue-500/50 rounded flex items-center justify-center hover:border-blue-400 hover:shadow-neon-blue transition-all duration-300 transform hover:scale-110 group/social"
           >
             <svg
@@ -137,6 +138,7 @@
           <a
             v-if="profile.social.github"
             :href="profile.social.github"
+            target="_blank"
             class="w-10 h-10 border border-purple-500/50 rounded flex items-center justify-center hover:border-purple-400 hover:shadow-neon-purple transition-all duration-300 transform hover:scale-110 group/social"
           >
             <svg
@@ -152,6 +154,7 @@
           <a
             v-if="profile.social.twitter"
             :href="profile.social.twitter"
+            target="_blank"
             class="w-10 h-10 border border-cyan-500/50 rounded flex items-center justify-center hover:border-cyan-400 hover:shadow-neon-cyan transition-all duration-300 transform hover:scale-110 group/social"
           >
             <svg
@@ -203,7 +206,7 @@ defineProps({
 const codeModal = ref(null);
 const cardCode = cardCodes.ProfileCard3;
 
-const openCodeModal = () => {
+const showCode = () => {
   if (codeModal.value) {
     codeModal.value.openModal();
   }

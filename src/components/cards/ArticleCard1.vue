@@ -4,13 +4,13 @@
   >
     <!-- Code button -->
     <button
-      @click="openCodeModal"
+      @click="showCode"
       class="absolute top-4 right-4 z-30 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-300 shadow-lg border border-gray-200 cursor-pointer"
       title="Ver código del componente"
       aria-label="Ver código del componente"
     >
       <svg
-        class="w-5 h-5 text-gray-700"
+        class="w-5 h-5 text-gray-700 pointer-events-none"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -136,11 +136,14 @@
           </div>
         </div>
 
-        <button
-          class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200"
+        <a
+          :href="article.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200 inline-block cursor-pointer"
         >
           Leer más
-        </button>
+        </a>
       </div>
     </div>
 
@@ -169,7 +172,7 @@ defineProps({
 const codeModal = ref(null);
 const cardCode = cardCodes.ArticleCard1;
 
-const openCodeModal = () => {
+const showCode = () => {
   if (codeModal.value) {
     codeModal.value.openModal();
   }
