@@ -22,8 +22,52 @@
         </div>
       </section>
 
+      <!-- Desktop: Carousel View -->
+      <div class="hidden lg:block">
+        <CardCarousel
+          :items="profiles"
+          title="Perfiles - Vista Carrusel"
+          description="Explora los diferentes estilos de tarjetas de perfil profesional"
+          :autoPlay="false"
+        >
+          <template #default="{ item, index }">
+            <component :is="getProfileComponent(index)" :profile="item" />
+          </template>
+        </CardCarousel>
+      </div>
+
+      <!-- Tablet & Mobile: Grid View -->
+      <div class="lg:hidden">
+        <div class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">
+            Todos los Diseños
+          </h2>
+          <p class="text-gray-600">
+            Vista en cuadrícula de todos los componentes de perfil disponibles
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            v-for="(profile, index) in profiles"
+            :key="profile.id"
+            class="bg-white rounded-xl shadow-lg p-6"
+          >
+            <div class="mb-4">
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                ProfileCard{{ index + 1 }}
+              </h3>
+            </div>
+
+            <div class="transform scale-90 origin-top">
+              <component :is="getProfileComponent(index)" :profile="profile" />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Instructions -->
-      <div class="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-8">
+      <div class="mt-16 bg-purple-50 border border-purple-200 rounded-lg p-6">
         <div class="flex items-start">
           <svg
             class="w-6 h-6 text-purple-600 mt-0.5 mr-3 flex-shrink-0"
@@ -60,84 +104,7 @@
         </div>
       </div>
 
-      <!-- Desktop: Carousel View -->
-      <div class="hidden lg:block">
-        <CardCarousel
-          :items="profiles"
-          title="Perfiles - Vista Carrusel"
-          description="Explora los diferentes estilos de tarjetas de perfil profesional"
-          :autoPlay="false"
-        >
-          <template #default="{ item, index }">
-            <component :is="getProfileComponent(index)" :profile="item" />
-          </template>
-        </CardCarousel>
-      </div>
-
-      <!-- Tablet & Mobile: Grid View -->
-      <div class="lg:hidden">
-        <div class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">
-            Todos los Diseños
-          </h2>
-          <p class="text-gray-600">
-            Vista en cuadrícula de todos los componentes de perfil disponibles
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div
-            v-for="(profile, index) in profiles"
-            :key="profile.id"
-            class="bg-white rounded-xl shadow-lg p-6"
-          >
-            <div class="mb-4">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                ProfileCard{{ index + 1 }}
-              </h3>
-              <p class="text-sm text-gray-600">
-                {{ getCardDescription(index) }}
-              </p>
-            </div>
-
-            <div class="transform scale-90 origin-top">
-              <component :is="getProfileComponent(index)" :profile="profile" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Component Info Section -->
-      <div class="mt-16 bg-white rounded-xl shadow-lg p-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">
-          Información de los Componentes
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div
-            v-for="(info, index) in componentInfo"
-            :key="index"
-            class="border border-gray-200 rounded-lg p-4"
-          >
-            <h3 class="font-semibold text-gray-900 mb-2">
-              ProfileCard{{ index + 1 }}
-            </h3>
-            <p class="text-sm text-gray-600 mb-3">
-              {{ info.description }}
-            </p>
-            <div class="space-y-1">
-              <p class="text-xs text-gray-500">
-                <strong>Layout:</strong> {{ info.layout }}
-              </p>
-              <p class="text-xs text-gray-500">
-                <strong>Características:</strong> {{ info.features }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Usage Examples -->
+      <!-- Casos de Uso Recomendados -->
       <div
         class="mt-12 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-8"
       >
@@ -190,31 +157,7 @@
             </div>
             <h3 class="font-semibold text-gray-900">Testimonios</h3>
             <p class="text-sm text-gray-600 mt-1">
-              Mostrar reseñas y opiniones de clientes
-            </p>
-          </div>
-
-          <div class="text-center">
-            <div
-              class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3"
-            >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"
-                />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-gray-900">Portafolios</h3>
-            <p class="text-sm text-gray-600 mt-1">
-              Presentar trabajos y proyectos personales
+              Reseñas de clientes con foto y información
             </p>
           </div>
 
@@ -238,7 +181,31 @@
             </div>
             <h3 class="font-semibold text-gray-900">Directorios</h3>
             <p class="text-sm text-gray-600 mt-1">
-              Crear listas de contactos profesionales
+              Listados de profesionales con contacto
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-gray-900">Portfolios</h3>
+            <p class="text-sm text-gray-600 mt-1">
+              Showcases creativos con proyectos destacados
             </p>
           </div>
         </div>
@@ -298,55 +265,4 @@ const profileComponents = [
 const getProfileComponent = (index) => {
   return profileComponents[index] || ProfileCard1;
 };
-
-// Descripciones de las tarjetas
-const getCardDescription = (index) => {
-  const descriptions = [
-    "Layout vertical con avatar centrado",
-    "Diseño horizontal con información lateral",
-    "Estilo compacto con habilidades destacadas",
-    "Diseño premium con efectos glassmorphism",
-    "Layout clásico con redes sociales integradas",
-    "Estilo moderno con animaciones suaves",
-  ];
-  return descriptions[index] || "Diseño único";
-};
-
-// Información detallada de componentes
-const componentInfo = [
-  {
-    description:
-      "Layout vertical con avatar prominente y información bien estructurada.",
-    layout: "Vertical",
-    features: "Avatar grande, bio expandida, enlaces sociales",
-  },
-  {
-    description:
-      "Diseño horizontal que aprovecha el espacio lateral para más información.",
-    layout: "Horizontal",
-    features: "Layout eficiente, información compacta, CTA integrado",
-  },
-  {
-    description:
-      "Estilo compacto que destaca las habilidades con tags visuales.",
-    layout: "Compacto",
-    features: "Tags de habilidades, información esencial, diseño limpio",
-  },
-  {
-    description:
-      "Diseño premium con efectos glassmorphism y elementos flotantes.",
-    layout: "Premium",
-    features: "Efectos glass, sombras avanzadas, gradientes sutiles",
-  },
-  {
-    description: "Layout clásico con integración completa de redes sociales.",
-    layout: "Clásico",
-    features: "Redes sociales, información completa, diseño tradicional",
-  },
-  {
-    description: "Estilo moderno con animaciones suaves y micro-interacciones.",
-    layout: "Moderno",
-    features: "Animaciones CSS, hover effects, diseño responsive",
-  },
-];
 </script>

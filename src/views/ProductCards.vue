@@ -22,8 +22,52 @@
         </div>
       </section>
 
+      <!-- Desktop: Carousel View -->
+      <div class="hidden lg:block">
+        <CardCarousel
+          :items="products"
+          title="Productos - Vista Carrusel"
+          description="Navega entre los diferentes diseños usando las flechas o los indicadores"
+          :autoPlay="false"
+        >
+          <template #default="{ item, index }">
+            <component :is="getProductComponent(index)" :product="item" />
+          </template>
+        </CardCarousel>
+      </div>
+
+      <!-- Tablet & Mobile: Grid View -->
+      <div class="lg:hidden">
+        <div class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">
+            Todos los Diseños
+          </h2>
+          <p class="text-gray-600">
+            Vista en cuadrícula de todos los componentes disponibles
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            v-for="(product, index) in products"
+            :key="product.id"
+            class="bg-white rounded-xl shadow-lg p-6"
+          >
+            <div class="mb-4">
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                ProductCard{{ index + 1 }}
+              </h3>
+            </div>
+
+            <div class="transform scale-90 origin-top">
+              <component :is="getProductComponent(index)" :product="product" />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Instructions -->
-      <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
+      <div class="mt-16 bg-blue-50 border border-blue-200 rounded-lg p-6">
         <div class="flex items-start">
           <svg
             class="w-6 h-6 text-blue-600 mt-0.5 mr-3 flex-shrink-0"
@@ -60,79 +104,109 @@
         </div>
       </div>
 
-      <!-- Desktop: Carousel View -->
-      <div class="hidden lg:block">
-        <CardCarousel
-          :items="products"
-          title="Productos - Vista Carrusel"
-          description="Navega entre los diferentes diseños usando las flechas o los indicadores"
-          :autoPlay="false"
-        >
-          <template #default="{ item, index }">
-            <component :is="getProductComponent(index)" :product="item" />
-          </template>
-        </CardCarousel>
-      </div>
-
-      <!-- Tablet & Mobile: Grid View -->
-      <div class="lg:hidden">
-        <div class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">
-            Todos los Diseños
-          </h2>
-          <p class="text-gray-600">
-            Vista en cuadrícula de todos los componentes disponibles
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div
-            v-for="(product, index) in products"
-            :key="product.id"
-            class="bg-white rounded-xl shadow-lg p-6"
-          >
-            <div class="mb-4">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                ProductCard{{ index + 1 }}
-              </h3>
-              <p class="text-sm text-gray-600">
-                {{ getCardDescription(index) }}
-              </p>
-            </div>
-
-            <div class="transform scale-90 origin-top">
-              <component :is="getProductComponent(index)" :product="product" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Component Info Section -->
-      <div class="mt-16 bg-white rounded-xl shadow-lg p-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">
-          Información de los Componentes
+      <!-- Casos de Uso Recomendados -->
+      <div
+        class="mt-12 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8"
+      >
+        <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+          Casos de Uso Recomendados
         </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div
-            v-for="(info, index) in componentInfo"
-            :key="index"
-            class="border border-gray-200 rounded-lg p-4"
-          >
-            <h3 class="font-semibold text-gray-900 mb-2">
-              ProductCard{{ index + 1 }}
-            </h3>
-            <p class="text-sm text-gray-600 mb-3">
-              {{ info.description }}
-            </p>
-            <div class="space-y-1">
-              <p class="text-xs text-gray-500">
-                <strong>Estilo:</strong> {{ info.style }}
-              </p>
-              <p class="text-xs text-gray-500">
-                <strong>Características:</strong> {{ info.features }}
-              </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="text-center">
+            <div
+              class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                />
+              </svg>
             </div>
+            <h3 class="font-semibold text-gray-900">E-commerce</h3>
+            <p class="text-sm text-gray-600 mt-1">
+              Tiendas online, catálogos de productos
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-gray-900">Apps Móviles</h3>
+            <p class="text-sm text-gray-600 mt-1">
+              Showcases de aplicaciones y features
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-gray-900">Servicios</h3>
+            <p class="text-sm text-gray-600 mt-1">
+              Páginas de servicios profesionales
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-gray-900">Portfolios</h3>
+            <p class="text-sm text-gray-600 mt-1">
+              Showcases creativos y proyectos destacados
+            </p>
           </div>
         </div>
       </div>
@@ -191,57 +265,4 @@ const productComponents = [
 const getProductComponent = (index) => {
   return productComponents[index] || ProductCard1;
 };
-
-// Descripciones de las tarjetas
-const getCardDescription = (index) => {
-  const descriptions = [
-    "Diseño minimalista con imagen grande",
-    "Estilo moderno con gradientes",
-    "Diseño compacto con información destacada",
-    "Estilo premium con efectos visuales",
-    "Diseño clásico con bordes redondeados",
-    "Estilo futurista con elementos interactivos",
-  ];
-  return descriptions[index] || "Diseño único";
-};
-
-// Información detallada de componentes
-const componentInfo = [
-  {
-    description:
-      "Diseño limpio y minimalista con imagen prominente y información esencial.",
-    style: "Minimalista",
-    features: "Imagen grande, tipografía clara, CTA destacado",
-  },
-  {
-    description:
-      "Estilo moderno con gradientes sutiles y efectos de hover suaves.",
-    style: "Moderno",
-    features: "Gradientes, animaciones, diseño responsive",
-  },
-  {
-    description:
-      "Diseño compacto que maximiza la información en espacio reducido.",
-    style: "Compacto",
-    features: "Layout eficiente, iconografía, colores vibrantes",
-  },
-  {
-    description:
-      "Estilo premium con sombras profundas y efectos visuales elegantes.",
-    style: "Premium",
-    features: "Sombras avanzadas, efectos 3D, acabados de lujo",
-  },
-  {
-    description:
-      "Diseño clásico con bordes redondeados y paleta de colores tradicional.",
-    style: "Clásico",
-    features: "Bordes suaves, colores neutros, layout equilibrado",
-  },
-  {
-    description:
-      "Estilo futurista con elementos interactivos y efectos de neón.",
-    style: "Futurista",
-    features: "Efectos neón, interactividad avanzada, diseño sci-fi",
-  },
-];
 </script>

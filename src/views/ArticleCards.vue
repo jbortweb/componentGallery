@@ -22,8 +22,52 @@
         </div>
       </section>
 
+      <!-- Desktop: Carousel View -->
+      <div class="hidden lg:block">
+        <CardCarousel
+          :items="articles"
+          title="Artículos - Vista Carrusel"
+          description="Descubre los diferentes estilos para presentar contenido editorial"
+          :autoPlay="false"
+        >
+          <template #default="{ item, index }">
+            <component :is="getArticleComponent(index)" :article="item" />
+          </template>
+        </CardCarousel>
+      </div>
+
+      <!-- Tablet & Mobile: Grid View -->
+      <div class="lg:hidden">
+        <div class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">
+            Todos los Diseños
+          </h2>
+          <p class="text-gray-600">
+            Vista en cuadrícula de todos los componentes de artículo disponibles
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            v-for="(article, index) in articles"
+            :key="article.id"
+            class="bg-white rounded-xl shadow-lg p-6"
+          >
+            <div class="mb-4">
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                ArticleCard{{ index + 1 }}
+              </h3>
+            </div>
+
+            <div class="transform scale-90 origin-top">
+              <component :is="getArticleComponent(index)" :article="article" />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Instructions -->
-      <div class="bg-green-50 border border-green-200 rounded-lg p-6 mb-8">
+      <div class="mt-16 bg-green-50 border border-green-200 rounded-lg p-6">
         <div class="flex items-start">
           <svg
             class="w-6 h-6 text-green-600 mt-0.5 mr-3 flex-shrink-0"
@@ -60,89 +104,12 @@
         </div>
       </div>
 
-      <!-- Desktop: Carousel View -->
-      <div class="hidden lg:block">
-        <CardCarousel
-          :items="articles"
-          title="Artículos - Vista Carrusel"
-          description="Descubre los diferentes estilos para presentar contenido editorial"
-          :autoPlay="false"
-        >
-          <template #default="{ item, index }">
-            <component :is="getArticleComponent(index)" :article="item" />
-          </template>
-        </CardCarousel>
-      </div>
-
-      <!-- Tablet & Mobile: Grid View -->
-      <div class="lg:hidden">
-        <div class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">
-            Todos los Diseños
-          </h2>
-          <p class="text-gray-600">
-            Vista en cuadrícula de todos los componentes de artículo disponibles
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div
-            v-for="(article, index) in articles"
-            :key="article.id"
-            class="bg-white rounded-xl shadow-lg p-6"
-          >
-            <div class="mb-4">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                ArticleCard{{ index + 1 }}
-              </h3>
-              <p class="text-sm text-gray-600">
-                {{ getCardDescription(index) }}
-              </p>
-            </div>
-
-            <div class="transform scale-90 origin-top">
-              <component :is="getArticleComponent(index)" :article="article" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Component Info Section -->
-      <div class="mt-16 bg-white rounded-xl shadow-lg p-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">
-          Información de los Componentes
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div
-            v-for="(info, index) in componentInfo"
-            :key="index"
-            class="border border-gray-200 rounded-lg p-4"
-          >
-            <h3 class="font-semibold text-gray-900 mb-2">
-              ArticleCard{{ index + 1 }}
-            </h3>
-            <p class="text-sm text-gray-600 mb-3">
-              {{ info.description }}
-            </p>
-            <div class="space-y-1">
-              <p class="text-xs text-gray-500">
-                <strong>Estilo:</strong> {{ info.style }}
-              </p>
-              <p class="text-xs text-gray-500">
-                <strong>Características:</strong> {{ info.features }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Content Types Section -->
+      <!-- Casos de Uso Recomendados -->
       <div
         class="mt-12 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-8"
       >
         <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
-          Tipos de Contenido Ideales
+          Casos de Uso Recomendados
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -244,102 +211,6 @@
         </div>
       </div>
 
-      <!-- Interactive Features -->
-      <div class="mt-12 bg-white rounded-xl shadow-lg p-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
-          Características Interactivas
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="text-center">
-            <div
-              class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <svg
-                class="w-8 h-8 text-orange-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                />
-              </svg>
-            </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">
-              Botones "Leer más"
-            </h3>
-            <p class="text-gray-600">
-              Todos los artículos incluyen botones funcionales que dirigen al
-              contenido completo
-            </p>
-          </div>
-
-          <div class="text-center">
-            <div
-              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <svg
-                class="w-8 h-8 text-blue-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-10 0v16a2 2 0 002 2h6a2 2 0 002-2V4"
-                />
-              </svg>
-            </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">
-              Metadatos Visibles
-            </h3>
-            <p class="text-gray-600">
-              Fecha de publicación, autor, categoría y tiempo de lectura
-              claramente mostrados
-            </p>
-          </div>
-
-          <div class="text-center">
-            <div
-              class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <svg
-                class="w-8 h-8 text-green-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                />
-              </svg>
-            </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">
-              Efectos Hover
-            </h3>
-            <p class="text-gray-600">
-              Animaciones suaves y efectos visuales que mejoran la experiencia
-              de usuario
-            </p>
-          </div>
-        </div>
-      </div>
-
       <!-- Back to Categories -->
       <div class="mt-12 text-center">
         <router-link
@@ -394,56 +265,4 @@ const articleComponents = [
 const getArticleComponent = (index) => {
   return articleComponents[index] || ArticleCard1;
 };
-
-// Descripciones de las tarjetas
-const getCardDescription = (index) => {
-  const descriptions = [
-    "Diseño limpio con imagen destacada y botón simple",
-    "Layout moderno con metadatos prominentes",
-    "Estilo compacto con información esencial",
-    "Diseño elegante con múltiples acciones",
-    "Estilo revista con tipografía destacada",
-    "Diseño futurista con efectos holográficos",
-  ];
-  return descriptions[index] || "Diseño único";
-};
-
-// Información detallada de componentes
-const componentInfo = [
-  {
-    description:
-      "Diseño limpio y directo con imagen destacada y botón de acción simple.",
-    style: "Minimalista",
-    features: "Imagen grande, botón simple, layout limpio",
-  },
-  {
-    description:
-      "Layout moderno que destaca los metadatos con un diseño equilibrado.",
-    style: "Moderno",
-    features: "Metadatos visibles, botón estilizado, diseño responsive",
-  },
-  {
-    description:
-      "Estilo compacto que maximiza la información en espacio reducido.",
-    style: "Compacto",
-    features: "Layout eficiente, información esencial, botón integrado",
-  },
-  {
-    description:
-      "Diseño elegante con múltiples opciones de acción y gradientes suaves.",
-    style: "Elegante",
-    features: "Botones múltiples, gradientes, efectos hover",
-  },
-  {
-    description: "Estilo revista con tipografía destacada y diseño editorial.",
-    style: "Editorial",
-    features: "Tipografía prominente, diseño magazine, botones duales",
-  },
-  {
-    description:
-      "Diseño futurista con efectos holográficos y elementos interactivos.",
-    style: "Futurista",
-    features: "Efectos holográficos, interfaz sci-fi, animaciones avanzadas",
-  },
-];
 </script>
