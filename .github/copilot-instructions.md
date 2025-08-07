@@ -145,3 +145,4 @@ const showCode = () => {
 - **Responsiveness**: Design for mobile-first, scale up
 - **Performance**: Use Vue 3 optimizations and lazy loading where appropriate
 - **Code Quality**: Follow ESLint rules and Vue 3 style guide
+- **Important**: El codigo que se coloca en archivo Data, como cardData.js, referente al modelo que se quiere replicar, debe ser exactamente igual al del elemento que se quiere replicar, exceptuando el boton de abrir modal y su logica, tambien las importaciones que no sean necesarias, se excluiran de los ejemplos.
