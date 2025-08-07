@@ -4,6 +4,8 @@ import ProductCards from '../views/ProductCards.vue'
 import ProfileCards from '../views/ProfileCards.vue'
 import ArticleCards from '../views/ArticleCards.vue'
 import HeaderFooter from '../views/HeaderFooter.vue'
+import Headers from '../views/Headers.vue'
+import Footers from '../views/Footers.vue'
 
 const routes = [
   {
@@ -44,6 +46,22 @@ const routes = [
     component: HeaderFooter,
     meta: {
       title: 'Headers y Footers'
+    }
+  },
+  {
+    path: '/headers',
+    name: 'Headers',
+    component: Headers,
+    meta: {
+      title: 'Headers'
+    }
+  },
+  {
+    path: '/footers',
+    name: 'Footers',
+    component: Footers,
+    meta: {
+      title: 'Footers'
     }
   }
 ]

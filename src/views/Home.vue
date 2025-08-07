@@ -124,28 +124,49 @@
               Headers & Footers
             </h3>
             <p class="text-gray-600 mb-4">
-              Próximamente: componentes de encabezados y pies de página para
-              completar tus proyectos.
+              Componentes de navegación y pie de página con temas únicos:
+              minimalista, gaming, glassmorphism y más.
             </p>
-            <router-link
-              to="/head-foot"
-              class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium"
-            >
-              Explorar
-              <svg
-                class="ml-1 w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            <div class="flex flex-col space-y-2">
+              <router-link
+                to="/headers"
+                class="inline-flex items-center justify-center text-purple-600 hover:text-purple-800 font-medium"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </router-link>
+                Ver Headers
+                <svg
+                  class="ml-1 w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </router-link>
+              <router-link
+                to="/footers"
+                class="inline-flex items-center justify-center text-purple-600 hover:text-purple-800 font-medium"
+              >
+                Ver Footers
+                <svg
+                  class="ml-1 w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </router-link>
+            </div>
           </div>
 
           <!-- Code Feature -->
