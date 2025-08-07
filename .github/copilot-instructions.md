@@ -1,103 +1,177 @@
 <!-- Use this file to provide workspace-specific custom instructions to Copilot. For more details, visit https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilotinstructionsmd-file -->
 
-# Project Instructions for GitHub Copilot
+# Instrucciones del Proyecto para GitHub Copilot
 
-This is a Vue 3 + Vite + Tailwind CSS project showcasing 18 unique interactive card components with modal code viewing functionality and carousel presentation.
+Este es un proyecto **Component Gallery** construido con **Vue 3 + Vite + Tailwind CSS** que demuestra **30 componentes únicos** organizados en tres categorías principales: Cards, Headers y Footers.
 
-## Project Overview
+## Visión General del Proyecto
 
-- **Purpose**: Interactive card gallery demonstrating various design patterns
-- **Components**: 18 unique card designs (6 products, 6 profiles, 6 articles)
-- **Features**: Code modal system, responsive carousel, interactive navigation
-- **Architecture**: Modular component-based design with Vue 3 Composition API
+- **Propósito**: Galería interactiva completa de componentes UI modernos
+- **Componentes**: 18 cards + 6 headers + 6 footers = 30 componentes únicos
+- **Características**: Sistema de modales de código, navegación SPA, diseño responsivo
+- **Arquitectura**: Diseño modular basado en componentes con Vue 3 Composition API
 
-## Project Structure
+## Estructura del Proyecto
 
 ```
 src/
 ├── components/
-│   ├── cards/              # 18 unique card components
-│   │   ├── ProductCard1-6.vue
-│   │   ├── ProfileCard1-6.vue
-│   │   └── ArticleCard1-6.vue
+│   ├── cards/              # 18 componentes de tarjetas únicos
+│   │   ├── ProductCard1-6.vue    # Tarjetas de productos (6 estilos)
+│   │   ├── ProfileCard1-6.vue    # Tarjetas de perfiles (6 estilos)
+│   │   └── ArticleCard1-6.vue    # Tarjetas de artículos (6 estilos)
+│   ├── headfoot/           # 12 componentes de layout
+│   │   ├── Header1-6.vue         # Headers temáticos (6 estilos)
+│   │   └── Footer1-6.vue         # Footers diversos (6 estilos)
 │   ├── carousel/
-│   │   └── CardCarousel.vue
-│   ├── CodeModal.vue       # Modal for displaying component code
-│   └── Navigation.vue      # Category navigation
+│   │   └── CardCarousel.vue      # Carousel responsivo para cards
+│   ├── AppHeader.vue       # Header principal de la aplicación
+│   ├── AppFooter.vue       # Footer principal de la aplicación
+│   ├── CodeModal.vue       # Modal para mostrar código fuente
+│   └── Navigation.vue      # Navegación con dropdowns por categorías
+├── views/                  # Páginas principales (SPA)
+│   ├── Home.vue           # Página de inicio
+│   ├── ProductCards.vue   # Galería de tarjetas de productos
+│   ├── ProfileCards.vue   # Galería de tarjetas de perfiles
+│   ├── ArticleCards.vue   # Galería de tarjetas de artículos
+│   ├── Headers.vue        # Galería de headers temáticos
+│   └── Footers.vue        # Galería de footers diversos
 ├── data/
-│   ├── cardData.js        # Sample data for all cards
-│   └── cardCodes.js       # Component source code for modals
-└── App.vue                # Main application component
+│   ├── cardData.js        # Datos de ejemplo para todas las cards
+│   ├── cardCodes.js       # Código fuente de los componentes de cards
+│   └── headCodes.js       # Código fuente de headers y footers
+├── router/
+│   └── index.js           # Configuración de rutas Vue Router
+├── App.vue                # Componente raíz con layout principal
+└── main.js                # Punto de entrada de la aplicación
 ```
 
-## Technology Stack
+## Stack Tecnológico
 
-- **Vue 3** with Composition API and `<script setup>`
-- **Vite** as build tool and development server
-- **Tailwind CSS v4.1** for styling and responsive design
-- **Native HTML Dialog** for modal functionality
+- **Vue 3** con Composition API y `<script setup>`
+- **Vue Router 4** para navegación SPA
+- **Vite** como build tool y servidor de desarrollo
+- **Tailwind CSS v4.1** para styling responsivo y utilitario
+- **Native HTML Dialog** para funcionalidad de modales
 
-## Code Style Guidelines
+## Categorías de Componentes
 
-### Vue Components
+### 🎴 Cards (18 componentes)
 
-- Use Composition API with `<script setup>` syntax
-- Implement `showCode()` function for all card components
-- Use `ref()` for modal references: `const codeModal = ref(null)`
-- Follow Vue 3 best practices and reactivity patterns
+#### ProductCard (6 variantes)
+
+- **ProductCard1**: Diseño moderno con gradientes azules
+- **ProductCard2**: Estilo magazine con overlays elegantes
+- **ProductCard3**: Tema futurista con efectos holográficos
+- **ProductCard4**: Diseño cyberpunk con animaciones neon
+- **ProductCard5**: Estilo minimalista con glassmorphism
+- **ProductCard6**: Tema espacial con efectos de scanner
+
+#### ProfileCard (6 variantes)
+
+- **ProfileCard1**: Glassmorphism con efectos 3D y partículas
+- **ProfileCard2**: Neumorphism suave con sombras elegantes
+- **ProfileCard3**: Tema retro-futurista con colores vibrantes
+- **ProfileCard4**: Diseño warm con gradientes cálidos
+- **ProfileCard5**: Estilo corporativo moderno y limpio
+- **ProfileCard6**: Terminal/tech style con efectos de código
+
+#### ArticleCard (6 variantes)
+
+- **ArticleCard1**: Diseño clean y moderno para blogs
+- **ArticleCard2**: Estilo magazine vibrante con tipografía destacada
+- **ArticleCard3**: Dark mode con tema terminal y efectos matrix
+- **ArticleCard4**: Diseño nature con colores emerald y orgánicos
+- **ArticleCard5**: Estilo newspaper clásico y elegante
+- **ArticleCard6**: Tema futurista holográfico con animaciones
+
+### 🔝 Headers (6 componentes temáticos)
+
+- **Header1**: Minimalista - Diseño limpio con efectos neumorfismo
+- **Header2**: Gaming - Tema cyberpunk con efectos neon y terminal
+- **Header3**: Artístico - Estilo creativo con efectos de pintura
+- **Header4**: Glassmorphism - Diseño moderno con partículas flotantes
+- **Header5**: Terminal - Interfaz de terminal con efectos matriz
+- **Header6**: Espacial - Tema galáctico con estrellas animadas
+
+### 🔻 Footers (6 componentes diversos)
+
+- **Footer1**: Diseño corporativo con múltiples columnas
+- **Footer2**: Estilo minimalista con enlaces esenciales
+- **Footer3**: Footer social con énfasis en redes sociales
+- **Footer4**: Diseño newsletter con suscripción destacada
+- **Footer5**: Footer completo con mapa del sitio
+- **Footer6**: Estilo creativo con elementos gráficos
+
+## Guías de Estilo de Código
+
+### Componentes Vue
+
+- Usar Composition API con sintaxis `<script setup>`
+- Implementar función `showCode()` para todos los componentes con modal
+- Usar `ref()` para referencias de modal: `const codeModal = ref(null)`
+- Seguir mejores prácticas de Vue 3 y patrones de reactividad
 
 ### Styling
 
-- Use Tailwind utility classes exclusively
-- Implement responsive design (`sm:`, `md:`, `lg:` breakpoints)
-- Use semantic color schemes per card type
-- Apply hover effects and smooth transitions
+- Usar exclusivamente clases utilitarias de Tailwind CSS
+- Implementar diseño responsivo (`sm:`, `md:`, `lg:` breakpoints)
+- Usar esquemas de colores semánticos por tipo de componente
+- Aplicar efectos hover y transiciones suaves
 
-### Accessibility
+### Accesibilidad
 
-- Include `cursor-pointer` on interactive buttons
-- Add `pointer-events-none` to SVG icons inside buttons
-- Provide `title` tooltips and `aria-label` attributes
-- Use semantic HTML structure
+- Incluir `cursor-pointer` en botones interactivos
+- Añadir `pointer-events-none` a iconos SVG dentro de botones
+- Proporcionar tooltips con `title` y atributos `aria-label`
+- Usar estructura HTML semántica
 
-## Component Architecture
+## Arquitectura de Componentes
 
-### Card Components
+### Componentes de Cards
 
-- **Consistent Structure**: All cards follow same modal integration pattern
-- **Unique Designs**: Each numbered variant has distinct visual style
-- **Modal Integration**: Every card includes CodeModal component
-- **Props**: Accept data objects (`product`, `profile`, or `article`)
+- **Estructura Consistente**: Todas las cards siguen el mismo patrón de integración modal
+- **Diseños Únicos**: Cada variante numerada tiene estilo visual distinto
+- **Integración Modal**: Cada card incluye el componente CodeModal
+- **Props**: Aceptan objetos de datos (`product`, `profile`, o `article`)
 
-### Modal System
+### Sistema de Modales
 
-- **CodeModal Component**: Reusable modal for displaying source code
-- **Native Dialog**: Uses HTML `<dialog>` element for better accessibility
-- **Code Storage**: Component templates stored in `cardCodes.js`
-- **No Modal Logic**: Displayed code excludes modal button and functionality
+- **CodeModal Component**: Modal reutilizable para mostrar código fuente
+- **Native Dialog**: Usa elemento HTML `<dialog>` para mejor accesibilidad
+- **Almacenamiento de Código**: Templates de componentes almacenados en archivos de datos
+- **Sin Lógica Modal**: El código mostrado excluye botón modal y funcionalidad
 
-### Data Management
+### Gestión de Datos
 
-- **cardData.js**: Sample data for all card types
-- **cardCodes.js**: Complete component source code templates
-- **Structured Props**: Category-specific data structures
+- **cardData.js**: Datos de ejemplo para todos los tipos de cards
+- **cardCodes.js**: Templates completos de código fuente de cards
+- **headCodes.js**: Templates de código fuente de headers y footers
+- **Props Estructuradas**: Estructuras de datos específicas por categoría
 
-## Naming Conventions
+### Sistema de Rutas
 
-- **Components**: PascalCase with descriptive names (`ProductCard1`, `CardCarousel`)
-- **Functions**: camelCase (`showCode`, `openModal`)
+- **Vue Router 4**: Configuración SPA con rutas dinámicas
+- **Navegación por Categorías**: Sistema de dropdown con indicadores de estado
+- **Meta Tags**: Títulos dinámicos y metadata por ruta
+- **Lazy Loading**: Carga de componentes bajo demanda
+
+## Convenciones de Nomenclatura
+
+- **Componentes**: PascalCase con nombres descriptivos (`ProductCard1`, `CardCarousel`)
+- **Funciones**: camelCase (`showCode`, `openModal`)
 - **Variables**: camelCase (`codeModal`, `cardCode`)
-- **Files**: PascalCase for components, camelCase for utilities
+- **Archivos**: PascalCase para componentes, camelCase para utilidades
 
-## Modal Integration Pattern
+## Patrón de Integración Modal
 
-All card components must follow this exact pattern:
+Todos los componentes de card DEBEN seguir este patrón exacto:
 
 ```vue
 <template>
-  <!-- Card content here -->
+  <!-- Contenido de la card aquí -->
 
-  <!-- Code button -->
+  <!-- Botón de código -->
   <button
     @click="showCode"
     class="absolute top-4 right-4 ... cursor-pointer"
@@ -107,11 +181,11 @@ All card components must follow this exact pattern:
     <svg class="... pointer-events-none">...</svg>
   </button>
 
-  <!-- Code Modal -->
+  <!-- Modal de código -->
   <CodeModal
     ref="codeModal"
-    cardType="[Type] Card"
-    cardVariant="[Style Description]"
+    cardType="[Tipo] Card"
+    cardVariant="[Descripción del Estilo]"
     :codeContent="cardCode"
   />
 </template>
@@ -121,12 +195,12 @@ import { ref } from 'vue'
 import CodeModal from '../CodeModal.vue'
 import { cardCodes } from '../../data/cardCodes.js'
 
-// Props definition
+// Definición de props
 defineProps({
   /* ... */
 })
 
-// Modal setup
+// Configuración del modal
 const codeModal = ref(null)
 const cardCode = cardCodes.ComponentName
 
@@ -138,11 +212,87 @@ const showCode = () => {
 </script>
 ```
 
-## Development Guidelines
+## Patrón para Headers y Footers
 
-- **Consistency**: All 18 cards use identical modal integration
-- **Accessibility**: Every interactive element must be accessible
-- **Responsiveness**: Design for mobile-first, scale up
-- **Performance**: Use Vue 3 optimizations and lazy loading where appropriate
-- **Code Quality**: Follow ESLint rules and Vue 3 style guide
-- **Important**: El codigo que se coloca en archivo Data, como cardData.js, referente al modelo que se quiere replicar, debe ser exactamente igual al del elemento que se quiere replicar, exceptuando el boton de abrir modal y su logica, tambien las importaciones que no sean necesarias, se excluiran de los ejemplos. Los comentarios deben estar en castellano.
+Los headers y footers NO incluyen modal, pero sus códigos se almacenan en `headCodes.js`:
+
+```vue
+<template>
+  <!-- Contenido del header/footer -->
+</template>
+
+<script setup>
+// Lógica específica del componente
+</script>
+
+<style scoped>
+/* Estilos específicos si son necesarios */
+</style>
+```
+
+## Responsive Design
+
+### Breakpoints
+
+- **Mobile**: < 640px (sm) - Layout de 1 columna
+- **Tablet**: 640px - 1024px (md) - Layout de 2 columnas
+- **Desktop**: > 1024px (lg) - Layout de 3 columnas
+
+### Comportamiento del Carousel
+
+- **Mobile**: Vista de rejilla vertical responsiva
+- **Tablet**: 2 elementos por vista en carousel
+- **Desktop**: 3 elementos por vista en carousel
+
+## Gestión de Estado
+
+- **Props**: Para datos de componentes individuales
+- **Router**: Para estado de navegación y rutas
+- **Reactive Data**: Para datos locales del componente
+- **No Vuex/Pinia**: El proyecto no requiere gestión de estado global
+
+## Pautas de Desarrollo
+
+- **Consistencia**: Los 30 componentes siguen patrones uniformes
+- **Accesibilidad**: Cada elemento interactivo debe ser accesible
+- **Responsividad**: Diseño mobile-first, escalar hacia arriba
+- **Performance**: Usar optimizaciones de Vue 3 y lazy loading
+- **Calidad de Código**: Seguir reglas ESLint y guía de estilo Vue 3
+- **Importante**: El código que se coloca en archivos de datos (cardData.js, cardCodes.js, headCodes.js) debe ser exactamente igual al del componente que se quiere replicar, excluyendo el botón de modal y su lógica, también las importaciones innecesarias. Los comentarios deben estar en castellano.
+
+## Mejores Prácticas Específicas
+
+### Para Cards
+
+- Incluir siempre el botón de código en la esquina superior derecha
+- Usar datos de ejemplo realistas y variados
+- Implementar efectos hover sutiles pero visibles
+- Mantener la legibilidad en todos los tamaños de pantalla
+
+### Para Headers
+
+- Asegurar que la navegación sea accesible
+- Implementar animaciones sutiles que no distraigan
+- Mantener la funcionalidad en todas las resoluciones
+- Usar semántica HTML correcta (`<header>`, `<nav>`, etc.)
+
+### Para Footers
+
+- Incluir enlaces útiles y organizados
+- Mantener un diseño limpio y no sobrecargado
+- Asegurar contraste adecuado para textos pequeños
+- Usar estructura semántica HTML (`<footer>`, `<section>`, etc.)
+
+## Testing (Opcional)
+
+El proyecto está preparado para integrar:
+
+- **Vitest**: Para testing unitario de componentes
+- **Cypress**: Para testing E2E de navegación
+- **Testing Library**: Para testing de comportamiento de usuario
+
+## Deployment
+
+- **Build**: `npm run build` - Optimiza para producción
+- **Preview**: `npm run preview` - Previsualiza la build
+- **Compatibilidad**: Modern browsers con soporte ES6+

@@ -2,7 +2,7 @@
   <div class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
     <div class="w-full px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <!-- Logo/Title -->
+        <!-- Logo/Título -->
         <div class="flex items-center">
           <router-link
             to="/"
@@ -12,9 +12,9 @@
           </router-link>
         </div>
 
-        <!-- Navigation Tabs -->
+        <!-- Pestañas de navegación -->
         <nav class="flex space-x-1">
-          <!-- Cards dropdown -->
+          <!-- Dropdown de Cards -->
           <div class="relative group">
             <button
               @click="toggleDropdown('cards')"
@@ -56,7 +56,7 @@
               </svg>
             </button>
 
-            <!-- Cards Dropdown -->
+            <!-- Dropdown de Cards -->
             <div
               v-if="dropdowns.cards"
               class="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
@@ -133,7 +133,7 @@
             </div>
           </div>
 
-          <!-- Layout dropdown -->
+          <!-- Dropdown de Layout -->
           <div class="relative group">
             <button
               @click="toggleDropdown('layout')"
@@ -175,7 +175,7 @@
               </svg>
             </button>
 
-            <!-- Layout Dropdown -->
+            <!-- Dropdown de Layout -->
             <div
               v-if="dropdowns.layout"
               class="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
@@ -253,7 +253,7 @@ const dropdowns = ref({
   layout: false,
 });
 
-// Computed properties para determinar si una sección está activa
+// Propiedades computadas para determinar si una sección está activa
 const isCardsActive = computed(() => {
   return route.path.startsWith("/cards/");
 });
@@ -276,7 +276,7 @@ const toggleDropdown = (name) => {
   Object.keys(dropdowns.value).forEach((key) => {
     if (key !== name) dropdowns.value[key] = false;
   });
-  // Toggle el dropdown seleccionado
+  // Activar/desactivar el dropdown seleccionado
   dropdowns.value[name] = !dropdowns.value[name];
 };
 
@@ -288,12 +288,12 @@ const closeDropdowns = () => {
 </script>
 
 <style scoped>
-/* Smooth transitions for dropdowns */
+/* Transiciones suaves para dropdowns */
 .group:hover .group-hover\\:block {
   display: block;
 }
 
-/* Ensure proper z-index stacking */
+/* Asegurar apilamiento correcto del z-index */
 .relative {
   z-index: auto;
 }

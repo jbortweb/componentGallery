@@ -1,17 +1,27 @@
 <template>
   <div class="min-h-screen bg-gray-50 py-8">
     <div class="max-w-full mx-auto">
-      <!-- Header -->
-      <div class="text-center mb-12 px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl font-bold text-gray-900 mb-4">Headers</h1>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-          Explora nuestra colección de 6 headers únicos con diseños modernos y
-          funcionalidades avanzadas. Cada componente está optimizado para
-          diferentes estilos y necesidades.
-        </p>
-      </div>
+      <!-- Hero Section -->
+      <section class="relative py-20 sm:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h1 class="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
+              <span class="block">Header</span>
+              <span class="block text-blue-600">Gallery</span>
+            </h1>
+            <p
+              class="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto mb-10"
+            >
+              Una colección de headers modernos e interactivos construidos con
+              <span class="font-semibold text-green-600">Vue 3</span>,
+              <span class="font-semibold text-purple-600">Vite</span> y
+              <span class="font-semibold text-blue-600">Tailwind CSS</span>
+            </p>
+          </div>
+        </div>
+      </section>
 
-      <!-- Headers Section -->
+      <!-- Sección de Headers -->
       <div class="space-y-16">
         <div
           v-for="(header, index) in headerData"
@@ -35,7 +45,7 @@
         </div>
       </div>
 
-      <!-- Instructions Section -->
+      <!-- Sección de instrucciones -->
       <div
         class="mt-16 bg-blue-50 border border-blue-200 rounded-lg p-6 mx-4 sm:mx-6 lg:mx-8"
       >
@@ -83,7 +93,7 @@
 </template>
 
 <script setup>
-// Import Header components
+// Importar componentes Header
 import Header1 from "../components/headfoot/Header1.vue";
 import Header2 from "../components/headfoot/Header2.vue";
 import Header3 from "../components/headfoot/Header3.vue";
@@ -91,7 +101,7 @@ import Header4 from "../components/headfoot/Header4.vue";
 import Header5 from "../components/headfoot/Header5.vue";
 import Header6 from "../components/headfoot/Header6.vue";
 
-// Header data
+// Datos de headers
 const headerData = [
   {
     id: "header1",
@@ -125,7 +135,7 @@ const headerData = [
   },
 ];
 
-// Functions to get components
+// Funciones para obtener componentes
 const getHeaderComponent = (index) => {
   const components = [Header1, Header2, Header3, Header4, Header5, Header6];
   return components[index];
@@ -133,7 +143,7 @@ const getHeaderComponent = (index) => {
 </script>
 
 <style scoped>
-/* Smooth animations */
+/* Animaciones suaves */
 .w-full {
   transition: all 0.3s ease;
 }

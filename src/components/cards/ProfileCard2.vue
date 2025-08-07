@@ -22,7 +22,7 @@
       </svg>
     </button>
 
-    <!-- Neumorphism Card -->
+    <!-- Tarjeta Neumorfismo -->
     <div
       class="bg-gray-300 rounded-3xl p-8 shadow-neumorphism hover:shadow-neumorphism-hover transition-all duration-500 transform hover:scale-102 relative overflow-hidden"
     >
@@ -216,7 +216,7 @@ const showCode = () => {
   box-shadow: inset 8px 8px 16px #bebebe, inset -8px -8px 16px #ffffff;
 }
 
-/* Custom animations */
+/* Animaciones personalizadas */
 @keyframes fade-in-scale {
   from {
     opacity: 0;

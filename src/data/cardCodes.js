@@ -1,12 +1,12 @@
 export const cardCodes = {
-  // Profile Cards
+  // Tarjetas de Perfil
   ProfileCard1: `<template>
   <div class="relative group w-96 perspective-1000">
-    <!-- Glassmorphism Card -->
+    <!-- Tarjeta Glassmorphism -->
     <div
       class="relative bg-gradient-to-br from-purple-400/20 via-pink-400/20 to-blue-400/20 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:rotate-1 group-hover:shadow-purple-500/25"
     >
-      <!-- Animated background blobs -->
+      <!-- Elementos de fondo animados -->
       <div class="absolute inset-0 overflow-hidden rounded-3xl">
         <div
           class="absolute -top-10 -left-10 w-32 h-32 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-20 animate-blob"
@@ -1278,7 +1278,7 @@ defineProps({
 });
 </script>`,
 
-  // Article Cards
+  // Tarjetas de Artículo
   ArticleCard1: `<template>
   <div
     class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 w-full max-w-sm mx-auto border border-gray-100 relative group"

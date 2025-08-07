@@ -1,0 +1,61 @@
+LICENCIA DUAL - Component Gallery
+
+Copyright (c) 2025 Proyecto Component Gallery
+
+Este proyecto utiliza una licencia dual que distingue entre diferentes partes del código:
+
+═══════════════════════════════════════════════════════════════════════════════
+
+## 📦 COMPONENTES INDIVIDUALES - Licencia MIT
+
+Los componentes individuales ubicados en las siguientes carpetas están bajo Licencia MIT:
+
+- /src/components/cards/ (ProductCard1-6, ProfileCard1-6, ArticleCard1-6)
+- /src/components/headfoot/ (Header1-6, Footer1-6)
+- /src/data/cardCodes.js (código fuente de componentes)
+- /src/data/headCodes.js (código fuente de headers/footers)
+
+PERMITIDO LIBREMENTE:
+✅ Usar, copiar, modificar componentes individuales
+✅ Integrar en proyectos comerciales
+✅ Redistribuir sin restricciones
+✅ Crear productos comerciales usando los componentes
+
+═══════════════════════════════════════════════════════════════════════════════
+
+## 🌐 APLICACIÓN WEB COMPLETA - Creative Commons BY-NC-SA 4.0
+
+El resto de la aplicación (estructura, navegación, sistema de galería) está bajo:
+Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional
+
+Esto incluye:
+
+- La aplicación web completa como concepto
+- Sistema de navegación y galería
+- Estructura general del proyecto
+- Archivos de configuración y setup
+
+PERMITIDO:
+✅ Usar para proyectos personales/educativos
+✅ Modificar y mejorar
+✅ Compartir libremente
+
+NO PERMITIDO:
+❌ Clonar la aplicación completa para uso comercial
+❌ Crear servicios pagos basados en la galería
+❌ Monetizar directamente el concepto de galería
+
+CONDICIONES:
+📋 Dar crédito al autor original
+🔄 Usar la misma licencia para modificaciones
+📝 Indicar cambios realizados
+
+═══════════════════════════════════════════════════════════════════════════════
+
+## 📞 CONTACTO
+
+Para consultas sobre uso comercial de la aplicación completa:
+📧 Email: tu-email@ejemplo.com
+
+EL SOFTWARE SE PROPORCIONA "COMO ESTÁ", SIN GARANTÍA DE NINGÚN TIPO.
+EN NINGÚN CASO LOS AUTORES SERÁN RESPONSABLES DE DAÑOS DERIVADOS DEL USO.

@@ -201,7 +201,7 @@ const showCode = () => {
     0 0 15px currentColor;
 }
 
-/* Cyberpunk grid animation */
+/* Animación de cuadrícula cyberpunk */
 .grid div:nth-child(odd) {
   animation-duration: 2s;
 }

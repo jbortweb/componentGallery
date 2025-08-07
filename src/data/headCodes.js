@@ -1,5 +1,5 @@
 export const headCodes = {
-  // Header Components
+  // Componentes de Header
   Header1: `<template>
   <!-- Header minimalista con diseño neumorfismo -->
   <header class="relative bg-gradient-to-br from-gray-50 to-gray-100 shadow-sm overflow-hidden">

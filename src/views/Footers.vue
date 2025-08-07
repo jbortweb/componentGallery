@@ -1,17 +1,27 @@
 <template>
   <div class="min-h-screen bg-gray-50 py-8">
     <div class="max-w-full mx-auto">
-      <!-- Header -->
-      <div class="text-center mb-12 px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl font-bold text-gray-900 mb-4">Footers</h1>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-          Explora nuestra colección de 6 footers profesionales con información
-          completa y diseños modernos. Perfectos para completar cualquier
-          proyecto web.
-        </p>
-      </div>
+      <!-- Hero Section -->
+      <section class="relative py-20 sm:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h1 class="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
+              <span class="block">Footer</span>
+              <span class="block text-blue-600">Gallery</span>
+            </h1>
+            <p
+              class="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto mb-10"
+            >
+              Una colección de footers modernos e interactivos construidos con
+              <span class="font-semibold text-green-600">Vue 3</span>,
+              <span class="font-semibold text-purple-600">Vite</span> y
+              <span class="font-semibold text-blue-600">Tailwind CSS</span>
+            </p>
+          </div>
+        </div>
+      </section>
 
-      <!-- Footers Section -->
+      <!-- Sección de Footers -->
       <div class="space-y-16">
         <div
           v-for="(footer, index) in footerData"
@@ -35,7 +45,7 @@
         </div>
       </div>
 
-      <!-- Instructions Section -->
+      <!-- Sección de instrucciones -->
       <div
         class="mt-16 bg-blue-50 border border-blue-200 rounded-lg p-6 mx-4 sm:mx-6 lg:mx-8"
       >
@@ -83,7 +93,7 @@
 </template>
 
 <script setup>
-// Import Footer components
+// Importar componentes Footer
 import Footer1 from "../components/headfoot/Footer1.vue";
 import Footer2 from "../components/headfoot/Footer2.vue";
 import Footer3 from "../components/headfoot/Footer3.vue";
@@ -91,7 +101,7 @@ import Footer4 from "../components/headfoot/Footer4.vue";
 import Footer5 from "../components/headfoot/Footer5.vue";
 import Footer6 from "../components/headfoot/Footer6.vue";
 
-// Footer data
+// Datos de footers
 const footerData = [
   {
     id: "footer1",
@@ -125,7 +135,7 @@ const footerData = [
   },
 ];
 
-// Functions to get components
+// Funciones para obtener componentes
 const getFooterComponent = (index) => {
   const components = [Footer1, Footer2, Footer3, Footer4, Footer5, Footer6];
   return components[index];
@@ -133,7 +143,7 @@ const getFooterComponent = (index) => {
 </script>
 
 <style scoped>
-/* Smooth animations */
+/* Animaciones suaves */
 .w-full {
   transition: all 0.3s ease;
 }

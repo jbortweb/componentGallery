@@ -333,7 +333,7 @@ const linksRef3 = ref(null);
 const newsletterRef = ref(null);
 const bottomRef = ref(null);
 
-// Animation states
+// Estados de animación
 const isVisible = ref(false);
 const companyVisible = ref(false);
 const linksVisible = ref(false);
@@ -377,7 +377,7 @@ const handleScroll = () => {
 
 onMounted(() => {
   window.addEventListener("scroll", handleScroll);
-  handleScroll(); // Check initial state
+  handleScroll(); // Verificar estado inicial
 });
 
 onUnmounted(() => {

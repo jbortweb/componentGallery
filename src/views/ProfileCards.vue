@@ -1,17 +1,26 @@
 <template>
   <div class="min-h-screen bg-gray-50 py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Header -->
-      <div class="text-center mb-12">
-        <h1 class="text-4xl font-bold text-gray-900 mb-4">
-          Tarjetas de Perfiles
-        </h1>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-          Descubre nuestra colección de 6 diseños únicos para tarjetas de perfil
-          profesional. Perfectas para mostrar información de equipo, testimonios
-          o perfiles de usuario.
-        </p>
-      </div>
+      <!-- Hero Section -->
+      <section class="relative py-20 sm:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h1 class="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
+              <span class="block">Profile Card</span>
+              <span class="block text-blue-600">Gallery</span>
+            </h1>
+            <p
+              class="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto mb-10"
+            >
+              Una colección de tarjetas de perfiles modernas e interactivas
+              construidas con
+              <span class="font-semibold text-green-600">Vue 3</span>,
+              <span class="font-semibold text-purple-600">Vite</span> y
+              <span class="font-semibold text-blue-600">Tailwind CSS</span>
+            </p>
+          </div>
+        </div>
+      </section>
 
       <!-- Instructions -->
       <div class="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-8">

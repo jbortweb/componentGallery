@@ -22,7 +22,7 @@
       </svg>
     </button>
 
-    <!-- Cyberpunk Card -->
+    <!-- Tarjeta Cyberpunk -->
     <div
       class="bg-gray-900 rounded-lg p-6 border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-500 relative overflow-hidden group/card neon-glow"
     >
@@ -253,7 +253,7 @@ const showCode = () => {
   background-size: 20px 20px;
 }
 
-/* Animations */
+/* Animaciones */
 @keyframes pulse-neon {
   0%,
   100% {

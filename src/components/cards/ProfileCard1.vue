@@ -22,7 +22,7 @@
       </svg>
     </button>
 
-    <!-- Glassmorphism Card -->
+    <!-- Tarjeta Glassmorphism -->
     <div
       class="relative bg-gradient-to-br from-purple-400/20 via-pink-400/20 to-blue-400/20 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:rotate-1 group-hover:shadow-purple-500/25"
     >
@@ -207,7 +207,7 @@ const showCode = () => {
   perspective: 1000px;
 }
 
-/* Custom animations */
+/* Animaciones personalizadas */
 @keyframes blob {
   0% {
     transform: translate(0px, 0px) scale(1);

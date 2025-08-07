@@ -41,14 +41,6 @@ const routes = [
     }
   },
   {
-    path: '/head-foot',
-    name: 'HeaderFooter',
-    component: HeaderFooter,
-    meta: {
-      title: 'Headers y Footers'
-    }
-  },
-  {
     path: '/headers',
     name: 'Headers',
     component: Headers,

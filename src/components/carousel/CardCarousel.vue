@@ -190,7 +190,7 @@ const goToSlide = (index) => {
   resetAutoPlay();
 };
 
-// Auto-play functionality
+// Funcionalidad de auto-reproducción
 const startAutoPlay = () => {
   if (props.autoPlay && props.items.length > 1) {
     autoPlayTimer = setInterval(() => {
@@ -222,7 +222,7 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* Custom animations for the 3D effect */
+/* Animaciones personalizadas para el efecto 3D */
 @keyframes slideIn {
   from {
     opacity: 0;

@@ -129,7 +129,7 @@
 </template>
 
 <script setup>
-// Import Header components
+// Importar componentes Header
 import Header1 from "../components/headfoot/Header1.vue";
 import Header2 from "../components/headfoot/Header2.vue";
 import Header3 from "../components/headfoot/Header3.vue";
@@ -137,7 +137,7 @@ import Header4 from "../components/headfoot/Header4.vue";
 import Header5 from "../components/headfoot/Header5.vue";
 import Header6 from "../components/headfoot/Header6.vue";
 
-// Import Footer components
+// Importar componentes Footer
 import Footer1 from "../components/headfoot/Footer1.vue";
 import Footer2 from "../components/headfoot/Footer2.vue";
 import Footer3 from "../components/headfoot/Footer3.vue";
@@ -213,7 +213,7 @@ const footerData = [
   },
 ];
 
-// Component getters
+// Funciones para obtener componentes
 const getHeaderComponent = (index) => {
   const components = [Header1, Header2, Header3, Header4, Header5, Header6];
   return components[index] || Header1;

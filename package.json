@@ -1,12 +1,38 @@
 {
-  "name": "componentcards",
-  "private": true,
-  "version": "0.0.0",
+  "name": "component-gallery",
+  "description": "Interactive gallery showcasing 30 unique UI components built with Vue 3, Vite, and Tailwind CSS",
+  "version": "1.0.0",
   "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "Tu Nombre",
+    "email": "tu-email@ejemplo.com",
+    "url": "https://github.com/tu-username"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tu-username/component-gallery.git"
+  },
+  "keywords": [
+    "vue3",
+    "vite",
+    "tailwindcss",
+    "components",
+    "ui-library",
+    "cards",
+    "headers",
+    "footers",
+    "gallery",
+    "responsive-design",
+    "glassmorphism",
+    "cyberpunk",
+    "modern-ui"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
