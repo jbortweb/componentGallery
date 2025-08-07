@@ -6,7 +6,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center">
             <h1 class="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
-              <span class="block">Product Card</span>
+              <span class="block">Productos Card</span>
               <span class="block text-blue-600">Gallery</span>
             </h1>
             <p
@@ -67,42 +67,7 @@
       </div>
 
       <!-- Instructions -->
-      <div class="mt-16 bg-blue-50 border border-blue-200 rounded-lg p-6">
-        <div class="flex items-start">
-          <svg
-            class="w-6 h-6 text-blue-600 mt-0.5 mr-3 flex-shrink-0"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
-          <div>
-            <h3 class="text-lg font-semibold text-blue-900 mb-2">
-              Cómo usar estos componentes
-            </h3>
-            <p class="text-blue-800 mb-3">
-              Haz clic en el icono de código (🔍) en cualquier tarjeta para ver
-              el código fuente completo del componente.
-            </p>
-            <div class="text-sm text-blue-700">
-              <p>
-                <strong>Tecnologías:</strong> Vue 3 (Composition API), Tailwind
-                CSS v4.1
-              </p>
-              <p>
-                <strong>Características:</strong> Responsive design, efectos
-                hover, modal de código integrado
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ComponentInstructions />
 
       <!-- Casos de Uso Recomendados -->
       <div
@@ -240,6 +205,7 @@
 <script setup>
 import { computed } from "vue";
 import CardCarousel from "../components/carousel/CardCarousel.vue";
+import ComponentInstructions from "../components/ComponentInstructions.vue";
 import ProductCard1 from "../components/cards/ProductCard1.vue";
 import ProductCard2 from "../components/cards/ProductCard2.vue";
 import ProductCard3 from "../components/cards/ProductCard3.vue";

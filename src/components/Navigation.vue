@@ -259,11 +259,7 @@ const isCardsActive = computed(() => {
 });
 
 const isLayoutActive = computed(() => {
-  return (
-    route.path === "/headers" ||
-    route.path === "/footers" ||
-    route.path === "/head-foot"
-  );
+  return route.path === "/headers" || route.path === "/footers";
 });
 
 const hasOpenDropdown = computed(() => {

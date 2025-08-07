@@ -3,7 +3,6 @@ import Home from '../views/Home.vue'
 import ProductCards from '../views/ProductCards.vue'
 import ProfileCards from '../views/ProfileCards.vue'
 import ArticleCards from '../views/ArticleCards.vue'
-import HeaderFooter from '../views/HeaderFooter.vue'
 import Headers from '../views/Headers.vue'
 import Footers from '../views/Footers.vue'
 
@@ -21,7 +20,7 @@ const routes = [
     name: 'ProductCards',
     component: ProductCards,
     meta: {
-      title: 'Tarjetas de Productos'
+      title: 'Productos'
     }
   },
   {
@@ -29,7 +28,7 @@ const routes = [
     name: 'ProfileCards',
     component: ProfileCards,
     meta: {
-      title: 'Tarjetas de Perfiles'
+      title: 'Perfiles'
     }
   },
   {
@@ -37,7 +36,7 @@ const routes = [
     name: 'ArticleCards',
     component: ArticleCards,
     meta: {
-      title: 'Tarjetas de Artículos'
+      title: 'Artículos'
     }
   },
   {

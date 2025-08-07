@@ -69,10 +69,18 @@
             </li>
             <li>
               <router-link
-                to="/head-foot"
+                to="/headers"
                 class="text-gray-400 hover:text-white transition-colors"
               >
-                Head & Foot
+                Headers
+              </router-link>
+            </li>
+            <li>
+              <router-link
+                to="/footers"
+                class="text-gray-400 hover:text-white transition-colors"
+              >
+                Footers
               </router-link>
             </li>
           </ul>

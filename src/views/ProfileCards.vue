@@ -6,7 +6,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center">
             <h1 class="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
-              <span class="block">Profile Card</span>
+              <span class="block">Perfiles Card</span>
               <span class="block text-blue-600">Gallery</span>
             </h1>
             <p
@@ -67,42 +67,7 @@
       </div>
 
       <!-- Instructions -->
-      <div class="mt-16 bg-purple-50 border border-purple-200 rounded-lg p-6">
-        <div class="flex items-start">
-          <svg
-            class="w-6 h-6 text-purple-600 mt-0.5 mr-3 flex-shrink-0"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-            />
-          </svg>
-          <div>
-            <h3 class="text-lg font-semibold text-purple-900 mb-2">
-              Tarjetas de Perfil Profesional
-            </h3>
-            <p class="text-purple-800 mb-3">
-              Cada diseño incluye diferentes layouts para mostrar información
-              personal, habilidades y enlaces sociales.
-            </p>
-            <div class="text-sm text-purple-700">
-              <p>
-                <strong>Incluye:</strong> Avatar, información personal,
-                habilidades, redes sociales
-              </p>
-              <p>
-                <strong>Casos de uso:</strong> Equipos, testimonios,
-                directorios, portfolios
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ComponentInstructions theme="purple" />
 
       <!-- Casos de Uso Recomendados -->
       <div
@@ -240,6 +205,7 @@
 <script setup>
 import { computed } from "vue";
 import CardCarousel from "../components/carousel/CardCarousel.vue";
+import ComponentInstructions from "../components/ComponentInstructions.vue";
 import ProfileCard1 from "../components/cards/ProfileCard1.vue";
 import ProfileCard2 from "../components/cards/ProfileCard2.vue";
 import ProfileCard3 from "../components/cards/ProfileCard3.vue";

@@ -6,7 +6,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center">
             <h1 class="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
-              <span class="block">Article Card</span>
+              <span class="block">Artículos Card</span>
               <span class="block text-blue-600">Gallery</span>
             </h1>
             <p
@@ -67,42 +67,7 @@
       </div>
 
       <!-- Instructions -->
-      <div class="mt-16 bg-green-50 border border-green-200 rounded-lg p-6">
-        <div class="flex items-start">
-          <svg
-            class="w-6 h-6 text-green-600 mt-0.5 mr-3 flex-shrink-0"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-            />
-          </svg>
-          <div>
-            <h3 class="text-lg font-semibold text-green-900 mb-2">
-              Tarjetas de Contenido Editorial
-            </h3>
-            <p class="text-green-800 mb-3">
-              Cada diseño incluye diferentes layouts para presentar artículos
-              con imágenes, metadatos y llamadas a la acción.
-            </p>
-            <div class="text-sm text-green-700">
-              <p>
-                <strong>Incluye:</strong> Imagen destacada, título, extracto,
-                metadatos, botones de acción
-              </p>
-              <p>
-                <strong>Casos de uso:</strong> Blogs, noticias, revistas,
-                documentación, portfolios
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ComponentInstructions theme="green" />
 
       <!-- Casos de Uso Recomendados -->
       <div
@@ -240,6 +205,7 @@
 <script setup>
 import { computed } from "vue";
 import CardCarousel from "../components/carousel/CardCarousel.vue";
+import ComponentInstructions from "../components/ComponentInstructions.vue";
 import ArticleCard1 from "../components/cards/ArticleCard1.vue";
 import ArticleCard2 from "../components/cards/ArticleCard2.vue";
 import ArticleCard3 from "../components/cards/ArticleCard3.vue";
