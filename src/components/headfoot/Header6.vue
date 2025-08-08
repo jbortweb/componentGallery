@@ -1,338 +1,14 @@
 <template>
-  <!-- Header con diseño de espacio/galaxia -->
-  <header
-    class="relative bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 overflow-hidden min-h-[400px]"
-  >
-    <!-- Estrellas animadas de fondo -->
-    <div class="absolute inset-0">
-      <div class="stars"></div>
-      <div class="stars2"></div>
-      <div class="stars3"></div>
-    </div>
-
-    <!-- Planetas decorativos -->
-    <div class="absolute inset-0 pointer-events-none">
-      <!-- Planeta grande -->
-      <div
-        class="absolute top-20 right-10 w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full opacity-20 animate-pulse"
-      ></div>
-      <!-- Planeta pequeño -->
-      <div
-        class="absolute bottom-10 left-20 w-16 h-16 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full opacity-30 animate-bounce"
-        style="animation-duration: 3s"
-      ></div>
-      <!-- Anillo planetario -->
-      <div
-        class="absolute top-32 right-16 w-40 h-40 border-4 border-purple-300/20 rounded-full animate-spin"
-        style="animation-duration: 20s"
-      ></div>
-    </div>
-
-    <!-- Navegación espacial -->
-    <nav class="relative z-10">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-20">
-          <!-- Logo espacial -->
-          <div class="flex items-center group">
-            <div class="relative">
-              <!-- Efecto de órbita -->
-              <div
-                class="absolute -inset-4 border border-purple-400/30 rounded-full animate-spin"
-                style="animation-duration: 8s"
-              ></div>
-              <div
-                class="w-12 h-12 bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-2xl shadow-purple-500/50 group-hover:shadow-purple-500/80 transition-all duration-300"
-              >
-                <svg
-                  class="w-6 h-6 text-white"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 2L13.09 8.26L22 9L13.09 15.74L12 22L10.91 15.74L2 9L10.91 8.26L12 2Z"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div class="ml-4">
-              <span class="text-white font-bold text-xl tracking-wider"
-                >STELLAR</span
-              >
-              <div class="text-purple-300 text-xs">Space Explorer v3.0</div>
-            </div>
-          </div>
-
-          <!-- Navegación estilo espacial -->
-          <div class="hidden md:flex items-center space-x-6">
-            <div
-              v-for="item in navItems"
-              :key="item.name"
-              class="relative group"
-            >
-              <a
-                href="#"
-                class="px-4 py-2 text-white/80 hover:text-white transition-all duration-300 relative"
-                @mouseenter="createStarBurst($event)"
-              >
-                {{ item.name }}
-                <!-- Efecto de órbita en hover -->
-                <div
-                  class="absolute inset-0 border border-purple-400/0 group-hover:border-purple-400/50 rounded-full transition-all duration-500 group-hover:scale-150 group-hover:opacity-0"
-                ></div>
-                <!-- Línea brillante inferior -->
-                <span
-                  class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 transition-all duration-300 group-hover:w-full"
-                ></span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Controles de misión -->
-          <div class="flex items-center space-x-4">
-            <!-- Panel de control -->
-            <div
-              class="hidden md:flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-purple-400/30 rounded-full px-4 py-2"
-            >
-              <div
-                class="w-2 h-2 bg-green-400 rounded-full animate-pulse"
-              ></div>
-              <span class="text-white text-sm font-mono">ONLINE</span>
-            </div>
-
-            <!-- Botón de lanzamiento -->
-            <button class="hidden md:block relative group">
-              <div
-                class="absolute -inset-1 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300 animate-pulse"
-              ></div>
-              <div
-                class="relative bg-gray-900/80 backdrop-blur-sm border border-purple-400/50 text-white font-bold py-3 px-6 rounded-full group-hover:bg-gray-900/60 transition duration-300"
-              >
-                🚀 LAUNCH
-              </div>
-            </button>
-
-            <!-- Menú móvil -->
-            <button
-              @click="toggleMobileMenu"
-              class="md:hidden p-2 bg-white/5 backdrop-blur-sm border border-purple-400/30 rounded-full text-white hover:bg-white/10 transition-colors"
-            >
-              <svg
-                class="w-6 h-6"
-                :class="{ hidden: isMobileMenuOpen, block: !isMobileMenuOpen }"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-              <svg
-                class="w-6 h-6"
-                :class="{ block: isMobileMenuOpen, hidden: !isMobileMenuOpen }"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Centro de comando espacial -->
-    <div class="relative z-10 px-4 sm:px-6 lg:px-8 py-16">
-      <div class="max-w-7xl mx-auto text-center">
-        <!-- Título principal -->
-        <div class="relative">
-          <h1
-            class="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-cyan-200 mb-6 tracking-tight"
-          >
-            EXPLORA
-            <span
-              class="block bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text"
-            >
-              EL COSMOS
-            </span>
-          </h1>
-
-          <!-- Subtítulo -->
-          <p
-            class="text-xl md:text-2xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed"
-          >
-            Embárcate en una odisea digital a través de las infinitas
-            posibilidades del universo tecnológico
-          </p>
-
-          <!-- Panel de control de misión -->
-          <div
-            class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8"
-          >
-            <button class="group relative overflow-hidden">
-              <div
-                class="absolute -inset-1 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"
-              ></div>
-              <div
-                class="relative bg-gray-900/80 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-2xl border border-purple-400/30 group-hover:bg-gray-900/60 transition duration-300"
-              >
-                <div class="flex items-center space-x-2">
-                  <span>🚀 INICIAR MISIÓN</span>
-                  <div
-                    class="w-2 h-2 bg-green-400 rounded-full animate-pulse"
-                  ></div>
-                </div>
-              </div>
-            </button>
-
-            <button
-              class="group bg-white/5 backdrop-blur-sm border border-purple-400/30 text-white font-bold py-4 px-8 rounded-2xl hover:bg-white/10 transition-all duration-300"
-            >
-              <div class="flex items-center space-x-2">
-                <span>🌌 EXPLORAR GALAXIA</span>
-                <svg
-                  class="w-5 h-5 group-hover:rotate-12 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </div>
-            </button>
-          </div>
-
-          <!-- Estadísticas del viaje -->
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            <div
-              class="bg-white/5 backdrop-blur-sm border border-purple-400/20 rounded-xl p-4"
-            >
-              <div
-                class="text-2xl font-bold text-purple-400"
-                ref="countPlanets"
-              >
-                0
-              </div>
-              <div class="text-sm text-white/60">Planetas</div>
-            </div>
-            <div
-              class="bg-white/5 backdrop-blur-sm border border-blue-400/20 rounded-xl p-4"
-            >
-              <div class="text-2xl font-bold text-blue-400" ref="countStars">
-                0
-              </div>
-              <div class="text-sm text-white/60">Estrellas</div>
-            </div>
-            <div
-              class="bg-white/5 backdrop-blur-sm border border-cyan-400/20 rounded-xl p-4"
-            >
-              <div class="text-2xl font-bold text-cyan-400" ref="countGalaxies">
-                0
-              </div>
-              <div class="text-sm text-white/60">Galaxias</div>
-            </div>
-            <div
-              class="bg-white/5 backdrop-blur-sm border border-pink-400/20 rounded-xl p-4"
-            >
-              <div class="text-2xl font-bold text-pink-400" ref="countUsers">
-                0
-              </div>
-              <div class="text-sm text-white/60">Exploradores</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Menú móvil espacial -->
-    <div v-if="isMobileMenuOpen" class="fixed inset-0 z-50 md:hidden">
-      <div
-        class="fixed inset-0 bg-black/80 backdrop-blur-sm"
-        @click="toggleMobileMenu"
-      ></div>
-      <div
-        class="relative bg-gradient-to-br from-purple-900/95 via-blue-900/95 to-indigo-900/95 backdrop-blur-xl border-r border-purple-400/30 w-80 h-full"
-      >
-        <!-- Header del menú -->
-        <div
-          class="flex items-center justify-between p-6 border-b border-purple-400/30"
-        >
-          <div class="flex items-center space-x-3">
-            <div
-              class="w-8 h-8 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-full"
-            ></div>
-            <span class="text-white font-bold text-lg">STELLAR NAV</span>
-          </div>
-          <button
-            @click="toggleMobileMenu"
-            class="p-2 bg-white/5 border border-purple-400/30 rounded-full text-white"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </div>
-
-        <!-- Navegación móvil -->
-        <nav class="p-6 space-y-4">
-          <a
-            v-for="item in navItems"
-            :key="item.name"
-            href="#"
-            class="flex items-center space-x-3 px-4 py-3 text-white bg-white/5 border border-purple-400/20 rounded-xl hover:bg-white/10 hover:border-purple-400/40 transition-all duration-200"
-            @click="toggleMobileMenu"
-          >
-            <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
-            <span class="font-medium">{{ item.name }}</span>
-          </a>
-        </nav>
-
-        <!-- Footer del menú móvil -->
-        <div
-          class="absolute bottom-0 left-0 right-0 p-6 border-t border-purple-400/30"
-        >
-          <button
-            class="w-full bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-cyan-500/20 border border-purple-400/30 text-white font-bold py-4 px-6 rounded-xl hover:bg-gradient-to-r hover:from-purple-500/30 hover:via-blue-500/30 hover:to-cyan-500/30 transition duration-300"
-          >
-            🚀 INICIAR MISIÓN
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Botón para ver código -->
+  <div class="relative">
+    <!-- Botón de código -->
     <button
       @click="showCode"
-      class="absolute top-4 right-4 z-50 p-3 bg-white/5 backdrop-blur-sm border border-purple-400/30 rounded-xl text-white hover:bg-white/10 transition-all duration-200 cursor-pointer"
+      class="absolute top-4 right-4 z-50 w-10 h-10 bg-blue-600/90 hover:bg-blue-500 rounded-lg flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-200 backdrop-blur-sm shadow-lg border border-blue-400/30 cursor-pointer"
       title="Ver código del componente"
       aria-label="Ver código del componente"
     >
       <svg
-        class="w-5 h-5 pointer-events-none"
+        class="w-5 h-5 text-white pointer-events-none"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -346,20 +22,379 @@
       </svg>
     </button>
 
-    <!-- Code Modal -->
-    <CodeModal
-      ref="codeModal"
-      cardType="Header Card"
-      cardVariant="Diseño espacial/galaxia con animaciones"
-      :codeContent="cardCode"
-    />
-  </header>
+    <!-- Header con diseño de espacio/galaxia -->
+    <header
+      class="relative bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 overflow-hidden min-h-[400px]"
+    >
+      <!-- Estrellas animadas de fondo -->
+      <div class="absolute inset-0">
+        <div class="stars"></div>
+        <div class="stars2"></div>
+        <div class="stars3"></div>
+      </div>
+
+      <!-- Planetas decorativos -->
+      <div class="absolute inset-0 pointer-events-none">
+        <!-- Planeta grande -->
+        <div
+          class="absolute top-20 right-10 w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full opacity-20 animate-pulse"
+        ></div>
+        <!-- Planeta pequeño -->
+        <div
+          class="absolute bottom-10 left-20 w-16 h-16 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full opacity-30 animate-bounce"
+          style="animation-duration: 3s"
+        ></div>
+        <!-- Anillo planetario -->
+        <div
+          class="absolute top-32 right-16 w-40 h-40 border-4 border-purple-300/20 rounded-full animate-spin"
+          style="animation-duration: 20s"
+        ></div>
+      </div>
+
+      <!-- Navegación espacial -->
+      <nav class="relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-20">
+            <!-- Logo espacial -->
+            <div class="flex items-center group">
+              <div class="relative">
+                <!-- Efecto de órbita -->
+                <div
+                  class="absolute -inset-4 border border-purple-400/30 rounded-full animate-spin"
+                  style="animation-duration: 8s"
+                ></div>
+                <div
+                  class="w-12 h-12 bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-2xl shadow-purple-500/50 group-hover:shadow-purple-500/80 transition-all duration-300"
+                >
+                  <svg
+                    class="w-6 h-6 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2L13.09 8.26L22 9L13.09 15.74L12 22L10.91 15.74L2 9L10.91 8.26L12 2Z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="ml-4">
+                <span class="text-white font-bold text-xl tracking-wider"
+                  >STELLAR</span
+                >
+                <div class="text-purple-300 text-xs">Space Explorer v3.0</div>
+              </div>
+            </div>
+
+            <!-- Navegación estilo espacial -->
+            <div class="hidden md:flex items-center space-x-6">
+              <div
+                v-for="item in navItems"
+                :key="item.name"
+                class="relative group"
+              >
+                <a
+                  href="#"
+                  class="px-4 py-2 text-white/80 hover:text-white transition-all duration-300 relative"
+                  @mouseenter="createStarBurst($event)"
+                >
+                  {{ item.name }}
+                  <!-- Efecto de órbita en hover -->
+                  <div
+                    class="absolute inset-0 border border-purple-400/0 group-hover:border-purple-400/50 rounded-full transition-all duration-500 group-hover:scale-150 group-hover:opacity-0"
+                  ></div>
+                  <!-- Línea brillante inferior -->
+                  <span
+                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 transition-all duration-300 group-hover:w-full"
+                  ></span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Controles de misión -->
+            <div class="flex items-center space-x-4">
+              <!-- Panel de control -->
+              <div
+                class="hidden md:flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-purple-400/30 rounded-full px-4 py-2"
+              >
+                <div
+                  class="w-2 h-2 bg-green-400 rounded-full animate-pulse"
+                ></div>
+                <span class="text-white text-sm font-mono">ONLINE</span>
+              </div>
+
+              <!-- Botón de lanzamiento -->
+              <button class="hidden md:block relative group">
+                <div
+                  class="absolute -inset-1 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300 animate-pulse"
+                ></div>
+                <div
+                  class="relative bg-gray-900/80 backdrop-blur-sm border border-purple-400/50 text-white font-bold py-3 px-6 rounded-full group-hover:bg-gray-900/60 transition duration-300"
+                >
+                  🚀 LAUNCH
+                </div>
+              </button>
+
+              <!-- Menú móvil -->
+              <button
+                @click="toggleMobileMenu"
+                class="md:hidden p-2 bg-white/5 backdrop-blur-sm border border-purple-400/30 rounded-full text-white hover:bg-white/10 transition-colors"
+              >
+                <svg
+                  class="w-6 h-6"
+                  :class="{
+                    hidden: isMobileMenuOpen,
+                    block: !isMobileMenuOpen,
+                  }"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+                <svg
+                  class="w-6 h-6"
+                  :class="{
+                    block: isMobileMenuOpen,
+                    hidden: !isMobileMenuOpen,
+                  }"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Centro de comando espacial -->
+      <div class="relative z-10 px-4 sm:px-6 lg:px-8 py-16">
+        <div class="max-w-7xl mx-auto text-center">
+          <!-- Título principal -->
+          <div class="relative">
+            <h1
+              class="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-cyan-200 mb-6 tracking-tight"
+            >
+              EXPLORA
+              <span
+                class="block bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text"
+              >
+                EL COSMOS
+              </span>
+            </h1>
+
+            <!-- Subtítulo -->
+            <p
+              class="text-xl md:text-2xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed"
+            >
+              Embárcate en una odisea digital a través de las infinitas
+              posibilidades del universo tecnológico
+            </p>
+
+            <!-- Panel de control de misión -->
+            <div
+              class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8"
+            >
+              <button class="group relative overflow-hidden">
+                <div
+                  class="absolute -inset-1 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"
+                ></div>
+                <div
+                  class="relative bg-gray-900/80 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-2xl border border-purple-400/30 group-hover:bg-gray-900/60 transition duration-300"
+                >
+                  <div class="flex items-center space-x-2">
+                    <span>🚀 INICIAR MISIÓN</span>
+                    <div
+                      class="w-2 h-2 bg-green-400 rounded-full animate-pulse"
+                    ></div>
+                  </div>
+                </div>
+              </button>
+
+              <button
+                class="group bg-white/5 backdrop-blur-sm border border-purple-400/30 text-white font-bold py-4 px-8 rounded-2xl hover:bg-white/10 transition-all duration-300"
+              >
+                <div class="flex items-center space-x-2">
+                  <span>🌌 EXPLORAR GALAXIA</span>
+                  <svg
+                    class="w-5 h-5 group-hover:rotate-12 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </div>
+              </button>
+            </div>
+
+            <!-- Estadísticas del viaje -->
+            <div
+              class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto"
+            >
+              <div
+                class="bg-white/5 backdrop-blur-sm border border-purple-400/20 rounded-xl p-4"
+              >
+                <div
+                  class="text-2xl font-bold text-purple-400"
+                  ref="countPlanets"
+                >
+                  0
+                </div>
+                <div class="text-sm text-white/60">Planetas</div>
+              </div>
+              <div
+                class="bg-white/5 backdrop-blur-sm border border-blue-400/20 rounded-xl p-4"
+              >
+                <div class="text-2xl font-bold text-blue-400" ref="countStars">
+                  0
+                </div>
+                <div class="text-sm text-white/60">Estrellas</div>
+              </div>
+              <div
+                class="bg-white/5 backdrop-blur-sm border border-cyan-400/20 rounded-xl p-4"
+              >
+                <div
+                  class="text-2xl font-bold text-cyan-400"
+                  ref="countGalaxies"
+                >
+                  0
+                </div>
+                <div class="text-sm text-white/60">Galaxias</div>
+              </div>
+              <div
+                class="bg-white/5 backdrop-blur-sm border border-pink-400/20 rounded-xl p-4"
+              >
+                <div class="text-2xl font-bold text-pink-400" ref="countUsers">
+                  0
+                </div>
+                <div class="text-sm text-white/60">Exploradores</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menú móvil espacial -->
+      <div v-if="isMobileMenuOpen" class="fixed inset-0 z-50 md:hidden">
+        <div
+          class="fixed inset-0 bg-black/80 backdrop-blur-sm"
+          @click="toggleMobileMenu"
+        ></div>
+        <div
+          class="relative bg-gradient-to-br from-purple-900/95 via-blue-900/95 to-indigo-900/95 backdrop-blur-xl border-r border-purple-400/30 w-80 h-full"
+        >
+          <!-- Header del menú -->
+          <div
+            class="flex items-center justify-between p-6 border-b border-purple-400/30"
+          >
+            <div class="flex items-center space-x-3">
+              <div
+                class="w-8 h-8 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-full"
+              ></div>
+              <span class="text-white font-bold text-lg">STELLAR NAV</span>
+            </div>
+            <button
+              @click="toggleMobileMenu"
+              class="p-2 bg-white/5 border border-purple-400/30 rounded-full text-white"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Navegación móvil -->
+          <nav class="p-6 space-y-4">
+            <a
+              v-for="item in navItems"
+              :key="item.name"
+              href="#"
+              class="flex items-center space-x-3 px-4 py-3 text-white bg-white/5 border border-purple-400/20 rounded-xl hover:bg-white/10 hover:border-purple-400/40 transition-all duration-200"
+              @click="toggleMobileMenu"
+            >
+              <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
+              <span class="font-medium">{{ item.name }}</span>
+            </a>
+          </nav>
+
+          <!-- Footer del menú móvil -->
+          <div
+            class="absolute bottom-0 left-0 right-0 p-6 border-t border-purple-400/30"
+          >
+            <button
+              class="w-full bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-cyan-500/20 border border-purple-400/30 text-white font-bold py-4 px-6 rounded-xl hover:bg-gradient-to-r hover:from-purple-500/30 hover:via-blue-500/30 hover:to-cyan-500/30 transition duration-300"
+            >
+              🚀 INICIAR MISIÓN
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botón para ver código -->
+      <button
+        @click="showCode"
+        class="absolute top-4 right-4 z-50 p-3 bg-white/5 backdrop-blur-sm border border-purple-400/30 rounded-xl text-white hover:bg-white/10 transition-all duration-200 cursor-pointer"
+        title="Ver código del componente"
+        aria-label="Ver código del componente"
+      >
+        <svg
+          class="w-5 h-5 pointer-events-none"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+          />
+        </svg>
+      </button>
+
+      <!-- Code Modal -->
+      <CodeModal
+        ref="codeModal"
+        cardType="Header Card"
+        cardVariant="Diseño espacial/galaxia con animaciones"
+        :codeContent="cardCode"
+      />
+    </header>
+  </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue";
 import CodeModal from "../CodeModal.vue";
-import { headCodes } from "../../data/headCodes.js";
+import Header6Code from "../../data/codes/headfoot/headers/Header6.js";
 
 // Estado del menú móvil
 const isMobileMenuOpen = ref(false);
@@ -381,7 +416,7 @@ const navItems = [
 
 // Modal setup
 const codeModal = ref(null);
-const cardCode = headCodes.Header6;
+const cardCode = Header6Code;
 
 const showCode = () => {
   if (codeModal.value) {

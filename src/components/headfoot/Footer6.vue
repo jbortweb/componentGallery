@@ -1,298 +1,14 @@
 <template>
-  <footer
-    class="relative min-h-[600px] overflow-hidden"
-    style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
-  >
-    <!-- Animated Background -->
-    <div class="absolute inset-0">
-      <!-- Floating Particles -->
-      <div
-        v-for="(particle, index) in particles"
-        :key="index"
-        class="absolute rounded-full opacity-20"
-        :class="[particle.color, particle.animation]"
-        :style="{
-          width: particle.size + 'px',
-          height: particle.size + 'px',
-          left: particle.x + '%',
-          top: particle.y + '%',
-          animationDelay: particle.delay + 's',
-          animationDuration: particle.duration + 's',
-        }"
-      ></div>
-
-      <!-- Mesh Gradient Overlay -->
-      <div
-        class="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/30 to-pink-900/20"
-      ></div>
-    </div>
-
-    <!-- Main Content -->
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <!-- Top Section - Company Info with Glass Effect -->
-      <div class="text-center mb-16">
-        <div
-          class="inline-block p-8 rounded-3xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-2xl"
-        >
-          <div class="flex justify-center items-center space-x-4 mb-6">
-            <div
-              class="w-16 h-16 bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30"
-            >
-              <svg
-                class="w-8 h-8 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
-                />
-              </svg>
-            </div>
-            <h2 class="text-5xl font-bold text-white drop-shadow-lg">
-              Company
-            </h2>
-          </div>
-          <p class="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-            Pioneros en el desarrollo de experiencias digitales inmersivas que
-            conectan el presente con el futuro de la tecnología.
-          </p>
-        </div>
-      </div>
-
-      <!-- Glass Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        <!-- Services Card -->
-        <div
-          class="p-6 rounded-2xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-2"
-        >
-          <div class="flex items-center space-x-3 mb-4">
-            <div
-              class="w-10 h-10 bg-gradient-to-r from-blue-400/30 to-cyan-400/30 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20"
-            >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                />
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold text-white">Servicios</h3>
-          </div>
-          <ul class="space-y-2 text-white/80">
-            <li class="flex items-center space-x-2">
-              <div class="w-1.5 h-1.5 bg-white/60 rounded-full"></div>
-              <span>Desarrollo Web Full-Stack</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <div class="w-1.5 h-1.5 bg-white/60 rounded-full"></div>
-              <span>Aplicaciones Móviles</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <div class="w-1.5 h-1.5 bg-white/60 rounded-full"></div>
-              <span>UI/UX Design</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <div class="w-1.5 h-1.5 bg-white/60 rounded-full"></div>
-              <span>Consultoría Tecnológica</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Contact Card -->
-        <div
-          class="p-6 rounded-2xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-2"
-        >
-          <div class="flex items-center space-x-3 mb-4">
-            <div
-              class="w-10 h-10 bg-gradient-to-r from-green-400/30 to-emerald-400/30 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20"
-            >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                />
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold text-white">Contacto</h3>
-          </div>
-          <div class="space-y-3 text-white/80">
-            <div class="flex items-center space-x-3">
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
-              <span class="text-sm">hola@company.com</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                />
-              </svg>
-              <span class="text-sm">+34 123 456 789</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                />
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
-              <span class="text-sm">Madrid, España</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Newsletter Card -->
-        <div
-          class="p-6 rounded-2xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-2"
-        >
-          <div class="flex items-center space-x-3 mb-4">
-            <div
-              class="w-10 h-10 bg-gradient-to-r from-purple-400/30 to-pink-400/30 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20"
-            >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 17h5l-5 5v-5zM4 19h1a3 3 0 003-3V8a3 3 0 00-3-3H4a1 1 0 00-1 1v12a1 1 0 001 1z"
-                />
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold text-white">Newsletter</h3>
-          </div>
-          <p class="text-white/80 text-sm mb-4">
-            Mantente al día con las últimas tendencias tecnológicas.
-          </p>
-          <div class="space-y-3">
-            <input
-              type="email"
-              placeholder="tu@email.com"
-              class="w-full px-4 py-2 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
-            />
-            <button
-              class="w-full px-4 py-2 bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-sm border border-white/30 rounded-lg text-white hover:from-white/30 hover:to-white/20 transition-all duration-300"
-            >
-              Suscribirse
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Social Media with Glass Effect -->
-      <div class="text-center mb-8">
-        <div
-          class="inline-flex space-x-4 p-4 rounded-2xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl"
-        >
-          <a
-            v-for="(social, index) in socialLinks"
-            :key="index"
-            href="#"
-            class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-white/30 transition-all duration-300 transform hover:scale-110 border border-white/30"
-            :class="social.hover"
-          >
-            <svg
-              class="w-6 h-6 text-white"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path :d="social.path" />
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Bottom Section -->
-      <div class="text-center">
-        <div
-          class="inline-block p-6 rounded-2xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl"
-        >
-          <p class="text-white/90 mb-4">
-            © 2024 Company. Diseñando el futuro digital con tecnología de
-            vanguardia.
-          </p>
-          <div
-            class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-white/70"
-          >
-            <a href="#" class="hover:text-white transition-colors"
-              >Política de Privacidad</a
-            >
-            <span class="hidden sm:block">•</span>
-            <a href="#" class="hover:text-white transition-colors"
-              >Términos de Servicio</a
-            >
-            <span class="hidden sm:block">•</span>
-            <a href="#" class="hover:text-white transition-colors">Cookies</a>
-            <span class="hidden sm:block">•</span>
-            <a href="#" class="hover:text-white transition-colors">Sitemap</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Code button -->
+  <div class="relative">
+    <!-- Botón de código -->
     <button
       @click="showCode"
-      class="absolute top-4 right-4 z-20 w-8 h-8 bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full flex items-center justify-center cursor-pointer transition-all border border-white/30"
+      class="absolute top-4 right-4 z-50 w-10 h-10 bg-blue-600/90 hover:bg-blue-500 rounded-lg flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-200 backdrop-blur-sm shadow-lg border border-blue-400/30 cursor-pointer"
       title="Ver código del componente"
       aria-label="Ver código del componente"
     >
       <svg
-        class="w-4 h-4 text-white pointer-events-none"
+        class="w-5 h-5 text-white pointer-events-none"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -306,24 +22,332 @@
       </svg>
     </button>
 
-    <!-- Code Modal -->
-    <CodeModal
-      ref="codeModal"
-      cardType="Footer"
-      cardVariant="Glassmorphism con efectos especiales"
-      :codeContent="cardCode"
-    />
-  </footer>
+    <footer
+      class="relative min-h-[600px] overflow-hidden"
+      style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+    >
+      <!-- Animated Background -->
+      <div class="absolute inset-0">
+        <!-- Floating Particles -->
+        <div
+          v-for="(particle, index) in particles"
+          :key="index"
+          class="absolute rounded-full opacity-20"
+          :class="[particle.color, particle.animation]"
+          :style="{
+            width: particle.size + 'px',
+            height: particle.size + 'px',
+            left: particle.x + '%',
+            top: particle.y + '%',
+            animationDelay: particle.delay + 's',
+            animationDuration: particle.duration + 's',
+          }"
+        ></div>
+
+        <!-- Mesh Gradient Overlay -->
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/30 to-pink-900/20"
+        ></div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <!-- Top Section - Company Info with Glass Effect -->
+        <div class="text-center mb-16">
+          <div
+            class="inline-block p-8 rounded-3xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-2xl"
+          >
+            <div class="flex justify-center items-center space-x-4 mb-6">
+              <div
+                class="w-16 h-16 bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30"
+              >
+                <svg
+                  class="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <h2 class="text-5xl font-bold text-white drop-shadow-lg">
+                Company
+              </h2>
+            </div>
+            <p class="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+              Pioneros en el desarrollo de experiencias digitales inmersivas que
+              conectan el presente con el futuro de la tecnología.
+            </p>
+          </div>
+        </div>
+
+        <!-- Glass Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <!-- Services Card -->
+          <div
+            class="p-6 rounded-2xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-2"
+          >
+            <div class="flex items-center space-x-3 mb-4">
+              <div
+                class="w-10 h-10 bg-gradient-to-r from-blue-400/30 to-cyan-400/30 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-white">Servicios</h3>
+            </div>
+            <ul class="space-y-2 text-white/80">
+              <li class="flex items-center space-x-2">
+                <div class="w-1.5 h-1.5 bg-white/60 rounded-full"></div>
+                <span>Desarrollo Web Full-Stack</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <div class="w-1.5 h-1.5 bg-white/60 rounded-full"></div>
+                <span>Aplicaciones Móviles</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <div class="w-1.5 h-1.5 bg-white/60 rounded-full"></div>
+                <span>UI/UX Design</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <div class="w-1.5 h-1.5 bg-white/60 rounded-full"></div>
+                <span>Consultoría Tecnológica</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Card -->
+          <div
+            class="p-6 rounded-2xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-2"
+          >
+            <div class="flex items-center space-x-3 mb-4">
+              <div
+                class="w-10 h-10 bg-gradient-to-r from-green-400/30 to-emerald-400/30 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-white">Contacto</h3>
+            </div>
+            <div class="space-y-3 text-white/80">
+              <div class="flex items-center space-x-3">
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                <span class="text-sm">hola@company.com</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                <span class="text-sm">+34 123 456 789</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <span class="text-sm">Madrid, España</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Newsletter Card -->
+          <div
+            class="p-6 rounded-2xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl hover:bg-white/15 transition-all duration-300 transform hover:-translate-y-2"
+          >
+            <div class="flex items-center space-x-3 mb-4">
+              <div
+                class="w-10 h-10 bg-gradient-to-r from-purple-400/30 to-pink-400/30 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 17h5l-5 5v-5zM4 19h1a3 3 0 003-3V8a3 3 0 00-3-3H4a1 1 0 00-1 1v12a1 1 0 001 1z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-white">Newsletter</h3>
+            </div>
+            <p class="text-white/80 text-sm mb-4">
+              Mantente al día con las últimas tendencias tecnológicas.
+            </p>
+            <div class="space-y-3">
+              <input
+                type="email"
+                placeholder="tu@email.com"
+                class="w-full px-4 py-2 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
+              />
+              <button
+                class="w-full px-4 py-2 bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-sm border border-white/30 rounded-lg text-white hover:from-white/30 hover:to-white/20 transition-all duration-300"
+              >
+                Suscribirse
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Media with Glass Effect -->
+        <div class="text-center mb-8">
+          <div
+            class="inline-flex space-x-4 p-4 rounded-2xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl"
+          >
+            <a
+              v-for="(social, index) in socialLinks"
+              :key="index"
+              href="#"
+              class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-white/30 transition-all duration-300 transform hover:scale-110 border border-white/30"
+              :class="social.hover"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path :d="social.path" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="text-center">
+          <div
+            class="inline-block p-6 rounded-2xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl"
+          >
+            <p class="text-white/90 mb-4">
+              © 2024 Company. Diseñando el futuro digital con tecnología de
+              vanguardia.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-white/70"
+            >
+              <a href="#" class="hover:text-white transition-colors"
+                >Política de Privacidad</a
+              >
+              <span class="hidden sm:block">•</span>
+              <a href="#" class="hover:text-white transition-colors"
+                >Términos de Servicio</a
+              >
+              <span class="hidden sm:block">•</span>
+              <a href="#" class="hover:text-white transition-colors">Cookies</a>
+              <span class="hidden sm:block">•</span>
+              <a href="#" class="hover:text-white transition-colors">Sitemap</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Code button -->
+      <button
+        @click="showCode"
+        class="absolute top-4 right-4 z-20 w-8 h-8 bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full flex items-center justify-center cursor-pointer transition-all border border-white/30"
+        title="Ver código del componente"
+        aria-label="Ver código del componente"
+      >
+        <svg
+          class="w-4 h-4 text-white pointer-events-none"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+          />
+        </svg>
+      </button>
+
+      <!-- Code Modal -->
+      <CodeModal
+        ref="codeModal"
+        cardType="Footer"
+        cardVariant="Glassmorphism con efectos especiales"
+        :codeContent="cardCode"
+      />
+    </footer>
+  </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue";
 import CodeModal from "../CodeModal.vue";
-import { headCodes } from "../../data/headCodes.js";
+import Footer6Code from "../../data/codes/headfoot/footers/Footer6.js";
 
 // Modal setup
 const codeModal = ref(null);
-const cardCode = headCodes.Footer6;
+const cardCode = Footer6Code;
 
 // Floating particles data
 const particles = ref([]);
