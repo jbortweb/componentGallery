@@ -1,32 +1,10 @@
-<template>
-  <div class="relative group w-full perspective-1000">
-    <!-- Code button -->
-    <button
-      @click="showCode"
-      class="absolute top-4 right-4 z-30 w-10 h-10 bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-300 shadow-lg border border-white/30 cursor-pointer"
-      title="Ver código del componente"
-      aria-label="Ver código del componente"
-    >
-      <svg
-        class="w-5 h-5 text-pink-500"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        />
-      </svg>
-    </button>
-
+export const ProfileCard1 = `<template>
+  <div class="relative group w-96 perspective-1000">
     <!-- Tarjeta Glassmorphism -->
     <div
       class="relative bg-gradient-to-br from-purple-400/20 via-pink-400/20 to-blue-400/20 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:rotate-1 group-hover:shadow-purple-500/25"
     >
-      <!-- Animated background blobs -->
+      <!-- Elementos de fondo animados -->
       <div class="absolute inset-0 overflow-hidden rounded-3xl">
         <div
           class="absolute -top-10 -left-10 w-32 h-32 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-20 animate-blob"
@@ -39,21 +17,21 @@
         ></div>
       </div>
 
-      <!-- Content -->
+      <!-- Contenido -->
       <div class="relative z-10">
-        <!-- Floating Avatar -->
+        <!-- Avatar flotante -->
         <div class="flex justify-center mb-6">
           <div class="relative">
             <div
               class="w-24 h-24 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-1 group-hover:scale-110 transition-transform duration-300"
             >
               <img
-                src="/mia.webp"
+                src="../assets/logo.svg"
                 alt="Ana García"
                 class="w-full h-full rounded-full object-cover border-4 border-white/50"
               />
             </div>
-            <!-- Status indicator -->
+            <!-- Indicador de estado -->
             <div
               class="absolute -bottom-1 -right-1 w-8 h-8 bg-green-400 rounded-full border-4 border-white/50 flex items-center justify-center animate-pulse"
             >
@@ -62,7 +40,7 @@
           </div>
         </div>
 
-        <!-- Info Section -->
+        <!-- Sección de información -->
         <div class="text-center mb-6">
           <h3 class="text-2xl font-bold text-pink-500 mb-2 animate-fade-in-up">
             Ana García
@@ -79,7 +57,7 @@
           </p>
         </div>
 
-        <!-- Bio with typing effect -->
+        <!-- Biografía con efecto de escritura -->
         <div class="mb-6 animate-fade-in-up animation-delay-600">
           <p
             class="text-pink-500/80 text-sm text-center leading-relaxed line-clamp-3"
@@ -89,7 +67,7 @@
           </p>
         </div>
 
-        <!-- Floating Skills -->
+        <!-- Habilidades flotantes -->
         <div class="mb-6 animate-fade-in-up animation-delay-800">
           <div class="flex flex-wrap justify-center gap-2">
             <span
@@ -119,7 +97,7 @@
           </div>
         </div>
 
-        <!-- Social Links with hover effects -->
+        <!-- Enlaces sociales con efectos hover -->
         <div
           class="flex justify-center space-x-4 mb-6 animate-fade-in-up animation-delay-1000"
         >
@@ -170,7 +148,7 @@
           </a>
         </div>
 
-        <!-- Glowing Connect Button -->
+        <!-- Botón de conexión con brillo -->
         <div class="animate-fade-in-up animation-delay-1200">
           <button
             class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-pink-500 py-3 px-6 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 relative overflow-hidden group/btn"
@@ -183,39 +161,16 @@
         </div>
       </div>
     </div>
-
-    <!-- Code Modal -->
-    <CodeModal
-      ref="codeModal"
-      cardType="Profile Card"
-      cardVariant="Glassmorphism Style"
-      :codeContent="cardCode"
-    />
   </div>
 </template>
 
-<script setup>
-import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ProfileCard1 } from "../../data/codes/cards/profiles/ProfileCard1.js";
-
-// Configuración del modal
-const codeModal = ref(null);
-const cardCode = ProfileCard1;
-
-const showCode = () => {
-  if (codeModal.value) {
-    codeModal.value.openModal();
-  }
-};
+<script>
+export default {
+  name: 'ProfileCard1',
+}
 </script>
 
 <style scoped>
-.perspective-1000 {
-  perspective: 1000px;
-}
-
-/* Animaciones personalizadas */
 @keyframes blob {
   0% {
     transform: translate(0px, 0px) scale(1);
@@ -243,7 +198,7 @@ const showCode = () => {
 @keyframes fade-in-up {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -309,4 +264,4 @@ const showCode = () => {
 .animation-delay-4000 {
   animation-delay: 4000ms;
 }
-</style>
+</style>`;

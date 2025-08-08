@@ -1,6 +1,6 @@
-<template>
+export const ArticleCard4 = `<template>
   <div
-    class="article-card-4 group relative bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 rounded-2xl shadow-lg border border-emerald-200/50 overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
+    class="article-card-4 group relative bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 rounded-2xl shadow-lg border border-emerald-200/50 overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1 w-96 mx-auto"
   >
     <!-- Nature-inspired background elements -->
     <div
@@ -9,28 +9,6 @@
     <div
       class="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-tr from-cyan-200/20 to-emerald-200/20 rounded-full blur-2xl group-hover:scale-110 transition-transform duration-500 delay-100"
     ></div>
-
-    <!-- Code button -->
-    <button
-      @click="showCode"
-      class="absolute top-4 right-4 bg-emerald-600 hover:bg-emerald-500 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg z-10 cursor-pointer"
-      aria-label="Ver código del componente ArticleCard4"
-      title="Ver código del componente"
-    >
-      <svg
-        class="w-4 h-4"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        ></path>
-      </svg>
-    </button>
 
     <!-- Article image with nature effect -->
     <div class="relative mb-6">
@@ -79,7 +57,9 @@
             </span>
           </div>
         </div>
-        <div class="text-xs text-emerald-600 font-medium">15 min</div>
+        <div class="text-xs text-emerald-600 font-medium">
+          15 min
+        </div>
       </div>
 
       <!-- Title with organic typography -->
@@ -103,7 +83,9 @@
             AR
           </div>
           <div>
-            <p class="text-sm font-medium text-gray-800">AI Research</p>
+            <p class="text-sm font-medium text-gray-800">
+              AI Research
+            </p>
             <p class="text-xs text-gray-500">4 Ene 2024</p>
           </div>
         </div>
@@ -145,16 +127,12 @@
       <div class="mt-6 flex justify-between items-center">
         <a
           href="#"
-          target="_blank"
-          rel="noopener noreferrer"
           class="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer"
         >
           Leer más
         </a>
         <a
           href="#"
-          target="_blank"
-          rel="noopener noreferrer"
           class="text-emerald-600 hover:text-emerald-700 text-sm font-medium transition-colors duration-300 cursor-pointer"
         >
           Ver más artículos
@@ -167,30 +145,13 @@
       class="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 group-hover:w-full transition-all duration-700 ease-out rounded-full"
     ></div>
 
-    <!-- Code Modal -->
-    <CodeModal
-      ref="codeModal"
-      cardType="Article Card"
-      cardVariant="Natural Reading Style"
-      :codeContent="cardCode"
-    />
   </div>
 </template>
 
-<script setup>
-import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ArticleCard4 } from "../../data/codes/cards/articles/ArticleCard4.js";
-
-// Configuración del modal
-const codeModal = ref(null);
-const cardCode = ArticleCard4;
-
-const showCode = () => {
-  if (codeModal.value) {
-    codeModal.value.openModal();
-  }
-};
+<script>
+export default {
+  name: 'ArticleCard4'
+}
 </script>
 
 <style scoped>
@@ -204,4 +165,4 @@ const showCode = () => {
 .leaf {
   border-radius: 50% 0 50% 50%;
 }
-</style>
+</style>`;

@@ -1,51 +1,29 @@
-<template>
-  <div class="relative group w-full">
-    <!-- Code button -->
-    <button
-      @click="showCode"
-      class="absolute top-4 right-4 z-30 w-10 h-10 bg-gray-300 hover:bg-gray-200 rounded-full flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-300 shadow-neumorphism-inset cursor-pointer"
-      title="Ver código del componente"
-      aria-label="Ver código del componente"
-    >
-      <svg
-        class="w-5 h-5 text-gray-600"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        />
-      </svg>
-    </button>
-
+export const ProfileCard2 = `<template>
+  <div class="relative group w-96">
     <!-- Tarjeta Neumorfismo -->
     <div
       class="bg-gray-300 rounded-3xl p-8 shadow-neumorphism hover:shadow-neumorphism-hover transition-all duration-500 transform hover:scale-102 relative overflow-hidden"
     >
-      <!-- Subtle gradient overlay -->
+      <!-- Superposición de gradiente sutil -->
       <div
         class="absolute inset-0 bg-gradient-to-br from-white/5 to-gray-400/5 rounded-3xl"
       ></div>
 
-      <!-- Content -->
+      <!-- Contenido -->
       <div class="relative z-10">
-        <!-- Avatar with 3D effect -->
+        <!-- Avatar con efecto 3D -->
         <div class="flex justify-center mb-6">
           <div class="relative group/avatar">
             <div
               class="w-24 h-24 rounded-full shadow-neumorphism-inset bg-gray-300 p-2 transform transition-all duration-300 group-hover/avatar:shadow-neumorphism-inset-hover"
             >
               <img
-                src="/mia.webp"
+                src="../assets/logo.svg"
                 alt="Carlos Mendoza"
                 class="w-full h-full rounded-full object-cover shadow-inner"
               />
             </div>
-            <!-- 3D floating status -->
+            <!-- Estado flotante 3D -->
             <div
               class="absolute -bottom-2 -right-2 w-8 h-8 bg-green-400 rounded-full shadow-neumorphism flex items-center justify-center transform hover:scale-110 transition-all duration-300"
             >
@@ -56,7 +34,7 @@
           </div>
         </div>
 
-        <!-- Info with depth -->
+        <!-- Información con profundidad -->
         <div class="text-center mb-6">
           <h3 class="text-2xl font-bold text-gray-800 mb-2 tracking-wide">
             Carlos Mendoza
@@ -69,7 +47,7 @@
           <p class="text-gray-500 text-sm font-medium">@ Design Studio</p>
         </div>
 
-        <!-- Bio in recessed area -->
+        <!-- Biografía en área empotrada -->
         <div class="mb-6">
           <div class="bg-gray-300 rounded-2xl p-4 shadow-neumorphism-inset">
             <p
@@ -81,7 +59,7 @@
           </div>
         </div>
 
-        <!-- 3D Skills -->
+        <!-- Habilidades 3D -->
         <div class="mb-6">
           <div class="grid grid-cols-2 gap-3">
             <div
@@ -111,7 +89,7 @@
           </div>
         </div>
 
-        <!-- 3D Social buttons -->
+        <!-- Botones sociales 3D -->
         <div class="flex justify-center space-x-4 mb-6">
           <a
             href="https://www.linkedin.com/in/jordi-bort/"
@@ -145,7 +123,7 @@
           </a>
         </div>
 
-        <!-- 3D Connect Button -->
+        <!-- Botón de conexión 3D -->
         <button
           class="w-full bg-gray-300 text-gray-700 py-4 px-6 rounded-2xl font-bold shadow-neumorphism hover:shadow-neumorphism-hover active:shadow-neumorphism-pressed transition-all duration-200 transform hover:-translate-y-1 relative overflow-hidden group/btn"
         >
@@ -156,34 +134,17 @@
         </button>
       </div>
     </div>
-
-    <!-- Code Modal -->
-    <CodeModal
-      ref="codeModal"
-      cardType="Profile Card"
-      cardVariant="Neumorphism Style"
-      :codeContent="cardCode"
-    />
   </div>
 </template>
 
-<script setup>
-import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ProfileCard2 } from "../../data/codes/cards/profiles/ProfileCard2.js";
-
-const codeModal = ref(null);
-const cardCode = ProfileCard2;
-
-const showCode = () => {
-  if (codeModal.value) {
-    codeModal.value.openModal();
-  }
-};
+<script>
+export default {
+  name: 'ProfileCard2',
+}
 </script>
 
 <style scoped>
-/* Neumorphism shadows */
+/* Sombras de neumorfismo */
 .shadow-neumorphism {
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
 }
@@ -221,7 +182,7 @@ const showCode = () => {
   opacity: 0;
 }
 
-.hover\:scale-102:hover {
+.hover\\:scale-102:hover {
   transform: scale(1.02);
 }
-</style>
+</style>`;

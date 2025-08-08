@@ -1,28 +1,8 @@
-<template>
+export const ProductCard3 = `<template>
   <div
     class="bg-gray-900 rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 w-full max-w-sm mx-auto border border-gray-700 relative group"
   >
-    <!-- Code button -->
-    <button
-      @click="showCode"
-      class="absolute top-4 right-4 bg-white/20 text-white p-3 rounded-lg transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-white/20 z-10 cursor-pointer"
-      aria-label="Ver código del componente ProductCard3"
-      title="Ver código del componente"
-    >
-      <svg
-        class="w-4 h-4"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        ></path>
-      </svg>
-    </button>
+   
 
     <div class="p-6">
       <div class="flex items-center justify-between mb-4">
@@ -84,30 +64,12 @@
         </button>
       </div>
     </div>
-
-    <!-- Code Modal -->
-    <CodeModal
-      ref="codeModal"
-      cardType="Product Card"
-      cardVariant="Dark Modern Style"
-      :codeContent="cardCode"
-    />
   </div>
 </template>
 
-<script setup>
-import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ProductCard3 } from "../../data/codes/cards/products/ProductCard3.js";
-
-// Datos integrados de AirPods Pro
-
-const codeModal = ref(null);
-const cardCode = ProductCard3;
-
-const showCode = () => {
-  if (codeModal.value) {
-    codeModal.value.openModal();
-  }
-};
+<script>
+export default {
+  name: 'ProductCard3'
+}
 </script>
+`;

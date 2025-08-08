@@ -1,6 +1,6 @@
-<template>
+export const ProductCard4 = `<template>
   <div
-    class="product-card-4 group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-900/80 via-blue-900/80 to-indigo-900/80 backdrop-blur-sm border border-purple-500/20 p-6 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/25 hover:border-purple-400/40"
+    class="product-card-4 group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-900/80 via-blue-900/80 to-indigo-900/80 backdrop-blur-sm border border-purple-500/20 p-6 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/25 hover:border-purple-400/40 w-96"
   >
     <!-- Animated background pattern -->
     <div class="absolute inset-0 opacity-10">
@@ -24,29 +24,6 @@
         style="animation-delay: 2s"
       ></div>
     </div>
-
-    <!-- Code button -->
-    <button
-      @click="showCode"
-      class="absolute top-4 right-4 bg-purple-600/80 hover:bg-purple-500 text-white p-3 rounded-lg transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-purple-400/30 z-50 cursor-pointer"
-      aria-label="Ver código del componente ProductCard4"
-      title="Ver código del componente"
-    >
-      <svg
-        class="w-4 h-4"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        ></path>
-      </svg>
-    </button>
-
     <!-- Product image with smooth hover effect -->
     <div class="relative mb-6">
       <img
@@ -98,32 +75,13 @@
         </button>
       </div>
     </div>
-
-    <!-- Code Modal -->
-    <CodeModal
-      ref="codeModal"
-      cardType="Product Card"
-      cardVariant="Holographic Purple Style"
-      :codeContent="cardCode"
-    />
   </div>
 </template>
 
-<script setup>
-import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ProductCard4 } from "../../data/codes/cards/products/ProductCard4.js";
-
-// Datos integrados del Samsung Galaxy S24 Ultra
-
-const codeModal = ref(null);
-const cardCode = ProductCard4;
-
-const showCode = () => {
-  if (codeModal.value) {
-    codeModal.value.openModal();
-  }
-};
+<script>
+export default {
+  name: 'ProductCard4'
+}
 </script>
 
 <style scoped>
@@ -140,4 +98,4 @@ const showCode = () => {
 .particle {
   animation: float 3s ease-in-out infinite;
 }
-</style>
+</style>`;

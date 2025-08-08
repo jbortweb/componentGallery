@@ -1,29 +1,7 @@
-<template>
+export const ProductCard2 = `<template>
   <div
     class="bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:scale-105 w-full max-w-sm mx-auto border border-gray-100 relative group"
   >
-    <!-- Code button -->
-    <button
-      @click="showCode"
-      class="absolute top-3 right-3 z-30 w-10 h-10 bg-orange-600/90 hover:bg-orange-500 rounded-lg flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-200 backdrop-blur-sm shadow-lg border border-orange-400/30 cursor-pointer"
-      title="Ver código del componente"
-      aria-label="Ver código del componente"
-    >
-      <svg
-        class="w-5 h-5 text-white"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        />
-      </svg>
-    </button>
-
     <div class="relative">
       <div
         class="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-red-500/20 z-10"
@@ -66,7 +44,9 @@
             :key="star"
             class="w-5 h-5"
             :class="
-              star <= Math.floor(4.9) ? 'text-orange-400' : 'text-gray-200'
+              star <= Math.floor(4.9)
+                ? 'text-orange-400'
+                : 'text-gray-200'
             "
             fill="currentColor"
             viewBox="0 0 20 20"
@@ -76,7 +56,9 @@
             />
           </svg>
         </div>
-        <span class="text-sm font-semibold text-gray-700">4.9 (892)</span>
+        <span class="text-sm font-semibold text-gray-700"
+          >4.9 (892)</span
+        >
       </div>
 
       <p class="text-gray-600 mb-6 leading-relaxed">
@@ -108,30 +90,12 @@
         </button>
       </div>
     </div>
-
-    <!-- Code Modal -->
-    <CodeModal
-      ref="codeModal"
-      cardType="Product Card"
-      cardVariant="Orange Style"
-      :codeContent="cardCode"
-    />
   </div>
 </template>
 
-<script setup>
-import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ProductCard2 } from "../../data/codes/cards/products/ProductCard2.js";
-
-// Datos integrados del MacBook Air M2
-
-const codeModal = ref(null);
-const cardCode = ProductCard2;
-
-const showCode = () => {
-  if (codeModal.value) {
-    codeModal.value.openModal();
-  }
-};
+<script>
+export default {
+  name: 'ProductCard2'
+}
 </script>
+`;

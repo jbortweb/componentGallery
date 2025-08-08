@@ -1,33 +1,11 @@
-<template>
+export const ProductCard5 = `<template>
   <div
-    class="product-card-5 group relative bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+    class="product-card-5 group relative bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 w-96"
   >
     <!-- Minimalist top accent -->
     <div
       class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900"
     ></div>
-
-    <!-- Code button -->
-    <button
-      @click="showCode"
-      class="absolute top-4 right-4 bg-gray-900 hover:bg-gray-700 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 z-10 shadow-lg cursor-pointer"
-      aria-label="Ver código del componente ProductCard5"
-      title="Ver código del componente"
-    >
-      <svg
-        class="w-4 h-4"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        ></path>
-      </svg>
-    </button>
 
     <!-- Clean product image -->
     <div class="p-6 pb-4">
@@ -50,7 +28,8 @@
     <div class="px-6 pb-6 space-y-4">
       <!-- Category and rating -->
       <div class="flex items-center justify-between">
-        <span class="text-xs font-medium text-gray-500 uppercase tracking-wider"
+        <span
+          class="text-xs font-medium text-gray-500 uppercase tracking-wider"
           >Audio</span
         >
         <div class="flex items-center space-x-1">
@@ -106,32 +85,13 @@
     <div
       class="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-500 ease-out"
     ></div>
-
-    <!-- Code Modal -->
-    <CodeModal
-      ref="codeModal"
-      cardType="Product Card"
-      cardVariant="Minimalist Clean Style"
-      :codeContent="cardCode"
-    />
   </div>
 </template>
 
-<script setup>
-import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ProductCard5 } from "../../data/codes/cards/products/ProductCard5.js";
-
-// Datos integrados del Sony WH-1000XM5
-
-const codeModal = ref(null);
-const cardCode = ProductCard5;
-
-const showCode = () => {
-  if (codeModal.value) {
-    codeModal.value.openModal();
-  }
-};
+<script>
+export default {
+  name: 'ProductCard5'
+}
 </script>
 
 <style scoped>
@@ -141,4 +101,4 @@ const showCode = () => {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-</style>
+</style>`;

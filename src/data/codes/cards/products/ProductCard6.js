@@ -1,6 +1,6 @@
-<template>
+export const ProductCard6 = `<template>
   <div
-    class="product-card-6 group relative bg-black rounded-2xl overflow-hidden border border-cyan-500/30 transition-all duration-500 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/20"
+    class="product-card-6 group relative bg-black rounded-2xl overflow-hidden border border-cyan-500/30 transition-all duration-500 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/20 w-96"
   >
     <!-- Neon grid background -->
     <div class="absolute inset-0 opacity-10">
@@ -9,7 +9,7 @@
           v-for="i in 64"
           :key="i"
           class="border border-cyan-500/20 animate-pulse"
-          :style="`animation-delay: ${i * 0.1}s`"
+          :style="{ animationDelay: (i * 0.1) + 's' }"
         ></div>
       </div>
     </div>
@@ -20,28 +20,6 @@
         class="scan-line absolute w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scan"
       ></div>
     </div>
-
-    <!-- Code button -->
-    <button
-      @click="showCode"
-      class="absolute top-4 right-4 bg-cyan-600 hover:bg-cyan-500 text-white p-3 rounded-lg transition-all duration-300 hover:scale-110 border border-cyan-400/50 z-50 shadow-lg shadow-cyan-500/50 cursor-pointer"
-      aria-label="Ver código del componente ProductCard6"
-      title="Ver código del componente"
-    >
-      <svg
-        class="w-4 h-4"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        ></path>
-      </svg>
-    </button>
 
     <div class="relative z-10 p-6">
       <!-- Neon product image -->
@@ -141,32 +119,13 @@
         mask-composite: xor;
       "
     ></div>
-
-    <!-- Code Modal -->
-    <CodeModal
-      ref="codeModal"
-      cardType="Product Card"
-      cardVariant="Cyberpunk Neon Style"
-      :codeContent="cardCode"
-    />
   </div>
 </template>
 
-<script setup>
-import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ProductCard6 } from "../../data/codes/cards/products/ProductCard6.js";
-
-// Datos integrados del iPad Pro 12.9
-
-const codeModal = ref(null);
-const cardCode = ProductCard6;
-
-const showCode = () => {
-  if (codeModal.value) {
-    codeModal.value.openModal();
-  }
-};
+<script>
+export default {
+  name: 'ProductCard6'
+}
 </script>
 
 <style scoped>
@@ -188,7 +147,7 @@ const showCode = () => {
     0 0 15px currentColor;
 }
 
-/* Animación de cuadrícula cyberpunk */
+/* Cyberpunk grid animation */
 .grid div:nth-child(odd) {
   animation-duration: 2s;
 }
@@ -196,4 +155,4 @@ const showCode = () => {
 .grid div:nth-child(even) {
   animation-duration: 3s;
 }
-</style>
+</style>`;

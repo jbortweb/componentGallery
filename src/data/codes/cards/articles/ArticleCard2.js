@@ -1,29 +1,7 @@
-<template>
+export const ArticleCard2 = `<template>
   <div
-    class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 w-full max-w-sm mx-auto border border-orange-100 relative group"
+    class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 w-96 mx-auto border border-orange-100 relative group"
   >
-    <!-- Code button -->
-    <button
-      @click="showCode"
-      class="absolute top-4 right-4 z-30 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-300 shadow-lg border border-orange-200 cursor-pointer"
-      title="Ver código del componente"
-      aria-label="Ver código del componente"
-    >
-      <svg
-        class="w-5 h-5 text-gray-700 pointer-events-none"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        />
-      </svg>
-    </button>
-
     <div class="p-6">
       <!-- Header con diseño magazine -->
       <div class="flex items-center justify-between mb-4">
@@ -31,10 +9,12 @@
           <div
             class="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center"
           >
-            <span class="text-white text-xs font-bold">DW</span>
+            <span class="text-white text-xs font-bold">{{
+              author.charAt(0)
+            }}</span>
           </div>
           <div>
-            <p class="text-sm font-bold text-gray-900">Design Weekly</p>
+            <p class="text-sm font-bold text-gray-900">{{ author }}</p>
             <p class="text-xs text-orange-600">12 Ene 2024</p>
           </div>
         </div>
@@ -138,28 +118,11 @@
         </a>
       </div>
     </div>
-
-    <!-- Code Modal -->
-    <CodeModal
-      ref="codeModal"
-      cardType="Article Card"
-      cardVariant="Magazine Style"
-      :codeContent="cardCode"
-    />
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ArticleCard2 } from "../../data/codes/cards/articles/ArticleCard2.js";
-
-const codeModal = ref(null);
-const cardCode = ArticleCard2;
-
-const showCode = () => {
-  if (codeModal.value) {
-    codeModal.value.openModal();
-  }
-};
+const author = "Jbortweb";
 </script>
+
+`;

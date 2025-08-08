@@ -1,6 +1,6 @@
-<template>
+export const ProfileCard4 = `<template>
   <div
-    class="profile-card-4 group relative bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-6 border border-orange-200/50 shadow-lg hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 overflow-hidden"
+    class="profile-card-4 group relative bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-6 border border-orange-200/50 shadow-lg hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 overflow-hidden w-96"
   >
     <!-- Warm background elements -->
     <div
@@ -9,29 +9,6 @@
     <div
       class="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-tr from-yellow-400/20 to-orange-400/20 rounded-full blur-xl group-hover:scale-125 transition-transform duration-500 delay-100"
     ></div>
-
-    <!-- Code button -->
-    <button
-      @click="showCode"
-      class="absolute top-4 right-4 bg-orange-600 hover:bg-orange-500 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg z-10 cursor-pointer"
-      aria-label="Ver código del componente ProfileCard4"
-      title="Ver código del componente"
-    >
-      <svg
-        class="w-4 h-4"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        ></path>
-      </svg>
-    </button>
-
     <!-- Profile section with warm colors -->
     <div class="relative z-10 text-center mb-6">
       <div class="relative inline-block">
@@ -41,7 +18,7 @@
             class="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-400 rounded-full opacity-50 blur-lg group-hover:opacity-70 transition-opacity duration-300"
           ></div>
           <img
-            src="/mia.webp"
+            src="../assets/logo.svg"
             alt="David Rodriguez"
             class="relative w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300"
           />
@@ -148,28 +125,11 @@
     <div
       class="absolute bottom-20 left-8 w-2 h-2 bg-red-300 rounded-full opacity-60 group-hover:opacity-90 group-hover:scale-150 transition-all duration-500 delay-300"
     ></div>
-
-    <!-- Code Modal -->
-    <CodeModal
-      ref="codeModal"
-      cardType="Profile Card"
-      cardVariant="Warm Geometric Style"
-      :codeContent="cardCode"
-    />
   </div>
 </template>
 
-<script setup>
-import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ProfileCard4 } from "../../data/codes/cards/profiles/ProfileCard4.js";
-
-const codeModal = ref(null);
-const cardCode = ProfileCard4;
-
-const showCode = () => {
-  if (codeModal.value) {
-    codeModal.value.openModal();
-  }
-};
-</script>
+<script>
+export default {
+  name: 'ProfileCard4',
+}
+</script>`;

@@ -1,6 +1,6 @@
-<template>
+export const ArticleCard6 = `<template>
   <div
-    class="article-card-6 group relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-2xl border border-purple-500/30 shadow-2xl overflow-hidden transition-all duration-500 hover:shadow-purple-500/25 hover:border-purple-400/50"
+    class="article-card-6 group relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-2xl border border-purple-500/30 shadow-2xl overflow-hidden transition-all duration-500 hover:shadow-purple-500/25 hover:border-purple-400/50 w-96 mx-auto"
   >
     <!-- Futuristic grid overlay -->
     <div class="absolute inset-0 opacity-10">
@@ -9,7 +9,7 @@
           v-for="i in 36"
           :key="i"
           class="border border-purple-400/20 animate-pulse"
-          :style="`animation-delay: ${i * 0.1}s`"
+          :style="{ 'animation-delay': (i * 0.1) + 's' }"
         ></div>
       </div>
     </div>
@@ -19,27 +19,6 @@
       class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent animate-pulse"
     ></div>
 
-    <!-- Code button -->
-    <button
-      @click="showCode"
-      class="absolute top-4 right-4 bg-purple-600/80 hover:bg-purple-500 text-white p-3 rounded-lg transition-all duration-300 hover:scale-110 border border-purple-400/50 z-60 shadow-lg cursor-pointer"
-      aria-label="Ver código del componente ArticleCard6"
-      title="Ver código del componente"
-    >
-      <svg
-        class="w-4 h-4 pointer-events-none"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        ></path>
-      </svg>
-    </button>
 
     <div class="relative z-10 p-6">
       <!-- Futuristic header -->
@@ -95,19 +74,14 @@
           <span class="text-purple-400 text-xs font-mono">Tags:</span>
           <div class="flex space-x-2">
             <span
-              class="px-2 py-1 bg-red-50 text-red-600 text-xs font-medium rounded border border-red-200"
+              class="px-2 py-1 bg-purple-900/50 text-purple-300 group-hover:text-white text-xs font-mono border border-purple-500/30 rounded hover:border-purple-400/50 transition-colors duration-300"
             >
-              Security
+              #security
             </span>
             <span
-              class="px-2 py-1 bg-red-50 text-red-600 text-xs font-medium rounded border border-red-200"
+              class="px-2 py-1 bg-purple-900/50 text-purple-300 group-hover:text-white text-xs font-mono border border-purple-500/30 rounded hover:border-purple-400/50 transition-colors duration-300"
             >
-              Web Development
-            </span>
-            <span
-              class="px-2 py-1 bg-red-50 text-red-600 text-xs font-medium rounded border border-red-200"
-            >
-              Best Practices
+              #web_development
             </span>
           </div>
         </div>
@@ -138,22 +112,55 @@
           </p>
         </div>
 
-        <!-- Holographic action interface -->
+        <!-- Author and stats in terminal style -->
         <div
-          class="mt-6 flex justify-between items-center border-t border-purple-800/50 pt-4"
+          class="flex items-center justify-between pt-4 border-t border-purple-500/30"
         >
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-10 h-10 bg-gradient-to-br from-purple-600 to-cyan-600 rounded border border-purple-400/50 flex items-center justify-center text-white font-mono font-bold text-xs shadow-lg"
+            >
+              SC
+            </div>
+            <div>
+              <p
+                class="text-purple-300 group-hover:text-white font-mono text-sm"
+              >
+                Security Central
+              </p>
+              <p class="text-gray-400 group-hover:text-white text-xs font-mono">
+                2 Ene 2024
+              </p>
+            </div>
+          </div>
+
+          <!-- Digital metrics -->
+          <div class="flex items-center space-x-4 text-xs font-mono">
+            <div
+              class="flex items-center space-x-1 text-purple-400 group-hover:text-white transition-colors duration-300"
+            >
+              <span class="glow-text">♥</span>
+              <span>423</span>
+            </div>
+            <div
+              class="flex items-center space-x-1 text-purple-400 group-hover:text-white transition-colors duration-300"
+            >
+              <span class="glow-text">◊</span>
+              <span>89</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Holographic action interface -->
+        <div class="mt-6 flex justify-between items-center border-t border-purple-800/50 pt-4">
           <a
             href="#"
-            target="_blank"
-            rel="noopener noreferrer"
             class="relative bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-white px-6 py-2 rounded-lg font-mono text-sm transition-all duration-300 shadow-lg hover:shadow-purple-500/25 glow-text cursor-pointer"
           >
             [LEER_MÁS]
           </a>
           <a
             href="#"
-            target="_blank"
-            rel="noopener noreferrer"
             class="text-purple-400 hover:text-white font-mono text-xs transition-colors duration-300 glow-text cursor-pointer"
           >
             >_ EXPLORAR
@@ -170,35 +177,17 @@
         mask-composite: xor;
       "
     ></div>
-
-    <!-- Code Modal -->
-    <CodeModal
-      ref="codeModal"
-      cardType="Article Card"
-      cardVariant="Futuristic Hologram Style"
-      :codeContent="cardCode"
-    />
   </div>
 </template>
 
-<script setup>
-import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ArticleCard6 } from "../../data/codes/cards/articles/ArticleCard6.js";
-
-// Configuración del modal
-const codeModal = ref(null);
-const cardCode = ArticleCard6;
-
-const showCode = () => {
-  if (codeModal.value) {
-    codeModal.value.openModal();
-  }
-};
+<script>
+export default {
+  name: 'ArticleCard6'
+}
 </script>
 
 <style scoped>
 .glow-text {
   text-shadow: 0 0 5px currentColor;
 }
-</style>
+</style>`;

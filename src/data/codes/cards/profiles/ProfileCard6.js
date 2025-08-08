@@ -1,6 +1,6 @@
-<template>
+export const ProfileCard6 = `<template>
   <div
-    class="profile-card-6 group relative bg-gradient-to-br from-slate-900 via-gray-900 to-black rounded-2xl p-6 border border-gray-700/50 shadow-2xl overflow-hidden transition-all duration-500 hover:shadow-cyan-500/20 hover:border-cyan-500/30"
+    class="profile-card-6 group relative bg-gradient-to-br from-slate-900 via-gray-900 to-black rounded-2xl p-6 border border-gray-700/50 shadow-2xl overflow-hidden transition-all duration-500 hover:shadow-cyan-500/20 hover:border-cyan-500/30 w-96"
   >
     <!-- Tech grid background -->
     <div class="absolute inset-0 opacity-5">
@@ -8,29 +8,7 @@
         <div v-for="i in 144" :key="i" class="border border-cyan-500/10"></div>
       </div>
     </div>
-
-    <!-- Code button -->
-    <button
-      @click="showCode"
-      class="absolute top-4 right-4 bg-cyan-600/80 hover:bg-cyan-500 text-white p-3 rounded-lg transition-all duration-300 hover:scale-110 border border-cyan-400/30 z-10 shadow-lg cursor-pointer"
-      aria-label="Ver código del componente ProfileCard6"
-      title="Ver código del componente"
-    >
-      <svg
-        class="w-4 h-4"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        ></path>
-      </svg>
-    </button>
-
+    
     <!-- Tech-style profile -->
     <div class="relative z-10">
       <!-- Header with terminal styling -->
@@ -53,7 +31,7 @@
             class="absolute -inset-1 border border-cyan-400/30 rounded-full"
           ></div>
           <img
-            src="/mia.webp"
+            src="../assets/logo.svg"
             alt="Miguel Santos"
             class="w-full h-full rounded-full object-cover border-2 border-gray-700 group-hover:border-cyan-500/50 transition-colors duration-300"
           />
@@ -175,28 +153,11 @@
         mask-composite: xor;
       "
     ></div>
-
-    <!-- Code Modal -->
-    <CodeModal
-      ref="codeModal"
-      cardType="Profile Card"
-      cardVariant="Tech Terminal Style"
-      :codeContent="cardCode"
-    />
   </div>
 </template>
 
-<script setup>
-import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ProfileCard6 } from "../../data/codes/cards/profiles/ProfileCard6.js";
-
-const codeModal = ref(null);
-const cardCode = ProfileCard6;
-
-const showCode = () => {
-  if (codeModal.value) {
-    codeModal.value.openModal();
-  }
-};
-</script>
+<script>
+export default {
+  name: 'ProfileCard6'
+}
+</script>`;

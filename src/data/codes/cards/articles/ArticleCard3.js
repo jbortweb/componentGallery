@@ -1,29 +1,7 @@
-<template>
+export const ArticleCard3 = `<template>
   <div
-    class="bg-gray-900 rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 w-full max-w-sm mx-auto border border-gray-800 relative"
+    class="bg-gray-900 rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 w-96 mx-auto border border-gray-800"
   >
-    <!-- Code button -->
-    <button
-      @click="showCode"
-      class="absolute top-4 right-4 bg-green-600 hover:bg-green-500 text-white p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg z-40 cursor-pointer"
-      aria-label="Ver código del componente ArticleCard3"
-      title="Ver código del componente"
-    >
-      <svg
-        class="w-4 h-4"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        ></path>
-      </svg>
-    </button>
-
     <div class="p-6">
       <!-- Header dark mode -->
       <div class="flex items-center justify-between mb-6">
@@ -34,9 +12,10 @@
             >Published</span
           >
         </div>
-        <div class="text-gray-400 text-xs font-mono">10 Ene 2024</div>
+        <div class="text-gray-400 text-xs font-mono">
+          10 Ene 2024
+        </div>
       </div>
-
       <!-- Image con overlay dark -->
       <div class="relative mb-6 rounded-xl overflow-hidden">
         <img
@@ -129,38 +108,19 @@
           </div>
         </div>
 
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="bg-cyan-500 hover:bg-cyan-400 text-gray-900 px-4 py-2 rounded-lg font-bold text-sm transition-all duration-200 shadow-lg inline-block cursor-pointer"
+        <button
+          class="bg-cyan-500 hover:bg-cyan-400 text-gray-900 px-4 py-2 rounded-lg font-bold text-sm transition-all duration-200 shadow-lg"
         >
-          Leer más
-        </a>
+          Read →
+        </button>
       </div>
     </div>
-
-    <!-- Code Modal -->
-    <CodeModal
-      ref="codeModal"
-      cardType="Article Card"
-      cardVariant="Dark Terminal Style"
-      :codeContent="cardCode"
-    />
   </div>
 </template>
 
-<script setup>
-import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ArticleCard3 } from "../../data/codes/cards/articles/ArticleCard3.js";
-
-const codeModal = ref(null);
-const cardCode = ArticleCard3;
-
-const showCode = () => {
-  if (codeModal.value) {
-    codeModal.value.openModal();
-  }
-};
+<script>
+export default {
+  name: 'ArticleCard3'
+}
 </script>
+`;
