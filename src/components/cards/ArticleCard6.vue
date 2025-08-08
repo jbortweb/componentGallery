@@ -138,45 +138,6 @@
           </p>
         </div>
 
-        <!-- Author and stats in terminal style -->
-        <div
-          class="flex items-center justify-between pt-4 border-t border-purple-500/30"
-        >
-          <div class="flex items-center space-x-3">
-            <div
-              class="w-10 h-10 bg-gradient-to-br from-purple-600 to-cyan-600 rounded border border-purple-400/50 flex items-center justify-center text-white font-mono font-bold text-xs shadow-lg"
-            >
-              ST
-            </div>
-            <div>
-              <p
-                class="text-purple-300 group-hover:text-white font-mono text-sm"
-              >
-                Security Today
-              </p>
-              <p class="text-gray-400 group-hover:text-white text-xs font-mono">
-                3 Ene 2024
-              </p>
-            </div>
-          </div>
-
-          <!-- Digital metrics -->
-          <div class="flex items-center space-x-4 text-xs font-mono">
-            <div
-              class="flex items-center space-x-1 text-purple-400 group-hover:text-white transition-colors duration-300"
-            >
-              <span class="glow-text">♥</span>
-              <span>178</span>
-            </div>
-            <div
-              class="flex items-center space-x-1 text-purple-400 group-hover:text-white transition-colors duration-300"
-            >
-              <span class="glow-text">◊</span>
-              <span>29</span>
-            </div>
-          </div>
-        </div>
-
         <!-- Holographic action interface -->
         <div
           class="mt-6 flex justify-between items-center border-t border-purple-800/50 pt-4"
