@@ -121,8 +121,8 @@
 
 <script setup>
 import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ProductCard2 } from "../../data/codes/cards/products/ProductCard2.js";
+import CodeModal from "../../CodeModal.vue";
+import { ProductCard2 } from "../../../data/codes/cards/products/ProductCard2.js";
 
 // Datos integrados del MacBook Air M2
 

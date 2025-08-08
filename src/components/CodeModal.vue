@@ -70,7 +70,7 @@
 </template>
 
 <script setup>
-import { ref, nextTick } from "vue";
+import { ref } from "vue";
 
 const props = defineProps({
   cardType: {

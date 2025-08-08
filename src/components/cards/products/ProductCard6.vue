@@ -154,8 +154,8 @@
 
 <script setup>
 import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ProductCard6 } from "../../data/codes/cards/products/ProductCard6.js";
+import CodeModal from "../../CodeModal.vue";
+import { ProductCard6 } from "../../../data/codes/cards/products/ProductCard6.js";
 
 // Datos integrados del iPad Pro 12.9
 

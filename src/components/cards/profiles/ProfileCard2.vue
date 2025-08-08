@@ -169,8 +169,8 @@
 
 <script setup>
 import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ProfileCard2 } from "../../data/codes/cards/profiles/ProfileCard2.js";
+import CodeModal from "../../CodeModal.vue";
+import { ProfileCard2 } from "../../../data/codes/cards/profiles/ProfileCard2.js";
 
 const codeModal = ref(null);
 const cardCode = ProfileCard2;

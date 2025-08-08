@@ -179,8 +179,8 @@
 
 <script setup>
 import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ArticleCard4 } from "../../data/codes/cards/articles/ArticleCard4.js";
+import CodeModal from "../../CodeModal.vue";
+import { ArticleCard4 } from "../../../data/codes/cards/articles/ArticleCard4.js";
 
 // Configuración del modal
 const codeModal = ref(null);

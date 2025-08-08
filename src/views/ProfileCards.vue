@@ -206,12 +206,12 @@
 import { computed } from "vue";
 import CardCarousel from "../components/carousel/CardCarousel.vue";
 import ComponentInstructions from "../components/ComponentInstructions.vue";
-import ProfileCard1 from "../components/cards/ProfileCard1.vue";
-import ProfileCard2 from "../components/cards/ProfileCard2.vue";
-import ProfileCard3 from "../components/cards/ProfileCard3.vue";
-import ProfileCard4 from "../components/cards/ProfileCard4.vue";
-import ProfileCard5 from "../components/cards/ProfileCard5.vue";
-import ProfileCard6 from "../components/cards/ProfileCard6.vue";
+import ProfileCard1 from "../components/cards/profiles/ProfileCard1.vue";
+import ProfileCard2 from "../components/cards/profiles/ProfileCard2.vue";
+import ProfileCard3 from "../components/cards/profiles/ProfileCard3.vue";
+import ProfileCard4 from "../components/cards/profiles/ProfileCard4.vue";
+import ProfileCard5 from "../components/cards/profiles/ProfileCard5.vue";
+import ProfileCard6 from "../components/cards/profiles/ProfileCard6.vue";
 
 // Componentes de perfiles
 const profileComponents = [

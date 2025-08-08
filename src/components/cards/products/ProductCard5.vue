@@ -119,8 +119,8 @@
 
 <script setup>
 import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ProductCard5 } from "../../data/codes/cards/products/ProductCard5.js";
+import CodeModal from "../../CodeModal.vue";
+import { ProductCard5 } from "../../../data/codes/cards/products/ProductCard5.js";
 
 // Datos integrados del Sony WH-1000XM5
 

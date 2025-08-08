@@ -97,8 +97,8 @@
 
 <script setup>
 import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ProductCard3 } from "../../data/codes/cards/products/ProductCard3.js";
+import CodeModal from "../../CodeModal.vue";
+import { ProductCard3 } from "../../../data/codes/cards/products/ProductCard3.js";
 
 // Datos integrados de AirPods Pro
 

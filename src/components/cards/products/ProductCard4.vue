@@ -111,8 +111,8 @@
 
 <script setup>
 import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ProductCard4 } from "../../data/codes/cards/products/ProductCard4.js";
+import CodeModal from "../../CodeModal.vue";
+import { ProductCard4 } from "../../../data/codes/cards/products/ProductCard4.js";
 
 // Datos integrados del Samsung Galaxy S24 Ultra
 

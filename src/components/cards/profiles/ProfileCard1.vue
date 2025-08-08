@@ -196,8 +196,8 @@
 
 <script setup>
 import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import { ProfileCard1 } from "../../data/codes/cards/profiles/ProfileCard1.js";
+import CodeModal from "../../CodeModal.vue";
+import { ProfileCard1 } from "../../../data/codes/cards/profiles/ProfileCard1.js";
 
 // Configuración del modal
 const codeModal = ref(null);

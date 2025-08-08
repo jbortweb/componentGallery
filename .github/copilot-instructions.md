@@ -122,7 +122,6 @@ src/
 ### Accesibilidad
 
 - Incluir `cursor-pointer` en botones interactivos
-- Añadir `pointer-events-none` a iconos SVG dentro de botones
 - Proporcionar tooltips con `title` y atributos `aria-label`
 - Usar estructura HTML semántica
 
@@ -143,11 +142,6 @@ src/
 - **Sin Lógica Modal**: El código mostrado excluye botón modal y funcionalidad
 
 ### Gestión de Datos
-
-- **cardData.js**: Datos de ejemplo para todos los tipos de cards
-- **cardCodes.js**: Templates completos de código fuente de cards
-- **headCodes.js**: Templates de código fuente de headers y footers
-- **Props Estructuradas**: Estructuras de datos específicas por categoría
 
 ### Sistema de Rutas
 
@@ -193,7 +187,6 @@ Todos los componentes de card DEBEN seguir este patrón exacto:
 <script setup>
 import { ref } from 'vue'
 import CodeModal from '../CodeModal.vue'
-import { cardCodes } from '../../data/cardCodes.js'
 
 // Definición de props
 defineProps({
@@ -211,10 +204,6 @@ const showCode = () => {
 }
 </script>
 ```
-
-## Patrón para Headers y Footers
-
-Los headers y footers NO incluyen modal, pero sus códigos se almacenan en `headCodes.js`:
 
 ```vue
 <template>
@@ -258,9 +247,14 @@ Los headers y footers NO incluyen modal, pero sus códigos se almacenan en `head
 - **Responsividad**: Diseño mobile-first, escalar hacia arriba
 - **Performance**: Usar optimizaciones de Vue 3 y lazy loading
 - **Calidad de Código**: Seguir reglas ESLint y guía de estilo Vue 3
-- **Importante**: El código que se coloca en archivos de datos ( cardCodes.js, headCodes.js) debe ser exactamente igual al del componente que se quiere replicar, excluyendo el botón de modal y su lógica, también las importaciones innecesarias. Los comentarios deben estar en castellano.
+- **Importante**: El código que se coloca en archivos de data/codes debend estar en sus respectivas carpetas, bien organizadas y mantenibles, si hace falta crear una carpeta, hazlo. El codigo de los archivos debe ser exactamente igual al del componente que se quiere replicar, excluyendo el botón de modal y su lógica, también las importaciones innecesarias.
+  Los comentarios deben estar en castellano.
 
 ## Mejores Prácticas Específicas
+
+### Componentes
+
+- Los componentes deben tener los mismos estilos en su estructura, deben importar el componente de instrucciones y estas tener el mismo color que su elemento siguiente.
 
 ### Para Cards
 

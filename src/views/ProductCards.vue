@@ -206,12 +206,12 @@
 import { computed } from "vue";
 import CardCarousel from "../components/carousel/CardCarousel.vue";
 import ComponentInstructions from "../components/ComponentInstructions.vue";
-import ProductCard1 from "../components/cards/ProductCard1.vue";
-import ProductCard2 from "../components/cards/ProductCard2.vue";
-import ProductCard3 from "../components/cards/ProductCard3.vue";
-import ProductCard4 from "../components/cards/ProductCard4.vue";
-import ProductCard5 from "../components/cards/ProductCard5.vue";
-import ProductCard6 from "../components/cards/ProductCard6.vue";
+import ProductCard1 from "../components/cards/products/ProductCard1.vue";
+import ProductCard2 from "../components/cards/products/ProductCard2.vue";
+import ProductCard3 from "../components/cards/products/ProductCard3.vue";
+import ProductCard4 from "../components/cards/products/ProductCard4.vue";
+import ProductCard5 from "../components/cards/products/ProductCard5.vue";
+import ProductCard6 from "../components/cards/products/ProductCard6.vue";
 
 // Componentes de productos
 const productComponents = [

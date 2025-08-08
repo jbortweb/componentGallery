@@ -206,12 +206,12 @@
 import { computed } from "vue";
 import CardCarousel from "../components/carousel/CardCarousel.vue";
 import ComponentInstructions from "../components/ComponentInstructions.vue";
-import ArticleCard1 from "../components/cards/ArticleCard1.vue";
-import ArticleCard2 from "../components/cards/ArticleCard2.vue";
-import ArticleCard3 from "../components/cards/ArticleCard3.vue";
-import ArticleCard4 from "../components/cards/ArticleCard4.vue";
-import ArticleCard5 from "../components/cards/ArticleCard5.vue";
-import ArticleCard6 from "../components/cards/ArticleCard6.vue";
+import ArticleCard1 from "../components/cards/articles/ArticleCard1.vue";
+import ArticleCard2 from "../components/cards/articles/ArticleCard2.vue";
+import ArticleCard3 from "../components/cards/articles/ArticleCard3.vue";
+import ArticleCard4 from "../components/cards/articles/ArticleCard4.vue";
+import ArticleCard5 from "../components/cards/articles/ArticleCard5.vue";
+import ArticleCard6 from "../components/cards/articles/ArticleCard6.vue";
 
 // Componentes de artículos
 const articleComponents = [
