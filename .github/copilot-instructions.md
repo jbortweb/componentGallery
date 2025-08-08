@@ -16,18 +16,47 @@ Este es un proyecto **Component Gallery** construido con **Vue 3 + Vite + Tailwi
 ```
 src/
 ├── components/
-│   ├── cards/              # 18 componentes de tarjetas únicos
-│   │   ├── ProductCard1-6.vue    # Tarjetas de productos (6 estilos)
-│   │   ├── ProfileCard1-6.vue    # Tarjetas de perfiles (6 estilos)
-│   │   └── ArticleCard1-6.vue    # Tarjetas de artículos (6 estilos)
-│   ├── headfoot/           # 12 componentes de layout
-│   │   ├── Header1-6.vue         # Headers temáticos (6 estilos)
-│   │   └── Footer1-6.vue         # Footers diversos (6 estilos)
+│   ├── cards/              # 18 componentes de tarjetas organizados por tipo
+│   │   ├── articles/       # Tarjetas de artículos (6 componentes)
+│   │   │   ├── ArticleCard1.vue  # Diseño clean y moderno para blogs
+│   │   │   ├── ArticleCard2.vue  # Estilo magazine vibrante
+│   │   │   ├── ArticleCard3.vue  # Dark mode con tema terminal
+│   │   │   ├── ArticleCard4.vue  # Diseño nature con colores emerald
+│   │   │   ├── ArticleCard5.vue  # Estilo newspaper clásico
+│   │   │   └── ArticleCard6.vue  # Tema futurista holográfico
+│   │   ├── products/       # Tarjetas de productos (6 componentes)
+│   │   │   ├── ProductCard1.vue  # Diseño moderno con gradientes azules
+│   │   │   ├── ProductCard2.vue  # Estilo magazine con overlays
+│   │   │   ├── ProductCard3.vue  # Tema futurista holográfico
+│   │   │   ├── ProductCard4.vue  # Diseño cyberpunk con neon
+│   │   │   ├── ProductCard5.vue  # Estilo minimalista glassmorphism
+│   │   │   └── ProductCard6.vue  # Tema espacial con scanner
+│   │   └── profiles/       # Tarjetas de perfiles (6 componentes)
+│   │       ├── ProfileCard1.vue  # Glassmorphism con efectos 3D
+│   │       ├── ProfileCard2.vue  # Neumorphism suave elegante
+│   │       ├── ProfileCard3.vue  # Tema retro-futurista vibrante
+│   │       ├── ProfileCard4.vue  # Diseño warm con gradientes cálidos
+│   │       ├── ProfileCard5.vue  # Estilo corporativo moderno
+│   │       └── ProfileCard6.vue  # Terminal/tech style con código
+│   ├── headfoot/           # 12 componentes de layout (headers y footers)
+│   │   ├── Header1.vue           # Header minimalista con neumorfismo
+│   │   ├── Header2.vue           # Header gaming cyberpunk con neon
+│   │   ├── Header3.vue           # Header artístico con efectos pintura
+│   │   ├── Header4.vue           # Header glassmorphism con partículas
+│   │   ├── Header5.vue           # Header terminal con efectos matriz
+│   │   ├── Header6.vue           # Header espacial con estrellas
+│   │   ├── Footer1.vue           # Footer corporativo con columnas
+│   │   ├── Footer2.vue           # Footer minimalista con enlaces
+│   │   ├── Footer3.vue           # Footer social con redes sociales
+│   │   ├── Footer4.vue           # Footer newsletter con suscripción
+│   │   ├── Footer5.vue           # Footer completo con mapa del sitio
+│   │   └── Footer6.vue           # Footer creativo con gráficos
 │   ├── carousel/
 │   │   └── CardCarousel.vue      # Carousel responsivo para cards
 │   ├── AppHeader.vue       # Header principal de la aplicación
 │   ├── AppFooter.vue       # Footer principal de la aplicación
 │   ├── CodeModal.vue       # Modal para mostrar código fuente
+│   ├── ComponentInstructions.vue # Componente de instrucciones reutilizable
 │   └── Navigation.vue      # Navegación con dropdowns por categorías
 ├── views/                  # Páginas principales (SPA)
 │   ├── Home.vue           # Página de inicio
@@ -38,8 +67,47 @@ src/
 │   └── Footers.vue        # Galería de footers diversos
 ├── data/
 │   ├── cardData.js        # Datos de ejemplo para todas las cards
-│   ├── cardCodes.js       # Código fuente de los componentes de cards
-│   └── headCodes.js       # Código fuente de headers y footers
+│   ├── cardCodes.js       # [DEPRECATED] Archivo legacy - usar codes/ folder
+│   ├── headCodes.js       # [DEPRECATED] Archivo legacy - usar codes/ folder
+│   └── codes/             # 📁 NUEVA ESTRUCTURA ORGANIZADA DE CÓDIGOS
+│       ├── cards/         # Códigos de componentes de tarjetas
+│       │   ├── index.js   # Exportaciones centralizadas de todos los códigos
+│       │   ├── articles/  # Códigos de tarjetas de artículos
+│       │   │   ├── ArticleCard1.js  # Código sin modal del componente
+│       │   │   ├── ArticleCard2.js  # Código sin modal del componente
+│       │   │   ├── ArticleCard3.js  # Código sin modal del componente
+│       │   │   ├── ArticleCard4.js  # Código sin modal del componente
+│       │   │   ├── ArticleCard5.js  # Código sin modal del componente
+│       │   │   └── ArticleCard6.js  # Código sin modal del componente
+│       │   ├── products/  # Códigos de tarjetas de productos
+│       │   │   ├── ProductCard1.js  # Código sin modal del componente
+│       │   │   ├── ProductCard2.js  # Código sin modal del componente
+│       │   │   ├── ProductCard3.js  # Código sin modal del componente
+│       │   │   ├── ProductCard4.js  # Código sin modal del componente
+│       │   │   ├── ProductCard5.js  # Código sin modal del componente
+│       │   │   └── ProductCard6.js  # Código sin modal del componente
+│       │   └── profiles/  # Códigos de tarjetas de perfiles
+│       │       ├── ProfileCard1.js  # Código sin modal del componente
+│       │       ├── ProfileCard2.js  # Código sin modal del componente
+│       │       ├── ProfileCard3.js  # Código sin modal del componente
+│       │       ├── ProfileCard4.js  # Código sin modal del componente
+│       │       ├── ProfileCard5.js  # Código sin modal del componente
+│       │       └── ProfileCard6.js  # Código sin modal del componente
+│       └── headfoot/      # Códigos de headers y footers
+│           ├── headers/   # Códigos de componentes de headers
+│           │   ├── Header1.js     # Código del header minimalista
+│           │   ├── Header2.js     # Código del header gaming
+│           │   ├── Header3.js     # Código del header artístico
+│           │   ├── Header4.js     # Código del header glassmorphism
+│           │   ├── Header5.js     # Código del header terminal
+│           │   └── Header6.js     # Código del header espacial
+│           └── footers/   # Códigos de componentes de footers
+│               ├── Footer1.js     # Código del footer corporativo
+│               ├── Footer2.js     # Código del footer minimalista
+│               ├── Footer3.js     # Código del footer social
+│               ├── Footer4.js     # Código del footer newsletter
+│               ├── Footer5.js     # Código del footer completo
+│               └── Footer6.js     # Código del footer creativo
 ├── router/
 │   └── index.js           # Configuración de rutas Vue Router
 ├── App.vue                # Componente raíz con layout principal
@@ -127,12 +195,27 @@ src/
 
 ## Arquitectura de Componentes
 
-### Componentes de Cards
+### Componentes de Cards - NUEVA ESTRUCTURA ORGANIZADA
 
-- **Estructura Consistente**: Todas las cards siguen el mismo patrón de integración modal
-- **Diseños Únicos**: Cada variante numerada tiene estilo visual distinto
-- **Integración Modal**: Cada card incluye el componente CodeModal
-- **Props**: Aceptan objetos de datos (`product`, `profile`, o `article`)
+- **Estructura por Categorías**: Las cards están organizadas en 3 carpetas temáticas
+  - `src/components/cards/articles/` - Tarjetas de artículos y contenido
+  - `src/components/cards/products/` - Tarjetas de productos comerciales
+  - `src/components/cards/profiles/` - Tarjetas de perfiles de usuario
+- **Consistencia de Diseño**: Cada categoría mantiene 6 variantes numeradas (Card1-Card6)
+- **Integración Modal**: Todos los componentes incluyen integración con CodeModal
+- **Rutas de Importación**: Ajustadas para la nueva estructura anidada
+- **Props Específicas**: Cada tipo acepta objetos de datos correspondientes (`article`, `product`, `profile`)
+
+### Códigos de Componentes - NUEVA ESTRUCTURA ORGANIZADA
+
+- **Estructura Jerárquica**: `src/data/codes/` contiene toda la organización de códigos
+- **Separación por Tipo**:
+  - `codes/cards/` - Todos los códigos de tarjetas organizados por subcategorías
+  - `codes/headfoot/` - Headers y footers separados en carpetas específicas
+- **Archivos Individuales**: Cada componente tiene su propio archivo `.js`
+- **Sin Lógica Modal**: Los códigos excluyen botones modales y funcionalidad de modales
+- **Exportación Default**: Todos los archivos usan `export default` para consistencia
+- **Centralización**: `codes/cards/index.js` actúa como punto central de exportación
 
 ### Sistema de Modales
 
@@ -142,6 +225,28 @@ src/
 - **Sin Lógica Modal**: El código mostrado excluye botón modal y funcionalidad
 
 ### Gestión de Datos
+
+- **cardData.js**: Datos de ejemplo para todos los tipos de tarjetas
+- **Estructura Deprecated**: `cardCodes.js` y `headCodes.js` son archivos legacy
+- **Nueva Organización**: Todo el código está en `src/data/codes/` con estructura jerárquica
+- **Patrones de Importación**:
+
+  ```javascript
+  // Para tarjetas de artículos
+  import ArticleCard1Code from '../data/codes/cards/articles/ArticleCard1.js'
+
+  // Para tarjetas de productos
+  import ProductCard1Code from '../data/codes/cards/products/ProductCard1.js'
+
+  // Para tarjetas de perfiles
+  import ProfileCard1Code from '../data/codes/cards/profiles/ProfileCard1.js'
+
+  // Para headers
+  import Header1Code from '../data/codes/headfoot/headers/Header1.js'
+
+  // Para footers
+  import Footer1Code from '../data/codes/headfoot/footers/Footer1.js'
+  ```
 
 ### Sistema de Rutas
 
@@ -247,8 +352,14 @@ const showCode = () => {
 - **Responsividad**: Diseño mobile-first, escalar hacia arriba
 - **Performance**: Usar optimizaciones de Vue 3 y lazy loading
 - **Calidad de Código**: Seguir reglas ESLint y guía de estilo Vue 3
-- **Importante**: El código que se coloca en archivos de data/codes debend estar en sus respectivas carpetas, bien organizadas y mantenibles, si hace falta crear una carpeta, hazlo. El codigo de los archivos debe ser exactamente igual al del componente que se quiere replicar, excluyendo el botón de modal y su lógica, también las importaciones innecesarias.
+- **Importante**: El código que se coloca en archivos de data/codes debe estar en sus respectivas carpetas, bien organizadas y mantenibles, si hace falta crear una carpeta, hazlo. El código de los archivos debe ser exactamente igual al del componente que se quiere replicar, excluyendo el botón de modal y su lógica, también las importaciones innecesarias.
   Los comentarios deben estar en castellano.
+- **Estructura de Códigos**:
+  - Cards por categorías: `codes/cards/articles/`, `codes/cards/products/`, `codes/cards/profiles/`
+  - Headers y footers: `codes/headfoot/headers/`, `codes/headfoot/footers/`
+  - Cada componente tiene su propio archivo individual con `export default`
+- **Rutas de Importación**: Usar paths relativos correctos desde las vistas hacia los códigos
+- **Organización Modular**: Mantener separación clara entre tipos de componentes
 
 ## Mejores Prácticas Específicas
 

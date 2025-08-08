@@ -40,7 +40,139 @@ git push origin feature/mi-nueva-caracteristica
 - Describe claramente los cambios realizados
 - Incluye screenshots si hay cambios visuales
 
-## 📋 Tipos de Contribuciones
+## � Estructura de Archivos y Organización
+
+### 🏗️ Arquitectura del Proyecto
+
+El proyecto sigue una **estructura modular organizada por tipos de componentes**:
+
+```
+src/
+├── components/
+│   ├── cards/                    # 📋 TARJETAS (18 componentes)
+│   │   ├── articles/            # 📰 Tarjetas de artículos (6)
+│   │   │   ├── ArticleCard1.vue  # Diseño clean y moderno
+│   │   │   ├── ArticleCard2.vue  # Estilo magazine vibrante
+│   │   │   ├── ArticleCard3.vue  # Dark mode con tema terminal
+│   │   │   ├── ArticleCard4.vue  # Diseño nature con emerald
+│   │   │   ├── ArticleCard5.vue  # Estilo newspaper clásico
+│   │   │   └── ArticleCard6.vue  # Tema futurista holográfico
+│   │   ├── products/            # 🛍️ Tarjetas de productos (6)
+│   │   │   ├── ProductCard1.vue  # Gradientes azules modernos
+│   │   │   ├── ProductCard2.vue  # Estilo magazine con overlays
+│   │   │   ├── ProductCard3.vue  # Tema futurista holográfico
+│   │   │   ├── ProductCard4.vue  # Diseño cyberpunk con neon
+│   │   │   ├── ProductCard5.vue  # Minimalista glassmorphism
+│   │   │   └── ProductCard6.vue  # Tema espacial con scanner
+│   │   └── profiles/            # 👤 Tarjetas de perfiles (6)
+│   │       ├── ProfileCard1.vue  # Glassmorphism con 3D
+│   │       ├── ProfileCard2.vue  # Neumorphism suave
+│   │       ├── ProfileCard3.vue  # Retro-futurista vibrante
+│   │       ├── ProfileCard4.vue  # Warm con gradientes cálidos
+│   │       ├── ProfileCard5.vue  # Corporativo moderno
+│   │       └── ProfileCard6.vue  # Terminal/tech style
+│   ├── headfoot/                # 🔝🔻 LAYOUT (12 componentes)
+│   │   ├── Header1-6.vue        # 6 headers temáticos
+│   │   └── Footer1-6.vue        # 6 footers diversos
+│   └── [otros componentes comunes]
+├── data/
+│   ├── cardData.js              # 📊 Datos de ejemplo
+│   ├── codes/                   # 💾 CÓDIGOS ORGANIZADOS
+│   │   ├── cards/               # Códigos de tarjetas
+│   │   │   ├── articles/        # Códigos ArticleCard1-6.js
+│   │   │   ├── products/        # Códigos ProductCard1-6.js
+│   │   │   └── profiles/        # Códigos ProfileCard1-6.js
+│   │   └── headfoot/            # Códigos headers/footers
+│   │       ├── headers/         # Códigos Header1-6.js
+│   │       └── footers/         # Códigos Footer1-6.js
+│   └── [archivos legacy deprecated]
+└── views/                       # 🖼️ Páginas SPA
+    ├── ArticleCards.vue         # Galería de artículos
+    ├── ProductCards.vue         # Galería de productos
+    ├── ProfileCards.vue         # Galería de perfiles
+    ├── Headers.vue              # Galería de headers
+    └── Footers.vue              # Galería de footers
+```
+
+### 📋 Reglas de Organización
+
+#### ✅ Para Cards (Tarjetas)
+
+1. **Ubicación de Componentes**: `src/components/cards/[tipo]/`
+
+   - `articles/` → Contenido, blogs, noticias
+   - `products/` → Comercio, catálogos, tiendas
+   - `profiles/` → Usuarios, equipos, contactos
+
+2. **Ubicación de Códigos**: `src/data/codes/cards/[tipo]/`
+
+   - Misma estructura que componentes
+   - Un archivo `.js` por componente
+
+3. **Nomenclatura**: `[Tipo]Card[Número].vue` (ej: `ArticleCard1.vue`)
+
+4. **Importaciones en Vistas**:
+   ```javascript
+   // Componente
+   import ArticleCard1 from '../components/cards/articles/ArticleCard1.vue'
+   // Código
+   import ArticleCard1Code from '../data/codes/cards/articles/ArticleCard1.js'
+   ```
+
+#### ✅ Para Headers/Footers
+
+1. **Ubicación de Componentes**: `src/components/headfoot/`
+
+   - Todos en la misma carpeta plana
+
+2. **Ubicación de Códigos**: `src/data/codes/headfoot/[tipo]/`
+
+   - `headers/` → Header1-6.js
+   - `footers/` → Footer1-6.js
+
+3. **Importaciones**:
+   ```javascript
+   import Header1Code from '../data/codes/headfoot/headers/Header1.js'
+   ```
+
+### 🔄 Rutas de Importación
+
+#### Desde Vistas (views/) hacia Componentes:
+
+```javascript
+// Cards organizadas por tipo
+import ProductCard1 from '../components/cards/products/ProductCard1.vue'
+import ProfileCard2 from '../components/cards/profiles/ProfileCard2.vue'
+import ArticleCard3 from '../components/cards/articles/ArticleCard3.vue'
+
+// Headers/footers
+import Header1 from '../components/headfoot/Header1.vue'
+```
+
+#### Desde Vistas hacia Códigos:
+
+```javascript
+// Códigos de cards por tipo
+import ProductCard1Code from '../data/codes/cards/products/ProductCard1.js'
+import ProfileCard2Code from '../data/codes/cards/profiles/ProfileCard2.js'
+import ArticleCard3Code from '../data/codes/cards/articles/ArticleCard3.js'
+
+// Códigos de headers/footers
+import Header1Code from '../data/codes/headfoot/headers/Header1.js'
+import Footer1Code from '../data/codes/headfoot/footers/Footer1.js'
+```
+
+#### Desde Cards hacia CodeModal:
+
+```javascript
+// Para cards en subcarpetas (articles/, products/, profiles/)
+import CodeModal from '../../CodeModal.vue'
+
+// Para componentes en headfoot/
+import CodeModal from '../CodeModal.vue'
+```
+
+## �📋 Tipos de Contribuciones
 
 ### 🐛 Reportar Bugs
 
@@ -64,18 +196,63 @@ git push origin feature/mi-nueva-caracteristica
 
 #### Para Tarjetas (Cards):
 
-1. Crear componente en `src/components/cards/`
-2. Seguir el patrón de modal existente
-3. Añadir datos de ejemplo en `src/data/cardData.js`
-4. Registrar código en `src/data/cardCodes.js`
-5. Importar en la vista correspondiente
+**⚠️ IMPORTANTE: Nueva Estructura Organizada por Categorías**
+
+Las tarjetas están organizadas en 3 carpetas temáticas:
+
+1. **Crear componente en la carpeta correspondiente**:
+
+   ```
+   src/components/cards/
+   ├── articles/    # Tarjetas de artículos y contenido
+   ├── products/    # Tarjetas de productos comerciales
+   └── profiles/    # Tarjetas de perfiles de usuario
+   ```
+
+2. **Seguir el patrón de modal existente** (ver ejemplo en Pautas de Código)
+
+3. **Añadir datos de ejemplo** en `src/data/cardData.js` en la sección correspondiente
+
+4. **Registrar código** en la estructura organizada:
+
+   ```
+   src/data/codes/cards/
+   ├── articles/    # Códigos de ArticleCard1.js - ArticleCard6.js
+   ├── products/    # Códigos de ProductCard1.js - ProductCard6.js
+   └── profiles/    # Códigos de ProfileCard1.js - ProfileCard6.js
+   ```
+
+5. **Importar en vista correspondiente** usando la nueva ruta:
+
+   ```javascript
+   // Para tarjetas de artículos
+   import ArticleCard1 from '../components/cards/articles/ArticleCard1.vue'
+   import ArticleCard1Code from '../data/codes/cards/articles/ArticleCard1.js'
+
+   // Para tarjetas de productos
+   import ProductCard1 from '../components/cards/products/ProductCard1.vue'
+   import ProductCard1Code from '../data/codes/cards/products/ProductCard1.js'
+
+   // Para tarjetas de perfiles
+   import ProfileCard1 from '../components/cards/profiles/ProfileCard1.vue'
+   import ProfileCard1Code from '../data/codes/cards/profiles/ProfileCard1.js'
+   ```
 
 #### Para Headers/Footers:
 
-1. Crear componente en `src/components/headfoot/`
-2. Registrar código en `src/data/headCodes.js`
-3. Importar en vista correspondiente
-4. Añadir a datos del componente
+1. **Crear componente** en `src/components/headfoot/`
+2. **Registrar código** en la estructura separada:
+   ```
+   src/data/codes/headfoot/
+   ├── headers/     # Header1.js - Header6.js
+   └── footers/     # Footer1.js - Footer6.js
+   ```
+3. **Importar en vista correspondiente** usando rutas específicas:
+   ```javascript
+   import Header1Code from '../data/codes/headfoot/headers/Header1.js'
+   import Footer1Code from '../data/codes/headfoot/footers/Footer1.js'
+   ```
+4. **Añadir a datos del componente** en la vista correspondiente
 
 ## 💻 Pautas de Código
 
@@ -109,15 +286,16 @@ git push origin feature/mi-nueva-caracteristica
 
 <script setup>
 import { ref } from 'vue'
-// Importaciones ordenadas
+import CodeModal from '../../CodeModal.vue' // Ajustar path según carpeta
 
 // Props si es necesario
 defineProps({
-  // Props con tipos
+  // Props con tipos para article, product o profile
 })
 
 // Composables y reactivity
 const codeModal = ref(null)
+const cardCode = componentCode // Importar desde data/codes/cards/
 
 // Funciones
 const showCode = () => {
@@ -155,8 +333,10 @@ const showCode = () => {
 
 ### Datos y Códigos
 
+**⚠️ NUEVA ESTRUCTURA ORGANIZADA**
+
 ```javascript
-// cardData.js - Datos estructurados
+// cardData.js - Datos estructurados por tipo
 export const cardData = {
   products: [
     {
@@ -170,20 +350,61 @@ export const cardData = {
       reviews: 123,
     },
   ],
+  profiles: [
+    {
+      id: 1,
+      name: 'Nombre Usuario',
+      role: 'Rol/Profesión',
+      avatar: 'https://...',
+      // ... otros campos
+    },
+  ],
+  articles: [
+    {
+      id: 1,
+      title: 'Título del Artículo',
+      excerpt: 'Resumen del contenido',
+      author: 'Autor',
+      // ... otros campos
+    },
+  ],
 }
 
-// cardCodes.js - Sin lógica de modal
-export const cardCodes = {
-  ProductCard1: `<template>
+// Códigos organizados por carpetas - Ejemplo ProductCard1.js
+// Ubicación: src/data/codes/cards/products/ProductCard1.js
+export default `<template>
   <!-- Solo el contenido del componente -->
   <!-- SIN botón de modal ni CodeModal -->
+  <!-- SIN importación de CodeModal -->
 </template>
 
 <script setup>
-// Solo imports necesarios
-// Solo lógica del componente
-</script>`,
-}
+// Solo imports necesarios para el componente
+// Solo lógica del componente (sin modal)
+</script>`
+
+// Códigos para headers - Ejemplo Header1.js
+// Ubicación: src/data/codes/headfoot/headers/Header1.js
+export default `<template>
+  <!-- Contenido del header sin referencias modales -->
+</template>
+
+<script setup>
+// Lógica específica del header
+</script>`
+```
+
+**📁 Estructura de Carpetas para Códigos:**
+
+```
+src/data/codes/
+├── cards/
+│   ├── articles/     # ArticleCard1.js - ArticleCard6.js
+│   ├── products/     # ProductCard1.js - ProductCard6.js
+│   └── profiles/     # ProfileCard1.js - ProfileCard6.js
+└── headfoot/
+    ├── headers/      # Header1.js - Header6.js
+    └── footers/      # Footer1.js - Footer6.js
 ```
 
 ## 🧪 Testing
@@ -206,7 +427,15 @@ npm run preview
 - [ ] La accesibilidad está implementada
 - [ ] Los comentarios están en español
 - [ ] Los datos de ejemplo son realistas
-- [ ] El código está en los archivos de datos correspondientes
+- [ ] **El código está en los archivos organizados por carpetas:**
+  - [ ] Cards en `src/data/codes/cards/[articles|products|profiles]/`
+  - [ ] Headers en `src/data/codes/headfoot/headers/`
+  - [ ] Footers en `src/data/codes/headfoot/footers/`
+- [ ] **Los componentes están en las carpetas correctas:**
+  - [ ] Cards en `src/components/cards/[articles|products|profiles]/`
+  - [ ] Headers/footers en `src/components/headfoot/`
+- [ ] **Las rutas de importación son correctas** para la estructura anidada
+- [ ] **Los códigos NO incluyen** lógica de modal ni botones de código
 
 ## 📝 Convenciones de Commit
 
@@ -262,6 +491,10 @@ test: añadir tests para CardCarousel
 - ❌ No incluir lógica de modal en archivos de datos
 - ❌ No usar comentarios en inglés
 - ❌ No subir archivos de configuración personal
+- ❌ **No colocar componentes en carpetas incorrectas**
+- ❌ **No usar rutas de importación obsoletas** (`cardCodes.js`, `headCodes.js`)
+- ❌ **No mezclar tipos de componentes** en carpetas incorrectas
+- ❌ **No olvidar actualizar rutas** al mover o crear componentes
 
 ## ❓ ¿Necesitas Ayuda?
 
