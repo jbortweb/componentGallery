@@ -19,21 +19,21 @@ export const cardCodes = {
         ></div>
       </div>
 
-      <!-- Content -->
+      <!-- Contenido -->
       <div class="relative z-10">
-        <!-- Floating Avatar -->
+        <!-- Avatar flotante -->
         <div class="flex justify-center mb-6">
           <div class="relative">
             <div
               class="w-24 h-24 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-1 group-hover:scale-110 transition-transform duration-300"
             >
               <img
-                :src="profile.avatar"
-                :alt="profile.name"
+                src="../assets/logo.svg"
+                alt="Ana García"
                 class="w-full h-full rounded-full object-cover border-4 border-white/50"
               />
             </div>
-            <!-- Status indicator -->
+            <!-- Indicador de estado -->
             <div
               class="absolute -bottom-1 -right-1 w-8 h-8 bg-green-400 rounded-full border-4 border-white/50 flex items-center justify-center animate-pulse"
             >
@@ -42,53 +42,69 @@ export const cardCodes = {
           </div>
         </div>
 
-        <!-- Info Section -->
+        <!-- Sección de información -->
         <div class="text-center mb-6">
           <h3 class="text-2xl font-bold text-pink-500 mb-2 animate-fade-in-up">
-            {{ profile.name }}
+            Ana García
           </h3>
           <p
             class="text-pink-500 text-lg mb-1 animate-fade-in-up animation-delay-200"
           >
-            {{ profile.role }}
+            Frontend Developer
           </p>
           <p
             class="text-pink-500/60 text-sm animate-fade-in-up animation-delay-400"
           >
-            @ {{ profile.company }}
+            @ Tech Solutions
           </p>
         </div>
 
-        <!-- Bio with typing effect -->
+        <!-- Biografía con efecto de escritura -->
         <div class="mb-6 animate-fade-in-up animation-delay-600">
           <p
             class="text-pink-500/80 text-sm text-center leading-relaxed line-clamp-3"
           >
-            {{ profile.bio }}
+            Apasionada del desarrollo web con 5 años de experiencia en React y
+            Vue.js
           </p>
         </div>
 
-        <!-- Floating Skills -->
+        <!-- Habilidades flotantes -->
         <div class="mb-6 animate-fade-in-up animation-delay-800">
           <div class="flex flex-wrap justify-center gap-2">
             <span
-              v-for="(skill, index) in profile.skills.slice(0, 4)"
-              :key="skill"
-              :style="{ animationDelay: (index * 200) + 'ms' }"
               class="bg-white/20 backdrop-blur-sm text-pink-500 text-xs px-3 py-2 rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 animate-float"
+              style="animation-delay: 0ms"
             >
-              {{ skill }}
+              Vue.js
+            </span>
+            <span
+              class="bg-white/20 backdrop-blur-sm text-pink-500 text-xs px-3 py-2 rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 animate-float"
+              style="animation-delay: 200ms"
+            >
+              React
+            </span>
+            <span
+              class="bg-white/20 backdrop-blur-sm text-pink-500 text-xs px-3 py-2 rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 animate-float"
+              style="animation-delay: 400ms"
+            >
+              TypeScript
+            </span>
+            <span
+              class="bg-white/20 backdrop-blur-sm text-pink-500 text-xs px-3 py-2 rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 animate-float"
+              style="animation-delay: 600ms"
+            >
+              Tailwind CSS
             </span>
           </div>
         </div>
 
-        <!-- Social Links with hover effects -->
+        <!-- Enlaces sociales con efectos hover -->
         <div
           class="flex justify-center space-x-4 mb-6 animate-fade-in-up animation-delay-1000"
         >
           <a
-            v-if="profile.social.linkedin"
-            :href="profile.social.linkedin"
+            href="https://www.linkedin.com/in/jordi-bort/"
             target="_blank"
             class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-blue-500/50 hover:scale-110 transition-all duration-300 group/social"
           >
@@ -103,8 +119,7 @@ export const cardCodes = {
             </svg>
           </a>
           <a
-            v-if="profile.social.github"
-            :href="profile.social.github"
+            href="https://github.com/jbortweb"
             target="_blank"
             class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 group/social"
           >
@@ -119,8 +134,7 @@ export const cardCodes = {
             </svg>
           </a>
           <a
-            v-if="profile.social.twitter"
-            :href="profile.social.twitter"
+            href="https://twitter.com"
             target="_blank"
             class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-blue-400/50 hover:scale-110 transition-all duration-300 group/social"
           >
@@ -136,7 +150,7 @@ export const cardCodes = {
           </a>
         </div>
 
-        <!-- Glowing Connect Button -->
+        <!-- Botón de conexión con brillo -->
         <div class="animate-fade-in-up animation-delay-1200">
           <button
             class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-pink-500 py-3 px-6 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 relative overflow-hidden group/btn"
@@ -152,23 +166,13 @@ export const cardCodes = {
   </div>
 </template>
 
-<script setup>
-
-defineProps({
-  profile: {
-    type: Object,
-    required: true,
-  },
-});
-
+<script>
+export default {
+  name: 'ProfileCard1',
+}
 </script>
 
 <style scoped>
-.perspective-1000 {
-  perspective: 1000px;
-}
-
-/* Custom animations */
 @keyframes blob {
   0% {
     transform: translate(0px, 0px) scale(1);
@@ -196,7 +200,7 @@ defineProps({
 @keyframes fade-in-up {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -264,160 +268,175 @@ defineProps({
 }
 </style>`,
 
+
   ProfileCard2: `<template>
   <div class="relative group w-96">
-    
-    <!-- Neumorphism Card -->
+    <!-- Tarjeta Neumorfismo -->
     <div
       class="bg-gray-300 rounded-3xl p-8 shadow-neumorphism hover:shadow-neumorphism-hover transition-all duration-500 transform hover:scale-102 relative overflow-hidden"
     >
-      <!-- Subtle gradient overlay -->
-      <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-gray-400/5 rounded-3xl"></div>
-      
-      <!-- Content -->
+      <!-- Superposición de gradiente sutil -->
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-white/5 to-gray-400/5 rounded-3xl"
+      ></div>
+
+      <!-- Contenido -->
       <div class="relative z-10">
-        <!-- Avatar with 3D effect -->
+        <!-- Avatar con efecto 3D -->
         <div class="flex justify-center mb-6">
           <div class="relative group/avatar">
-            <div class="w-24 h-24 rounded-full shadow-neumorphism-inset bg-gray-300 p-2 transform transition-all duration-300 group-hover/avatar:shadow-neumorphism-inset-hover">
+            <div
+              class="w-24 h-24 rounded-full shadow-neumorphism-inset bg-gray-300 p-2 transform transition-all duration-300 group-hover/avatar:shadow-neumorphism-inset-hover"
+            >
               <img
-                :src="profile.avatar"
-                :alt="profile.name"
+                src="../assets/logo.svg"
+                alt="Carlos Mendoza"
                 class="w-full h-full rounded-full object-cover shadow-inner"
               />
             </div>
-            <!-- 3D floating status -->
-            <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-green-400 rounded-full shadow-neumorphism flex items-center justify-center transform hover:scale-110 transition-all duration-300">
-              <div class="w-3 h-3 bg-green-500 rounded-full shadow-neumorphism-inset animate-pulse"></div>
+            <!-- Estado flotante 3D -->
+            <div
+              class="absolute -bottom-2 -right-2 w-8 h-8 bg-green-400 rounded-full shadow-neumorphism flex items-center justify-center transform hover:scale-110 transition-all duration-300"
+            >
+              <div
+                class="w-3 h-3 bg-green-500 rounded-full shadow-neumorphism-inset animate-pulse"
+              ></div>
             </div>
           </div>
         </div>
 
-        <!-- Info with depth -->
+        <!-- Información con profundidad -->
         <div class="text-center mb-6">
           <h3 class="text-2xl font-bold text-gray-800 mb-2 tracking-wide">
-            {{ profile.name }}
+            Carlos Mendoza
           </h3>
-          <div class="bg-gray-300 rounded-2xl p-3 shadow-neumorphism-inset mb-2">
-            <p class="text-gray-600 font-medium">
-              {{ profile.role }}
-            </p>
+          <div
+            class="bg-gray-300 rounded-2xl p-3 shadow-neumorphism-inset mb-2"
+          >
+            <p class="text-gray-600 font-medium">UI/UX Designer</p>
           </div>
-          <p class="text-gray-500 text-sm font-medium">
-            @ {{ profile.company }}
-          </p>
+          <p class="text-gray-500 text-sm font-medium">@ Design Studio</p>
         </div>
 
-        <!-- Bio in recessed area -->
+        <!-- Biografía en área empotrada -->
         <div class="mb-6">
           <div class="bg-gray-300 rounded-2xl p-4 shadow-neumorphism-inset">
-            <p class="text-gray-600 text-sm text-center leading-relaxed line-clamp-3">
-              {{ profile.bio }}
+            <p
+              class="text-gray-600 text-sm text-center leading-relaxed line-clamp-3"
+            >
+              Diseñador creativo especializado en experiencias digitales
+              intuitivas
             </p>
           </div>
         </div>
 
-        <!-- 3D Skills -->
+        <!-- Habilidades 3D -->
         <div class="mb-6">
           <div class="grid grid-cols-2 gap-3">
             <div
-              v-for="(skill, index) in profile.skills.slice(0, 4)"
-              :key="skill"
-              :style="{ animationDelay: (index * 200) + 'ms' }"
               class="bg-gray-300 text-gray-700 text-xs font-medium px-3 py-2 rounded-xl shadow-neumorphism hover:shadow-neumorphism-hover transition-all duration-300 text-center transform hover:-translate-y-1 animate-fade-in-scale"
+              style="animation-delay: 0ms"
             >
-              {{ skill }}
+              Figma
+            </div>
+            <div
+              class="bg-gray-300 text-gray-700 text-xs font-medium px-3 py-2 rounded-xl shadow-neumorphism hover:shadow-neumorphism-hover transition-all duration-300 text-center transform hover:-translate-y-1 animate-fade-in-scale"
+              style="animation-delay: 100ms"
+            >
+              Adobe XD
+            </div>
+            <div
+              class="bg-gray-300 text-gray-700 text-xs font-medium px-3 py-2 rounded-xl shadow-neumorphism hover:shadow-neumorphism-hover transition-all duration-300 text-center transform hover:-translate-y-1 animate-fade-in-scale"
+              style="animation-delay: 200ms"
+            >
+              Prototyping
+            </div>
+            <div
+              class="bg-gray-300 text-gray-700 text-xs font-medium px-3 py-2 rounded-xl shadow-neumorphism hover:shadow-neumorphism-hover transition-all duration-300 text-center transform hover:-translate-y-1 animate-fade-in-scale"
+              style="animation-delay: 300ms"
+            >
+              User Research
             </div>
           </div>
         </div>
 
-        <!-- 3D Social buttons -->
+        <!-- Botones sociales 3D -->
         <div class="flex justify-center space-x-4 mb-6">
           <a
-            v-if="profile.social.linkedin"
-            :href="profile.social.linkedin"
+            href="https://www.linkedin.com/in/jordi-bort/"
             target="_blank"
             class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center shadow-neumorphism hover:shadow-neumorphism-inset active:shadow-neumorphism-pressed transition-all duration-200 transform hover:-translate-y-1 group/social"
           >
-            <svg class="w-5 h-5 text-blue-600 group-hover/social:scale-110 transition-transform duration-200" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            <svg
+              class="w-5 h-5 text-blue-600 group-hover/social:scale-110 transition-transform duration-200"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              />
             </svg>
           </a>
           <a
-            v-if="profile.social.github"
-            :href="profile.social.github"
+            href="https://portafoliojbortweb.netlify.app/"
             target="_blank"
             class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center shadow-neumorphism hover:shadow-neumorphism-inset active:shadow-neumorphism-pressed transition-all duration-200 transform hover:-translate-y-1 group/social"
           >
-            <svg class="w-5 h-5 text-gray-800 group-hover/social:scale-110 transition-transform duration-200" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-          </a>
-          <a
-            v-if="profile.social.twitter"
-            :href="profile.social.twitter"
-            target="_blank"
-            class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center shadow-neumorphism hover:shadow-neumorphism-inset active:shadow-neumorphism-pressed transition-all duration-200 transform hover:-translate-y-1 group/social"
-          >
-            <svg class="w-5 h-5 text-blue-400 group-hover/social:scale-110 transition-transform duration-200" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+            <svg
+              class="w-5 h-5 text-pink-600 group-hover/social:scale-110 transition-transform duration-200"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.568 13.8h-3.185V24h-4.84V13.8H6.185V9.442h3.358V6.294c0-2.855 1.168-4.55 4.55-4.55h2.833v4.362h-1.775c-1.331 0-1.419.497-1.419 1.419v1.917h3.185L15.568 13.8z"
+              />
             </svg>
           </a>
         </div>
 
-        <!-- 3D Connect Button -->
-        <button class="w-full bg-gray-300 text-gray-700 py-4 px-6 rounded-2xl font-bold shadow-neumorphism hover:shadow-neumorphism-hover active:shadow-neumorphism-pressed transition-all duration-200 transform hover:-translate-y-1 relative overflow-hidden group/btn">
+        <!-- Botón de conexión 3D -->
+        <button
+          class="w-full bg-gray-300 text-gray-700 py-4 px-6 rounded-2xl font-bold shadow-neumorphism hover:shadow-neumorphism-hover active:shadow-neumorphism-pressed transition-all duration-200 transform hover:-translate-y-1 relative overflow-hidden group/btn"
+        >
           <span class="relative z-10">Conectar</span>
-          <div class="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-purple-400/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-purple-400/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 rounded-2xl"
+          ></div>
         </button>
       </div>
     </div>
   </div>
 </template>
 
-<script setup>
-
-defineProps({
-  profile: {
-    type: Object,
-    required: true,
-  },
-});
+<script>
+export default {
+  name: 'ProfileCard2',
+}
 </script>
 
 <style scoped>
-/* Neumorphism shadows */
+/* Sombras de neumorfismo */
 .shadow-neumorphism {
-  box-shadow: 
-    20px 20px 60px #bebebe,
-    -20px -20px 60px #ffffff;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
 }
 
 .shadow-neumorphism-hover {
-  box-shadow: 
-    25px 25px 75px #bebebe,
-    -25px -25px 75px #ffffff;
+  box-shadow: 25px 25px 75px #bebebe, -25px -25px 75px #ffffff;
 }
 
 .shadow-neumorphism-inset {
-  box-shadow: 
-    inset 10px 10px 20px #bebebe,
-    inset -10px -10px 20px #ffffff;
+  box-shadow: inset 10px 10px 20px #bebebe, inset -10px -10px 20px #ffffff;
 }
 
 .shadow-neumorphism-inset-hover {
-  box-shadow: 
-    inset 15px 15px 30px #bebebe,
-    inset -15px -15px 30px #ffffff;
+  box-shadow: inset 15px 15px 30px #bebebe, inset -15px -15px 30px #ffffff;
 }
 
 .shadow-neumorphism-pressed {
-  box-shadow: 
-    inset 8px 8px 16px #bebebe,
-    inset -8px -8px 16px #ffffff;
+  box-shadow: inset 8px 8px 16px #bebebe, inset -8px -8px 16px #ffffff;
 }
 
-/* Custom animations */
+/* Animaciones personalizadas */
 @keyframes fade-in-scale {
   from {
     opacity: 0;
@@ -434,7 +453,7 @@ defineProps({
   opacity: 0;
 }
 
-.hover\:scale-102:hover {
+.hover\\:scale-102:hover {
   transform: scale(1.02);
 }
 </style>`,
@@ -471,8 +490,8 @@ defineProps({
               class="w-24 h-24 rounded-full border-2 border-cyan-400 p-1 animate-pulse-neon"
             >
               <img
-                :src="profile.avatar"
-                :alt="profile.name"
+                src="../assets/logo.svg"
+                alt="María López"
                 class="w-full h-full rounded-full object-cover filter brightness-110 contrast-110"
               />
               <!-- Holographic effect -->
@@ -493,17 +512,17 @@ defineProps({
         <div class="text-center mb-6">
           <h3
             class="text-2xl font-mono font-bold text-white mb-2 glitch-text"
-            data-text="{{ profile.name }}"
+            data-text="María López"
           >
-            {{ profile.name }}
+            María López
           </h3>
           <div
             class="inline-block bg-gradient-to-r from-cyan-400 to-purple-400 text-gray-900 px-4 py-2 rounded font-mono text-sm font-bold mb-2 shadow-neon"
           >
-            {{ profile.role }}
+            Data Scientist
           </div>
           <p class="text-cyan-300 text-sm font-mono opacity-80">
-            &gt; {{ profile.company }}_
+            &gt; AI Innovations_
           </p>
         </div>
 
@@ -514,7 +533,7 @@ defineProps({
           >
             <div class="text-green-400 mb-2">&gt; cat bio.txt</div>
             <p class="text-green-300 leading-relaxed terminal-bio">
-              {{ profile.bio }}
+              Experta en machine learning y análisis de datos con enfoque en IA
             </p>
             <div class="text-green-400 mt-2 animate-blink">█</div>
           </div>
@@ -527,12 +546,28 @@ defineProps({
           </div>
           <div class="flex flex-wrap gap-2">
             <span
-              v-for="(skill, index) in profile.skills.slice(0, 4)"
-              :key="skill"
-              :style="{ animationDelay: (index * 150) + 'ms' }"
               class="bg-transparent border border-cyan-500/50 text-cyan-300 text-xs font-mono px-3 py-1 rounded hover:border-cyan-400 hover:text-cyan-200 hover:shadow-neon-sm transition-all duration-300 animate-fade-in-cyber"
+              style="animation-delay: 0ms"
             >
-              {{ skill }}
+              Python
+            </span>
+            <span
+              class="bg-transparent border border-cyan-500/50 text-cyan-300 text-xs font-mono px-3 py-1 rounded hover:border-cyan-400 hover:text-cyan-200 hover:shadow-neon-sm transition-all duration-300 animate-fade-in-cyber"
+              style="animation-delay: 150ms"
+            >
+              TensorFlow
+            </span>
+            <span
+              class="bg-transparent border border-cyan-500/50 text-cyan-300 text-xs font-mono px-3 py-1 rounded hover:border-cyan-400 hover:text-cyan-200 hover:shadow-neon-sm transition-all duration-300 animate-fade-in-cyber"
+              style="animation-delay: 300ms"
+            >
+              SQL
+            </span>
+            <span
+              class="bg-transparent border border-cyan-500/50 text-cyan-300 text-xs font-mono px-3 py-1 rounded hover:border-cyan-400 hover:text-cyan-200 hover:shadow-neon-sm transition-all duration-300 animate-fade-in-cyber"
+              style="animation-delay: 450ms"
+            >
+              Data Visualization
             </span>
           </div>
         </div>
@@ -540,8 +575,7 @@ defineProps({
         <!-- Holographic Social -->
         <div class="flex justify-center space-x-4 mb-6">
           <a
-            v-if="profile.social.linkedin"
-            :href="profile.social.linkedin"
+            href="https://www.linkedin.com/in/jordi-bort/"
             target="_blank"
             class="w-10 h-10 border border-blue-500/50 rounded flex items-center justify-center hover:border-blue-400 hover:shadow-neon-blue transition-all duration-300 transform hover:scale-110 group/social"
           >
@@ -556,8 +590,7 @@ defineProps({
             </svg>
           </a>
           <a
-            v-if="profile.social.github"
-            :href="profile.social.github"
+            href="https://github.com/jbortweb"
             target="_blank"
             class="w-10 h-10 border border-purple-500/50 rounded flex items-center justify-center hover:border-purple-400 hover:shadow-neon-purple transition-all duration-300 transform hover:scale-110 group/social"
           >
@@ -572,8 +605,7 @@ defineProps({
             </svg>
           </a>
           <a
-            v-if="profile.social.twitter"
-            :href="profile.social.twitter"
+            href="https://portafoliojbortweb.netlify.app/"
             target="_blank"
             class="w-10 h-10 border border-cyan-500/50 rounded flex items-center justify-center hover:border-cyan-400 hover:shadow-neon-cyan transition-all duration-300 transform hover:scale-110 group/social"
           >
@@ -603,15 +635,10 @@ defineProps({
   </div>
 </template>
 
-<script setup>
-
-
-defineProps({
-  profile: {
-    type: Object,
-    required: true,
-  },
-});
+<script>
+export default {
+  name: 'ProfileCard3',
+}
 </script>
 
 <style scoped>
@@ -869,8 +896,8 @@ defineProps({
             class="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-400 rounded-full opacity-50 blur-lg group-hover:opacity-70 transition-opacity duration-300"
           ></div>
           <img
-            :src="profile.avatar"
-            :alt="profile.name"
+            src="../assets/logo.svg"
+            alt="David Rodriguez"
             class="relative w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300"
           />
         </div>
@@ -886,19 +913,17 @@ defineProps({
       <h3
         class="text-xl font-bold text-gray-800 group-hover:text-orange-600 transition-colors duration-300"
       >
-        {{ profile.name }}
+        David Rodriguez
       </h3>
 
-      <p class="text-orange-600 font-semibold text-sm mb-1">
-        {{ profile.role }}
-      </p>
-      <p class="text-gray-600 text-sm">{{ profile.company }}</p>
+      <p class="text-orange-600 font-semibold text-sm mb-1">DevOps Engineer</p>
+      <p class="text-gray-600 text-sm">Cloud Systems</p>
     </div>
 
     <!-- Bio section -->
     <div class="relative z-10 mb-6">
       <p class="text-gray-700 text-sm leading-relaxed text-center px-2">
-        {{ profile.bio }}
+        Especialista en infraestructura cloud y automatización de procesos
       </p>
     </div>
 
@@ -906,17 +931,24 @@ defineProps({
     <div class="relative z-10 mb-6">
       <div class="flex flex-wrap gap-2 justify-center">
         <span
-          v-for="skill in profile.skills.slice(0, 3)"
-          :key="skill"
           class="px-3 py-1 bg-gradient-to-r from-orange-100 to-red-100 text-orange-700 text-xs font-medium rounded-full border border-orange-200 group-hover:from-orange-200 group-hover:to-red-200 transition-colors duration-300"
         >
-          {{ skill }}
+          AWS
         </span>
         <span
-          v-if="profile.skills.length > 3"
+          class="px-3 py-1 bg-gradient-to-r from-orange-100 to-red-100 text-orange-700 text-xs font-medium rounded-full border border-orange-200 group-hover:from-orange-200 group-hover:to-red-200 transition-colors duration-300"
+        >
+          Docker
+        </span>
+        <span
+          class="px-3 py-1 bg-gradient-to-r from-orange-100 to-red-100 text-orange-700 text-xs font-medium rounded-full border border-orange-200 group-hover:from-orange-200 group-hover:to-red-200 transition-colors duration-300"
+        >
+          Kubernetes
+        </span>
+        <span
           class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full border border-gray-200"
         >
-          +{{ profile.skills.length - 3 }}
+          +1
         </span>
       </div>
     </div>
@@ -924,50 +956,41 @@ defineProps({
     <!-- Social links with warm theme -->
     <div class="relative z-10 flex justify-center space-x-3">
       <a
-        v-for="(url, platform) in profile.social"
-        :key="platform"
-        :href="url"
+        href="https://www.linkedin.com/in/jordi-bort/"
         target="_blank"
         class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-100 to-red-100 border border-orange-200 flex items-center justify-center text-orange-600 hover:from-orange-200 hover:to-red-200 hover:text-orange-700 hover:scale-110 transition-all duration-300 shadow-sm hover:shadow-md group/social"
-        :aria-label="'Perfil de ' + platform"
+        aria-label="Perfil de linkedin"
       >
-        <!-- Icons for different platforms -->
-        <svg
-          v-if="platform === 'linkedin'"
-          class="w-5 h-5"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
+        <!-- LinkedIn Icon -->
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
           <path
             d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
           />
         </svg>
-        <svg
-          v-else-if="platform === 'github'"
-          class="w-5 h-5"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
+      </a>
+      <a
+        href="https://github.com/jbortweb"
+        target="_blank"
+        class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-100 to-red-100 border border-orange-200 flex items-center justify-center text-orange-600 hover:from-orange-200 hover:to-red-200 hover:text-orange-700 hover:scale-110 transition-all duration-300 shadow-sm hover:shadow-md group/social"
+        aria-label="Perfil de github"
+      >
+        <!-- GitHub Icon -->
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
           <path
             d="M10 0a10 10 0 00-3.16 19.49c.5.1.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0110 4.84c.85.004 1.71.115 2.51.337 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0010 0z"
           />
         </svg>
-        <svg
-          v-else-if="platform === 'twitter'"
-          class="w-5 h-5"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
+      </a>
+      <a
+        href="https://twitter.com/"
+        target="_blank"
+        class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-100 to-red-100 border border-orange-200 flex items-center justify-center text-orange-600 hover:from-orange-200 hover:to-red-200 hover:text-orange-700 hover:scale-110 transition-all duration-300 shadow-sm hover:shadow-md group/social"
+        aria-label="Perfil de twitter"
+      >
+        <!-- Twitter Icon -->
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
           <path
             d="M6.29 18.25c7.55 0 11.67-6.25 11.67-11.67v-.53c.8-.59 1.49-1.3 2.04-2.13-.75.33-1.54.55-2.36.65a4.12 4.12 0 001.8-2.27c-.8.48-1.68.81-2.6 1a4.1 4.1 0 00-7 3.74 11.65 11.65 0 01-8.45-4.3 4.1 4.1 0 001.27 5.49A4.07 4.07 0 01.8 7.7v.05a4.1 4.1 0 003.3 4.03 4.1 4.1 0 01-1.86.07 4.1 4.1 0 003.83 2.85A8.23 8.23 0 010 16.4a11.62 11.62 0 006.29 1.84"
-          />
-        </svg>
-        <svg v-else class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-          <path
-            fill-rule="evenodd"
-            d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
-            clip-rule="evenodd"
           />
         </svg>
       </a>
@@ -983,18 +1006,14 @@ defineProps({
   </div>
 </template>
 
-<script setup>
-
-defineProps({
-  profile: {
-    type: Object,
-    required: true,
-  },
-});
+<script>
+export default {
+  name: 'ProfileCard4',
+}
 </script>`,
   ProfileCard5: `<template>
   <div
-    class="profile-card-5 group relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
+    class="profile-card-5 group relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1 w-96"
   >
     <!-- Minimalist top accent -->
     <div
@@ -1006,8 +1025,8 @@ defineProps({
         <div class="relative inline-block mb-6">
           <!-- Professional avatar -->
           <img
-            :src="profile.avatar"
-            :alt="profile.name"
+            src="../assets/logo.svg"
+            alt="Laura Chen"
             class="w-28 h-28 rounded-full object-cover shadow-lg border-4 border-white group-hover:scale-105 transition-transform duration-300"
           />
           <!-- Professional status -->
@@ -1018,23 +1037,21 @@ defineProps({
           </div>
         </div>
 
-        <!-- Name and title -->
-        <h3
-          class="text-2xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors duration-300"
-        >
-          {{ profile.name }}
-        </h3>
-
-        <div class="space-y-1">
-          <p class="text-indigo-600 font-semibold">{{ profile.role }}</p>
-          <p class="text-gray-500 text-sm">{{ profile.company }}</p>
+        <!-- Nombre y título -->
+        <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">
+          Laura Chen
+        </h2>
+        <div class="text-center">
+          <p class="text-indigo-600 font-semibold">Product Manager</p>
+          <p class="text-gray-500 text-sm">StartupXYZ</p>
         </div>
       </div>
 
-      <!-- Professional bio -->
+      <!-- Biografía profesional -->
       <div class="mb-8">
         <p class="text-gray-600 text-center leading-relaxed">
-          {{ profile.bio }}
+          Product Manager con experiencia en productos digitales y
+          metodologías ágiles
         </p>
       </div>
 
@@ -1047,29 +1064,41 @@ defineProps({
         </h4>
         <div class="flex flex-wrap gap-2">
           <span
-            v-for="skill in profile.skills"
-            :key="skill"
             class="px-3 py-1 bg-gray-100 hover:bg-indigo-100 text-gray-700 hover:text-indigo-700 text-xs font-medium rounded-lg transition-colors duration-300 border border-transparent hover:border-indigo-200"
           >
-            {{ skill }}
+            Product Strategy
+          </span>
+          <span
+            class="px-3 py-1 bg-gray-100 hover:bg-indigo-100 text-gray-700 hover:text-indigo-700 text-xs font-medium rounded-lg transition-colors duration-300 border border-transparent hover:border-indigo-200"
+          >
+            Agile
+          </span>
+          <span
+            class="px-3 py-1 bg-gray-100 hover:bg-indigo-100 text-gray-700 hover:text-indigo-700 text-xs font-medium rounded-lg transition-colors duration-300 border border-transparent hover:border-indigo-200"
+          >
+            User Research
+          </span>
+          <span
+            class="px-3 py-1 bg-gray-100 hover:bg-indigo-100 text-gray-700 hover:text-indigo-700 text-xs font-medium rounded-lg transition-colors duration-300 border border-transparent hover:border-indigo-200"
+          >
+            Analytics
           </span>
         </div>
       </div>
 
       <!-- Professional contact -->
-      <div class="flex justify-center space-x-4">
+      <div class="flex justify-center space-x-4 relative z-10">
         <a
-          v-for="(url, platform) in profile.social"
-          :key="platform"
-          :href="url"
+          href="https://www.linkedin.com/in/jordi-bort/"
           target="_blank"
-          class="w-12 h-12 rounded-full bg-gray-50 hover:bg-indigo-50 border border-gray-200 hover:border-indigo-200 flex items-center justify-center text-gray-600 hover:text-indigo-600 transition-all duration-300 hover:scale-110 group/social"
-          :aria-label="'Conectar en ' + platform"
+          rel="noopener noreferrer"
+          class="w-12 h-12 rounded-full bg-gray-50 hover:bg-indigo-50 border border-gray-200 hover:border-indigo-200 flex items-center justify-center text-gray-600 hover:text-indigo-600 transition-all duration-300 hover:scale-110 group/social cursor-pointer"
+          aria-label="Conectar en linkedin"
+          @click.stop
         >
-          <!-- Professional platform icons -->
+          <!-- LinkedIn Icon -->
           <svg
-            v-if="platform === 'linkedin'"
-            class="w-5 h-5"
+            class="w-5 h-5 pointer-events-none"
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -1077,19 +1106,18 @@ defineProps({
               d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
             />
           </svg>
+        </a>
+        <a
+          href="https://twitter.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-12 h-12 rounded-full bg-gray-50 hover:bg-indigo-50 border border-gray-200 hover:border-indigo-200 flex items-center justify-center text-gray-600 hover:text-indigo-600 transition-all duration-300 hover:scale-110 group/social cursor-pointer"
+          aria-label="Conectar en twitter"
+          @click.stop
+        >
+          <!-- Twitter Icon -->
           <svg
-            v-else-if="platform === 'github'"
-            class="w-5 h-5"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path
-              d="M10 0a10 10 0 00-3.16 19.49c.5.1.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0110 4.84c.85.004 1.71.115 2.51.337 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0010 0z"
-            />
-          </svg>
-          <svg
-            v-else-if="platform === 'twitter'"
-            class="w-5 h-5"
+            class="w-5 h-5 pointer-events-none"
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -1097,12 +1125,23 @@ defineProps({
               d="M6.29 18.25c7.55 0 11.67-6.25 11.67-11.67v-.53c.8-.59 1.49-1.3 2.04-2.13-.75.33-1.54.55-2.36.65a4.12 4.12 0 001.8-2.27c-.8.48-1.68.81-2.6 1a4.1 4.1 0 00-7 3.74 11.65 11.65 0 01-8.45-4.3 4.1 4.1 0 001.27 5.49A4.07 4.07 0 01.8 7.7v.05a4.1 4.1 0 003.3 4.03 4.1 4.1 0 01-1.86.07 4.1 4.1 0 003.83 2.85A8.23 8.23 0 010 16.4a11.62 11.62 0 006.29 1.84"
             />
           </svg>
-          <svg v-else class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+        </a>
+        <a
+          href="https://portafoliojbortweb.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-12 h-12 rounded-full bg-gray-50 hover:bg-indigo-50 border border-gray-200 hover:border-indigo-200 flex items-center justify-center text-gray-600 hover:text-indigo-600 transition-all duration-300 hover:scale-110 group/social cursor-pointer"
+          aria-label="Conectar en medium"
+          @click.stop
+        >
+          <!-- Medium Icon -->
+          <svg
+            class="w-5 h-5 pointer-events-none"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
             <path
-              fill-rule="evenodd"
-              d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
-              clip-rule="evenodd"
+              d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"
             />
           </svg>
         </a>
@@ -1117,16 +1156,10 @@ defineProps({
   </div>
 </template>
 
-<script setup>
-
-
-defineProps({
-  profile: {
-    type: Object,
-    required: true,
-  },
-});
-
+<script>
+export default {
+  name: 'ProfileCard5'
+}
 </script>`,
   ProfileCard6: `<template>
   <div
@@ -1159,8 +1192,8 @@ defineProps({
             class="absolute -inset-1 border border-cyan-400/30 rounded-full"
           ></div>
           <img
-            :src="profile.avatar"
-            :alt="profile.name"
+            src="../assets/logo.svg"
+            alt="Miguel Santos"
             class="w-full h-full rounded-full object-cover border-2 border-gray-700 group-hover:border-cyan-500/50 transition-colors duration-300"
           />
 
@@ -1180,20 +1213,21 @@ defineProps({
           <h3
             class="text-xl font-bold text-white font-mono group-hover:text-cyan-300 transition-colors duration-300"
           >
-            {{ profile.name }}
+            Miguel Santos
           </h3>
         </div>
 
         <div class="text-center">
           <p class="text-cyan-400 font-mono text-xs mb-1">$ cat role.txt</p>
-          <p class="text-gray-300 font-mono text-sm">{{ profile.role }}</p>
-          <p class="text-gray-500 font-mono text-xs">{{ profile.company }}</p>
+          <p class="text-gray-300 font-mono text-sm">Backend Developer</p>
+          <p class="text-gray-500 font-mono text-xs">Enterprise Corp</p>
         </div>
 
         <div class="bg-gray-900/50 border border-cyan-500/30 rounded-lg p-3">
           <p class="text-cyan-400 font-mono text-xs mb-2">$ cat bio.md</p>
           <p class="text-gray-300 text-sm font-mono leading-relaxed">
-            {{ profile.bio }}
+            Desarrollador backend especializado en arquitecturas escalables y
+            microservicios
           </p>
         </div>
       </div>
@@ -1203,11 +1237,24 @@ defineProps({
         <p class="text-cyan-400 font-mono text-xs mb-2">$ ls skills/</p>
         <div class="flex flex-wrap gap-2">
           <span
-            v-for="skill in profile.skills"
-            :key="skill"
             class="px-3 py-1 bg-gray-800/80 text-cyan-300 text-xs font-mono rounded border border-cyan-500/30 hover:border-cyan-400/50 hover:bg-gray-700/80 transition-all duration-300"
           >
-            {{ skill.toLowerCase().replace(" ", "_") }}.js
+            node.js
+          </span>
+          <span
+            class="px-3 py-1 bg-gray-800/80 text-cyan-300 text-xs font-mono rounded border border-cyan-500/30 hover:border-cyan-400/50 hover:bg-gray-700/80 transition-all duration-300"
+          >
+            python.js
+          </span>
+          <span
+            class="px-3 py-1 bg-gray-800/80 text-cyan-300 text-xs font-mono rounded border border-cyan-500/30 hover:border-cyan-400/50 hover:bg-gray-700/80 transition-all duration-300"
+          >
+            postgresql.js
+          </span>
+          <span
+            class="px-3 py-1 bg-gray-800/80 text-cyan-300 text-xs font-mono rounded border border-cyan-500/30 hover:border-cyan-400/50 hover:bg-gray-700/80 transition-all duration-300"
+          >
+            mongodb.js
           </span>
         </div>
       </div>
@@ -1217,40 +1264,41 @@ defineProps({
         <p class="text-cyan-400 font-mono text-xs mb-3">$ ls connections/</p>
         <div class="flex justify-center space-x-3">
           <a
-            v-for="(url, platform) in profile.social"
-            :key="platform"
-            :href="url"
+            href="https://www.linkedin.com/in/jordi-bort/"
             target="_blank"
             class="w-10 h-10 bg-gray-800/80 hover:bg-cyan-900/50 border border-cyan-500/30 hover:border-cyan-400/50 rounded-lg flex items-center justify-center text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:scale-110 group/social"
-            :aria-label="platform + '.link'"
+            aria-label="linkedin.link"
           >
-            <!-- Tech-style icons -->
-            <svg
-              v-if="platform === 'linkedin'"
-              class="w-4 h-4"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
+            <!-- LinkedIn Icon -->
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path
                 d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
               />
             </svg>
-            <svg
-              v-else-if="platform === 'github'"
-              class="w-4 h-4"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
+          </a>
+          <a
+            href="https://github.com/jbortweb"
+            target="_blank"
+            class="w-10 h-10 bg-gray-800/80 hover:bg-cyan-900/50 border border-cyan-500/30 hover:border-cyan-400/50 rounded-lg flex items-center justify-center text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:scale-110 group/social"
+            aria-label="github.link"
+          >
+            <!-- GitHub Icon -->
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path
                 d="M10 0a10 10 0 00-3.16 19.49c.5.1.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0110 4.84c.85.004 1.71.115 2.51.337 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0010 0z"
               />
             </svg>
-            <svg v-else class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+          </a>
+          <a
+            href="https://portafoliojbortweb.netlify.app/"
+            target="_blank"
+            class="w-10 h-10 bg-gray-800/80 hover:bg-cyan-900/50 border border-cyan-500/30 hover:border-cyan-400/50 rounded-lg flex items-center justify-center text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:scale-110 group/social"
+            aria-label="stackoverflow.link"
+          >
+            <!-- Stack Overflow Icon -->
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path
-                fill-rule="evenodd"
-                d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
-                clip-rule="evenodd"
+                d="M15 17v-3h2v5H1v-5h2v3h12zM7.65 3.56l.85 1.94 7.75-3.4-.85-1.94L7.65 3.56zm1.34 3.63l1.47 1.66 6.7-5.93-1.47-1.66-6.7 5.93zm2.22 3.24l1.94 1.09 4.95-8.8-1.94-1.09-4.95 8.8zM15 12h-2v3h2v-3zm-7 0h5v2H8v-2z"
               />
             </svg>
           </a>
@@ -1269,25 +1317,22 @@ defineProps({
   </div>
 </template>
 
-<script setup>
-defineProps({
-  profile: {
-    type: Object,
-    required: true,
-  },
-});
+<script>
+export default {
+  name: 'ProfileCard6'
+}
 </script>`,
 
   // Tarjetas de Artículo
   ArticleCard1: `<template>
   <div
-    class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 w-full max-w-sm mx-auto border border-gray-100 relative group"
+    class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 w-96 mx-auto border border-gray-100 relative group"
   >
     <!-- Image with overlay -->
     <div class="relative h-48 overflow-hidden">
       <img
-        :src="article.image"
-        :alt="article.title"
+        src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop"
+        alt="El Futuro del Desarrollo Web en 2024"
         class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
       />
       <div
@@ -1297,29 +1342,32 @@ defineProps({
         <span
           class="bg-white/90 backdrop-blur-sm text-gray-900 px-3 py-1 rounded-full text-xs font-bold"
         >
-          {{ article.readTime }}
+          5 min
         </span>
       </div>
       <div class="absolute bottom-4 left-4 right-4">
         <h3 class="text-white text-xl font-bold leading-tight mb-2">
-          {{ article.title }}
+          El Futuro del Desarrollo Web en 2024
         </h3>
       </div>
     </div>
 
     <div class="p-6">
       <p class="text-gray-600 text-sm mb-4 leading-relaxed">
-        {{ article.excerpt }}
+        Exploramos las tendencias emergentes en desarrollo web para 2024
       </p>
 
       <!-- Tags -->
       <div class="flex flex-wrap gap-2 mb-4">
         <span
-          v-for="tag in article.tags.slice(0, 2)"
-          :key="tag"
           class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium"
         >
-          #{{ tag }}
+          #Web Development
+        </span>
+        <span
+          class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium"
+        >
+          #Technology
         </span>
       </div>
 
@@ -1329,15 +1377,11 @@ defineProps({
           <div
             class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center"
           >
-            <span class="text-white text-sm font-bold">{{
-              article.author.charAt(0)
-            }}</span>
+            <span class="text-white text-sm font-bold">T</span>
           </div>
           <div class="ml-3">
-            <p class="text-sm font-semibold text-gray-900">
-              {{ article.author }}
-            </p>
-            <p class="text-xs text-gray-500">{{ formatDate(article.date) }}</p>
+            <p class="text-sm font-semibold text-gray-900">Tech Blog</p>
+            <p class="text-xs text-gray-500">15 Ene 2024</p>
           </div>
         </div>
         <button
@@ -1375,7 +1419,7 @@ defineProps({
                 d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
               />
             </svg>
-            <span class="text-sm text-gray-600">{{ article.likes }}</span>
+            <span class="text-sm text-gray-600">156</span>
           </div>
           <div class="flex items-center">
             <svg
@@ -1391,12 +1435,12 @@ defineProps({
                 d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
               />
             </svg>
-            <span class="text-sm text-gray-600">{{ article.comments }}</span>
+            <span class="text-sm text-gray-600">23</span>
           </div>
         </div>
 
         <a
-          :href="article.url"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
           class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200 inline-block cursor-pointer"
@@ -1408,29 +1452,15 @@ defineProps({
   </div>
 </template>
 
-<script setup>
-
-defineProps({
-  article: {
-    type: Object,
-    required: true,
-  },
-});
-
-const formatDate = (dateString) => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("es-ES", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-};
+<script>
 </script>
+<style scoped>
+</style>
 `,
 
   ArticleCard2: `<template>
   <div
-    class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 w-full max-w-sm mx-auto border border-orange-100 relative group"
+    class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 w-96 mx-auto border border-orange-100 relative group"
   >
     <div class="p-6">
       <!-- Header con diseño magazine -->
@@ -1440,38 +1470,36 @@ const formatDate = (dateString) => {
             class="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center"
           >
             <span class="text-white text-xs font-bold">{{
-              article.author.charAt(0)
+              author.charAt(0)
             }}</span>
           </div>
           <div>
-            <p class="text-sm font-bold text-gray-900">{{ article.author }}</p>
-            <p class="text-xs text-orange-600">
-              {{ formatDate(article.date) }}
-            </p>
+            <p class="text-sm font-bold text-gray-900">{{ author }}</p>
+            <p class="text-xs text-orange-600">12 Ene 2024</p>
           </div>
         </div>
         <div
           class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs font-bold"
         >
-          {{ article.readTime }}
+          8 min
         </div>
       </div>
 
       <!-- Title con estilo magazine -->
       <h3 class="text-2xl font-black text-gray-900 mb-3 leading-tight">
-        {{ article.title }}
+        Diseño Responsivo con Tailwind CSS
       </h3>
 
       <!-- Excerpt -->
       <p class="text-gray-700 mb-4 leading-relaxed font-medium">
-        {{ article.excerpt }}
+        Aprende a crear diseños adaptativos usando las utilidades de Tailwind
       </p>
 
       <!-- Image -->
       <div class="relative mb-4 rounded-2xl overflow-hidden">
         <img
-          :src="article.image"
-          :alt="article.title"
+          src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=400&h=250&fit=crop"
+          alt="Diseño Responsivo con Tailwind CSS"
           class="w-full h-40 object-cover"
         />
         <div
@@ -1482,11 +1510,19 @@ const formatDate = (dateString) => {
       <!-- Tags con estilo magazine -->
       <div class="flex flex-wrap gap-2 mb-6">
         <span
-          v-for="tag in article.tags.slice(0, 3)"
-          :key="tag"
           class="bg-white border border-orange-200 text-orange-800 px-3 py-1 rounded-lg text-xs font-semibold shadow-sm"
         >
-          {{ tag }}
+          CSS
+        </span>
+        <span
+          class="bg-white border border-orange-200 text-orange-800 px-3 py-1 rounded-lg text-xs font-semibold shadow-sm"
+        >
+          Tailwind
+        </span>
+        <span
+          class="bg-white border border-orange-200 text-orange-800 px-3 py-1 rounded-lg text-xs font-semibold shadow-sm"
+        >
+          Responsive Design
         </span>
       </div>
 
@@ -1508,9 +1544,7 @@ const formatDate = (dateString) => {
                 />
               </svg>
             </div>
-            <span class="text-sm font-semibold text-gray-700">{{
-              article.likes
-            }}</span>
+            <span class="text-sm font-semibold text-gray-700">156</span>
           </div>
           <div class="flex items-center">
             <div
@@ -1530,14 +1564,12 @@ const formatDate = (dateString) => {
                 />
               </svg>
             </div>
-            <span class="text-sm font-semibold text-gray-700">{{
-              article.comments
-            }}</span>
+            <span class="text-sm font-semibold text-gray-700">23</span>
           </div>
         </div>
 
         <a
-          :href="article.url"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
           class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm hover:from-orange-600 hover:to-red-600 transition-all duration-200 shadow-lg inline-block cursor-pointer"
@@ -1550,28 +1582,13 @@ const formatDate = (dateString) => {
 </template>
 
 <script setup>
-
-
-defineProps({
-  article: {
-    type: Object,
-    required: true,
-  },
-});
-
-const formatDate = (dateString) => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("es-ES", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-};
+const author = "Jbortweb";
 </script>
+
 `,
   ArticleCard3: `<template>
   <div
-    class="bg-gray-900 rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 w-full max-w-sm mx-auto border border-gray-800"
+    class="bg-gray-900 rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 w-96 mx-auto border border-gray-800"
   >
     <div class="p-6">
       <!-- Header dark mode -->
@@ -1584,14 +1601,14 @@ const formatDate = (dateString) => {
           >
         </div>
         <div class="text-gray-400 text-xs font-mono">
-          {{ formatDate(article.date) }}
+          10 Ene 2024
         </div>
       </div>
       <!-- Image con overlay dark -->
       <div class="relative mb-6 rounded-xl overflow-hidden">
         <img
-          :src="article.image"
-          :alt="article.title"
+          src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop"
+          alt="Vue 3: Composition API en Profundidad"
           class="w-full h-32 object-cover"
         />
         <div
@@ -1601,27 +1618,30 @@ const formatDate = (dateString) => {
           <span
             class="bg-cyan-500 text-gray-900 px-2 py-1 rounded text-xs font-bold"
           >
-            {{ article.readTime }}
+            12 min
           </span>
         </div>
       </div>
 
       <!-- Content -->
       <h3 class="text-white text-xl font-bold mb-3 leading-tight">
-        {{ article.title }}
+        Vue 3: Composition API en Profundidad
       </h3>
       <p class="text-gray-300 text-sm mb-4 leading-relaxed">
-        {{ article.excerpt }}
+        Domina la Composition API de Vue 3 con ejemplos prácticos
       </p>
 
       <!-- Tags dark mode -->
       <div class="flex flex-wrap gap-2 mb-6">
         <span
-          v-for="tag in article.tags.slice(0, 2)"
-          :key="tag"
           class="bg-gray-800 border border-gray-700 text-cyan-400 px-3 py-1 rounded-lg text-xs font-medium"
         >
-          {{ tag }}
+          Vue.js
+        </span>
+        <span
+          class="bg-gray-800 border border-gray-700 text-cyan-400 px-3 py-1 rounded-lg text-xs font-medium"
+        >
+          JavaScript
         </span>
       </div>
 
@@ -1631,12 +1651,10 @@ const formatDate = (dateString) => {
           <div
             class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center"
           >
-            <span class="text-white text-sm font-bold">{{
-              article.author.charAt(0)
-            }}</span>
+            <span class="text-white text-sm font-bold">VM</span>
           </div>
           <div class="ml-3">
-            <p class="text-white font-semibold text-sm">{{ article.author }}</p>
+            <p class="text-white font-semibold text-sm">Vue Mastery</p>
             <p class="text-gray-400 text-xs">Tech Writer</p>
           </div>
         </div>
@@ -1658,7 +1676,7 @@ const formatDate = (dateString) => {
                 d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
               />
             </svg>
-            <span class="text-gray-300 text-sm">{{ article.likes }}</span>
+            <span class="text-gray-300 text-sm">294</span>
           </div>
           <div class="flex items-center">
             <svg
@@ -1674,7 +1692,7 @@ const formatDate = (dateString) => {
                 d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
               />
             </svg>
-            <span class="text-gray-300 text-sm">{{ article.comments }}</span>
+            <span class="text-gray-300 text-sm">45</span>
           </div>
         </div>
 
@@ -1688,29 +1706,15 @@ const formatDate = (dateString) => {
   </div>
 </template>
 
-<script setup>
-
-
-defineProps({
-  article: {
-    type: Object,
-    required: true,
-  },
-});
-
-const formatDate = (dateString) => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("es-ES", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-};
+<script>
+export default {
+  name: 'ArticleCard3'
+}
 </script>
 `,
   ArticleCard4: `<template>
   <div
-    class="article-card-4 group relative bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 rounded-2xl shadow-lg border border-emerald-200/50 overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
+    class="article-card-4 group relative bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 rounded-2xl shadow-lg border border-emerald-200/50 overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1 w-96 mx-auto"
   >
     <!-- Nature-inspired background elements -->
     <div
@@ -1724,8 +1728,8 @@ const formatDate = (dateString) => {
     <div class="relative mb-6">
       <div class="overflow-hidden rounded-t-2xl">
         <img
-          :src="article.image"
-          :alt="article.title"
+          src="https://images.unsplash.com/photo-1555255707-c07966088b7b?w=400&h=250&fit=crop"
+          alt="Inteligencia Artificial y Machine Learning"
           class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
         />
         <div
@@ -1756,16 +1760,19 @@ const formatDate = (dateString) => {
         <div class="flex items-center space-x-2">
           <div class="flex -space-x-1">
             <span
-              v-for="tag in article.tags.slice(0, 2)"
-              :key="tag"
               class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-medium rounded-full border border-emerald-200 group-hover:bg-emerald-200 transition-colors duration-300"
             >
-              {{ tag }}
+              AI
+            </span>
+            <span
+              class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-medium rounded-full border border-emerald-200 group-hover:bg-emerald-200 transition-colors duration-300"
+            >
+              Machine Learning
             </span>
           </div>
         </div>
         <div class="text-xs text-emerald-600 font-medium">
-          {{ article.readTime }}
+          15 min
         </div>
       </div>
 
@@ -1773,12 +1780,12 @@ const formatDate = (dateString) => {
       <h3
         class="text-xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-emerald-700 transition-colors duration-300"
       >
-        {{ article.title }}
+        Inteligencia Artificial y Machine Learning
       </h3>
 
       <!-- Excerpt -->
       <p class="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
-        {{ article.excerpt }}
+        Guía completa para comenzar en el mundo del machine learning
       </p>
 
       <!-- Author info with nature theme -->
@@ -1787,13 +1794,13 @@ const formatDate = (dateString) => {
           <div
             class="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-xs shadow-sm"
           >
-            {{ article.author.charAt(0) }}
+            AR
           </div>
           <div>
             <p class="text-sm font-medium text-gray-800">
-              {{ article.author }}
+              AI Research
             </p>
-            <p class="text-xs text-gray-500">{{ article.date }}</p>
+            <p class="text-xs text-gray-500">4 Ene 2024</p>
           </div>
         </div>
 
@@ -1807,7 +1814,7 @@ const formatDate = (dateString) => {
                 d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
               />
             </svg>
-            <span>{{ article.likes }}</span>
+            <span>387</span>
           </div>
           <div
             class="flex items-center space-x-1 hover:text-emerald-600 transition-colors duration-300"
@@ -1825,7 +1832,7 @@ const formatDate = (dateString) => {
                 d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
               />
             </svg>
-            <span>{{ article.comments }}</span>
+            <span>67</span>
           </div>
         </div>
       </div>
@@ -1833,17 +1840,13 @@ const formatDate = (dateString) => {
       <!-- Action buttons -->
       <div class="mt-6 flex justify-between items-center">
         <a
-          :href="article.url"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#"
           class="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer"
         >
           Leer más
         </a>
         <a
-          :href="article.secondaryUrl"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#"
           class="text-emerald-600 hover:text-emerald-700 text-sm font-medium transition-colors duration-300 cursor-pointer"
         >
           Ver más artículos
@@ -1859,15 +1862,10 @@ const formatDate = (dateString) => {
   </div>
 </template>
 
-<script setup>
-
-
-defineProps({
-  article: {
-    type: Object,
-    required: true,
-  },
-});
+<script>
+export default {
+  name: 'ArticleCard4'
+}
 </script>
 
 <style scoped>
@@ -1884,7 +1882,7 @@ defineProps({
 </style>`,
   ArticleCard5: `<template>
   <div
-    class="article-card-5 group relative bg-white rounded-none shadow-xl border-l-4 border-red-500 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:border-red-600"
+    class="article-card-5 group relative bg-white rounded-none shadow-xl border-l-4 border-red-500 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:border-red-600 w-96 mx-auto"
   >
     <!-- Magazine-style header stripe -->
     <div
@@ -1899,22 +1897,20 @@ defineProps({
           <div class="space-y-1">
             <div class="flex space-x-2">
               <span
-                v-for="tag in article.tags.slice(0, 1)"
-                :key="tag"
                 class="px-2 py-1 bg-red-500 text-white text-xs font-bold uppercase tracking-wide"
               >
-                {{ tag }}
+                DevOps
               </span>
             </div>
             <p
               class="text-xs text-gray-500 uppercase tracking-wide font-semibold"
             >
-              {{ article.readTime }} Read
+              6 min Read
             </p>
           </div>
         </div>
         <div class="text-right">
-          <p class="text-xs text-gray-400 uppercase">{{ article.date }}</p>
+          <p class="text-xs text-gray-400 uppercase">8 Ene 2024</p>
         </div>
       </div>
 
@@ -1922,14 +1918,14 @@ defineProps({
       <h3
         class="text-2xl font-black text-gray-900 mb-4 leading-tight group-hover:text-red-700 transition-colors duration-300 uppercase tracking-tight"
       >
-        {{ article.title }}
+        DevOps: Automatización y CI/CD
       </h3>
 
       <!-- Magazine-style image -->
       <div class="relative mb-6 -mx-6">
         <img
-          :src="article.image"
-          :alt="article.title"
+          src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=400&h=250&fit=crop"
+          alt="DevOps: Automatización y CI/CD"
           class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <!-- Bold overlay -->
@@ -1938,7 +1934,7 @@ defineProps({
         ></div>
         <div class="absolute bottom-4 left-6 right-6">
           <p class="text-white text-sm leading-relaxed font-medium">
-            {{ article.excerpt }}
+            Implementa pipelines de CI/CD efectivos para tu equipo
           </p>
         </div>
       </div>
@@ -1950,18 +1946,13 @@ defineProps({
             <div
               class="w-12 h-12 bg-red-500 text-white font-black text-lg flex items-center justify-center"
             >
-              {{
-                article.author
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")
-              }}
+              DT
             </div>
             <div>
               <p
                 class="font-bold text-gray-900 uppercase text-sm tracking-wide"
               >
-                {{ article.author }}
+                DevOps Pro
               </p>
               <p class="text-xs text-gray-500 uppercase font-semibold">
                 Contributing Writer
@@ -1972,12 +1963,12 @@ defineProps({
           <!-- Bold engagement stats -->
           <div class="flex items-center space-x-4">
             <div class="text-center">
-              <p class="text-xl font-black text-red-500">{{ article.likes }}</p>
+              <p class="text-xl font-black text-red-500">245</p>
               <p class="text-xs text-gray-500 uppercase font-bold">Likes</p>
             </div>
             <div class="text-center">
               <p class="text-xl font-black text-red-500">
-                {{ article.comments }}
+                38
               </p>
               <p class="text-xs text-gray-500 uppercase font-bold">Comments</p>
             </div>
@@ -1988,17 +1979,13 @@ defineProps({
       <!-- Magazine action buttons -->
       <div class="mt-6 pt-4 border-t-2 border-red-500 flex justify-between items-center">
         <a
-          :href="article.url"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#"
           class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded font-black text-sm uppercase tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 cursor-pointer"
         >
           LEER MÁS
         </a>
         <a
-          :href="article.secondaryUrl"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#"
           class="text-red-500 hover:text-red-600 font-bold text-sm uppercase tracking-wide transition-colors duration-300 cursor-pointer"
         >
           + ARTÍCULOS
@@ -2018,20 +2005,14 @@ defineProps({
   </div>
 </template>
 
-<script setup>
-
-
-defineProps({
-  article: {
-    type: Object,
-    required: true,
-  },
-});
-
+<script>
+export default {
+  name: 'ArticleCard5'
+}
 </script>`,
   ArticleCard6: `<template>
   <div
-    class="article-card-6 group relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-2xl border border-purple-500/30 shadow-2xl overflow-hidden transition-all duration-500 hover:shadow-purple-500/25 hover:border-purple-400/50"
+    class="article-card-6 group relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-2xl border border-purple-500/30 shadow-2xl overflow-hidden transition-all duration-500 hover:shadow-purple-500/25 hover:border-purple-400/50 w-96 mx-auto"
   >
     <!-- Futuristic grid overlay -->
     <div class="absolute inset-0 opacity-10">
@@ -2064,7 +2045,7 @@ defineProps({
           class="flex items-center space-x-2 text-xs text-purple-300 font-mono"
         >
           <span>Runtime:</span>
-          <span class="text-purple-400">{{ article.readTime }}</span>
+          <span class="text-purple-400">7 min</span>
         </div>
       </div>
 
@@ -2074,8 +2055,8 @@ defineProps({
           class="absolute inset-0 bg-purple-500/20 blur-xl rounded-lg group-hover:bg-purple-400/30 transition-colors duration-500"
         ></div>
         <img
-          :src="article.image"
-          :alt="article.title"
+          src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop"
+          alt="Seguridad en Aplicaciones Web Modernas"
           class="relative z-10 w-full h-40 object-cover rounded-lg border border-purple-500/50 shadow-lg filter contrast-125 saturate-110 group-hover:shadow-purple-500/50 transition-all duration-500"
         />
         <!-- Holographic overlay -->
@@ -2105,11 +2086,14 @@ defineProps({
           <span class="text-purple-400 text-xs font-mono">Tags:</span>
           <div class="flex space-x-2">
             <span
-              v-for="tag in article.tags.slice(0, 2)"
-              :key="tag"
               class="px-2 py-1 bg-purple-900/50 text-purple-300 group-hover:text-white text-xs font-mono border border-purple-500/30 rounded hover:border-purple-400/50 transition-colors duration-300"
             >
-              #{{ tag.toLowerCase().replace(" ", "_") }}
+              #security
+            </span>
+            <span
+              class="px-2 py-1 bg-purple-900/50 text-purple-300 group-hover:text-white text-xs font-mono border border-purple-500/30 rounded hover:border-purple-400/50 transition-colors duration-300"
+            >
+              #web_development
             </span>
           </div>
         </div>
@@ -2119,7 +2103,7 @@ defineProps({
           <h3
             class="text-xl font-bold text-white group-hover:text-white transition-colors duration-300 font-mono leading-tight"
           >
-            {{ article.title }}
+            Seguridad en Aplicaciones Web Modernas
           </h3>
         </div>
 
@@ -2136,7 +2120,7 @@ defineProps({
           <p
             class="text-gray-300 group-hover:text-white text-sm font-mono leading-relaxed"
           >
-            > {{ article.excerpt }}
+            > Mejores prácticas para proteger tus aplicaciones web
           </p>
         </div>
 
@@ -2148,21 +2132,16 @@ defineProps({
             <div
               class="w-10 h-10 bg-gradient-to-br from-purple-600 to-cyan-600 rounded border border-purple-400/50 flex items-center justify-center text-white font-mono font-bold text-xs shadow-lg"
             >
-              {{
-                article.author
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")
-              }}
+              SC
             </div>
             <div>
               <p
                 class="text-purple-300 group-hover:text-white font-mono text-sm"
               >
-                {{ article.author }}
+                Security Central
               </p>
               <p class="text-gray-400 group-hover:text-white text-xs font-mono">
-                {{ article.date }}
+                2 Ene 2024
               </p>
             </div>
           </div>
@@ -2173,13 +2152,13 @@ defineProps({
               class="flex items-center space-x-1 text-purple-400 group-hover:text-white transition-colors duration-300"
             >
               <span class="glow-text">♥</span>
-              <span>{{ article.likes }}</span>
+              <span>423</span>
             </div>
             <div
               class="flex items-center space-x-1 text-purple-400 group-hover:text-white transition-colors duration-300"
             >
               <span class="glow-text">◊</span>
-              <span>{{ article.comments }}</span>
+              <span>89</span>
             </div>
           </div>
         </div>
@@ -2187,17 +2166,13 @@ defineProps({
         <!-- Holographic action interface -->
         <div class="mt-6 flex justify-between items-center border-t border-purple-800/50 pt-4">
           <a
-            :href="article.url"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#"
             class="relative bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-white px-6 py-2 rounded-lg font-mono text-sm transition-all duration-300 shadow-lg hover:shadow-purple-500/25 glow-text cursor-pointer"
           >
             [LEER_MÁS]
           </a>
           <a
-            :href="article.secondaryUrl"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#"
             class="text-purple-400 hover:text-white font-mono text-xs transition-colors duration-300 glow-text cursor-pointer"
           >
             >_ EXPLORAR
@@ -2217,15 +2192,10 @@ defineProps({
   </div>
 </template>
 
-<script setup>
-
-defineProps({
-  article: {
-    type: Object,
-    required: true,
-  },
-});
-
+<script>
+export default {
+  name: 'ArticleCard6'
+}
 </script>
 
 <style scoped>
@@ -2252,7 +2222,7 @@ defineProps({
           PREMIUM
         </span>
       </div>
-      <div class="absolute top-4 right-4">
+      <div class="absolute top-4 right-14">
         <button
           class="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors"
         >
@@ -2314,8 +2284,10 @@ defineProps({
   </div>
 </template>
 
-<script setup>
-// Componente de tarjeta de producto con datos integrados
+<script>
+export default {
+  name: 'ProductCard1'
+}
 </script>
 `,
 
@@ -2414,8 +2386,10 @@ defineProps({
   </div>
 </template>
 
-<script setup>
-// Componente de tarjeta de producto con datos integrados - MacBook Air M2
+<script>
+export default {
+  name: 'ProductCard2'
+}
 </script>
 `,
 
@@ -2435,8 +2409,8 @@ defineProps({
 
       <div class="relative mb-6">
         <img
-          :src="product.image"
-          :alt="product.title"
+          src="https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=400&h=300&fit=crop"
+          alt="AirPods Pro"
           class="w-full h-40 object-cover rounded-xl"
         />
         <div
@@ -2446,29 +2420,29 @@ defineProps({
           <span
             class="bg-gray-800/90 text-white px-3 py-1 rounded-lg text-xs font-medium backdrop-blur-sm"
           >
-            {{ product.category }}
+            Audio
           </span>
         </div>
       </div>
 
       <h3 class="text-white text-xl font-bold mb-2 leading-tight">
-        {{ product.title }}
+        AirPods Pro
       </h3>
       <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-        {{ product.description }}
+        Audio inmersivo con cancelación activa de ruido
       </p>
 
       <div class="flex items-center justify-between mb-6">
         <div class="text-left">
-          <div class="text-2xl font-bold text-white">{{ product.price }}</div>
+          <div class="text-2xl font-bold text-white">249€</div>
           <div class="text-gray-400 text-xs">Precio final</div>
         </div>
         <div class="text-right">
           <div class="flex items-center">
             <span class="text-yellow-400 text-lg mr-1">★</span>
-            <span class="text-white font-semibold">{{ product.rating }}</span>
+            <span class="text-white font-semibold">4.7</span>
           </div>
-          <div class="text-gray-400 text-xs">{{ product.reviews }} reviews</div>
+          <div class="text-gray-400 text-xs">634 reviews</div>
         </div>
       </div>
 
@@ -2488,21 +2462,15 @@ defineProps({
   </div>
 </template>
 
-<script setup>
-
-
-defineProps({
-  product: {
-    type: Object,
-    required: true,
-  },
-});
-
+<script>
+export default {
+  name: 'ProductCard3'
+}
 </script>
 `,
   ProductCard4: `<template>
   <div
-    class="product-card-4 group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-900/80 via-blue-900/80 to-indigo-900/80 backdrop-blur-sm border border-purple-500/20 p-6 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/25 hover:border-purple-400/40"
+    class="product-card-4 group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-900/80 via-blue-900/80 to-indigo-900/80 backdrop-blur-sm border border-purple-500/20 p-6 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/25 hover:border-purple-400/40 w-96"
   >
     <!-- Animated background pattern -->
     <div class="absolute inset-0 opacity-10">
@@ -2529,8 +2497,8 @@ defineProps({
     <!-- Product image with smooth hover effect -->
     <div class="relative mb-6">
       <img
-        :src="product.image"
-        :alt="product.title"
+        src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400&h=300&fit=crop"
+        alt="Samsung Galaxy S24 Ultra"
         class="relative z-20 w-full h-48 object-cover rounded-xl border border-purple-400/30 shadow-lg group-hover:shadow-purple-500/50 transition-shadow duration-500"
       />
     </div>
@@ -2540,7 +2508,7 @@ defineProps({
       <div class="flex items-center justify-between">
         <span
           class="px-3 py-1 text-xs font-semibold bg-purple-500/30 text-purple-200 rounded-full border border-purple-400/50"
-          >{{ product.category }}</span
+          >Technology</span
         >
         <div class="flex items-center space-x-1 text-yellow-400">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
@@ -2548,28 +2516,26 @@ defineProps({
               d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
             />
           </svg>
-          <span class="text-sm font-medium text-white">{{
-            product.rating
-          }}</span>
+          <span class="text-sm font-medium text-white">4.6</span>
         </div>
       </div>
 
       <h3
         class="text-xl font-bold text-white group-hover:text-purple-200 transition-colors duration-300"
       >
-        {{ product.title }}
+        Samsung Galaxy S24 Ultra
       </h3>
 
       <p class="text-gray-300 text-sm leading-relaxed">
-        {{ product.description }}
+        Smartphone Android premium con S Pen y cámara de 200MP
       </p>
 
       <div
         class="flex items-center justify-between pt-4 border-t border-purple-500/20"
       >
         <div class="space-y-1">
-          <p class="text-2xl font-bold text-white">{{ product.price }}</p>
-          <p class="text-xs text-gray-400">{{ product.reviews }} reseñas</p>
+          <p class="text-2xl font-bold text-white">1,299€</p>
+          <p class="text-xs text-gray-400">3421 reseñas</p>
         </div>
 
         <button
@@ -2582,14 +2548,10 @@ defineProps({
   </div>
 </template>
 
-<script setup>
-
-defineProps({
-  product: {
-    type: Object,
-    required: true,
-  },
-});
+<script>
+export default {
+  name: 'ProductCard4'
+}
 </script>
 
 <style scoped>
@@ -2609,7 +2571,7 @@ defineProps({
 </style>`,
   ProductCard5: `<template>
   <div
-    class="product-card-5 group relative bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+    class="product-card-5 group relative bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 w-96"
   >
     <!-- Minimalist top accent -->
     <div
@@ -2622,8 +2584,8 @@ defineProps({
         class="relative overflow-hidden rounded-2xl bg-gray-50 group-hover:bg-gray-100 transition-colors duration-300"
       >
         <img
-          :src="product.image"
-          :alt="product.title"
+          src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=400&h=300&fit=crop"
+          alt="Sony WH-1000XM5"
           class="w-full h-52 object-cover transition-transform duration-700 group-hover:scale-110"
         />
         <!-- Minimal overlay -->
@@ -2639,16 +2601,14 @@ defineProps({
       <div class="flex items-center justify-between">
         <span
           class="text-xs font-medium text-gray-500 uppercase tracking-wider"
-          >{{ product.category }}</span
+          >Audio</span
         >
         <div class="flex items-center space-x-1">
           <div class="flex space-x-1">
             <div v-for="star in 5" :key="star" class="w-3 h-3">
               <svg
                 :class="
-                  star <= Math.floor(product.rating)
-                    ? 'text-gray-900'
-                    : 'text-gray-200'
+                  star <= Math.floor(4.8) ? 'text-gray-900' : 'text-gray-200'
                 "
                 fill="currentColor"
                 viewBox="0 0 20 20"
@@ -2659,9 +2619,7 @@ defineProps({
               </svg>
             </div>
           </div>
-          <span class="text-sm font-medium text-gray-600 ml-2">{{
-            product.rating
-          }}</span>
+          <span class="text-sm font-medium text-gray-600 ml-2">4.8</span>
         </div>
       </div>
 
@@ -2669,23 +2627,21 @@ defineProps({
       <h3
         class="text-2xl font-bold text-gray-900 leading-tight group-hover:text-gray-700 transition-colors duration-300"
       >
-        {{ product.title }}
+        Sony WH-1000XM5
       </h3>
 
       <!-- Description -->
       <p class="text-gray-600 text-sm leading-relaxed line-clamp-2">
-        {{ product.description }}
+        Auriculares inalámbricos con la mejor cancelación de ruido
       </p>
 
       <!-- Reviews count -->
-      <p class="text-xs text-gray-400">
-        {{ product.reviews }} reseñas verificadas
-      </p>
+      <p class="text-xs text-gray-400">1876 reseñas verificadas</p>
 
       <!-- Price and action -->
       <div class="flex items-end justify-between pt-4">
         <div>
-          <p class="text-3xl font-bold text-gray-900">{{ product.price }}</p>
+          <p class="text-3xl font-bold text-gray-900">399€</p>
         </div>
 
         <button
@@ -2703,15 +2659,10 @@ defineProps({
   </div>
 </template>
 
-<script setup>
-
-
-defineProps({
-  product: {
-    type: Object,
-    required: true,
-  },
-});
+<script>
+export default {
+  name: 'ProductCard5'
+}
 </script>
 
 <style scoped>
@@ -2724,7 +2675,7 @@ defineProps({
 </style>`,
   ProductCard6: `<template>
   <div
-    class="product-card-6 group relative bg-black rounded-2xl overflow-hidden border border-cyan-500/30 transition-all duration-500 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/20"
+    class="product-card-6 group relative bg-black rounded-2xl overflow-hidden border border-cyan-500/30 transition-all duration-500 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/20 w-96"
   >
     <!-- Neon grid background -->
     <div class="absolute inset-0 opacity-10">
@@ -2752,8 +2703,8 @@ defineProps({
           class="absolute inset-0 bg-cyan-500/20 blur-xl rounded-xl group-hover:bg-cyan-400/30 transition-colors duration-500"
         ></div>
         <img
-          :src="product.image"
-          :alt="product.title"
+          src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=300&fit=crop"
+          alt="iPad Pro 12.9"
           class="relative z-10 w-full h-48 object-cover rounded-xl border border-cyan-500/50 shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-400/30 transition-all duration-500 filter contrast-125 saturate-110"
         />
         <!-- Holographic overlay -->
@@ -2784,25 +2735,21 @@ defineProps({
             <div class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
             <span
               class="text-cyan-400 text-xs font-mono uppercase tracking-wider"
-              >{{ product.category }}</span
+              >Technology</span
             >
           </div>
           <div class="flex items-center space-x-2 text-cyan-300">
             <span class="text-xs font-mono">RATING:</span>
-            <span class="text-sm font-bold text-cyan-400"
-              >{{ product.rating }}/5</span
-            >
+            <span class="text-sm font-bold text-cyan-400">4.7/5</span>
           </div>
         </div>
 
         <!-- Glitch title effect -->
         <div class="relative">
-          <h3 class="text-xl font-bold text-white font-mono">
-            {{ product.title }}
-          </h3>
+          <h3 class="text-xl font-bold text-white font-mono">iPad Pro 12.9</h3>
           <!-- Glitch overlay -->
           <h3 class="absolute inset-0 text-xl font-bold text-white font-mono">
-            {{ product.title }}
+            iPad Pro 12.9
           </h3>
         </div>
 
@@ -2817,7 +2764,7 @@ defineProps({
             >
           </div>
           <p class="text-gray-300 text-sm font-mono leading-relaxed">
-            > {{ product.description }}
+            > Tablet profesional con chip M2 y pantalla Liquid Retina XDR
           </p>
         </div>
 
@@ -2826,12 +2773,8 @@ defineProps({
           class="flex items-center justify-between pt-4 border-t border-cyan-500/30"
         >
           <div class="space-y-1">
-            <p class="text-2xl font-bold text-white font-mono">
-              {{ product.price }}
-            </p>
-            <p class="text-xs text-gray-400 font-mono">
-              {{ product.reviews }} reviews.log
-            </p>
+            <p class="text-2xl font-bold text-white font-mono">1,099€</p>
+            <p class="text-xs text-gray-400 font-mono">967 reviews.log</p>
           </div>
 
           <button
@@ -2854,16 +2797,10 @@ defineProps({
   </div>
 </template>
 
-<script setup>
-
-
-defineProps({
-  product: {
-    type: Object,
-    required: true,
-  },
-});
-
+<script>
+export default {
+  name: 'ProductCard6'
+}
 </script>
 
 <style scoped>

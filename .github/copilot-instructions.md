@@ -258,7 +258,7 @@ Los headers y footers NO incluyen modal, pero sus códigos se almacenan en `head
 - **Responsividad**: Diseño mobile-first, escalar hacia arriba
 - **Performance**: Usar optimizaciones de Vue 3 y lazy loading
 - **Calidad de Código**: Seguir reglas ESLint y guía de estilo Vue 3
-- **Importante**: El código que se coloca en archivos de datos (cardData.js, cardCodes.js, headCodes.js) debe ser exactamente igual al del componente que se quiere replicar, excluyendo el botón de modal y su lógica, también las importaciones innecesarias. Los comentarios deben estar en castellano.
+- **Importante**: El código que se coloca en archivos de datos ( cardCodes.js, headCodes.js) debe ser exactamente igual al del componente que se quiere replicar, excluyendo el botón de modal y su lógica, también las importaciones innecesarias. Los comentarios deben estar en castellano.
 
 ## Mejores Prácticas Específicas
 
