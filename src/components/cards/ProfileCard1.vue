@@ -48,8 +48,8 @@
               class="w-24 h-24 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-1 group-hover:scale-110 transition-transform duration-300"
             >
               <img
-                :src="profile.avatar"
-                :alt="profile.name"
+                src="/mia.webp"
+                alt="Ana García"
                 class="w-full h-full rounded-full object-cover border-4 border-white/50"
               />
             </div>
@@ -65,17 +65,17 @@
         <!-- Info Section -->
         <div class="text-center mb-6">
           <h3 class="text-2xl font-bold text-pink-500 mb-2 animate-fade-in-up">
-            {{ profile.name }}
+            Ana García
           </h3>
           <p
             class="text-pink-500 text-lg mb-1 animate-fade-in-up animation-delay-200"
           >
-            {{ profile.role }}
+            Frontend Developer
           </p>
           <p
             class="text-pink-500/60 text-sm animate-fade-in-up animation-delay-400"
           >
-            @ {{ profile.company }}
+            @ Tech Solutions
           </p>
         </div>
 
@@ -84,7 +84,8 @@
           <p
             class="text-pink-500/80 text-sm text-center leading-relaxed line-clamp-3"
           >
-            {{ profile.bio }}
+            Apasionada del desarrollo web con 5 años de experiencia en React y
+            Vue.js
           </p>
         </div>
 
@@ -92,12 +93,28 @@
         <div class="mb-6 animate-fade-in-up animation-delay-800">
           <div class="flex flex-wrap justify-center gap-2">
             <span
-              v-for="(skill, index) in profile.skills.slice(0, 4)"
-              :key="skill"
-              :style="{ animationDelay: `${index * 200}ms` }"
               class="bg-white/20 backdrop-blur-sm text-pink-500 text-xs px-3 py-2 rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 animate-float"
+              style="animation-delay: 0ms"
             >
-              {{ skill }}
+              Vue.js
+            </span>
+            <span
+              class="bg-white/20 backdrop-blur-sm text-pink-500 text-xs px-3 py-2 rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 animate-float"
+              style="animation-delay: 200ms"
+            >
+              React
+            </span>
+            <span
+              class="bg-white/20 backdrop-blur-sm text-pink-500 text-xs px-3 py-2 rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 animate-float"
+              style="animation-delay: 400ms"
+            >
+              TypeScript
+            </span>
+            <span
+              class="bg-white/20 backdrop-blur-sm text-pink-500 text-xs px-3 py-2 rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 animate-float"
+              style="animation-delay: 600ms"
+            >
+              Tailwind CSS
             </span>
           </div>
         </div>
@@ -107,8 +124,7 @@
           class="flex justify-center space-x-4 mb-6 animate-fade-in-up animation-delay-1000"
         >
           <a
-            v-if="profile.social.linkedin"
-            :href="profile.social.linkedin"
+            href="https://www.linkedin.com/in/jordi-bort/"
             target="_blank"
             class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-blue-500/50 hover:scale-110 transition-all duration-300 group/social"
           >
@@ -123,8 +139,7 @@
             </svg>
           </a>
           <a
-            v-if="profile.social.github"
-            :href="profile.social.github"
+            href="https://github.com/jbortweb"
             target="_blank"
             class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 group/social"
           >
@@ -139,8 +154,7 @@
             </svg>
           </a>
           <a
-            v-if="profile.social.twitter"
-            :href="profile.social.twitter"
+            href="https://twitter.com"
             target="_blank"
             class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-blue-400/50 hover:scale-110 transition-all duration-300 group/social"
           >
@@ -185,13 +199,7 @@ import { ref } from "vue";
 import CodeModal from "../CodeModal.vue";
 import { cardCodes } from "../../data/cardCodes.js";
 
-defineProps({
-  profile: {
-    type: Object,
-    required: true,
-  },
-});
-
+// Configuración del modal
 const codeModal = ref(null);
 const cardCode = cardCodes.ProfileCard1;
 

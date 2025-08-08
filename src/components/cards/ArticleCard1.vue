@@ -27,8 +27,8 @@
     <!-- Image with overlay -->
     <div class="relative h-48 overflow-hidden">
       <img
-        :src="article.image"
-        :alt="article.title"
+        src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop"
+        alt="El Futuro del Desarrollo Web en 2024"
         class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
       />
       <div

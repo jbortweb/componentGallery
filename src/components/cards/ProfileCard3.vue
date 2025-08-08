@@ -51,8 +51,8 @@
               class="w-24 h-24 rounded-full border-2 border-cyan-400 p-1 animate-pulse-neon"
             >
               <img
-                :src="profile.avatar"
-                :alt="profile.name"
+                src="/mia.webp"
+                alt="María López"
                 class="w-full h-full rounded-full object-cover filter brightness-110 contrast-110"
               />
               <!-- Holographic effect -->
@@ -73,17 +73,17 @@
         <div class="text-center mb-6">
           <h3
             class="text-2xl font-mono font-bold text-white mb-2 glitch-text"
-            data-text="{{ profile.name }}"
+            data-text="María López"
           >
-            {{ profile.name }}
+            María López
           </h3>
           <div
             class="inline-block bg-gradient-to-r from-cyan-400 to-purple-400 text-gray-900 px-4 py-2 rounded font-mono text-sm font-bold mb-2 shadow-neon"
           >
-            {{ profile.role }}
+            Data Scientist
           </div>
           <p class="text-cyan-300 text-sm font-mono opacity-80">
-            &gt; {{ profile.company }}_
+            &gt; AI Innovations_
           </p>
         </div>
 
@@ -94,7 +94,7 @@
           >
             <div class="text-green-400 mb-2">&gt; cat bio.txt</div>
             <p class="text-green-300 leading-relaxed terminal-bio">
-              {{ profile.bio }}
+              Experta en machine learning y análisis de datos con enfoque en IA
             </p>
             <div class="text-green-400 mt-2 animate-blink">█</div>
           </div>
@@ -107,12 +107,28 @@
           </div>
           <div class="flex flex-wrap gap-2">
             <span
-              v-for="(skill, index) in profile.skills.slice(0, 4)"
-              :key="skill"
-              :style="{ animationDelay: `${index * 150}ms` }"
               class="bg-transparent border border-cyan-500/50 text-cyan-300 text-xs font-mono px-3 py-1 rounded hover:border-cyan-400 hover:text-cyan-200 hover:shadow-neon-sm transition-all duration-300 animate-fade-in-cyber"
+              style="animation-delay: 0ms"
             >
-              {{ skill }}
+              Python
+            </span>
+            <span
+              class="bg-transparent border border-cyan-500/50 text-cyan-300 text-xs font-mono px-3 py-1 rounded hover:border-cyan-400 hover:text-cyan-200 hover:shadow-neon-sm transition-all duration-300 animate-fade-in-cyber"
+              style="animation-delay: 150ms"
+            >
+              TensorFlow
+            </span>
+            <span
+              class="bg-transparent border border-cyan-500/50 text-cyan-300 text-xs font-mono px-3 py-1 rounded hover:border-cyan-400 hover:text-cyan-200 hover:shadow-neon-sm transition-all duration-300 animate-fade-in-cyber"
+              style="animation-delay: 300ms"
+            >
+              SQL
+            </span>
+            <span
+              class="bg-transparent border border-cyan-500/50 text-cyan-300 text-xs font-mono px-3 py-1 rounded hover:border-cyan-400 hover:text-cyan-200 hover:shadow-neon-sm transition-all duration-300 animate-fade-in-cyber"
+              style="animation-delay: 450ms"
+            >
+              Data Visualization
             </span>
           </div>
         </div>
@@ -120,8 +136,7 @@
         <!-- Holographic Social -->
         <div class="flex justify-center space-x-4 mb-6">
           <a
-            v-if="profile.social.linkedin"
-            :href="profile.social.linkedin"
+            href="https://www.linkedin.com/in/jordi-bort/"
             target="_blank"
             class="w-10 h-10 border border-blue-500/50 rounded flex items-center justify-center hover:border-blue-400 hover:shadow-neon-blue transition-all duration-300 transform hover:scale-110 group/social"
           >
@@ -136,8 +151,7 @@
             </svg>
           </a>
           <a
-            v-if="profile.social.github"
-            :href="profile.social.github"
+            href="https://github.com/jbortweb"
             target="_blank"
             class="w-10 h-10 border border-purple-500/50 rounded flex items-center justify-center hover:border-purple-400 hover:shadow-neon-purple transition-all duration-300 transform hover:scale-110 group/social"
           >
@@ -147,13 +161,12 @@
               viewBox="0 0 24 24"
             >
               <path
-                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
               />
             </svg>
           </a>
           <a
-            v-if="profile.social.twitter"
-            :href="profile.social.twitter"
+            href="https://portafoliojbortweb.netlify.app/"
             target="_blank"
             class="w-10 h-10 border border-cyan-500/50 rounded flex items-center justify-center hover:border-cyan-400 hover:shadow-neon-cyan transition-all duration-300 transform hover:scale-110 group/social"
           >
@@ -195,13 +208,6 @@
 import { ref } from "vue";
 import CodeModal from "../CodeModal.vue";
 import { cardCodes } from "../../data/cardCodes.js";
-
-defineProps({
-  profile: {
-    type: Object,
-    required: true,
-  },
-});
 
 const codeModal = ref(null);
 const cardCode = cardCodes.ProfileCard3;
