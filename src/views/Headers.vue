@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-50 py-8">
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Hero Section -->
       <section class="relative py-20 sm:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,13 +48,11 @@
       </div>
 
       <!-- Instructions -->
-      <div class="mx-4 sm:mx-6 lg:mx-8">
-        <ComponentInstructions theme="purple" />
-      </div>
+      <ComponentInstructions theme="purple" />
 
       <!-- Casos de Uso Recomendados -->
       <div
-        class="mt-12 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-8 mx-4 sm:mx-6 lg:mx-8"
+        class="mt-12 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-8"
       >
         <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
           Casos de Uso Recomendados
