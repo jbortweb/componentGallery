@@ -449,7 +449,9 @@ const animateCounters = () => {
         current = target;
         clearInterval(timer);
       }
-      counterRef.value.textContent = Math.floor(current).toLocaleString();
+      if (counterRef.value) {
+        counterRef.value.textContent = Math.floor(current).toLocaleString();
+      }
     }, 20);
   });
 };

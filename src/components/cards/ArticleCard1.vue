@@ -38,29 +38,32 @@
         <span
           class="bg-white/90 backdrop-blur-sm text-gray-900 px-3 py-1 rounded-full text-xs font-bold"
         >
-          {{ article.readTime }}
+          5 min
         </span>
       </div>
       <div class="absolute bottom-4 left-4 right-4">
         <h3 class="text-white text-xl font-bold leading-tight mb-2">
-          {{ article.title }}
+          El Futuro del Desarrollo Web en 2024
         </h3>
       </div>
     </div>
 
     <div class="p-6">
       <p class="text-gray-600 text-sm mb-4 leading-relaxed">
-        {{ article.excerpt }}
+        Exploramos las tendencias emergentes en desarrollo web para 2024
       </p>
 
       <!-- Tags -->
       <div class="flex flex-wrap gap-2 mb-4">
         <span
-          v-for="tag in article.tags.slice(0, 2)"
-          :key="tag"
           class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium"
         >
-          #{{ tag }}
+          #Web Development
+        </span>
+        <span
+          class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium"
+        >
+          #Technology
         </span>
       </div>
 
@@ -70,15 +73,11 @@
           <div
             class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center"
           >
-            <span class="text-white text-sm font-bold">{{
-              article.author.charAt(0)
-            }}</span>
+            <span class="text-white text-sm font-bold">T</span>
           </div>
           <div class="ml-3">
-            <p class="text-sm font-semibold text-gray-900">
-              {{ article.author }}
-            </p>
-            <p class="text-xs text-gray-500">{{ formatDate(article.date) }}</p>
+            <p class="text-sm font-semibold text-gray-900">Tech Blog</p>
+            <p class="text-xs text-gray-500">15 Ene 2024</p>
           </div>
         </div>
         <button
@@ -116,7 +115,7 @@
                 d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
               />
             </svg>
-            <span class="text-sm text-gray-600">{{ article.likes }}</span>
+            <span class="text-sm text-gray-600">156</span>
           </div>
           <div class="flex items-center">
             <svg
@@ -132,12 +131,12 @@
                 d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
               />
             </svg>
-            <span class="text-sm text-gray-600">{{ article.comments }}</span>
+            <span class="text-sm text-gray-600">23</span>
           </div>
         </div>
 
         <a
-          :href="article.url"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
           class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200 inline-block cursor-pointer"
@@ -162,13 +161,6 @@ import { ref } from "vue";
 import CodeModal from "../CodeModal.vue";
 import { cardCodes } from "../../data/cardCodes.js";
 
-defineProps({
-  article: {
-    type: Object,
-    required: true,
-  },
-});
-
 const codeModal = ref(null);
 const cardCode = cardCodes.ArticleCard1;
 
@@ -176,14 +168,5 @@ const showCode = () => {
   if (codeModal.value) {
     codeModal.value.openModal();
   }
-};
-
-const formatDate = (dateString) => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("es-ES", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
 };
 </script>

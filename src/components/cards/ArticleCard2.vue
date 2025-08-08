@@ -31,39 +31,35 @@
           <div
             class="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center"
           >
-            <span class="text-white text-xs font-bold">{{
-              article.author.charAt(0)
-            }}</span>
+            <span class="text-white text-xs font-bold">DW</span>
           </div>
           <div>
-            <p class="text-sm font-bold text-gray-900">{{ article.author }}</p>
-            <p class="text-xs text-orange-600">
-              {{ formatDate(article.date) }}
-            </p>
+            <p class="text-sm font-bold text-gray-900">Design Weekly</p>
+            <p class="text-xs text-orange-600">12 Ene 2024</p>
           </div>
         </div>
         <div
           class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs font-bold"
         >
-          {{ article.readTime }}
+          8 min
         </div>
       </div>
 
       <!-- Title con estilo magazine -->
       <h3 class="text-2xl font-black text-gray-900 mb-3 leading-tight">
-        {{ article.title }}
+        Diseño Responsivo con Tailwind CSS
       </h3>
 
       <!-- Excerpt -->
       <p class="text-gray-700 mb-4 leading-relaxed font-medium">
-        {{ article.excerpt }}
+        Aprende a crear diseños adaptativos usando las utilidades de Tailwind
       </p>
 
       <!-- Image -->
       <div class="relative mb-4 rounded-2xl overflow-hidden">
         <img
-          :src="article.image"
-          :alt="article.title"
+          src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=400&h=250&fit=crop"
+          alt="Diseño Responsivo con Tailwind CSS"
           class="w-full h-40 object-cover"
         />
         <div
@@ -74,11 +70,19 @@
       <!-- Tags con estilo magazine -->
       <div class="flex flex-wrap gap-2 mb-6">
         <span
-          v-for="tag in article.tags.slice(0, 3)"
-          :key="tag"
           class="bg-white border border-orange-200 text-orange-800 px-3 py-1 rounded-lg text-xs font-semibold shadow-sm"
         >
-          {{ tag }}
+          CSS
+        </span>
+        <span
+          class="bg-white border border-orange-200 text-orange-800 px-3 py-1 rounded-lg text-xs font-semibold shadow-sm"
+        >
+          Tailwind
+        </span>
+        <span
+          class="bg-white border border-orange-200 text-orange-800 px-3 py-1 rounded-lg text-xs font-semibold shadow-sm"
+        >
+          Responsive Design
         </span>
       </div>
 
@@ -100,9 +104,7 @@
                 />
               </svg>
             </div>
-            <span class="text-sm font-semibold text-gray-700">{{
-              article.likes
-            }}</span>
+            <span class="text-sm font-semibold text-gray-700">156</span>
           </div>
           <div class="flex items-center">
             <div
@@ -122,14 +124,12 @@
                 />
               </svg>
             </div>
-            <span class="text-sm font-semibold text-gray-700">{{
-              article.comments
-            }}</span>
+            <span class="text-sm font-semibold text-gray-700">23</span>
           </div>
         </div>
 
         <a
-          :href="article.url"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
           class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm hover:from-orange-600 hover:to-red-600 transition-all duration-200 shadow-lg inline-block cursor-pointer"
@@ -154,13 +154,6 @@ import { ref } from "vue";
 import CodeModal from "../CodeModal.vue";
 import { cardCodes } from "../../data/cardCodes.js";
 
-defineProps({
-  article: {
-    type: Object,
-    required: true,
-  },
-});
-
 const codeModal = ref(null);
 const cardCode = cardCodes.ArticleCard2;
 
@@ -168,14 +161,5 @@ const showCode = () => {
   if (codeModal.value) {
     codeModal.value.openModal();
   }
-};
-
-const formatDate = (dateString) => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("es-ES", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
 };
 </script>

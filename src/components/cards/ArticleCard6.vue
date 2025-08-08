@@ -54,7 +54,7 @@
           class="flex items-center space-x-2 text-xs text-purple-300 font-mono"
         >
           <span>Runtime:</span>
-          <span class="text-purple-400">{{ article.readTime }}</span>
+          <span class="text-purple-400">7 min</span>
         </div>
       </div>
 
@@ -64,8 +64,8 @@
           class="absolute inset-0 bg-purple-500/20 blur-xl rounded-lg group-hover:bg-purple-400/30 transition-colors duration-500"
         ></div>
         <img
-          :src="article.image"
-          :alt="article.title"
+          src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop"
+          alt="Seguridad en Aplicaciones Web Modernas"
           class="relative z-10 w-full h-40 object-cover rounded-lg border border-purple-500/50 shadow-lg filter contrast-125 saturate-110 group-hover:shadow-purple-500/50 transition-all duration-500"
         />
         <!-- Holographic overlay -->
@@ -95,11 +95,19 @@
           <span class="text-purple-400 text-xs font-mono">Tags:</span>
           <div class="flex space-x-2">
             <span
-              v-for="tag in article.tags.slice(0, 2)"
-              :key="tag"
-              class="px-2 py-1 bg-purple-900/50 text-purple-300 group-hover:text-white text-xs font-mono border border-purple-500/30 rounded hover:border-purple-400/50 transition-colors duration-300"
+              class="px-2 py-1 bg-red-50 text-red-600 text-xs font-medium rounded border border-red-200"
             >
-              #{{ tag.toLowerCase().replace(" ", "_") }}
+              Security
+            </span>
+            <span
+              class="px-2 py-1 bg-red-50 text-red-600 text-xs font-medium rounded border border-red-200"
+            >
+              Web Development
+            </span>
+            <span
+              class="px-2 py-1 bg-red-50 text-red-600 text-xs font-medium rounded border border-red-200"
+            >
+              Best Practices
             </span>
           </div>
         </div>
@@ -109,7 +117,7 @@
           <h3
             class="text-xl font-bold text-white group-hover:text-white transition-colors duration-300 font-mono leading-tight"
           >
-            {{ article.title }}
+            Seguridad en Aplicaciones Web Modernas
           </h3>
         </div>
 
@@ -126,7 +134,7 @@
           <p
             class="text-gray-300 group-hover:text-white text-sm font-mono leading-relaxed"
           >
-            > {{ article.excerpt }}
+            > Mejores prácticas para proteger tus aplicaciones web
           </p>
         </div>
 
@@ -138,21 +146,16 @@
             <div
               class="w-10 h-10 bg-gradient-to-br from-purple-600 to-cyan-600 rounded border border-purple-400/50 flex items-center justify-center text-white font-mono font-bold text-xs shadow-lg"
             >
-              {{
-                article.author
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")
-              }}
+              ST
             </div>
             <div>
               <p
                 class="text-purple-300 group-hover:text-white font-mono text-sm"
               >
-                {{ article.author }}
+                Security Today
               </p>
               <p class="text-gray-400 group-hover:text-white text-xs font-mono">
-                {{ article.date }}
+                3 Ene 2024
               </p>
             </div>
           </div>
@@ -163,13 +166,13 @@
               class="flex items-center space-x-1 text-purple-400 group-hover:text-white transition-colors duration-300"
             >
               <span class="glow-text">♥</span>
-              <span>{{ article.likes }}</span>
+              <span>178</span>
             </div>
             <div
               class="flex items-center space-x-1 text-purple-400 group-hover:text-white transition-colors duration-300"
             >
               <span class="glow-text">◊</span>
-              <span>{{ article.comments }}</span>
+              <span>29</span>
             </div>
           </div>
         </div>
@@ -179,7 +182,7 @@
           class="mt-6 flex justify-between items-center border-t border-purple-800/50 pt-4"
         >
           <a
-            :href="article.url"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
             class="relative bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-white px-6 py-2 rounded-lg font-mono text-sm transition-all duration-300 shadow-lg hover:shadow-purple-500/25 glow-text cursor-pointer"
@@ -187,7 +190,7 @@
             [LEER_MÁS]
           </a>
           <a
-            :href="article.secondaryUrl"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
             class="text-purple-400 hover:text-white font-mono text-xs transition-colors duration-300 glow-text cursor-pointer"
@@ -222,13 +225,7 @@ import { ref } from "vue";
 import CodeModal from "../CodeModal.vue";
 import { cardCodes } from "../../data/cardCodes.js";
 
-defineProps({
-  article: {
-    type: Object,
-    required: true,
-  },
-});
-
+// Configuración del modal
 const codeModal = ref(null);
 const cardCode = cardCodes.ArticleCard6;
 

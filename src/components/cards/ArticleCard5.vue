@@ -31,43 +31,35 @@
 
     <div class="p-6 pt-8">
       <!-- Magazine-style header -->
-      <div class="flex items-start justify-between mb-4">
-        <div class="flex items-center space-x-2">
-          <div class="w-1 h-16 bg-red-500"></div>
-          <div class="space-y-1">
-            <div class="flex space-x-2">
-              <span
-                v-for="tag in article.tags.slice(0, 1)"
-                :key="tag"
-                class="px-2 py-1 bg-red-500 text-white text-xs font-bold uppercase tracking-wide"
-              >
-                {{ tag }}
-              </span>
-            </div>
-            <p
-              class="text-xs text-gray-500 uppercase tracking-wide font-semibold"
-            >
-              {{ article.readTime }} Read
-            </p>
-          </div>
-        </div>
-        <div class="text-right">
-          <p class="text-xs text-gray-400 uppercase">{{ article.date }}</p>
-        </div>
+      <div class="flex flex-wrap gap-2">
+        <span
+          class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full border border-slate-200 hover:bg-slate-200 transition-colors duration-300"
+        >
+          DevOps
+        </span>
+        <span
+          class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full border border-slate-200 hover:bg-slate-200 transition-colors duration-300"
+        >
+          CI/CD
+        </span>
+        <span
+          class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full border border-slate-200 hover:bg-slate-200 transition-colors duration-300"
+        >
+          Automation
+        </span>
       </div>
-
       <!-- Bold magazine title -->
       <h3
         class="text-2xl font-black text-gray-900 mb-4 leading-tight group-hover:text-red-700 transition-colors duration-300 uppercase tracking-tight"
       >
-        {{ article.title }}
+        DevOps: Automatización y CI/CD
       </h3>
 
       <!-- Magazine-style image -->
       <div class="relative mb-6 -mx-6">
         <img
-          :src="article.image"
-          :alt="article.title"
+          src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=400&h=250&fit=crop"
+          alt="DevOps: Automatización y CI/CD"
           class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <!-- Bold overlay -->
@@ -76,7 +68,7 @@
         ></div>
         <div class="absolute bottom-4 left-6 right-6">
           <p class="text-white text-sm leading-relaxed font-medium">
-            {{ article.excerpt }}
+            Implementa pipelines de CI/CD efectivos para tu equipo
           </p>
         </div>
       </div>
@@ -88,18 +80,13 @@
             <div
               class="w-12 h-12 bg-red-500 text-white font-black text-lg flex items-center justify-center"
             >
-              {{
-                article.author
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")
-              }}
+              DT
             </div>
             <div>
               <p
                 class="font-bold text-gray-900 uppercase text-sm tracking-wide"
               >
-                {{ article.author }}
+                DevOps Pro
               </p>
               <p class="text-xs text-gray-500 uppercase font-semibold">
                 Contributing Writer
@@ -110,13 +97,11 @@
           <!-- Bold engagement stats -->
           <div class="flex items-center space-x-4">
             <div class="text-center">
-              <p class="text-xl font-black text-red-500">{{ article.likes }}</p>
+              <p class="text-xl font-black text-red-500">245</p>
               <p class="text-xs text-gray-500 uppercase font-bold">Likes</p>
             </div>
             <div class="text-center">
-              <p class="text-xl font-black text-red-500">
-                {{ article.comments }}
-              </p>
+              <p class="text-xl font-black text-red-500">38</p>
               <p class="text-xs text-gray-500 uppercase font-bold">Comments</p>
             </div>
           </div>
@@ -125,7 +110,7 @@
         <!-- Magazine-style action buttons -->
         <div class="mt-6 flex justify-between items-center">
           <a
-            :href="article.url"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
             class="bg-red-500 hover:bg-red-600 text-white px-8 py-3 font-black text-sm uppercase tracking-wide transition-all duration-300 hover:scale-105 shadow-lg cursor-pointer"
@@ -133,7 +118,7 @@
             Leer más
           </a>
           <a
-            :href="article.secondaryUrl"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
             class="text-red-500 hover:text-red-600 font-bold text-sm uppercase tracking-wide transition-colors duration-300 cursor-pointer"
@@ -169,13 +154,7 @@ import { ref } from "vue";
 import CodeModal from "../CodeModal.vue";
 import { cardCodes } from "../../data/cardCodes.js";
 
-defineProps({
-  article: {
-    type: Object,
-    required: true,
-  },
-});
-
+// Configuración del modal
 const codeModal = ref(null);
 const cardCode = cardCodes.ArticleCard5;
 

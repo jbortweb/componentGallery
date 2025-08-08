@@ -34,16 +34,14 @@
             >Published</span
           >
         </div>
-        <div class="text-gray-400 text-xs font-mono">
-          {{ formatDate(article.date) }}
-        </div>
+        <div class="text-gray-400 text-xs font-mono">10 Ene 2024</div>
       </div>
 
       <!-- Image con overlay dark -->
       <div class="relative mb-6 rounded-xl overflow-hidden">
         <img
-          :src="article.image"
-          :alt="article.title"
+          src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop"
+          alt="Vue 3: Composition API en Profundidad"
           class="w-full h-32 object-cover"
         />
         <div
@@ -53,27 +51,30 @@
           <span
             class="bg-cyan-500 text-gray-900 px-2 py-1 rounded text-xs font-bold"
           >
-            {{ article.readTime }}
+            12 min
           </span>
         </div>
       </div>
 
       <!-- Content -->
       <h3 class="text-white text-xl font-bold mb-3 leading-tight">
-        {{ article.title }}
+        Vue 3: Composition API en Profundidad
       </h3>
       <p class="text-gray-300 text-sm mb-4 leading-relaxed">
-        {{ article.excerpt }}
+        Domina la Composition API de Vue 3 con ejemplos prácticos
       </p>
 
       <!-- Tags dark mode -->
       <div class="flex flex-wrap gap-2 mb-6">
         <span
-          v-for="tag in article.tags.slice(0, 2)"
-          :key="tag"
           class="bg-gray-800 border border-gray-700 text-cyan-400 px-3 py-1 rounded-lg text-xs font-medium"
         >
-          {{ tag }}
+          Vue.js
+        </span>
+        <span
+          class="bg-gray-800 border border-gray-700 text-cyan-400 px-3 py-1 rounded-lg text-xs font-medium"
+        >
+          JavaScript
         </span>
       </div>
 
@@ -83,12 +84,10 @@
           <div
             class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center"
           >
-            <span class="text-white text-sm font-bold">{{
-              article.author.charAt(0)
-            }}</span>
+            <span class="text-white text-sm font-bold">VM</span>
           </div>
           <div class="ml-3">
-            <p class="text-white font-semibold text-sm">{{ article.author }}</p>
+            <p class="text-white font-semibold text-sm">Vue Mastery</p>
             <p class="text-gray-400 text-xs">Tech Writer</p>
           </div>
         </div>
@@ -110,7 +109,7 @@
                 d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
               />
             </svg>
-            <span class="text-gray-300 text-sm">{{ article.likes }}</span>
+            <span class="text-gray-300 text-sm">294</span>
           </div>
           <div class="flex items-center">
             <svg
@@ -126,12 +125,12 @@
                 d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
               />
             </svg>
-            <span class="text-gray-300 text-sm">{{ article.comments }}</span>
+            <span class="text-gray-300 text-sm">45</span>
           </div>
         </div>
 
         <a
-          :href="article.url"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
           class="bg-cyan-500 hover:bg-cyan-400 text-gray-900 px-4 py-2 rounded-lg font-bold text-sm transition-all duration-200 shadow-lg inline-block cursor-pointer"
@@ -156,13 +155,6 @@ import { ref } from "vue";
 import CodeModal from "../CodeModal.vue";
 import { cardCodes } from "../../data/cardCodes.js";
 
-defineProps({
-  article: {
-    type: Object,
-    required: true,
-  },
-});
-
 const codeModal = ref(null);
 const cardCode = cardCodes.ArticleCard3;
 
@@ -170,14 +162,5 @@ const showCode = () => {
   if (codeModal.value) {
     codeModal.value.openModal();
   }
-};
-
-const formatDate = (dateString) => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("es-ES", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
 };
 </script>

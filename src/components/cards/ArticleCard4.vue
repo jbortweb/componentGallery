@@ -36,8 +36,8 @@
     <div class="relative mb-6">
       <div class="overflow-hidden rounded-t-2xl">
         <img
-          :src="article.image"
-          :alt="article.title"
+          src="https://images.unsplash.com/photo-1555255707-c07966088b7b?w=400&h=250&fit=crop"
+          alt="Inteligencia Artificial y Machine Learning"
           class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
         />
         <div
@@ -68,29 +68,30 @@
         <div class="flex items-center space-x-2">
           <div class="flex -space-x-1">
             <span
-              v-for="tag in article.tags.slice(0, 2)"
-              :key="tag"
               class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-medium rounded-full border border-emerald-200 group-hover:bg-emerald-200 transition-colors duration-300"
             >
-              {{ tag }}
+              AI
+            </span>
+            <span
+              class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-medium rounded-full border border-emerald-200 group-hover:bg-emerald-200 transition-colors duration-300"
+            >
+              Machine Learning
             </span>
           </div>
         </div>
-        <div class="text-xs text-emerald-600 font-medium">
-          {{ article.readTime }}
-        </div>
+        <div class="text-xs text-emerald-600 font-medium">15 min</div>
       </div>
 
       <!-- Title with organic typography -->
       <h3
         class="text-xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-emerald-700 transition-colors duration-300"
       >
-        {{ article.title }}
+        Inteligencia Artificial y Machine Learning
       </h3>
 
       <!-- Excerpt -->
       <p class="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
-        {{ article.excerpt }}
+        Guía completa para comenzar en el mundo del machine learning
       </p>
 
       <!-- Author info with nature theme -->
@@ -99,13 +100,11 @@
           <div
             class="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-xs shadow-sm"
           >
-            {{ article.author.charAt(0) }}
+            AR
           </div>
           <div>
-            <p class="text-sm font-medium text-gray-800">
-              {{ article.author }}
-            </p>
-            <p class="text-xs text-gray-500">{{ article.date }}</p>
+            <p class="text-sm font-medium text-gray-800">AI Research</p>
+            <p class="text-xs text-gray-500">4 Ene 2024</p>
           </div>
         </div>
 
@@ -119,7 +118,7 @@
                 d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
               />
             </svg>
-            <span>{{ article.likes }}</span>
+            <span>387</span>
           </div>
           <div
             class="flex items-center space-x-1 hover:text-emerald-600 transition-colors duration-300"
@@ -137,7 +136,7 @@
                 d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
               />
             </svg>
-            <span>{{ article.comments }}</span>
+            <span>67</span>
           </div>
         </div>
       </div>
@@ -145,7 +144,7 @@
       <!-- Action buttons -->
       <div class="mt-6 flex justify-between items-center">
         <a
-          :href="article.url"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
           class="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 cursor-pointer"
@@ -153,7 +152,7 @@
           Leer más
         </a>
         <a
-          :href="article.secondaryUrl"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
           class="text-emerald-600 hover:text-emerald-700 text-sm font-medium transition-colors duration-300 cursor-pointer"
@@ -183,13 +182,7 @@ import { ref } from "vue";
 import CodeModal from "../CodeModal.vue";
 import { cardCodes } from "../../data/cardCodes.js";
 
-defineProps({
-  article: {
-    type: Object,
-    required: true,
-  },
-});
-
+// Configuración del modal
 const codeModal = ref(null);
 const cardCode = cardCodes.ArticleCard4;
 
