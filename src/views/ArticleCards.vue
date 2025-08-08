@@ -25,13 +25,13 @@
       <!-- Desktop: Carousel View -->
       <div class="hidden lg:block">
         <CardCarousel
-          :items="articles"
+          :items="Array(6).fill({})"
           title="Artículos - Vista Carrusel"
           description="Descubre los diferentes estilos para presentar contenido editorial"
           :autoPlay="false"
         >
-          <template #default="{ item, index }">
-            <component :is="getArticleComponent(index)" :article="item" />
+          <template #default="{ index }">
+            <component :is="getArticleComponent(index)" />
           </template>
         </CardCarousel>
       </div>
@@ -49,18 +49,18 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div
-            v-for="(article, index) in articles"
-            :key="article.id"
+            v-for="index in 6"
+            :key="index"
             class="bg-white rounded-xl shadow-lg p-6"
           >
             <div class="mb-4">
               <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                ArticleCard{{ index + 1 }}
+                ArticleCard{{ index }}
               </h3>
             </div>
 
             <div class="transform scale-90 origin-top">
-              <component :is="getArticleComponent(index)" :article="article" />
+              <component :is="getArticleComponent(index - 1)" />
             </div>
           </div>
         </div>
@@ -212,10 +212,6 @@ import ArticleCard3 from "../components/cards/ArticleCard3.vue";
 import ArticleCard4 from "../components/cards/ArticleCard4.vue";
 import ArticleCard5 from "../components/cards/ArticleCard5.vue";
 import ArticleCard6 from "../components/cards/ArticleCard6.vue";
-import { cardData } from "../data/cardData.js";
-
-// Datos de artículos
-const articles = computed(() => cardData.articles);
 
 // Componentes de artículos
 const articleComponents = [

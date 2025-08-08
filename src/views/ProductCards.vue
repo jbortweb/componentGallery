@@ -25,13 +25,13 @@
       <!-- Desktop: Carousel View -->
       <div class="hidden lg:block">
         <CardCarousel
-          :items="products"
+          :items="Array(6).fill({})"
           title="Productos - Vista Carrusel"
           description="Navega entre los diferentes diseños usando las flechas o los indicadores"
           :autoPlay="false"
         >
-          <template #default="{ item, index }">
-            <component :is="getProductComponent(index)" :product="item" />
+          <template #default="{ index }">
+            <component :is="getProductComponent(index)" />
           </template>
         </CardCarousel>
       </div>
@@ -49,18 +49,18 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div
-            v-for="(product, index) in products"
-            :key="product.id"
+            v-for="index in 6"
+            :key="index"
             class="bg-white rounded-xl shadow-lg p-6"
           >
             <div class="mb-4">
               <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                ProductCard{{ index + 1 }}
+                ProductCard{{ index }}
               </h3>
             </div>
 
             <div class="transform scale-90 origin-top">
-              <component :is="getProductComponent(index)" :product="product" />
+              <component :is="getProductComponent(index - 1)" />
             </div>
           </div>
         </div>
@@ -212,10 +212,6 @@ import ProductCard3 from "../components/cards/ProductCard3.vue";
 import ProductCard4 from "../components/cards/ProductCard4.vue";
 import ProductCard5 from "../components/cards/ProductCard5.vue";
 import ProductCard6 from "../components/cards/ProductCard6.vue";
-import { cardData } from "../data/cardData.js";
-
-// Datos de productos
-const products = computed(() => cardData.products);
 
 // Componentes de productos
 const productComponents = [

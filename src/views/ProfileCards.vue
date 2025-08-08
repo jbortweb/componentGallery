@@ -25,13 +25,13 @@
       <!-- Desktop: Carousel View -->
       <div class="hidden lg:block">
         <CardCarousel
-          :items="profiles"
+          :items="Array(6).fill({})"
           title="Perfiles - Vista Carrusel"
           description="Explora los diferentes estilos de tarjetas de perfil profesional"
           :autoPlay="false"
         >
-          <template #default="{ item, index }">
-            <component :is="getProfileComponent(index)" :profile="item" />
+          <template #default="{ index }">
+            <component :is="getProfileComponent(index)" />
           </template>
         </CardCarousel>
       </div>
@@ -49,18 +49,18 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div
-            v-for="(profile, index) in profiles"
-            :key="profile.id"
+            v-for="index in 6"
+            :key="index"
             class="bg-white rounded-xl shadow-lg p-6"
           >
             <div class="mb-4">
               <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                ProfileCard{{ index + 1 }}
+                ProfileCard{{ index }}
               </h3>
             </div>
 
             <div class="transform scale-90 origin-top">
-              <component :is="getProfileComponent(index)" :profile="profile" />
+              <component :is="getProfileComponent(index - 1)" />
             </div>
           </div>
         </div>
@@ -212,10 +212,6 @@ import ProfileCard3 from "../components/cards/ProfileCard3.vue";
 import ProfileCard4 from "../components/cards/ProfileCard4.vue";
 import ProfileCard5 from "../components/cards/ProfileCard5.vue";
 import ProfileCard6 from "../components/cards/ProfileCard6.vue";
-import { cardData } from "../data/cardData.js";
-
-// Datos de perfiles
-const profiles = computed(() => cardData.profiles);
 
 // Componentes de perfiles
 const profileComponents = [

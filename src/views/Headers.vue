@@ -52,7 +52,7 @@
 
       <!-- Casos de Uso Recomendados -->
       <div
-        class="mt-12 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-8"
+        class="mt-12 bg-gradient-to-r from-purple-50 to-indigo-50 border-purple-200 rounded-xl p-8"
       >
         <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
           Casos de Uso Recomendados
