@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-50 py-8">
-    <div class="max-w-full mx-auto">
+    <div class="max-w-7xl mx-auto">
       <!-- Hero Section -->
       <section class="relative py-20 sm:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,48 +47,9 @@
         </div>
       </div>
 
-      <!-- Sección de instrucciones -->
-      <div
-        class="mt-16 bg-blue-50 border border-blue-200 rounded-lg p-6 mx-4 sm:mx-6 lg:mx-8"
-      >
-        <div class="flex items-start">
-          <svg
-            class="w-6 h-6 text-blue-600 mt-0.5 mr-3 flex-shrink-0"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
-          <div>
-            <h3 class="text-lg font-semibold text-blue-900 mb-2">
-              Cómo usar estos componentes
-            </h3>
-            <p class="text-blue-800 mb-3">
-              Haz clic en el icono de código (&lt;/&gt;) en cualquier header
-              para ver el código fuente completo del componente.
-            </p>
-            <div class="text-sm text-blue-700">
-              <p>
-                <strong>Tecnologías:</strong> Vue 3 (Composition API), Tailwind
-                CSS v4.1
-              </p>
-              <p>
-                <strong>Características:</strong> Responsive design, efectos
-                animados, glassmorphism, matriz effects
-              </p>
-              <p>
-                <strong>Temas disponibles:</strong> Minimalista, Gaming,
-                Artístico, Glassmorphism, Terminal, Espacial
-              </p>
-            </div>
-          </div>
-        </div>
+      <!-- Instructions -->
+      <div class="mx-4 sm:mx-6 lg:mx-8">
+        <ComponentInstructions theme="purple" />
       </div>
 
       <!-- Casos de Uso Recomendados -->
@@ -232,6 +193,7 @@ import Header3 from "../components/headfoot/Header3.vue";
 import Header4 from "../components/headfoot/Header4.vue";
 import Header5 from "../components/headfoot/Header5.vue";
 import Header6 from "../components/headfoot/Header6.vue";
+import ComponentInstructions from "../components/ComponentInstructions.vue";
 
 // Datos de headers
 const headerData = [
