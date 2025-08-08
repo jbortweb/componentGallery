@@ -2241,8 +2241,8 @@ defineProps({
     <!-- Premium Badge -->
     <div class="relative">
       <img
-        :src="product.image"
-        :alt="product.title"
+        src="https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?w=400&h=300&fit=crop"
+        alt="iPhone 15 Pro"
         class="w-full h-52 object-cover"
       />
       <div class="absolute top-4 left-4">
@@ -2252,7 +2252,7 @@ defineProps({
           PREMIUM
         </span>
       </div>
-      <div class="absolute top-4 right-14">
+      <div class="absolute top-4 right-4">
         <button
           class="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors"
         >
@@ -2275,7 +2275,7 @@ defineProps({
         <span
           class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
         >
-          {{ product.price }}
+          999€
         </span>
         <div class="flex items-center bg-yellow-100 px-2 py-1 rounded-lg">
           <svg
@@ -2287,19 +2287,17 @@ defineProps({
               d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
             />
           </svg>
-          <span class="text-yellow-700 font-semibold text-sm">{{
-            product.rating
-          }}</span>
+          <span class="text-yellow-700 font-semibold text-sm">4.8</span>
         </div>
       </div>
 
-      <h3 class="text-xl font-bold text-gray-900 mb-2">{{ product.title }}</h3>
+      <h3 class="text-xl font-bold text-gray-900 mb-2">iPhone 15 Pro</h3>
       <p class="text-gray-600 text-sm mb-4 line-height-relaxed">
-        {{ product.description }}
+        El iPhone más avanzado con chip A17 Pro y cámara de 48MP
       </p>
 
       <div class="flex items-center justify-between mb-4">
-        <span class="text-xs text-gray-500">{{ product.reviews }} reseñas</span>
+        <span class="text-xs text-gray-500">1247 reseñas</span>
         <div class="flex items-center space-x-1">
           <div class="w-2 h-2 bg-green-500 rounded-full"></div>
           <span class="text-xs text-green-600 font-medium">En stock</span>
@@ -2317,14 +2315,7 @@ defineProps({
 </template>
 
 <script setup>
-
-
-defineProps({
-  product: {
-    type: Object,
-    required: true,
-  },
-});
+// Componente de tarjeta de producto con datos integrados
 </script>
 `,
 
@@ -2337,24 +2328,22 @@ defineProps({
         class="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-red-500/20 z-10"
       ></div>
       <img
-        :src="product.image"
-        :alt="product.title"
+        src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400&h=300&fit=crop"
+        alt="MacBook Air M2"
         class="w-full h-48 object-cover"
       />
       <div class="absolute bottom-4 left-4 z-20">
         <div
           class="bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-lg"
         >
-          <span class="text-2xl font-black text-gray-900">{{
-            product.price
-          }}</span>
+          <span class="text-2xl font-black text-gray-900">1,199€</span>
         </div>
       </div>
       <div class="absolute top-4 right-4 z-20">
         <div
           class="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold"
         >
-          {{ product.category }}
+          Technology
         </div>
       </div>
     </div>
@@ -2366,7 +2355,7 @@ defineProps({
       ></div>
 
       <h3 class="text-2xl font-black text-gray-900 mb-3 leading-tight">
-        {{ product.title }}
+        MacBook Air M2
       </h3>
 
       <div class="flex items-center mb-4">
@@ -2376,7 +2365,7 @@ defineProps({
             :key="star"
             class="w-5 h-5"
             :class="
-              star <= Math.floor(product.rating)
+              star <= Math.floor(4.9)
                 ? 'text-orange-400'
                 : 'text-gray-200'
             "
@@ -2389,12 +2378,12 @@ defineProps({
           </svg>
         </div>
         <span class="text-sm font-semibold text-gray-700"
-          >4.8 ({{ product.reviews }})</span
+          >4.9 (892)</span
         >
       </div>
 
       <p class="text-gray-600 mb-6 leading-relaxed">
-        {{ product.description }}
+        Potencia y portabilidad en el laptop más fino de Apple
       </p>
 
       <div class="flex space-x-3">
@@ -2426,14 +2415,7 @@ defineProps({
 </template>
 
 <script setup>
-
-
-defineProps({
-  product: {
-    type: Object,
-    required: true,
-  },
-});
+// Componente de tarjeta de producto con datos integrados - MacBook Air M2
 </script>
 `,
 

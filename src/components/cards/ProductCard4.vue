@@ -50,8 +50,8 @@
     <!-- Product image with smooth hover effect -->
     <div class="relative mb-6">
       <img
-        :src="product.image"
-        :alt="product.title"
+        src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400&h=300&fit=crop"
+        alt="Samsung Galaxy S24 Ultra"
         class="relative z-20 w-full h-48 object-cover rounded-xl border border-purple-400/30 shadow-lg group-hover:shadow-purple-500/50 transition-shadow duration-500"
       />
     </div>
@@ -61,7 +61,7 @@
       <div class="flex items-center justify-between">
         <span
           class="px-3 py-1 text-xs font-semibold bg-purple-500/30 text-purple-200 rounded-full border border-purple-400/50"
-          >{{ product.category }}</span
+          >Technology</span
         >
         <div class="flex items-center space-x-1 text-yellow-400">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
@@ -69,28 +69,26 @@
               d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
             />
           </svg>
-          <span class="text-sm font-medium text-white">{{
-            product.rating
-          }}</span>
+          <span class="text-sm font-medium text-white">4.6</span>
         </div>
       </div>
 
       <h3
         class="text-xl font-bold text-white group-hover:text-purple-200 transition-colors duration-300"
       >
-        {{ product.title }}
+        Samsung Galaxy S24 Ultra
       </h3>
 
       <p class="text-gray-300 text-sm leading-relaxed">
-        {{ product.description }}
+        Smartphone Android premium con S Pen y cámara de 200MP
       </p>
 
       <div
         class="flex items-center justify-between pt-4 border-t border-purple-500/20"
       >
         <div class="space-y-1">
-          <p class="text-2xl font-bold text-white">{{ product.price }}</p>
-          <p class="text-xs text-gray-400">{{ product.reviews }} reseñas</p>
+          <p class="text-2xl font-bold text-white">1,299€</p>
+          <p class="text-xs text-gray-400">3421 reseñas</p>
         </div>
 
         <button
@@ -116,12 +114,7 @@ import { ref } from "vue";
 import CodeModal from "../CodeModal.vue";
 import { cardCodes } from "../../data/cardCodes.js";
 
-defineProps({
-  product: {
-    type: Object,
-    required: true,
-  },
-});
+// Datos integrados del Samsung Galaxy S24 Ultra
 
 const codeModal = ref(null);
 const cardCode = cardCodes.ProductCard4;

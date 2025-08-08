@@ -1655,7 +1655,7 @@ const initMatrixEffect = () => {
     ctx.fillRect(0, 0, canvas.width, canvas.height)
     
     ctx.fillStyle = '#00ff41'
-    ctx.font = \`${fontSize}px monospace\`
+    ctx.font = \`\${fontSize}px monospace\`
     
     for (let i = 0; i < drops.length; i++) {
       const text = characters[Math.floor(Math.random() * characters.length)]

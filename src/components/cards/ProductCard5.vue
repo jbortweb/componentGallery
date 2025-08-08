@@ -35,8 +35,8 @@
         class="relative overflow-hidden rounded-2xl bg-gray-50 group-hover:bg-gray-100 transition-colors duration-300"
       >
         <img
-          :src="product.image"
-          :alt="product.title"
+          src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=400&h=300&fit=crop"
+          alt="Sony WH-1000XM5"
           class="w-full h-52 object-cover transition-transform duration-700 group-hover:scale-110"
         />
         <!-- Minimal overlay -->
@@ -50,18 +50,15 @@
     <div class="px-6 pb-6 space-y-4">
       <!-- Category and rating -->
       <div class="flex items-center justify-between">
-        <span
-          class="text-xs font-medium text-gray-500 uppercase tracking-wider"
-          >{{ product.category }}</span
+        <span class="text-xs font-medium text-gray-500 uppercase tracking-wider"
+          >Audio</span
         >
         <div class="flex items-center space-x-1">
           <div class="flex space-x-1">
             <div v-for="star in 5" :key="star" class="w-3 h-3">
               <svg
                 :class="
-                  star <= Math.floor(product.rating)
-                    ? 'text-gray-900'
-                    : 'text-gray-200'
+                  star <= Math.floor(4.8) ? 'text-gray-900' : 'text-gray-200'
                 "
                 fill="currentColor"
                 viewBox="0 0 20 20"
@@ -72,9 +69,7 @@
               </svg>
             </div>
           </div>
-          <span class="text-sm font-medium text-gray-600 ml-2">{{
-            product.rating
-          }}</span>
+          <span class="text-sm font-medium text-gray-600 ml-2">4.8</span>
         </div>
       </div>
 
@@ -82,23 +77,21 @@
       <h3
         class="text-2xl font-bold text-gray-900 leading-tight group-hover:text-gray-700 transition-colors duration-300"
       >
-        {{ product.title }}
+        Sony WH-1000XM5
       </h3>
 
       <!-- Description -->
       <p class="text-gray-600 text-sm leading-relaxed line-clamp-2">
-        {{ product.description }}
+        Auriculares inalámbricos con la mejor cancelación de ruido
       </p>
 
       <!-- Reviews count -->
-      <p class="text-xs text-gray-400">
-        {{ product.reviews }} reseñas verificadas
-      </p>
+      <p class="text-xs text-gray-400">1876 reseñas verificadas</p>
 
       <!-- Price and action -->
       <div class="flex items-end justify-between pt-4">
         <div>
-          <p class="text-3xl font-bold text-gray-900">{{ product.price }}</p>
+          <p class="text-3xl font-bold text-gray-900">399€</p>
         </div>
 
         <button
@@ -129,12 +122,7 @@ import { ref } from "vue";
 import CodeModal from "../CodeModal.vue";
 import { cardCodes } from "../../data/cardCodes.js";
 
-defineProps({
-  product: {
-    type: Object,
-    required: true,
-  },
-});
+// Datos integrados del Sony WH-1000XM5
 
 const codeModal = ref(null);
 const cardCode = cardCodes.ProductCard5;

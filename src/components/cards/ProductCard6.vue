@@ -50,8 +50,8 @@
           class="absolute inset-0 bg-cyan-500/20 blur-xl rounded-xl group-hover:bg-cyan-400/30 transition-colors duration-500"
         ></div>
         <img
-          :src="product.image"
-          :alt="product.title"
+          src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=300&fit=crop"
+          alt="iPad Pro 12.9"
           class="relative z-10 w-full h-48 object-cover rounded-xl border border-cyan-500/50 shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-400/30 transition-all duration-500 filter contrast-125 saturate-110"
         />
         <!-- Holographic overlay -->
@@ -82,25 +82,21 @@
             <div class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
             <span
               class="text-cyan-400 text-xs font-mono uppercase tracking-wider"
-              >{{ product.category }}</span
+              >Technology</span
             >
           </div>
           <div class="flex items-center space-x-2 text-cyan-300">
             <span class="text-xs font-mono">RATING:</span>
-            <span class="text-sm font-bold text-cyan-400"
-              >{{ product.rating }}/5</span
-            >
+            <span class="text-sm font-bold text-cyan-400">4.7/5</span>
           </div>
         </div>
 
         <!-- Glitch title effect -->
         <div class="relative">
-          <h3 class="text-xl font-bold text-white font-mono">
-            {{ product.title }}
-          </h3>
+          <h3 class="text-xl font-bold text-white font-mono">iPad Pro 12.9</h3>
           <!-- Glitch overlay -->
           <h3 class="absolute inset-0 text-xl font-bold text-white font-mono">
-            {{ product.title }}
+            iPad Pro 12.9
           </h3>
         </div>
 
@@ -115,7 +111,7 @@
             >
           </div>
           <p class="text-gray-300 text-sm font-mono leading-relaxed">
-            > {{ product.description }}
+            > Tablet profesional con chip M2 y pantalla Liquid Retina XDR
           </p>
         </div>
 
@@ -124,12 +120,8 @@
           class="flex items-center justify-between pt-4 border-t border-cyan-500/30"
         >
           <div class="space-y-1">
-            <p class="text-2xl font-bold text-white font-mono">
-              {{ product.price }}
-            </p>
-            <p class="text-xs text-gray-400 font-mono">
-              {{ product.reviews }} reviews.log
-            </p>
+            <p class="text-2xl font-bold text-white font-mono">1,099€</p>
+            <p class="text-xs text-gray-400 font-mono">967 reviews.log</p>
           </div>
 
           <button
@@ -165,12 +157,7 @@ import { ref } from "vue";
 import CodeModal from "../CodeModal.vue";
 import { cardCodes } from "../../data/cardCodes.js";
 
-defineProps({
-  product: {
-    type: Object,
-    required: true,
-  },
-});
+// Datos integrados del iPad Pro 12.9
 
 const codeModal = ref(null);
 const cardCode = cardCodes.ProductCard6;

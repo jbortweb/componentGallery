@@ -29,24 +29,22 @@
         class="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-red-500/20 z-10"
       ></div>
       <img
-        :src="product.image"
-        :alt="product.title"
+        src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400&h=300&fit=crop"
+        alt="MacBook Air M2"
         class="w-full h-48 object-cover"
       />
       <div class="absolute bottom-4 left-4 z-20">
         <div
           class="bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-lg"
         >
-          <span class="text-2xl font-black text-gray-900">{{
-            product.price
-          }}</span>
+          <span class="text-2xl font-black text-gray-900">1,199€</span>
         </div>
       </div>
       <div class="absolute top-4 right-4 z-20">
         <div
           class="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold"
         >
-          {{ product.category }}
+          Technology
         </div>
       </div>
     </div>
@@ -58,7 +56,7 @@
       ></div>
 
       <h3 class="text-2xl font-black text-gray-900 mb-3 leading-tight">
-        {{ product.title }}
+        MacBook Air M2
       </h3>
 
       <div class="flex items-center mb-4">
@@ -68,9 +66,7 @@
             :key="star"
             class="w-5 h-5"
             :class="
-              star <= Math.floor(product.rating)
-                ? 'text-orange-400'
-                : 'text-gray-200'
+              star <= Math.floor(4.9) ? 'text-orange-400' : 'text-gray-200'
             "
             fill="currentColor"
             viewBox="0 0 20 20"
@@ -80,13 +76,11 @@
             />
           </svg>
         </div>
-        <span class="text-sm font-semibold text-gray-700"
-          >4.8 ({{ product.reviews }})</span
-        >
+        <span class="text-sm font-semibold text-gray-700">4.9 (892)</span>
       </div>
 
       <p class="text-gray-600 mb-6 leading-relaxed">
-        {{ product.description }}
+        Potencia y portabilidad en el laptop más fino de Apple
       </p>
 
       <div class="flex space-x-3">
@@ -130,12 +124,7 @@ import { ref } from "vue";
 import CodeModal from "../CodeModal.vue";
 import { cardCodes } from "../../data/cardCodes.js";
 
-defineProps({
-  product: {
-    type: Object,
-    required: true,
-  },
-});
+// Datos integrados del MacBook Air M2
 
 const codeModal = ref(null);
 const cardCode = cardCodes.ProductCard2;

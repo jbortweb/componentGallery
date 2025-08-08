@@ -34,8 +34,8 @@
 
       <div class="relative mb-6">
         <img
-          :src="product.image"
-          :alt="product.title"
+          src="https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=400&h=300&fit=crop"
+          alt="AirPods Pro"
           class="w-full h-40 object-cover rounded-xl"
         />
         <div
@@ -45,29 +45,29 @@
           <span
             class="bg-gray-800/90 text-white px-3 py-1 rounded-lg text-xs font-medium backdrop-blur-sm"
           >
-            {{ product.category }}
+            Audio
           </span>
         </div>
       </div>
 
       <h3 class="text-white text-xl font-bold mb-2 leading-tight">
-        {{ product.title }}
+        AirPods Pro
       </h3>
       <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-        {{ product.description }}
+        Audio inmersivo con cancelación activa de ruido
       </p>
 
       <div class="flex items-center justify-between mb-6">
         <div class="text-left">
-          <div class="text-2xl font-bold text-white">{{ product.price }}</div>
+          <div class="text-2xl font-bold text-white">249€</div>
           <div class="text-gray-400 text-xs">Precio final</div>
         </div>
         <div class="text-right">
           <div class="flex items-center">
             <span class="text-yellow-400 text-lg mr-1">★</span>
-            <span class="text-white font-semibold">{{ product.rating }}</span>
+            <span class="text-white font-semibold">4.7</span>
           </div>
-          <div class="text-gray-400 text-xs">{{ product.reviews }} reviews</div>
+          <div class="text-gray-400 text-xs">634 reviews</div>
         </div>
       </div>
 
@@ -100,12 +100,7 @@ import { ref } from "vue";
 import CodeModal from "../CodeModal.vue";
 import { cardCodes } from "../../data/cardCodes.js";
 
-defineProps({
-  product: {
-    type: Object,
-    required: true,
-  },
-});
+// Datos integrados de AirPods Pro
 
 const codeModal = ref(null);
 const cardCode = cardCodes.ProductCard3;
