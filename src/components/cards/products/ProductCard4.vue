@@ -112,12 +112,12 @@
 <script setup>
 import { ref } from "vue";
 import CodeModal from "../../CodeModal.vue";
-import { ProductCard4 } from "../../../data/codes/cards/products/ProductCard4.js";
+import ProductCard4Code from "../../../data/codes/cards/products/ProductCard4.js";
 
 // Datos integrados del Samsung Galaxy S24 Ultra
 
 const codeModal = ref(null);
-const cardCode = ProductCard4;
+const cardCode = ProductCard4Code;
 
 const showCode = () => {
   if (codeModal.value) {

@@ -152,10 +152,10 @@
 <script setup>
 import { ref } from "vue";
 import CodeModal from "../../CodeModal.vue";
-import { ArticleCard2 } from "../../../data/codes/cards/articles/ArticleCard2.js";
+import ArticleCard2Code from "../../../data/codes/cards/articles/ArticleCard2.js";
 
 const codeModal = ref(null);
-const cardCode = ArticleCard2;
+const cardCode = ArticleCard2Code;
 
 const showCode = () => {
   if (codeModal.value) {

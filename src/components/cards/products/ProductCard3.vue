@@ -98,12 +98,12 @@
 <script setup>
 import { ref } from "vue";
 import CodeModal from "../../CodeModal.vue";
-import { ProductCard3 } from "../../../data/codes/cards/products/ProductCard3.js";
+import ProductCard3Code from "../../../data/codes/cards/products/ProductCard3.js";
 
 // Datos integrados de AirPods Pro
 
 const codeModal = ref(null);
-const cardCode = ProductCard3;
+const cardCode = ProductCard3Code;
 
 const showCode = () => {
   if (codeModal.value) {

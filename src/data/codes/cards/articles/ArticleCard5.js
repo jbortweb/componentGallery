@@ -1,4 +1,4 @@
-export const ArticleCard5 = `<template>
+export default `<template>
   <div
     class="article-card-5 group relative bg-white rounded-none shadow-xl border-l-4 border-red-500 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:border-red-600 w-96 mx-auto"
   >
@@ -123,8 +123,6 @@ export const ArticleCard5 = `<template>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'ArticleCard5'
-}
+<script setup>
+// Lógica del componente aquí
 </script>`;

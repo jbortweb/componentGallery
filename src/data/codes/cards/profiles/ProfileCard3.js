@@ -1,4 +1,4 @@
-export const ProfileCard3 = `<template>
+export default `<template>
   <div class="relative group w-96">
 
     <!-- Cyberpunk Card -->
@@ -175,10 +175,8 @@ export const ProfileCard3 = `<template>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'ProfileCard3',
-}
+<script setup>
+// Lógica del componente aquí
 </script>
 
 <style scoped>

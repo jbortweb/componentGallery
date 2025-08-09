@@ -1,4 +1,4 @@
-export const ProfileCard1 = `<template>
+export default `<template>
   <div class="relative group w-96 perspective-1000">
     <!-- Tarjeta Glassmorphism -->
     <div
@@ -164,10 +164,8 @@ export const ProfileCard1 = `<template>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'ProfileCard1',
-}
+<script setup>
+// Lógica del componente aquí
 </script>
 
 <style scoped>

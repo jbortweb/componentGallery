@@ -1,4 +1,4 @@
-export const ProfileCard2 = `<template>
+export default `<template>
   <div class="relative group w-96">
     <!-- Tarjeta Neumorfismo -->
     <div
@@ -137,10 +137,8 @@ export const ProfileCard2 = `<template>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'ProfileCard2',
-}
+<script setup>
+// Lógica del componente aquí
 </script>
 
 <style scoped>

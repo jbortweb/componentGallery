@@ -1,4 +1,4 @@
-export const ProfileCard4 = `<template>
+export default `<template>
   <div
     class="profile-card-4 group relative bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-6 border border-orange-200/50 shadow-lg hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 overflow-hidden w-96"
   >
@@ -128,8 +128,6 @@ export const ProfileCard4 = `<template>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'ProfileCard4',
-}
+<script setup>
+// Lógica del componente aquí
 </script>`;

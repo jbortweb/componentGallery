@@ -1,4 +1,4 @@
-export const ArticleCard1 = `<template>
+export default `<template>
   <div
     class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 w-96 mx-auto border border-gray-100 relative group"
   >
@@ -126,7 +126,7 @@ export const ArticleCard1 = `<template>
   </div>
 </template>
 
-<script>
+<script setup>
 </script>
 <style scoped>
 </style>

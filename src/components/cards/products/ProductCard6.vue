@@ -155,12 +155,12 @@
 <script setup>
 import { ref } from "vue";
 import CodeModal from "../../CodeModal.vue";
-import { ProductCard6 } from "../../../data/codes/cards/products/ProductCard6.js";
+import ProductCard6Code from "../../../data/codes/cards/products/ProductCard6.js";
 
 // Datos integrados del iPad Pro 12.9
 
 const codeModal = ref(null);
-const cardCode = ProductCard6;
+const cardCode = ProductCard6Code;
 
 const showCode = () => {
   if (codeModal.value) {

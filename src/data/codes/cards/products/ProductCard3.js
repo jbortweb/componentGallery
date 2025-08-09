@@ -1,4 +1,4 @@
-export const ProductCard3 = `<template>
+export default `<template>
   <div
     class="bg-gray-900 rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 w-full max-w-sm mx-auto border border-gray-700 relative group"
   >
@@ -67,9 +67,7 @@ export const ProductCard3 = `<template>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'ProductCard3'
-}
+<script setup>
+// Lógica del componente aquí
 </script>
 `;

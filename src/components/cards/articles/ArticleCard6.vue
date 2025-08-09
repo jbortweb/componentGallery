@@ -184,11 +184,11 @@
 <script setup>
 import { ref } from "vue";
 import CodeModal from "../../CodeModal.vue";
-import { ArticleCard6 } from "../../../data/codes/cards/articles/ArticleCard6.js";
+import ArticleCard6Code from "../../../data/codes/cards/articles/ArticleCard6.js";
 
 // Configuración del modal
 const codeModal = ref(null);
-const cardCode = ArticleCard6;
+const cardCode = ArticleCard6Code;
 
 const showCode = () => {
   if (codeModal.value) {

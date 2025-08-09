@@ -120,12 +120,12 @@
 <script setup>
 import { ref } from "vue";
 import CodeModal from "../../CodeModal.vue";
-import { ProductCard5 } from "../../../data/codes/cards/products/ProductCard5.js";
+import ProductCard5Code from "../../../data/codes/cards/products/ProductCard5.js";
 
 // Datos integrados del Sony WH-1000XM5
 
 const codeModal = ref(null);
-const cardCode = ProductCard5;
+const cardCode = ProductCard5Code;
 
 const showCode = () => {
   if (codeModal.value) {

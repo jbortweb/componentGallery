@@ -1,4 +1,4 @@
-export const ArticleCard6 = `<template>
+export default `<template>
   <div
     class="article-card-6 group relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-2xl border border-purple-500/30 shadow-2xl overflow-hidden transition-all duration-500 hover:shadow-purple-500/25 hover:border-purple-400/50 w-96 mx-auto"
   >
@@ -180,10 +180,8 @@ export const ArticleCard6 = `<template>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'ArticleCard6'
-}
+<script setup>
+// Lógica del componente aquí
 </script>
 
 <style scoped>

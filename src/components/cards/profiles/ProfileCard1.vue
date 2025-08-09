@@ -197,11 +197,11 @@
 <script setup>
 import { ref } from "vue";
 import CodeModal from "../../CodeModal.vue";
-import { ProfileCard1 } from "../../../data/codes/cards/profiles/ProfileCard1.js";
+import ProfileCard1Code from "../../../data/codes/cards/profiles/ProfileCard1.js";
 
 // Configuración del modal
 const codeModal = ref(null);
-const cardCode = ProfileCard1;
+const cardCode = ProfileCard1Code;
 
 const showCode = () => {
   if (codeModal.value) {

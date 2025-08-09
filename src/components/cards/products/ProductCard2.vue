@@ -122,12 +122,12 @@
 <script setup>
 import { ref } from "vue";
 import CodeModal from "../../CodeModal.vue";
-import { ProductCard2 } from "../../../data/codes/cards/products/ProductCard2.js";
+import ProductCard2Code from "../../../data/codes/cards/products/ProductCard2.js";
 
 // Datos integrados del MacBook Air M2
 
 const codeModal = ref(null);
-const cardCode = ProductCard2;
+const cardCode = ProductCard2Code;
 
 const showCode = () => {
   if (codeModal.value) {

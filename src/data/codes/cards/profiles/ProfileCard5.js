@@ -1,4 +1,4 @@
-export const ProfileCard5 = `<template>
+export default `<template>
   <div
     class="profile-card-5 group relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1 w-96"
   >
@@ -143,8 +143,6 @@ export const ProfileCard5 = `<template>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'ProfileCard5'
-}
+<script setup>
+// Lógica del componente aquí
 </script>`;

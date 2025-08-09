@@ -1,4 +1,4 @@
-export const ArticleCard2 = `<template>
+export default `<template>
   <div
     class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 w-96 mx-auto border border-orange-100 relative group"
   >
@@ -10,11 +10,11 @@ export const ArticleCard2 = `<template>
             class="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center"
           >
             <span class="text-white text-xs font-bold">{{
-              author.charAt(0)
+              J
             }}</span>
           </div>
           <div>
-            <p class="text-sm font-bold text-gray-900">{{ author }}</p>
+            <p class="text-sm font-bold text-gray-900">Jbortweb</p>
             <p class="text-xs text-orange-600">12 Ene 2024</p>
           </div>
         </div>
@@ -122,7 +122,6 @@ export const ArticleCard2 = `<template>
 </template>
 
 <script setup>
-const author = "Jbortweb";
 </script>
 
 `;
