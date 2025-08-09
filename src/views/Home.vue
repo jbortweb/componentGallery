@@ -71,14 +71,14 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <!-- Característica de Cards -->
           <div
-            class="feature-card group cursor-pointer"
+            class="feature-card group cursor-pointer hover:shadow-2xl hover:shadow-cyan-500/20 hover:border-cyan-500/40 transition-all duration-500"
             @click="navigateToCards"
           >
             <div
-              class="feature-icon bg-gradient-to-r from-cyan-500 to-blue-600"
+              class="feature-icon bg-gradient-to-r from-cyan-500 to-blue-600 group-hover:from-cyan-400 group-hover:to-blue-500 group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-xl group-hover:shadow-cyan-500/50 transition-all duration-500"
             >
               <svg
-                class="w-8 h-8 text-white"
+                class="w-8 h-8 text-white group-hover:rotate-6 transition-all duration-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -102,28 +102,28 @@
             </p>
             <div class="space-y-2">
               <div
-                class="flex items-center justify-between text-sm cursor-pointer hover:text-cyan-300 transition-colors"
+                class="flex items-center justify-between text-sm cursor-pointer hover:text-cyan-300 hover:bg-cyan-500/10 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 rounded-lg p-3 border border-transparent hover:border-cyan-500/40"
                 @click.stop="navigateToProductCards"
               >
-                <span class="text-cyan-400">Productos</span>
+                <span class="text-cyan-400 font-medium">Productos</span>
                 <span class="text-gray-400 group-hover:text-gray-300"
                   >6 componentes</span
                 >
               </div>
               <div
-                class="flex items-center justify-between text-sm cursor-pointer hover:text-purple-300 transition-colors"
+                class="flex items-center justify-between text-sm cursor-pointer hover:text-purple-300 hover:bg-purple-500/10 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 rounded-lg p-3 border border-transparent hover:border-purple-500/40"
                 @click.stop="navigateToProfileCards"
               >
-                <span class="text-purple-400">Perfiles</span>
+                <span class="text-purple-400 font-medium">Perfiles</span>
                 <span class="text-gray-400 group-hover:text-gray-300"
                   >6 componentes</span
                 >
               </div>
               <div
-                class="flex items-center justify-between text-sm cursor-pointer hover:text-green-300 transition-colors"
+                class="flex items-center justify-between text-sm cursor-pointer hover:text-green-300 hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/20 transition-all duration-300 rounded-lg p-3 border border-transparent hover:border-green-500/40"
                 @click.stop="navigateToArticleCards"
               >
-                <span class="text-green-400">Artículos</span>
+                <span class="text-green-400 font-medium">Artículos</span>
                 <span class="text-gray-400 group-hover:text-gray-300"
                   >6 componentes</span
                 >
@@ -133,14 +133,14 @@
 
           <!-- Headers & Footers -->
           <div
-            class="feature-card group cursor-pointer"
+            class="feature-card group cursor-pointer hover:shadow-2xl hover:shadow-purple-500/20 hover:border-purple-500/40 transition-all duration-500"
             @click="navigateToHeaders"
           >
             <div
-              class="feature-icon bg-gradient-to-r from-purple-500 to-pink-600"
+              class="feature-icon bg-gradient-to-r from-purple-500 to-pink-600 group-hover:from-purple-400 group-hover:to-pink-500 group-hover:scale-110 group-hover:-rotate-12 group-hover:shadow-xl group-hover:shadow-purple-500/50 transition-all duration-500"
             >
               <svg
-                class="w-8 h-8 text-white"
+                class="w-8 h-8 text-white group-hover:-rotate-12 transition-all duration-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -164,19 +164,19 @@
             </p>
             <div class="space-y-2">
               <div
-                class="flex items-center justify-between text-sm cursor-pointer hover:text-orange-300 transition-colors"
+                class="flex items-center justify-between text-sm cursor-pointer hover:text-orange-300 hover:bg-orange-500/10 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300 rounded-lg p-3 border border-transparent hover:border-orange-500/40"
                 @click.stop="navigateToHeaders"
               >
-                <span class="text-orange-400">Headers</span>
+                <span class="text-orange-400 font-medium">Headers</span>
                 <span class="text-gray-400 group-hover:text-gray-300"
                   >6 componentes</span
                 >
               </div>
               <div
-                class="flex items-center justify-between text-sm cursor-pointer hover:text-indigo-300 transition-colors"
+                class="flex items-center justify-between text-sm cursor-pointer hover:text-indigo-300 hover:bg-indigo-500/10 hover:shadow-lg hover:shadow-indigo-500/20 transition-all duration-300 rounded-lg p-3 border border-transparent hover:border-indigo-500/40"
                 @click.stop="navigateToFooters"
               >
-                <span class="text-indigo-400">Footers</span>
+                <span class="text-indigo-400 font-medium">Footers</span>
                 <span class="text-gray-400 group-hover:text-gray-300"
                   >6 componentes</span
                 >
@@ -185,12 +185,14 @@
           </div>
 
           <!-- Código Visible -->
-          <div class="feature-card group">
+          <div
+            class="feature-card group hover:shadow-2xl hover:shadow-green-500/20 hover:border-green-500/40 transition-all duration-500"
+          >
             <div
-              class="feature-icon bg-gradient-to-r from-green-500 to-emerald-600"
+              class="feature-icon bg-gradient-to-r from-green-500 to-emerald-600 group-hover:from-green-400 group-hover:to-emerald-500 group-hover:scale-110 group-hover:rotate-18 group-hover:shadow-xl group-hover:shadow-green-500/50 transition-all duration-500"
             >
               <svg
-                class="w-8 h-8 text-white"
+                class="w-8 h-8 text-white group-hover:rotate-18 transition-all duration-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -348,9 +350,11 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
           <!-- Vue 3 -->
           <div class="tech-card group">
-            <div class="tech-icon">
+            <div
+              class="tech-icon group-hover:scale-110 group-hover:rotate-6 transition-all duration-300"
+            >
               <svg
-                class="w-12 h-12 text-green-500"
+                class="w-12 h-12 text-green-500 group-hover:text-green-400 transition-colors duration-300"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
@@ -367,9 +371,11 @@
 
           <!-- Vite -->
           <div class="tech-card group">
-            <div class="tech-icon">
+            <div
+              class="tech-icon group-hover:scale-110 group-hover:-rotate-6 transition-all duration-300"
+            >
               <svg
-                class="w-12 h-12 text-purple-500"
+                class="w-12 h-12 text-purple-500 group-hover:text-purple-400 transition-colors duration-300"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -392,9 +398,11 @@
 
           <!-- Tailwind -->
           <div class="tech-card group">
-            <div class="tech-icon">
+            <div
+              class="tech-icon group-hover:scale-110 group-hover:rotate-12 transition-all duration-300"
+            >
               <svg
-                class="w-12 h-12 text-blue-500"
+                class="w-12 h-12 text-blue-500 group-hover:text-blue-400 transition-colors duration-300"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
@@ -413,9 +421,11 @@
 
           <!-- Vue Router -->
           <div class="tech-card group">
-            <div class="tech-icon">
+            <div
+              class="tech-icon group-hover:scale-110 group-hover:-rotate-12 transition-all duration-300"
+            >
               <svg
-                class="w-12 h-12 text-indigo-500"
+                class="w-12 h-12 text-indigo-500 group-hover:text-indigo-400 transition-colors duration-300"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -497,13 +507,14 @@ const navigateToFooters = () => {
   border-radius: 1rem;
   padding: 2rem;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   transform: scale(1);
 }
 
 .feature-card:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.08) translateY(-8px);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.7);
 }
 
 .feature-icon {
@@ -515,6 +526,7 @@ const navigateToFooters = () => {
   justify-content: center;
   margin: 0 auto 1.5rem auto;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
 }
 
 /* Tech cards */
