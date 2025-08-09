@@ -37,7 +37,7 @@
               <h1
                 class="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent group-hover:from-cyan-300 group-hover:to-blue-300 transition-all duration-300"
               >
-                Component Gallery
+                GalleryComponent
               </h1>
               <p
                 class="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300"
