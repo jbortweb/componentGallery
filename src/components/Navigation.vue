@@ -8,7 +8,7 @@
             to="/"
             class="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
           >
-            <span class="text-blue-600">Component</span>Gallery
+            <span class="text-blue-600">Gallery</span>Component
           </router-link>
         </div>
 

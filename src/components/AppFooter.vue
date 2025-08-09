@@ -162,12 +162,28 @@
         <div class="flex flex-col md:flex-row justify-between items-center">
           <p class="text-gray-400 text-sm">
             Este proyecto es de código abierto y damos la bienvenida a
-            colaboraciones. ¡Tu participación es valiosa!
+            <a
+              href="https://github.com/jbortweb/componentGallery"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-white hover:text-blue-400 transition-colors cursor-pointer underline underline-offset-2"
+            >
+              colaboraciones </a
+            >. ¡Tu participación es valiosa!
           </p>
           <div class="mt-4 md:mt-0 flex items-center space-x-2">
             <img src="/logo.svg" alt="Vite" class="w-10 h-10" />
             <span class="text-gray-400 text-sm">
-              Construido por jbortweb con Vue 3 + Tailwind
+              Creado por
+              <a
+                href="https://portafoliojbortweb.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-white hover:text-blue-400 transition-colors cursor-pointer underline underline-offset-2"
+              >
+                jbortweb
+              </a>
+              con Vue 3 + Tailwind
             </span>
           </div>
         </div>
