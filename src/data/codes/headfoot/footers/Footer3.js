@@ -267,7 +267,7 @@ export default `<template>
         }"
       >
         <div class="text-purple-200 text-sm mb-4 md:mb-0">
-          © 2024 Company. Diseñado con ❤️ para el futuro digital.
+          © 2025 Company. Diseñado con ❤️ para el futuro digital.
         </div>
         <div class="flex space-x-6 text-sm">
           <a href="#" class="text-purple-300 hover:text-white transition-colors"

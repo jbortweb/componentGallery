@@ -152,7 +152,7 @@ export default `<template>
           <!-- Logo y descripción de empresa -->
           <div class="mb-8">
             <div class="flex items-center space-x-3 mb-6">
-              <img src="/logo.svg" alt="Logo" class="h-12 w-12" />
+              <img src="../assets/logo.svg" alt="Logo" class="h-12 w-12" />
               <div>
                 <h3 class="text-2xl font-bold text-gray-900">Company</h3>
                 <p class="text-gray-600">Transformando ideas en código</p>
@@ -323,7 +323,7 @@ export default `<template>
         class="mt-12 pt-8 border-t border-gray-200 text-center text-gray-600"
       >
         <p>
-          © 2024 Company. Todos los derechos reservados. Diseñado con ❤️ en
+          © 2025 Company. Todos los derechos reservados. Diseñado con ❤️ en
           Madrid.
         </p>
       </div>

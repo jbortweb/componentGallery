@@ -72,8 +72,20 @@ src/
 │   │       ├── ProfileCard5.vue  # Corporativo moderno
 │   │       └── ProfileCard6.vue  # Terminal/tech style
 │   ├── headfoot/                # 🔝🔻 LAYOUT (12 componentes)
-│   │   ├── Header1-6.vue        # 6 headers temáticos
-│   │   └── Footer1-6.vue        # 6 footers diversos
+│   │   ├── headers/             # 6 headers temáticos
+│   │   │   ├── Header1.vue      # Header minimalista
+│   │   │   ├── Header2.vue      # Header gaming cyberpunk
+│   │   │   ├── Header3.vue      # Header artístico
+│   │   │   ├── Header4.vue      # Header glassmorphism
+│   │   │   ├── Header5.vue      # Header terminal
+│   │   │   └── Header6.vue      # Header espacial
+│   │   └── footers/             # 6 footers diversos
+│   │       ├── Footer1.vue      # Footer corporativo
+│   │       ├── Footer2.vue      # Footer minimalista
+│   │       ├── Footer3.vue      # Footer social
+│   │       ├── Footer4.vue      # Footer newsletter
+│   │       ├── Footer5.vue      # Footer completo
+│   │       └── Footer6.vue      # Footer creativo
 │   └── [otros componentes comunes]
 ├── data/
 │   ├── cardData.js              # 📊 Datos de ejemplo
@@ -121,18 +133,26 @@ src/
 
 #### ✅ Para Headers/Footers
 
-1. **Ubicación de Componentes**: `src/components/headfoot/`
+1. **Ubicación de Componentes**: `src/components/headfoot/[tipo]/`
 
-   - Todos en la misma carpeta plana
+   - `headers/` → Header1-6.vue (componentes de header)
+   - `footers/` → Footer1-6.vue (componentes de footer)
 
 2. **Ubicación de Códigos**: `src/data/codes/headfoot/[tipo]/`
 
-   - `headers/` → Header1-6.js
-   - `footers/` → Footer1-6.js
+   - `headers/` → Header1-6.js (códigos de header)
+   - `footers/` → Footer1-6.js (códigos de footer)
 
-3. **Importaciones**:
+3. **Nomenclatura**: `[Tipo][Número].vue` (ej: `Header1.vue`, `Footer1.vue`)
+
+4. **Importaciones en Vistas**:
    ```javascript
+   // Componentes
+   import Header1 from '../components/headfoot/headers/Header1.vue'
+   import Footer1 from '../components/headfoot/footers/Footer1.vue'
+   // Códigos
    import Header1Code from '../data/codes/headfoot/headers/Header1.js'
+   import Footer1Code from '../data/codes/headfoot/footers/Footer1.js'
    ```
 
 ### 🔄 Rutas de Importación
@@ -145,8 +165,9 @@ import ProductCard1 from '../components/cards/products/ProductCard1.vue'
 import ProfileCard2 from '../components/cards/profiles/ProfileCard2.vue'
 import ArticleCard3 from '../components/cards/articles/ArticleCard3.vue'
 
-// Headers/footers
-import Header1 from '../components/headfoot/Header1.vue'
+// Headers/footers organizados por tipo
+import Header1 from '../components/headfoot/headers/Header1.vue'
+import Footer1 from '../components/headfoot/footers/Footer1.vue'
 ```
 
 #### Desde Vistas hacia Códigos:
@@ -164,12 +185,16 @@ import Footer1Code from '../data/codes/headfoot/footers/Footer1.js'
 
 #### Desde Cards hacia CodeModal:
 
+````javascript
+#### Desde Cards hacia CodeModal:
 ```javascript
 // Para cards en subcarpetas (articles/, products/, profiles/)
 import CodeModal from '../../CodeModal.vue'
 
-// Para componentes en headfoot/
-import CodeModal from '../CodeModal.vue'
+// Para headers y footers en subcarpetas (headers/, footers/)
+import CodeModal from '../../CodeModal.vue'
+````
+
 ```
 
 ## �📋 Tipos de Contribuciones
@@ -202,12 +227,14 @@ Las tarjetas están organizadas en 3 carpetas temáticas:
 
 1. **Crear componente en la carpeta correspondiente**:
 
-   ```
-   src/components/cards/
-   ├── articles/    # Tarjetas de artículos y contenido
-   ├── products/    # Tarjetas de productos comerciales
-   └── profiles/    # Tarjetas de perfiles de usuario
-   ```
+```
+
+src/components/cards/
+├── articles/ # Tarjetas de artículos y contenido
+├── products/ # Tarjetas de productos comerciales
+└── profiles/ # Tarjetas de perfiles de usuario
+
+```
 
 2. **Seguir el patrón de modal existente** (ver ejemplo en Pautas de Código)
 
@@ -215,28 +242,30 @@ Las tarjetas están organizadas en 3 carpetas temáticas:
 
 4. **Registrar código** en la estructura organizada:
 
-   ```
-   src/data/codes/cards/
-   ├── articles/    # Códigos de ArticleCard1.js - ArticleCard6.js
-   ├── products/    # Códigos de ProductCard1.js - ProductCard6.js
-   └── profiles/    # Códigos de ProfileCard1.js - ProfileCard6.js
-   ```
+```
+
+src/data/codes/cards/
+├── articles/ # Códigos de ArticleCard1.js - ArticleCard6.js
+├── products/ # Códigos de ProductCard1.js - ProductCard6.js
+└── profiles/ # Códigos de ProfileCard1.js - ProfileCard6.js
+
+````
 
 5. **Importar en vista correspondiente** usando la nueva ruta:
 
-   ```javascript
-   // Para tarjetas de artículos
-   import ArticleCard1 from '../components/cards/articles/ArticleCard1.vue'
-   import ArticleCard1Code from '../data/codes/cards/articles/ArticleCard1.js'
+```javascript
+// Para tarjetas de artículos
+import ArticleCard1 from '../components/cards/articles/ArticleCard1.vue'
+import ArticleCard1Code from '../data/codes/cards/articles/ArticleCard1.js'
 
-   // Para tarjetas de productos
-   import ProductCard1 from '../components/cards/products/ProductCard1.vue'
-   import ProductCard1Code from '../data/codes/cards/products/ProductCard1.js'
+// Para tarjetas de productos
+import ProductCard1 from '../components/cards/products/ProductCard1.vue'
+import ProductCard1Code from '../data/codes/cards/products/ProductCard1.js'
 
-   // Para tarjetas de perfiles
-   import ProfileCard1 from '../components/cards/profiles/ProfileCard1.vue'
-   import ProfileCard1Code from '../data/codes/cards/profiles/ProfileCard1.js'
-   ```
+// Para tarjetas de perfiles
+import ProfileCard1 from '../components/cards/profiles/ProfileCard1.vue'
+import ProfileCard1Code from '../data/codes/cards/profiles/ProfileCard1.js'
+````
 
 #### Para Headers/Footers:
 
@@ -433,7 +462,8 @@ npm run preview
   - [ ] Footers en `src/data/codes/headfoot/footers/`
 - [ ] **Los componentes están en las carpetas correctas:**
   - [ ] Cards en `src/components/cards/[articles|products|profiles]/`
-  - [ ] Headers/footers en `src/components/headfoot/`
+  - [ ] Headers en `src/components/headfoot/headers/`
+  - [ ] Footers en `src/components/headfoot/footers/`
 - [ ] **Las rutas de importación son correctas** para la estructura anidada
 - [ ] **Los códigos NO incluyen** lógica de modal ni botones de código
 

@@ -185,12 +185,12 @@
 
 <script setup>
 // Importar componentes Header
-import Header1 from "../components/headfoot/Header1.vue";
-import Header2 from "../components/headfoot/Header2.vue";
-import Header3 from "../components/headfoot/Header3.vue";
-import Header4 from "../components/headfoot/Header4.vue";
-import Header5 from "../components/headfoot/Header5.vue";
-import Header6 from "../components/headfoot/Header6.vue";
+import Header1 from "../components/headfoot/headers/Header1.vue";
+import Header2 from "../components/headfoot/headers/Header2.vue";
+import Header3 from "../components/headfoot/headers/Header3.vue";
+import Header4 from "../components/headfoot/headers/Header4.vue";
+import Header5 from "../components/headfoot/headers/Header5.vue";
+import Header6 from "../components/headfoot/headers/Header6.vue";
 import ComponentInstructions from "../components/ComponentInstructions.vue";
 
 // Datos de headers

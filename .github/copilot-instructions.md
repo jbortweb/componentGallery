@@ -39,18 +39,20 @@ src/
 │   │       ├── ProfileCard5.vue  # Estilo corporativo moderno
 │   │       └── ProfileCard6.vue  # Terminal/tech style con código
 │   ├── headfoot/           # 12 componentes de layout (headers y footers)
-│   │   ├── Header1.vue           # Header minimalista con neumorfismo
-│   │   ├── Header2.vue           # Header gaming cyberpunk con neon
-│   │   ├── Header3.vue           # Header artístico con efectos pintura
-│   │   ├── Header4.vue           # Header glassmorphism con partículas
-│   │   ├── Header5.vue           # Header terminal con efectos matriz
-│   │   ├── Header6.vue           # Header espacial con estrellas
-│   │   ├── Footer1.vue           # Footer corporativo con columnas
-│   │   ├── Footer2.vue           # Footer minimalista con enlaces
-│   │   ├── Footer3.vue           # Footer social con redes sociales
-│   │   ├── Footer4.vue           # Footer newsletter con suscripción
-│   │   ├── Footer5.vue           # Footer completo con mapa del sitio
-│   │   └── Footer6.vue           # Footer creativo con gráficos
+│   │   ├── headers/        # Headers temáticos (6 componentes)
+│   │   │   ├── Header1.vue       # Header minimalista con neumorfismo
+│   │   │   ├── Header2.vue       # Header gaming cyberpunk con neon
+│   │   │   ├── Header3.vue       # Header artístico con efectos pintura
+│   │   │   ├── Header4.vue       # Header glassmorphism con partículas
+│   │   │   ├── Header5.vue       # Header terminal con efectos matriz
+│   │   │   └── Header6.vue       # Header espacial con estrellas
+│   │   └── footers/        # Footers diversos (6 componentes)
+│   │       ├── Footer1.vue       # Footer corporativo con columnas
+│   │       ├── Footer2.vue       # Footer minimalista con enlaces
+│   │       ├── Footer3.vue       # Footer social con redes sociales
+│   │       ├── Footer4.vue       # Footer newsletter con suscripción
+│   │       ├── Footer5.vue       # Footer completo con mapa del sitio
+│   │       └── Footer6.vue       # Footer creativo con gráficos
 │   ├── carousel/
 │   │   └── CardCarousel.vue      # Carousel responsivo para cards
 │   ├── AppHeader.vue       # Header principal de la aplicación
@@ -237,15 +239,19 @@ src/
 
   // Para tarjetas de productos
   import ProductCard1Code from '../data/codes/cards/products/ProductCard1.js'
+  import ProductCard1 from '../components/cards/products/ProductCard1.vue'
 
   // Para tarjetas de perfiles
   import ProfileCard1Code from '../data/codes/cards/profiles/ProfileCard1.js'
+  import ProfileCard1 from '../components/cards/profiles/ProfileCard1.vue'
 
   // Para headers
   import Header1Code from '../data/codes/headfoot/headers/Header1.js'
+  import Header1 from '../components/headfoot/headers/Header1.vue'
 
   // Para footers
   import Footer1Code from '../data/codes/headfoot/footers/Footer1.js'
+  import Footer1 from '../components/headfoot/footers/Footer1.vue'
   ```
 
 ### Sistema de Rutas

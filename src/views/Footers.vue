@@ -185,12 +185,12 @@
 
 <script setup>
 // Importar componentes Footer
-import Footer1 from "../components/headfoot/Footer1.vue";
-import Footer2 from "../components/headfoot/Footer2.vue";
-import Footer3 from "../components/headfoot/Footer3.vue";
-import Footer4 from "../components/headfoot/Footer4.vue";
-import Footer5 from "../components/headfoot/Footer5.vue";
-import Footer6 from "../components/headfoot/Footer6.vue";
+import Footer1 from "../components/headfoot/footers/Footer1.vue";
+import Footer2 from "../components/headfoot/footers/Footer2.vue";
+import Footer3 from "../components/headfoot/footers/Footer3.vue";
+import Footer4 from "../components/headfoot/footers/Footer4.vue";
+import Footer5 from "../components/headfoot/footers/Footer5.vue";
+import Footer6 from "../components/headfoot/footers/Footer6.vue";
 import ComponentInstructions from "../components/ComponentInstructions.vue";
 
 // Datos de footers

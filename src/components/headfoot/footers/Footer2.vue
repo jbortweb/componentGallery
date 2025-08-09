@@ -325,33 +325,11 @@
               </a>
             </div>
             <div class="text-gray-600 text-sm">
-              © 2024 Company. Todos los derechos reservados.
+              © 2025 Company. Todos los derechos reservados.
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Code button -->
-      <button
-        @click="showCode"
-        class="absolute top-4 right-4 z-10 w-8 h-8 bg-white shadow-lg hover:shadow-xl rounded-full flex items-center justify-center cursor-pointer transition-all border border-gray-200"
-        title="Ver código del componente"
-        aria-label="Ver código del componente"
-      >
-        <svg
-          class="w-4 h-4 text-gray-600 pointer-events-none"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-          />
-        </svg>
-      </button>
 
       <!-- Code Modal -->
       <CodeModal
@@ -366,8 +344,8 @@
 
 <script setup>
 import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import Footer2Code from "../../data/codes/headfoot/footers/Footer2.js";
+import CodeModal from "../../CodeModal.vue";
+import Footer2Code from "../../../data/codes/headfoot/footers/Footer2.js";
 
 // Modal setup
 const codeModal = ref(null);

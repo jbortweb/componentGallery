@@ -342,8 +342,8 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import CodeModal from "../CodeModal.vue";
-import Footer6Code from "../../data/codes/headfoot/footers/Footer6.js";
+import CodeModal from "../../CodeModal.vue";
+import Footer6Code from "../../../data/codes/headfoot/footers/Footer6.js";
 
 // Modal setup
 const codeModal = ref(null);

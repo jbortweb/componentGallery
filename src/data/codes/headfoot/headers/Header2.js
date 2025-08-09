@@ -36,7 +36,7 @@ export default `<template>
               <div class="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50"></div>
             </div>
             <div class="ml-4">
-              <span class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 tracking-wider">NEXUS</span>
+              <span class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 tracking-wider">ONOFF</span>
               <div class="text-cyan-300 text-xs font-mono uppercase tracking-widest">Gaming Platform</div>
             </div>
           </div>

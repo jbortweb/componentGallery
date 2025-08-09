@@ -504,8 +504,8 @@
 
 <script setup>
 import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import Footer5Code from "../../data/codes/headfoot/footers/Footer5.js";
+import CodeModal from "../../CodeModal.vue";
+import Footer5Code from "../../../data/codes/headfoot/footers/Footer5.js";
 
 // Modal setup
 const codeModal = ref(null);

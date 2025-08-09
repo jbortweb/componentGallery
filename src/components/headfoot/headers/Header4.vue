@@ -70,7 +70,7 @@
                   </svg>
                 </div>
               </div>
-              <span class="ml-3 text-2xl font-bold text-white">Nexus</span>
+              <span class="ml-3 text-2xl font-bold text-white">Nexodus</span>
             </div>
 
             <!-- Navegación desktop -->
@@ -276,28 +276,6 @@
         </div>
       </div>
 
-      <!-- Botón para ver código -->
-      <button
-        @click="showCode"
-        class="absolute top-4 right-4 z-50 p-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white hover:bg-white/20 transition-all duration-200 cursor-pointer"
-        title="Ver código del componente"
-        aria-label="Ver código del componente"
-      >
-        <svg
-          class="w-5 h-5 pointer-events-none"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-          />
-        </svg>
-      </button>
-
       <!-- Code Modal -->
       <CodeModal
         ref="codeModal"
@@ -311,8 +289,8 @@
 
 <script setup>
 import { ref } from "vue";
-import CodeModal from "../CodeModal.vue";
-import Header4Code from "../../data/codes/headfoot/headers/Header4.js";
+import CodeModal from "../../CodeModal.vue";
+import Header4Code from "../../../data/codes/headfoot/headers/Header4.js";
 
 // Estado del menú móvil
 const isMobileMenuOpen = ref(false);

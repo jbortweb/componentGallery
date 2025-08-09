@@ -1,6 +1,6 @@
 export default `<template>
   <!-- Header con diseño de terminal/matriz -->
-  <header class="relative bg-black overflow-hidden">
+  <header class="relative bg-black overflow-hidden h-[100vh]">
     <!-- Efecto matriz de fondo -->
     <div class="absolute inset-0 opacity-20">
       <canvas ref="matrixCanvas" class="w-full h-full"></canvas>

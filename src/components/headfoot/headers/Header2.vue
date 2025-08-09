@@ -73,7 +73,7 @@
               <div class="ml-4">
                 <span
                   class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 tracking-wider"
-                  >NEXUS</span
+                  >ONOFF</span
                 >
                 <div
                   class="text-cyan-300 text-xs font-mono uppercase tracking-widest"
@@ -380,8 +380,8 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import CodeModal from "../CodeModal.vue";
-import Header2Code from "../../data/codes/headfoot/headers/Header2.js";
+import CodeModal from "../../CodeModal.vue";
+import Header2Code from "../../../data/codes/headfoot/headers/Header2.js";
 
 // Estado del menú móvil
 const isMobileMenuOpen = ref(false);
