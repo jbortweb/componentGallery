@@ -5,13 +5,13 @@
   "type": "module",
   "license": "MIT",
   "author": {
-    "name": "Tu Nombre",
-    "email": "tu-email@ejemplo.com",
-    "url": "https://github.com/tu-username"
+    "name": "Jordi Bort",
+    "email": "jbortweb@gmail.com",
+    "url": "https://github.com/jbortweb"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tu-username/component-gallery.git"
+    "url": "https://github.com/jbortweb/componentGallery.git"
   },
   "keywords": [
     "vue3",

@@ -1,10 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import ProductCards from '../views/ProductCards.vue'
-import ProfileCards from '../views/ProfileCards.vue'
-import ArticleCards from '../views/ArticleCards.vue'
-import Headers from '../views/Headers.vue'
-import Footers from '../views/Footers.vue'
+
+// Lazy loading de las vistas para optimizar el bundle
+const Home = () => import('../views/Home.vue')
+const ProductCards = () => import('../views/ProductCards.vue')
+const ProfileCards = () => import('../views/ProfileCards.vue')
+const ArticleCards = () => import('../views/ArticleCards.vue')
+const Headers = () => import('../views/Headers.vue')
+const Footers = () => import('../views/Footers.vue')
 
 const routes = [
   {
