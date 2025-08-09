@@ -8,7 +8,7 @@
       aria-label="Ver código del componente"
     >
       <svg
-        class="w-5 h-5 text-pink-500"
+        class="w-5 h-5 text-white"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -53,27 +53,21 @@
                 class="w-full h-full rounded-full object-cover border-4 border-white/50"
               />
             </div>
-            <!-- Status indicator -->
-            <div
-              class="absolute -bottom-1 -right-1 w-8 h-8 bg-green-400 rounded-full border-4 border-white/50 flex items-center justify-center animate-pulse"
-            >
-              <div class="w-3 h-3 bg-white rounded-full"></div>
-            </div>
           </div>
         </div>
 
         <!-- Info Section -->
         <div class="text-center mb-6">
-          <h3 class="text-2xl font-bold text-pink-500 mb-2 animate-fade-in-up">
+          <h3 class="text-2xl font-bold text-white mb-2 animate-fade-in-up">
             Ana García
           </h3>
           <p
-            class="text-pink-500 text-lg mb-1 animate-fade-in-up animation-delay-200"
+            class="text-gray-100 text-lg mb-1 animate-fade-in-up animation-delay-200"
           >
             Frontend Developer
           </p>
           <p
-            class="text-pink-500/60 text-sm animate-fade-in-up animation-delay-400"
+            class="text-gray-300 text-sm animate-fade-in-up animation-delay-400"
           >
             @ Tech Solutions
           </p>
@@ -82,7 +76,7 @@
         <!-- Bio with typing effect -->
         <div class="mb-6 animate-fade-in-up animation-delay-600">
           <p
-            class="text-pink-500/80 text-sm text-center leading-relaxed line-clamp-3"
+            class="text-gray-200 text-sm text-center leading-relaxed line-clamp-3"
           >
             Apasionada del desarrollo web con 5 años de experiencia en React y
             Vue.js
@@ -93,25 +87,25 @@
         <div class="mb-6 animate-fade-in-up animation-delay-800">
           <div class="flex flex-wrap justify-center gap-2">
             <span
-              class="bg-white/20 backdrop-blur-sm text-pink-500 text-xs px-3 py-2 rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 animate-float"
+              class="bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-2 rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 animate-float"
               style="animation-delay: 0ms"
             >
               Vue.js
             </span>
             <span
-              class="bg-white/20 backdrop-blur-sm text-pink-500 text-xs px-3 py-2 rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 animate-float"
+              class="bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-2 rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 animate-float"
               style="animation-delay: 200ms"
             >
               React
             </span>
             <span
-              class="bg-white/20 backdrop-blur-sm text-pink-500 text-xs px-3 py-2 rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 animate-float"
+              class="bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-2 rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 animate-float"
               style="animation-delay: 400ms"
             >
               TypeScript
             </span>
             <span
-              class="bg-white/20 backdrop-blur-sm text-pink-500 text-xs px-3 py-2 rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 animate-float"
+              class="bg-white/20 backdrop-blur-sm text-white text-xs px-3 py-2 rounded-full border border-white/30 hover:bg-white/30 hover:scale-110 transition-all duration-300 animate-float"
               style="animation-delay: 600ms"
             >
               Tailwind CSS
@@ -129,7 +123,7 @@
             class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-blue-500/50 hover:scale-110 transition-all duration-300 group/social"
           >
             <svg
-              class="w-5 h-5 text-pink-500 group-hover/social:animate-bounce"
+              class="w-5 h-5 text-white group-hover/social:animate-bounce"
               fill="currentColor"
               viewBox="0 0 24 24"
             >
@@ -144,7 +138,7 @@
             class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-700/50 hover:scale-110 transition-all duration-300 group/social"
           >
             <svg
-              class="w-5 h-5 text-pink-500 group-hover/social:animate-bounce"
+              class="w-5 h-5 text-white group-hover/social:animate-bounce"
               fill="currentColor"
               viewBox="0 0 24 24"
             >
@@ -159,7 +153,7 @@
             class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-blue-400/50 hover:scale-110 transition-all duration-300 group/social"
           >
             <svg
-              class="w-5 h-5 text-pink-500 group-hover/social:animate-bounce"
+              class="w-5 h-5 text-white group-hover/social:animate-bounce"
               fill="currentColor"
               viewBox="0 0 24 24"
             >
@@ -173,7 +167,7 @@
         <!-- Glowing Connect Button -->
         <div class="animate-fade-in-up animation-delay-1200">
           <button
-            class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-pink-500 py-3 px-6 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 relative overflow-hidden group/btn"
+            class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 px-6 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 relative overflow-hidden group/btn"
           >
             <span class="relative z-10 text-white">Conectar</span>
             <div

@@ -23,13 +23,6 @@ export default `<template>
             class="relative w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300"
           />
         </div>
-
-        <!-- Status indicator -->
-        <div
-          class="absolute -top-1 -right-1 w-6 h-6 bg-green-400 border-2 border-white rounded-full flex items-center justify-center"
-        >
-          <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-        </div>
       </div>
 
       <h3

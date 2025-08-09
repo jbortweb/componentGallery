@@ -17,11 +17,6 @@ export default `<template>
             class="w-28 h-28 rounded-full object-cover shadow-lg border-4 border-white group-hover:scale-105 transition-transform duration-300"
           />
           <!-- Professional status -->
-          <div
-            class="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 border-4 border-white rounded-full flex items-center justify-center shadow-lg"
-          >
-            <div class="w-3 h-3 bg-white rounded-full"></div>
-          </div>
         </div>
 
         <!-- Nombre y título -->

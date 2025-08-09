@@ -1,26 +1,6 @@
 <template>
-  <div class="min-h-screen bg-gray-50 py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Hero Section -->
-      <section class="relative py-20 sm:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center">
-            <h1 class="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
-              <span class="block">Header</span>
-              <span class="block text-blue-600">Gallery</span>
-            </h1>
-            <p
-              class="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto mb-10"
-            >
-              Una colección de headers modernos e interactivos construidos con
-              <span class="font-semibold text-green-600">Vue 3</span>,
-              <span class="font-semibold text-purple-600">Vite</span> y
-              <span class="font-semibold text-blue-600">Tailwind CSS</span>
-            </p>
-          </div>
-        </div>
-      </section>
-
+  <div class="transparent-headers">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <!-- Sección de Headers -->
       <div class="space-y-16">
         <div
@@ -30,17 +10,17 @@
         >
           <!-- Título centrado y elegante -->
           <div class="text-center mb-6">
-            <h3 class="text-2xl font-bold text-gray-800 mb-2">
+            <h3 class="text-2xl font-bold text-white mb-2">
               {{ header.name }}
             </h3>
             <div
-              class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"
+              class="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto rounded-full"
             ></div>
           </div>
 
           <!-- Componente header -->
           <div
-            class="w-[95%] mx-auto border-2 border-gray-300 rounded-lg shadow-lg overflow-hidden bg-white"
+            class="w-[95%] mx-auto backdrop-blur-lg bg-white/10 border border-white/20 rounded-xl shadow-2xl overflow-hidden"
           >
             <component :is="getHeaderComponent(index)" />
           </div>
@@ -52,16 +32,16 @@
 
       <!-- Casos de Uso Recomendados -->
       <div
-        class="mt-12 bg-gradient-to-r from-purple-50 to-indigo-50 border-purple-200 rounded-xl p-8"
+        class="mt-12 backdrop-blur-lg bg-white/5 border border-white/10 rounded-xl p-8 shadow-2xl"
       >
-        <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+        <h2 class="text-2xl font-bold text-white mb-6 text-center">
           Casos de Uso Recomendados
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="text-center">
             <div
-              class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-3"
+              class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
             >
               <svg
                 class="w-6 h-6 text-white"
@@ -77,15 +57,15 @@
                 />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-900">Sitios Web</h3>
-            <p class="text-sm text-gray-600 mt-1">
+            <h3 class="font-semibold text-white">Sitios Web</h3>
+            <p class="text-sm text-gray-300 mt-1">
               Páginas corporativas y portfolios
             </p>
           </div>
 
           <div class="text-center">
             <div
-              class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3"
+              class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
             >
               <svg
                 class="w-6 h-6 text-white"
@@ -101,15 +81,15 @@
                 />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-900">Aplicaciones</h3>
-            <p class="text-sm text-gray-600 mt-1">
-              Interfaces de software y dashboards
+            <h3 class="font-semibold text-white">Aplicaciones Web</h3>
+            <p class="text-sm text-gray-300 mt-1">
+              SaaS, dashboards y plataformas
             </p>
           </div>
 
           <div class="text-center">
             <div
-              class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-3"
+              class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
             >
               <svg
                 class="w-6 h-6 text-white"
@@ -125,15 +105,15 @@
                 />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-900">E-commerce</h3>
-            <p class="text-sm text-gray-600 mt-1">
+            <h3 class="font-semibold text-white">E-commerce</h3>
+            <p class="text-sm text-gray-300 mt-1">
               Tiendas online y marketplaces
             </p>
           </div>
 
           <div class="text-center">
             <div
-              class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3"
+              class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
             >
               <svg
                 class="w-6 h-6 text-white"
@@ -145,13 +125,13 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
                 />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-900">Blogs</h3>
-            <p class="text-sm text-gray-600 mt-1">
-              Publicaciones y contenido editorial
+            <h3 class="font-semibold text-white">Blogs</h3>
+            <p class="text-sm text-gray-300 mt-1">
+              Sitios de contenido y noticias
             </p>
           </div>
         </div>
@@ -161,7 +141,7 @@
       <div class="mt-12 text-center">
         <router-link
           to="/"
-          class="inline-flex items-center px-6 py-3 border border-gray-300 rounded-md text-base font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors"
+          class="inline-flex items-center px-6 py-3 backdrop-blur-lg bg-white/10 border border-white/20 rounded-xl text-base font-medium text-white hover:bg-white/20 transition-all duration-300 shadow-lg hover:shadow-xl"
         >
           <svg
             class="mr-2 w-5 h-5"
@@ -184,68 +164,62 @@
 </template>
 
 <script setup>
-// Importar componentes Header
+import ComponentInstructions from "../components/ComponentInstructions.vue";
 import Header1 from "../components/headfoot/headers/Header1.vue";
 import Header2 from "../components/headfoot/headers/Header2.vue";
 import Header3 from "../components/headfoot/headers/Header3.vue";
 import Header4 from "../components/headfoot/headers/Header4.vue";
 import Header5 from "../components/headfoot/headers/Header5.vue";
 import Header6 from "../components/headfoot/headers/Header6.vue";
-import ComponentInstructions from "../components/ComponentInstructions.vue";
+
+// Componentes de headers
+const headerComponents = [Header1, Header2, Header3, Header4, Header5, Header6];
 
 // Datos de headers
 const headerData = [
-  {
-    id: "header1",
-    name: "Header Minimalista",
-    description: "Diseño limpio con efectos neumorfismo y navegación elegante",
-  },
-  {
-    id: "header2",
-    name: "Header Gaming",
-    description: "Tema cyberpunk con efectos neon y animaciones de terminal",
-  },
-  {
-    id: "header3",
-    name: "Header Artístico",
-    description: "Estilo creativo con efectos de pintura y colores vibrantes",
-  },
-  {
-    id: "header4",
-    name: "Header Glassmorphism",
-    description: "Diseño moderno con partículas flotantes y efectos de vidrio",
-  },
-  {
-    id: "header5",
-    name: "Header Terminal",
-    description: "Interfaz de terminal con efectos matriz y typewriter",
-  },
-  {
-    id: "header6",
-    name: "Header Espacial",
-    description: "Tema galáctico con estrellas animadas y efectos orbitales",
-  },
+  { id: 1, name: "Header Minimalista", component: "Header1" },
+  { id: 2, name: "Header Gaming Cyberpunk", component: "Header2" },
+  { id: 3, name: "Header Artístico", component: "Header3" },
+  { id: 4, name: "Header Glassmorphism", component: "Header4" },
+  { id: 5, name: "Header Terminal", component: "Header5" },
+  { id: 6, name: "Header Espacial", component: "Header6" },
 ];
 
-// Funciones para obtener componentes
+// Función para obtener el componente correcto
 const getHeaderComponent = (index) => {
-  const components = [Header1, Header2, Header3, Header4, Header5, Header6];
-  return components[index];
+  return headerComponents[index] || Header1;
 };
 </script>
 
 <style scoped>
-/* Animaciones suaves */
-.w-full {
-  transition: all 0.3s ease;
+.transparent-headers {
+  background: transparent;
+  min-height: 100vh;
+  position: relative;
 }
 
-.shadow-lg {
-  transition: box-shadow 0.3s ease;
+/* Animación de rotación lateral como moneda */
+.coin-flip {
+  transform-style: preserve-3d;
+  transition: transform 0.5s linear;
 }
 
-.shadow-lg:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+.coin-flip:hover {
+  transform: rotateY(360deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-image-section {
+    margin: 0 1rem 3rem 1rem;
+  }
 }
 </style>

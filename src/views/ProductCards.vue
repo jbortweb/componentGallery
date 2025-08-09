@@ -1,33 +1,12 @@
 <template>
-  <div class="min-h-screen bg-gray-50 py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Hero Section -->
-      <section class="relative py-20 sm:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center">
-            <h1 class="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
-              <span class="block">Productos</span>
-              <span class="block text-blue-600">Gallery</span>
-            </h1>
-            <p
-              class="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto mb-10"
-            >
-              Una colección de tarjetas de productos modernas e interactivas
-              construidas con
-              <span class="font-semibold text-green-600">Vue 3</span>,
-              <span class="font-semibold text-purple-600">Vite</span> y
-              <span class="font-semibold text-blue-600">Tailwind CSS</span>
-            </p>
-          </div>
-        </div>
-      </section>
-
+  <div class="transparent-products">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <!-- Desktop: Carousel View -->
       <div class="hidden lg:block">
         <CardCarousel
           :items="Array(6).fill({})"
           title="Productos - Vista Carrusel"
-          description="Navega entre los diferentes diseños usando las flechas o los indicadores"
+          description="Descubre los diferentes estilos para presentar productos comerciales"
           :autoPlay="false"
         >
           <template #default="{ index }">
@@ -39,11 +18,9 @@
       <!-- Tablet & Mobile: Grid View -->
       <div class="lg:hidden">
         <div class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">
-            Todos los Diseños
-          </h2>
-          <p class="text-gray-600">
-            Vista en cuadrícula de todos los componentes disponibles
+          <h2 class="text-2xl font-bold text-white mb-4">Todos los Diseños</h2>
+          <p class="text-gray-300">
+            Vista en cuadrícula de todos los componentes de producto disponibles
           </p>
         </div>
 
@@ -51,10 +28,10 @@
           <div
             v-for="index in 6"
             :key="index"
-            class="bg-white rounded-xl shadow-lg p-6"
+            class="backdrop-blur-lg bg-white/5 border border-white/10 rounded-xl shadow-lg p-6"
           >
             <div class="mb-4">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              <h3 class="text-lg font-semibold text-white mb-2">
                 ProductCard{{ index }}
               </h3>
             </div>
@@ -67,20 +44,20 @@
       </div>
 
       <!-- Instructions -->
-      <ComponentInstructions />
+      <ComponentInstructions theme="blue" />
 
       <!-- Casos de Uso Recomendados -->
       <div
-        class="mt-12 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8"
+        class="mt-12 backdrop-blur-lg bg-white/5 border border-white/10 rounded-xl p-8 shadow-2xl"
       >
-        <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+        <h2 class="text-2xl font-bold text-white mb-6 text-center">
           Casos de Uso Recomendados
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="text-center">
             <div
-              class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3"
+              class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
             >
               <svg
                 class="w-6 h-6 text-white"
@@ -96,15 +73,15 @@
                 />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-900">E-commerce</h3>
-            <p class="text-sm text-gray-600 mt-1">
-              Tiendas online, catálogos de productos
+            <h3 class="font-semibold text-white">E-commerce</h3>
+            <p class="text-sm text-gray-300 mt-1">
+              Tiendas online y catálogos de productos
             </p>
           </div>
 
           <div class="text-center">
             <div
-              class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-3"
+              class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
             >
               <svg
                 class="w-6 h-6 text-white"
@@ -120,15 +97,15 @@
                 />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-900">Apps Móviles</h3>
-            <p class="text-sm text-gray-600 mt-1">
+            <h3 class="font-semibold text-white">Apps Móviles</h3>
+            <p class="text-sm text-gray-300 mt-1">
               Showcases de aplicaciones y features
             </p>
           </div>
 
           <div class="text-center">
             <div
-              class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3"
+              class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
             >
               <svg
                 class="w-6 h-6 text-white"
@@ -144,15 +121,15 @@
                 />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-900">Servicios</h3>
-            <p class="text-sm text-gray-600 mt-1">
+            <h3 class="font-semibold text-white">Servicios</h3>
+            <p class="text-sm text-gray-300 mt-1">
               Páginas de servicios profesionales
             </p>
           </div>
 
           <div class="text-center">
             <div
-              class="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-3"
+              class="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
             >
               <svg
                 class="w-6 h-6 text-white"
@@ -168,8 +145,8 @@
                 />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-900">Portfolios</h3>
-            <p class="text-sm text-gray-600 mt-1">
+            <h3 class="font-semibold text-white">Portfolios</h3>
+            <p class="text-sm text-gray-300 mt-1">
               Showcases creativos y proyectos destacados
             </p>
           </div>
@@ -180,7 +157,7 @@
       <div class="mt-12 text-center">
         <router-link
           to="/"
-          class="inline-flex items-center px-6 py-3 border border-gray-300 rounded-md text-base font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors"
+          class="inline-flex items-center px-6 py-3 backdrop-blur-lg bg-white/10 border border-white/20 rounded-xl text-base font-medium text-white hover:bg-white/20 transition-all duration-300 shadow-lg hover:shadow-xl"
         >
           <svg
             class="mr-2 w-5 h-5"
@@ -228,3 +205,36 @@ const getProductComponent = (index) => {
   return productComponents[index] || ProductCard1;
 };
 </script>
+
+<style scoped>
+.transparent-products {
+  background: transparent;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Animación de rotación lateral como moneda */
+.coin-flip {
+  transform-style: preserve-3d;
+  transition: transform 0.5s linear;
+}
+
+.coin-flip:hover {
+  transform: rotateY(360deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-image-section {
+    margin: 0 1rem 3rem 1rem;
+  }
+}
+</style>

@@ -1,27 +1,6 @@
 <template>
-  <div class="min-h-screen bg-gray-50 py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Hero Section -->
-      <section class="relative py-20 sm:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center">
-            <h1 class="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
-              <span class="block">Perfiles</span>
-              <span class="block text-blue-600">Gallery</span>
-            </h1>
-            <p
-              class="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto mb-10"
-            >
-              Una colección de tarjetas de perfiles modernas e interactivas
-              construidas con
-              <span class="font-semibold text-green-600">Vue 3</span>,
-              <span class="font-semibold text-purple-600">Vite</span> y
-              <span class="font-semibold text-blue-600">Tailwind CSS</span>
-            </p>
-          </div>
-        </div>
-      </section>
-
+  <div class="transparent-profiles">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <!-- Desktop: Carousel View -->
       <div class="hidden lg:block">
         <CardCarousel
@@ -39,10 +18,8 @@
       <!-- Tablet & Mobile: Grid View -->
       <div class="lg:hidden">
         <div class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">
-            Todos los Diseños
-          </h2>
-          <p class="text-gray-600">
+          <h2 class="text-2xl font-bold text-white mb-4">Todos los Diseños</h2>
+          <p class="text-gray-300">
             Vista en cuadrícula de todos los componentes de perfil disponibles
           </p>
         </div>
@@ -51,10 +28,10 @@
           <div
             v-for="index in 6"
             :key="index"
-            class="bg-white rounded-xl shadow-lg p-6"
+            class="backdrop-blur-lg bg-white/5 border border-white/10 rounded-xl shadow-lg p-6"
           >
             <div class="mb-4">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              <h3 class="text-lg font-semibold text-white mb-2">
                 ProfileCard{{ index }}
               </h3>
             </div>
@@ -71,16 +48,64 @@
 
       <!-- Casos de Uso Recomendados -->
       <div
-        class="mt-12 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-8"
+        class="mt-12 backdrop-blur-lg bg-white/5 border border-white/10 rounded-xl p-8 shadow-2xl"
       >
-        <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+        <h2 class="text-2xl font-bold text-white mb-6 text-center">
           Casos de Uso Recomendados
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="text-center">
             <div
-              class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3"
+              class="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-white">Equipos</h3>
+            <p class="text-sm text-gray-300 mt-1">
+              Páginas de equipo y colaboradores
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="w-12 h-12 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6M8 8v2H6a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2v-8a2 2 0 00-2-2h-2V8"
+                />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-white">Portfolios</h3>
+            <p class="text-sm text-gray-300 mt-1">
+              Perfiles profesionales y creativos
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
             >
               <svg
                 class="w-6 h-6 text-white"
@@ -96,39 +121,15 @@
                 />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-900">Páginas de Equipo</h3>
-            <p class="text-sm text-gray-600 mt-1">
-              Mostrar miembros del equipo con roles y contacto
+            <h3 class="font-semibold text-white">Redes Sociales</h3>
+            <p class="text-sm text-gray-300 mt-1">
+              Tarjetas de usuario y conexiones
             </p>
           </div>
 
           <div class="text-center">
             <div
-              class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-3"
-            >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-gray-900">Testimonios</h3>
-            <p class="text-sm text-gray-600 mt-1">
-              Reseñas de clientes con foto y información
-            </p>
-          </div>
-
-          <div class="text-center">
-            <div
-              class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-3"
+              class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
             >
               <svg
                 class="w-6 h-6 text-white"
@@ -144,33 +145,9 @@
                 />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-900">Directorios</h3>
-            <p class="text-sm text-gray-600 mt-1">
-              Listados de profesionales con contacto
-            </p>
-          </div>
-
-          <div class="text-center">
-            <div
-              class="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-3"
-            >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-gray-900">Portfolios</h3>
-            <p class="text-sm text-gray-600 mt-1">
-              Showcases creativos con proyectos destacados
+            <h3 class="font-semibold text-white">Directorios</h3>
+            <p class="text-sm text-gray-300 mt-1">
+              Listados profesionales y contactos
             </p>
           </div>
         </div>
@@ -180,7 +157,7 @@
       <div class="mt-12 text-center">
         <router-link
           to="/"
-          class="inline-flex items-center px-6 py-3 border border-gray-300 rounded-md text-base font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors"
+          class="inline-flex items-center px-6 py-3 backdrop-blur-lg bg-white/10 border border-white/20 rounded-xl text-base font-medium text-white hover:bg-white/20 transition-all duration-300 shadow-lg hover:shadow-xl"
         >
           <svg
             class="mr-2 w-5 h-5"
@@ -228,3 +205,36 @@ const getProfileComponent = (index) => {
   return profileComponents[index] || ProfileCard1;
 };
 </script>
+
+<style scoped>
+.transparent-profiles {
+  background: transparent;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Animación de rotación lateral como moneda */
+.coin-flip {
+  transform-style: preserve-3d;
+  transition: transform 0.5s linear;
+}
+
+.coin-flip:hover {
+  transform: rotateY(360deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-image-section {
+    margin: 0 1rem 3rem 1rem;
+  }
+}
+</style>

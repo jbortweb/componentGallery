@@ -3,10 +3,10 @@
     <!-- Header Section -->
     <div class="flex items-center justify-between px-4 sm:px-6 lg:px-8 mb-24">
       <div class="max-w-4xl">
-        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-1">
           {{ title }}
         </h2>
-        <p v-if="description" class="text-gray-600 text-sm sm:text-base">
+        <p v-if="description" class="text-gray-300 text-sm sm:text-base">
           {{ description }}
         </p>
       </div>

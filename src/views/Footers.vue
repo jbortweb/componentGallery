@@ -1,26 +1,6 @@
 <template>
-  <div class="min-h-screen bg-gray-50 py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Hero Section -->
-      <section class="relative py-20 sm:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center">
-            <h1 class="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
-              <span class="block">Footer</span>
-              <span class="block text-blue-600">Gallery</span>
-            </h1>
-            <p
-              class="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto mb-10"
-            >
-              Una colección de footers modernos e interactivos construidos con
-              <span class="font-semibold text-green-600">Vue 3</span>,
-              <span class="font-semibold text-purple-600">Vite</span> y
-              <span class="font-semibold text-blue-600">Tailwind CSS</span>
-            </p>
-          </div>
-        </div>
-      </section>
-
+  <div class="transparent-footers">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <!-- Sección de Footers -->
       <div class="space-y-16">
         <div
@@ -30,17 +10,17 @@
         >
           <!-- Título centrado y elegante -->
           <div class="text-center mb-6">
-            <h3 class="text-2xl font-bold text-gray-800 mb-2">
+            <h3 class="text-2xl font-bold text-white mb-2">
               {{ footer.name }}
             </h3>
             <div
-              class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"
+              class="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"
             ></div>
           </div>
 
           <!-- Componente footer -->
           <div
-            class="w-[95%] mx-auto border-2 border-gray-300 rounded-lg shadow-lg overflow-hidden bg-white"
+            class="w-[95%] mx-auto backdrop-blur-lg bg-white/10 border border-white/20 rounded-xl shadow-2xl overflow-hidden"
           >
             <component :is="getFooterComponent(index)" />
           </div>
@@ -52,16 +32,16 @@
 
       <!-- Casos de Uso Recomendados -->
       <div
-        class="mt-12 bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200 rounded-xl p-8"
+        class="mt-12 backdrop-blur-lg bg-white/5 border border-white/10 rounded-xl p-8 shadow-2xl"
       >
-        <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+        <h2 class="text-2xl font-bold text-white mb-6 text-center">
           Casos de Uso Recomendados
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="text-center">
             <div
-              class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3"
+              class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
             >
               <svg
                 class="w-6 h-6 text-white"
@@ -77,15 +57,15 @@
                 />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-900">Sitios Corporativos</h3>
-            <p class="text-sm text-gray-600 mt-1">
+            <h3 class="font-semibold text-white">Sitios Corporativos</h3>
+            <p class="text-sm text-gray-300 mt-1">
               Empresas y organizaciones profesionales
             </p>
           </div>
 
           <div class="text-center">
             <div
-              class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-3"
+              class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
             >
               <svg
                 class="w-6 h-6 text-white"
@@ -101,15 +81,15 @@
                 />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-900">E-commerce</h3>
-            <p class="text-sm text-gray-600 mt-1">
+            <h3 class="font-semibold text-white">E-commerce</h3>
+            <p class="text-sm text-gray-300 mt-1">
               Tiendas online y marketplaces
             </p>
           </div>
 
           <div class="text-center">
             <div
-              class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3"
+              class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
             >
               <svg
                 class="w-6 h-6 text-white"
@@ -121,19 +101,19 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                  d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
                 />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-900">Blogs</h3>
-            <p class="text-sm text-gray-600 mt-1">
-              Sitios de contenido y publicaciones
+            <h3 class="font-semibold text-white">Portfolios Creativos</h3>
+            <p class="text-sm text-gray-300 mt-1">
+              Artistas, diseñadores y creativos
             </p>
           </div>
 
           <div class="text-center">
             <div
-              class="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-3"
+              class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
             >
               <svg
                 class="w-6 h-6 text-white"
@@ -145,13 +125,13 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                  d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
                 />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-900">Portfolios</h3>
-            <p class="text-sm text-gray-600 mt-1">
-              Sitios creativos y profesionales
+            <h3 class="font-semibold text-white">Blogs y Medios</h3>
+            <p class="text-sm text-gray-300 mt-1">
+              Sitios de contenido y publicaciones
             </p>
           </div>
         </div>
@@ -161,7 +141,7 @@
       <div class="mt-12 text-center">
         <router-link
           to="/"
-          class="inline-flex items-center px-6 py-3 border border-gray-300 rounded-md text-base font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors"
+          class="inline-flex items-center px-6 py-3 backdrop-blur-lg bg-white/10 border border-white/20 rounded-xl text-base font-medium text-white hover:bg-white/20 transition-all duration-300 shadow-lg hover:shadow-xl"
         >
           <svg
             class="mr-2 w-5 h-5"
@@ -184,68 +164,62 @@
 </template>
 
 <script setup>
-// Importar componentes Footer
+import ComponentInstructions from "../components/ComponentInstructions.vue";
 import Footer1 from "../components/headfoot/footers/Footer1.vue";
 import Footer2 from "../components/headfoot/footers/Footer2.vue";
 import Footer3 from "../components/headfoot/footers/Footer3.vue";
 import Footer4 from "../components/headfoot/footers/Footer4.vue";
 import Footer5 from "../components/headfoot/footers/Footer5.vue";
 import Footer6 from "../components/headfoot/footers/Footer6.vue";
-import ComponentInstructions from "../components/ComponentInstructions.vue";
+
+// Componentes de footers
+const footerComponents = [Footer1, Footer2, Footer3, Footer4, Footer5, Footer6];
 
 // Datos de footers
 const footerData = [
-  {
-    id: "footer1",
-    name: "Footer Corporativo",
-    description: "Diseño profesional con múltiples secciones de información",
-  },
-  {
-    id: "footer2",
-    name: "Footer Minimalista",
-    description: "Estilo limpio y simple con información esencial",
-  },
-  {
-    id: "footer3",
-    name: "Footer Social",
-    description: "Enfocado en redes sociales y contenido dinámico",
-  },
-  {
-    id: "footer4",
-    name: "Footer Newsletter",
-    description: "Incluye suscripción y formulario de contacto",
-  },
-  {
-    id: "footer5",
-    name: "Footer Multi-columna",
-    description: "Organización avanzada con múltiples categorías",
-  },
-  {
-    id: "footer6",
-    name: "Footer Compacto",
-    description: "Diseño condensado con información básica",
-  },
+  { id: 1, name: "Footer Corporativo", component: "Footer1" },
+  { id: 2, name: "Footer Minimalista", component: "Footer2" },
+  { id: 3, name: "Footer Social", component: "Footer3" },
+  { id: 4, name: "Footer Newsletter", component: "Footer4" },
+  { id: 5, name: "Footer Completo", component: "Footer5" },
+  { id: 6, name: "Footer Creativo", component: "Footer6" },
 ];
 
-// Funciones para obtener componentes
+// Función para obtener el componente correcto
 const getFooterComponent = (index) => {
-  const components = [Footer1, Footer2, Footer3, Footer4, Footer5, Footer6];
-  return components[index];
+  return footerComponents[index] || Footer1;
 };
 </script>
 
 <style scoped>
-/* Animaciones suaves */
-.w-full {
-  transition: all 0.3s ease;
+.transparent-footers {
+  background: transparent;
+  min-height: 100vh;
+  position: relative;
 }
 
-.shadow-lg {
-  transition: box-shadow 0.3s ease;
+/* Animación de rotación lateral como moneda */
+.coin-flip {
+  transform-style: preserve-3d;
+  transition: transform 0.5s linear;
 }
 
-.shadow-lg:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+.coin-flip:hover {
+  transform: rotateY(360deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-image-section {
+    margin: 0 1rem 3rem 1rem;
+  }
 }
 </style>
