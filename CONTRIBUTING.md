@@ -123,14 +123,6 @@ src/
 
 3. **Nomenclatura**: `[Tipo]Card[Número].vue` (ej: `ArticleCard1.vue`)
 
-4. **Importaciones en Vistas**:
-   ```javascript
-   // Componente
-   import ArticleCard1 from '../components/cards/articles/ArticleCard1.vue'
-   // Código
-   import ArticleCard1Code from '../data/codes/cards/articles/ArticleCard1.js'
-   ```
-
 #### ✅ Para Headers/Footers
 
 1. **Ubicación de Componentes**: `src/components/headfoot/[tipo]/`
@@ -221,51 +213,17 @@ import CodeModal from '../../CodeModal.vue'
 
 #### Para Tarjetas (Cards):
 
-**⚠️ IMPORTANTE: Nueva Estructura Organizada por Categorías**
-
-Las tarjetas están organizadas en 3 carpetas temáticas:
-
 1. **Crear componente en la carpeta correspondiente**:
 
 ```
-
-src/components/cards/
-├── articles/ # Tarjetas de artículos y contenido
-├── products/ # Tarjetas de productos comerciales
-└── profiles/ # Tarjetas de perfiles de usuario
 
 ```
 
 2. **Seguir el patrón de modal existente** (ver ejemplo en Pautas de Código)
 
-3. **Añadir datos de ejemplo** en `src/data/cardData.js` en la sección correspondiente
-
 4. **Registrar código** en la estructura organizada:
 
 ```
-
-src/data/codes/cards/
-├── articles/ # Códigos de ArticleCard1.js - ArticleCard6.js
-├── products/ # Códigos de ProductCard1.js - ProductCard6.js
-└── profiles/ # Códigos de ProfileCard1.js - ProfileCard6.js
-
-````
-
-5. **Importar en vista correspondiente** usando la nueva ruta:
-
-```javascript
-// Para tarjetas de artículos
-import ArticleCard1 from '../components/cards/articles/ArticleCard1.vue'
-import ArticleCard1Code from '../data/codes/cards/articles/ArticleCard1.js'
-
-// Para tarjetas de productos
-import ProductCard1 from '../components/cards/products/ProductCard1.vue'
-import ProductCard1Code from '../data/codes/cards/products/ProductCard1.js'
-
-// Para tarjetas de perfiles
-import ProfileCard1 from '../components/cards/profiles/ProfileCard1.vue'
-import ProfileCard1Code from '../data/codes/cards/profiles/ProfileCard1.js'
-````
 
 #### Para Headers/Footers:
 
@@ -362,92 +320,6 @@ const showCode = () => {
 
 ### Datos y Códigos
 
-**⚠️ NUEVA ESTRUCTURA ORGANIZADA**
-
-```javascript
-// cardData.js - Datos estructurados por tipo
-export const cardData = {
-  products: [
-    {
-      id: 1,
-      title: 'Nombre del Producto',
-      description: 'Descripción detallada',
-      price: '€99',
-      image: 'https://...',
-      category: 'Categoría',
-      rating: 4.5,
-      reviews: 123,
-    },
-  ],
-  profiles: [
-    {
-      id: 1,
-      name: 'Nombre Usuario',
-      role: 'Rol/Profesión',
-      avatar: 'https://...',
-      // ... otros campos
-    },
-  ],
-  articles: [
-    {
-      id: 1,
-      title: 'Título del Artículo',
-      excerpt: 'Resumen del contenido',
-      author: 'Autor',
-      // ... otros campos
-    },
-  ],
-}
-
-// Códigos organizados por carpetas - Ejemplo ProductCard1.js
-// Ubicación: src/data/codes/cards/products/ProductCard1.js
-export default `<template>
-  <!-- Solo el contenido del componente -->
-  <!-- SIN botón de modal ni CodeModal -->
-  <!-- SIN importación de CodeModal -->
-</template>
-
-<script setup>
-// Solo imports necesarios para el componente
-// Solo lógica del componente (sin modal)
-</script>`
-
-// Códigos para headers - Ejemplo Header1.js
-// Ubicación: src/data/codes/headfoot/headers/Header1.js
-export default `<template>
-  <!-- Contenido del header sin referencias modales -->
-</template>
-
-<script setup>
-// Lógica específica del header
-</script>`
-```
-
-**📁 Estructura de Carpetas para Códigos:**
-
-```
-src/data/codes/
-├── cards/
-│   ├── articles/     # ArticleCard1.js - ArticleCard6.js
-│   ├── products/     # ProductCard1.js - ProductCard6.js
-│   └── profiles/     # ProfileCard1.js - ProfileCard6.js
-└── headfoot/
-    ├── headers/      # Header1.js - Header6.js
-    └── footers/      # Footer1.js - Footer6.js
-```
-
-## 🧪 Testing
-
-```bash
-# Ejecutar en modo desarrollo
-npm run dev
-
-# Construir para producción
-npm run build
-
-# Verificar build
-npm run preview
-```
 
 ### Checklist Pre-Commit
 
@@ -471,14 +343,6 @@ npm run preview
 
 Usar [Conventional Commits](https://www.conventionalcommits.org/):
 
-```
-feat: nueva tarjeta de producto con tema cyberpunk
-fix: corregir responsividad en móviles
-docs: actualizar README con nuevos componentes
-style: mejorar espaciado en ProfileCard2
-refactor: simplificar lógica de modal
-test: añadir tests para CardCarousel
-```
 
 ### Tipos de Commit
 
@@ -522,14 +386,13 @@ test: añadir tests para CardCarousel
 - ❌ No usar comentarios en inglés
 - ❌ No subir archivos de configuración personal
 - ❌ **No colocar componentes en carpetas incorrectas**
-- ❌ **No usar rutas de importación obsoletas** (`cardCodes.js`, `headCodes.js`)
 - ❌ **No mezclar tipos de componentes** en carpetas incorrectas
 - ❌ **No olvidar actualizar rutas** al mover o crear componentes
 
 ## ❓ ¿Necesitas Ayuda?
 
-- 📧 **Email**: tu-email@ejemplo.com
-- 💬 **Issues**: [GitHub Issues](https://github.com/tu-username/component-gallery/issues)
+- 📧 **Email**: jbortweb@gmail.com
+- 💬 **Issues**: [GitHub Issues](https://github.com/jbortweb/component-gallery/issues)
 - 📖 **Documentación**: Revisa el README.md completo
 - 🤖 **Copilot**: Revisa `.github/copilot-instructions.md`
 
