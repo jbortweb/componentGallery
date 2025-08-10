@@ -472,29 +472,29 @@ const getImageParticleStyle = (index) => {
   };
 };
 
-// Navegación a páginas
+// Navegación a páginas usando Vue Router
 const navigateToCards = () => {
-  window.open("/cards/productos", "_blank");
+  router.push("/cards/productos");
 };
 
 const navigateToProductCards = () => {
-  window.open("/cards/productos", "_blank");
+  router.push("/cards/productos");
 };
 
 const navigateToProfileCards = () => {
-  window.open("/cards/perfiles", "_blank");
+  router.push("/cards/perfiles");
 };
 
 const navigateToArticleCards = () => {
-  window.open("/cards/articulos", "_blank");
+  router.push("/cards/articulos");
 };
 
 const navigateToHeaders = () => {
-  window.open("/headers", "_blank");
+  router.push("/headers");
 };
 
 const navigateToFooters = () => {
-  window.open("/footers", "_blank");
+  router.push("/footers");
 };
 </script>
 

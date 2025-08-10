@@ -4,3 +4,9 @@
 
 [build.environment]
   NODE_VERSION = "22.1.0"
+
+# Redirecciones para SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
