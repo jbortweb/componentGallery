@@ -70,9 +70,10 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <!-- Característica de Cards -->
-          <div
-            class="feature-card group cursor-pointer hover:shadow-2xl hover:shadow-cyan-500/20 hover:border-cyan-500/40 transition-all duration-500"
-            @click="navigateToCards"
+          <router-link
+            to="/cards/productos"
+            target="_blank"
+            class="feature-card group cursor-pointer hover:shadow-2xl hover:shadow-cyan-500/20 hover:border-cyan-500/40 transition-all duration-500 block"
           >
             <div
               class="feature-icon bg-gradient-to-r from-cyan-500 to-blue-600 group-hover:from-cyan-400 group-hover:to-blue-500 group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-xl group-hover:shadow-cyan-500/50 transition-all duration-500"
@@ -101,40 +102,47 @@
               diseños espectaculares y efectos modernos.
             </p>
             <div class="space-y-2">
-              <div
+              <router-link
+                to="/cards/productos"
+                target="_blank"
                 class="flex items-center justify-between text-sm cursor-pointer hover:text-cyan-300 hover:bg-cyan-500/10 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 rounded-lg p-3 border border-transparent hover:border-cyan-500/40"
-                @click.stop="navigateToProductCards"
+                @click.stop
               >
                 <span class="text-cyan-400 font-medium">Productos</span>
                 <span class="text-gray-400 group-hover:text-gray-300"
                   >6 componentes</span
                 >
-              </div>
-              <div
+              </router-link>
+              <router-link
+                to="/cards/perfiles"
+                target="_blank"
                 class="flex items-center justify-between text-sm cursor-pointer hover:text-purple-300 hover:bg-purple-500/10 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 rounded-lg p-3 border border-transparent hover:border-purple-500/40"
-                @click.stop="navigateToProfileCards"
+                @click.stop
               >
                 <span class="text-purple-400 font-medium">Perfiles</span>
                 <span class="text-gray-400 group-hover:text-gray-300"
                   >6 componentes</span
                 >
-              </div>
-              <div
+              </router-link>
+              <router-link
+                to="/cards/articulos"
+                target="_blank"
                 class="flex items-center justify-between text-sm cursor-pointer hover:text-green-300 hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/20 transition-all duration-300 rounded-lg p-3 border border-transparent hover:border-green-500/40"
-                @click.stop="navigateToArticleCards"
+                @click.stop
               >
                 <span class="text-green-400 font-medium">Artículos</span>
                 <span class="text-gray-400 group-hover:text-gray-300"
                   >6 componentes</span
                 >
-              </div>
+              </router-link>
             </div>
-          </div>
+          </router-link>
 
           <!-- Headers & Footers -->
-          <div
-            class="feature-card group cursor-pointer hover:shadow-2xl hover:shadow-purple-500/20 hover:border-purple-500/40 transition-all duration-500"
-            @click="navigateToHeaders"
+          <router-link
+            to="/headers"
+            target="_blank"
+            class="feature-card group cursor-pointer hover:shadow-2xl hover:shadow-purple-500/20 hover:border-purple-500/40 transition-all duration-500 block"
           >
             <div
               class="feature-icon bg-gradient-to-r from-purple-500 to-pink-600 group-hover:from-purple-400 group-hover:to-pink-500 group-hover:scale-110 group-hover:-rotate-12 group-hover:shadow-xl group-hover:shadow-purple-500/50 transition-all duration-500"
@@ -163,26 +171,30 @@
               minimalista, gaming, glassmorphism y más.
             </p>
             <div class="space-y-2">
-              <div
+              <router-link
+                to="/headers"
+                target="_blank"
                 class="flex items-center justify-between text-sm cursor-pointer hover:text-orange-300 hover:bg-orange-500/10 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300 rounded-lg p-3 border border-transparent hover:border-orange-500/40"
-                @click.stop="navigateToHeaders"
+                @click.stop
               >
                 <span class="text-orange-400 font-medium">Headers</span>
                 <span class="text-gray-400 group-hover:text-gray-300"
                   >6 componentes</span
                 >
-              </div>
-              <div
+              </router-link>
+              <router-link
+                to="/footers"
+                target="_blank"
                 class="flex items-center justify-between text-sm cursor-pointer hover:text-indigo-300 hover:bg-indigo-500/10 hover:shadow-lg hover:shadow-indigo-500/20 transition-all duration-300 rounded-lg p-3 border border-transparent hover:border-indigo-500/40"
-                @click.stop="navigateToFooters"
+                @click.stop
               >
                 <span class="text-indigo-400 font-medium">Footers</span>
                 <span class="text-gray-400 group-hover:text-gray-300"
                   >6 componentes</span
                 >
-              </div>
+              </router-link>
             </div>
-          </div>
+          </router-link>
 
           <!-- Código Visible -->
           <div
@@ -452,10 +464,6 @@
 </template>
 
 <script setup>
-import { useRouter } from "vue-router";
-
-const router = useRouter();
-
 // Función para generar estilos de partículas sobre la imagen
 const getImageParticleStyle = (index) => {
   const size = Math.random() * 6 + 4;
@@ -470,31 +478,6 @@ const getImageParticleStyle = (index) => {
     top: `${top}%`,
     animationDelay: `${animationDelay}s`,
   };
-};
-
-// Navegación a páginas usando Vue Router
-const navigateToCards = () => {
-  router.push("/cards/productos");
-};
-
-const navigateToProductCards = () => {
-  router.push("/cards/productos");
-};
-
-const navigateToProfileCards = () => {
-  router.push("/cards/perfiles");
-};
-
-const navigateToArticleCards = () => {
-  router.push("/cards/articulos");
-};
-
-const navigateToHeaders = () => {
-  router.push("/headers");
-};
-
-const navigateToFooters = () => {
-  router.push("/footers");
 };
 </script>
 
