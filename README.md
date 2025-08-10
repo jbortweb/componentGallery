@@ -107,10 +107,12 @@ src/
 
 Todos los componentes de cards siguen un patrón consistente con modal integrado. Los headers y footers no incluyen modal pero su código se almacena en `headCodes.js`.
 
-### Añadir Componentes
+### Añadir Nuevos Tipos de Componentes
 
-1. **Cards**: Crear en `cards/`, añadir datos en `cardData.js`, código en `cardCodes.js`
-2. **Headers/Footers**: Crear en `headfoot/`, código en `headCodes.js`
+1. Crear un nuevo componente en `src/components/`
+2. Añadir los datos del modal en `src/data/`
+3. Actualizar la navegación en `src/components/Navigation.vue`
+4. Integrar en `src/App.vue`
 
 ### Personalización
 
@@ -124,12 +126,6 @@ Todos los componentes de cards siguen un patrón consistente con modal integrado
 - **Performance**: Lazy loading, tree shaking, bundle optimizado
 - **Responsive**: Breakpoints Tailwind (sm, md, lg, xl)
 
-### Añadir Nuevos Tipos de Tarjetas
-
-1. Crear un nuevo componente en `src/components/cards/`
-2. Añadir los datos en `src/data/cardData.js`
-3. Actualizar la navegación en `src/components/Navigation.vue`
-4. Integrar en `src/App.vue`
 
 ### Personalizar Estilos
 
