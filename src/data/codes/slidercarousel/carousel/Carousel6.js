@@ -1,66 +1,52 @@
 export default `<template>
   <div class="relative">
     
-    <!-- Contenedor principal transparente y sin sombra -->
+  <!-- Contenedor principal transparente y sin sombra -->
     <div
       class="relative bg-transparent overflow-visible max-w-7xl mx-auto py-12 select-none flex flex-col items-center justify-center min-h-[600px]"
     >
-      <!-- Carrusel principal -->
+      <!-- Carrusel 3D tipo spinning -->
       <div
         class="flex flex-col items-center justify-start w-full max-w-5xl z-10 mt-12"
       >
         <div
-          class="relative flex items-center justify-center h-[500px] w-full"
+          class="relative flex items-center justify-center h-[300px] w-full"
           style="perspective: 1200px; perspective-origin: 50% 30%"
         >
           <div
             v-for="(img, i) in images"
             :key="img.src"
             class="absolute transition-all duration-700 ease-[cubic-bezier(.4,1.2,.3,1)] cursor-pointer"
-            :class="getCardClass(i)"
-            style="overflow: hidden"
+            :style="get3DStyle(i)"
           >
-            <div class="relative w-full h-full group">
+            <div
+              class="relative w-[260px] h-[360px] rounded-3xl overflow-hidden group"
+            >
               <img
                 :src="img.src"
                 :alt="img.caption"
                 class="w-full h-full object-cover rounded-3xl"
                 draggable="false"
               />
-              <!-- Capa animada en hover, ajustada al borde redondeado -->
               <div
-                class="absolute inset-0 pointer-events-none rounded-3xl overflow-hidden"
+                class="absolute inset-0 bg-gradient-to-tr from-[#fff6] via-[#fcb69f99] to-[#d7266099] backdrop-blur-md flex items-end justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
               >
-                <div class="w-full h-full">
-                  <div
-                    class="absolute left-0 bottom-0 w-0 h-0 group-hover:w-full group-hover:h-full transition-all duration-500 ease-in-out rounded-bl-3xl"
-                    style="
-                      clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
-                      background: linear-gradient(
-                        135deg,
-                        #d72660cc 60%,
-                        #ff6e7fcc 100%
-                      );
-                    "
-                  >
-                    <span
-                      class="absolute right-4 bottom-4 text-2xl font-bold text-white drop-shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-right"
-                      >{{ img.caption }}</span
-                    >
-                  </div>
-                </div>
+                <span class="text-xl font-bold text-white drop-shadow-lg">{{
+                  img.caption
+                }}</span>
               </div>
             </div>
           </div>
+          <!-- Flechas -->
           <button
             @click="prev"
-            class="absolute left-0 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-[#4caf50] text-[#4caf50] hover:text-white rounded-full w-16 h-16 flex items-center justify-center z-20 transition-all duration-300 border-2 border-[#ffb347]"
+            class="absolute left-0 top-1/2 -translate-y-1/2 bg-[#232526]/80 hover:bg-[#414345] text-white hover:text-[#c2c2c2] rounded-full w-16 h-16 flex items-center justify-center z-20 transition-all duration-300 border-2 border-white"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24">
+            <svg width="36" height="36" viewBox="0 0 24 24">
               <path
                 d="M15 19l-7-7 7-7"
                 stroke="currentColor"
-                stroke-width="2"
+                stroke-width="2.5"
                 fill="none"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -69,13 +55,13 @@ export default `<template>
           </button>
           <button
             @click="next"
-            class="absolute right-0 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-[#4caf50] text-[#4caf50] hover:text-white rounded-full w-16 h-16 flex items-center justify-center z-20 transition-all duration-300 border-2 border-[#ffb347]"
+            class="absolute right-0 top-1/2 -translate-y-1/2 bg-[#232526]/80 hover:bg-[#414345] text-white hover:text-[#c2c2c2] rounded-full w-16 h-16 flex items-center justify-center z-20 transition-all duration-300 border-2 border-white"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24">
-              <path
-                d="M9 5l7 7-7 7"
+            <svg width="36" height="36" viewBox="0 0 24 24">
+              <polyline
+                points="9 5 15 12 9 19"
                 stroke="currentColor"
-                stroke-width="2"
+                stroke-width="2.5"
                 fill="none"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -83,26 +69,26 @@ export default `<template>
             </svg>
           </button>
         </div>
-      </div>
-      <!-- Miniaturas abajo -->
-      <div class="flex items-center justify-center gap-3 mt-12 mb-8 w-full">
-        <button
-          v-for="(img, i) in images"
-          :key="i"
-          @click="goTo(i)"
-          class="w-16 h-16 rounded-xl overflow-hidden border-2 transition-all duration-300 group relative"
-          :class="
-            i === currentIndex
-              ? 'border-[#4caf50] scale-110 ring-2 ring-[#ffb347]'
-              : 'border-white opacity-60 hover:opacity-100'
-          "
-        >
-          <img
-            :src="img.src"
-            :alt="img.caption"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-        </button>
+        <!-- Miniaturas -->
+        <div class="flex items-center justify-center gap-3 mt-60">
+          <button
+            v-for="(img, i) in images"
+            :key="i"
+            @click="goTo(i)"
+            class="w-16 h-16 rounded-xl overflow-hidden border-2 transition-all duration-300 group relative"
+            :class="
+              i === currentIndex
+                ? 'border-white scale-110 ring-2 ring-[#232526]'
+                : 'border-white opacity-60 hover:opacity-100'
+            "
+          >
+            <img
+              :src="img.src"
+              :alt="img.caption"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -138,7 +124,7 @@ const images = [
   },
 ];
 
-const currentIndex = ref(2);
+const currentIndex = ref(0);
 
 function prev() {
   currentIndex.value = (currentIndex.value - 1 + images.length) % images.length;
@@ -149,20 +135,43 @@ function next() {
 function goTo(i) {
   currentIndex.value = i;
 }
-function getCardClass(i) {
+function get3DStyle(i) {
   const total = images.length;
-  let diff = (i - currentIndex.value + total) % total;
-  if (diff > total / 2) diff -= total;
-  if (diff === 0) {
-    return "w-[420px] h-[420px] rounded-3xl z-20 scale-110";
+  const idx = (i - currentIndex.value + total) % total;
+  const baseAngle = 360 / total;
+  const angle = baseAngle * idx;
+  const radius = 320;
+  let scale = 1;
+  let opacity = 1;
+  let zIndex = 1;
+  if (idx === 0) {
+    scale = 1.1;
+    opacity = 1;
+    zIndex = 10;
+  } else if (idx === 1 || idx === total - 1) {
+    scale = 0.95;
+    opacity = 0.9;
+    zIndex = 8;
+  } else if (idx === 2 || idx === total - 2) {
+    scale = 0.85;
+    opacity = 0.7;
+    zIndex = 5;
+  } else if (idx === Math.floor(total / 2)) {
+    scale = 0.7;
+    opacity = 0.5;
+    zIndex = 2;
   }
-  if (diff === -1) {
-    return "w-[340px] h-[340px] rounded-2xl z-10 scale-95 -translate-x-32";
-  }
-  if (diff === 1) {
-    return "w-[340px] h-[340px] rounded-2xl z-10 scale-95 translate-x-32";
-  }
-  return "w-[220px] h-[220px] rounded-xl z-0 scale-90 opacity-0 pointer-events-none";
+  return {
+    left: "50%",
+    top: "50%",
+  transform: \`translate(-50%, -50%) rotateY(\${angle}deg) rotateX(-18deg) translateZ(\${radius}px) scale(\${scale})\`,
+    zIndex,
+    opacity,
+    transition: "all 0.7s cubic-bezier(.4,1.2,.3,1)",
+  };
 }
-}
-</script>`
+
+</script>
+
+<style>
+</style>`

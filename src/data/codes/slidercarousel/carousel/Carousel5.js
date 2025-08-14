@@ -164,5 +164,5 @@ function getCardClass(i) {
   }
   return "w-[220px] h-[220px] rounded-xl z-0 scale-90 opacity-0 pointer-events-none";
 }
-}
+
 </script>`
