@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div></div>
+  <div class="h-screen bg-red-500">hola slider</div>
 </template>
 
 <style scoped>
