@@ -83,7 +83,7 @@
               "
             />
             <div
-              class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-4 py-2 rounded-xl text-lg font-bold shadow-lg backdrop-blur-md"
+              class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white text-center px-4 py-2 rounded-xl text-lg font-bold shadow-lg backdrop-blur-md"
             >
               {{ img.caption }}
             </div>
@@ -154,11 +154,11 @@ const images = [
   },
   {
     src: "https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1600&q=80",
-    caption: "Bosque mágico",
+    caption: "Arena suave",
   },
   {
     src: "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=1600&q=80",
-    caption: "Luz dorada",
+    caption: "Bosque mágico",
   },
   {
     src: "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=80",

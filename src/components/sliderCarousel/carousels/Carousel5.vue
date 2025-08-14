@@ -75,7 +75,7 @@
           </div>
           <button
             @click="prev"
-            class="absolute left-0 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-[#4caf50] text-[#4caf50] hover:text-white rounded-full w-16 h-16 flex items-center justify-center z-20 transition-all duration-300 border-2 border-[#ffb347]"
+            class="absolute left-0 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-[#d72660cc] text-[#4caf50] hover:text-white rounded-full w-16 h-16 flex items-center justify-center z-20 transition-all duration-300 border-2 border-[#ffb347]"
           >
             <svg width="24" height="24" viewBox="0 0 24 24">
               <path
@@ -90,7 +90,7 @@
           </button>
           <button
             @click="next"
-            class="absolute right-0 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-[#4caf50] text-[#4caf50] hover:text-white rounded-full w-16 h-16 flex items-center justify-center z-20 transition-all duration-300 border-2 border-[#ffb347]"
+            class="absolute right-0 top-1/2 -translate-y-1/2 bg-white/60 hover:bg-[#d72660cc] text-[#4caf50] hover:text-white rounded-full w-16 h-16 flex items-center justify-center z-20 transition-all duration-300 border-2 border-[#ffb347]"
           >
             <svg width="24" height="24" viewBox="0 0 24 24">
               <path
@@ -114,7 +114,7 @@
           class="w-16 h-16 rounded-xl overflow-hidden border-2 transition-all duration-300 group relative"
           :class="
             i === currentIndex
-              ? 'border-[#4caf50] scale-110 ring-2 ring-[#ffb347]'
+              ? 'border-[#d72660cc] scale-110 ring-2 ring-[#ffb347]'
               : 'border-white opacity-60 hover:opacity-100'
           "
         >
@@ -143,28 +143,28 @@ import Carousel5Code from "../../../data/codes/slidercarousel/carousel/Carousel5
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-    caption: "Amanecer en la costa",
+    src: "https://plus.unsplash.com/premium_photo-1673448998919-d4b859e66e7b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnVycm9zfGVufDB8MHwwfHx8MA%3D%3D",
+    caption: "Ojos blancos",
   },
   {
-    src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
-    caption: "Olas poderosas",
+    src: "https://images.unsplash.com/photo-1599941520493-8158d3371e66?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVycm9zfGVufDB8MHwwfHx8MA%3D%3D",
+    caption: "Compañia",
   },
   {
-    src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
-    caption: "Montañas lejanas",
+    src: "https://images.unsplash.com/photo-1558680174-e8e572f854e2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnVycm9zfGVufDB8MHwwfHx8MA%3D%3D",
+    caption: "Mirando a cámara",
   },
   {
-    src: "https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=800&q=80",
-    caption: "Bosque mágico",
+    src: "https://images.unsplash.com/photo-1621814699494-4421e6703e28?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGJ1cnJvc3xlbnwwfDB8MHx8fDA%3D",
+    caption: "La vida",
   },
   {
-    src: "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=800&q=80",
-    caption: "Luz dorada",
+    src: "https://images.unsplash.com/photo-1628531008735-35d13c54a6bc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGJ1cnJvc3xlbnwwfDB8MHx8fDA%3D",
+    caption: "Descanso en el prado",
   },
   {
-    src: "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80",
-    caption: "Cielo infinito",
+    src: "https://images.unsplash.com/photo-1676636936433-fd54c84f66ed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fGJ1cnJvc3xlbnwwfDB8MHx8fDA%3D",
+    caption: "De paseo",
   },
 ];
 

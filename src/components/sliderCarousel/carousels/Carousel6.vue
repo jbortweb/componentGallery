@@ -129,28 +129,28 @@ import Carousel6Code from "../../../data/codes/slidercarousel/carousel/Carousel6
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-    caption: "Amanecer en la costa",
+    src: "https://images.unsplash.com/photo-1484603738253-e5b73679e8cb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fG5pZXZlfGVufDB8MHwwfHx8MA%3D%3D",
+    caption: "Paisaje nevado",
   },
   {
-    src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
-    caption: "Olas poderosas",
+    src: "https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FiYSVDMyVCMWF8ZW58MHwwfDB8fHww",
+    caption: "Cabaña en el bosque",
   },
   {
-    src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
-    caption: "Montañas lejanas",
+    src: "https://plus.unsplash.com/premium_photo-1669927131902-a64115445f0f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2l1ZGFkfGVufDB8MHwwfHx8MA%3D%3D",
+    caption: "Ciudad nocturna",
   },
   {
-    src: "https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=800&q=80",
-    caption: "Bosque mágico",
+    src: "https://images.unsplash.com/photo-1563968743333-044cef800494?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJvYm90aWNhfGVufDB8MHwwfHx8MA%3D%3D",
+    caption: "Robótica",
   },
   {
-    src: "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=800&q=80",
-    caption: "Luz dorada",
+    src: "https://images.unsplash.com/photo-1517886877123-e4a01ac527ac?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bHVjZXN8ZW58MHwwfDB8fHww",
+    caption: "Luces y reflejos",
   },
   {
-    src: "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80",
-    caption: "Cielo infinito",
+    src: "https://images.unsplash.com/photo-1495571758719-6ec1e876d6ae?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGF0YXJkZWNlcnxlbnwwfDB8MHx8fDA%3D",
+    caption: "Atardecer",
   },
 ];
 

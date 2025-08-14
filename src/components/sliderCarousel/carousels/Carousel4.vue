@@ -127,28 +127,28 @@ import Carousel4Code from "../../../data/codes/slidercarousel/carousel/Carousel4
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-    caption: "Amanecer en la costa",
+    src: "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=800&q=80",
+    caption: "Amigos peludos",
   },
   {
-    src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
-    caption: "Olas poderosas",
+    src: "https://images.unsplash.com/photo-1514373941175-0a141072bbc8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fHBlcnJvfGVufDB8MHwwfHx8MA%3D%3D",
+    caption: "Diversión en el parque",
   },
   {
-    src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
-    caption: "Montañas lejanas",
+    src: "https://images.unsplash.com/photo-1568572933382-74d440642117?auto=format&fit=crop&w=800&q=80",
+    caption: "Mirada tierna",
   },
   {
-    src: "https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=800&q=80",
-    caption: "Bosque mágico",
+    src: "https://images.unsplash.com/photo-1452441271666-5d998aa2f6cc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fHBlcnJvfGVufDB8MHwwfHx8MA%3D%3D",
+    caption: "Siesta canina",
   },
   {
-    src: "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=800&q=80",
-    caption: "Luz dorada",
+    src: "https://plus.unsplash.com/premium_photo-1671496450438-6a9c90ab87a0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fHBlcnJvfGVufDB8MHwwfHx8MA%3D%3D",
+    caption: "Paseo marítimo",
   },
   {
-    src: "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80",
-    caption: "Cielo infinito",
+    src: "https://images.unsplash.com/photo-1510020553968-30f966e1ec9e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAxfHxwZXJyb3xlbnwwfDB8MHx8fDA%3D",
+    caption: "Cachorro curioso",
   },
 ];
 
