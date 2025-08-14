@@ -158,6 +158,85 @@
                 </div>
               </div>
             </div>
+            <!-- Slider & Carousel Dropdown -->
+            <div class="relative group">
+              <button
+                class="flex items-center px-4 py-2 text-gray-300 hover:text-white transition-all duration-300"
+              >
+                <span>Slider & Carousel</span>
+                <svg
+                  class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                class="absolute top-full left-0 mt-2 w-64 bg-slate-800/95 backdrop-blur-lg border border-white/20 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2"
+              >
+                <div class="p-2">
+                  <router-link
+                    to="/carousel"
+                    class="flex items-center space-x-3 px-4 py-3 rounded-lg hover:bg-white/10 transition-colors duration-200"
+                  >
+                    <div
+                      class="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center"
+                    >
+                      <svg
+                        class="w-4 h-4 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M4 17v-6a1 1 0 011-1h14a1 1 0 011 1v6M4 17a2 2 0 002 2h12a2 2 0 002-2M4 17V7a2 2 0 012-2h12a2 2 0 012 2v10"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="text-white font-medium">Carouseles</div>
+                      <div class="text-gray-400 text-sm">6 componentes</div>
+                    </div>
+                  </router-link>
+                  <router-link
+                    to="/slider"
+                    class="flex items-center space-x-3 px-4 py-3 rounded-lg hover:bg-white/10 transition-colors duration-200"
+                  >
+                    <div
+                      class="w-8 h-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg flex items-center justify-center"
+                    >
+                      <svg
+                        class="w-4 h-4 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M8 17v-6a1 1 0 011-1h6a1 1 0 011 1v6M8 17a2 2 0 002 2h4a2 2 0 002-2M8 17V7a2 2 0 012-2h4a2 2 0 012 2v10"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="text-white font-medium">Sliders</div>
+                      <div class="text-gray-400 text-sm">Próximamente</div>
+                    </div>
+                  </router-link>
+                </div>
+              </div>
+            </div>
 
             <!-- Head & Foot Dropdown -->
             <div class="relative group">
