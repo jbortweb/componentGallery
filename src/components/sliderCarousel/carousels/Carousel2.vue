@@ -92,7 +92,7 @@
       <!-- Caption -->
       <div class="mt-6 text-center min-h-[2.5rem]">
         <h3
-          class="text-xl font-bold text-indigo-900 drop-shadow transition-all duration-500"
+          class="text-xl font-bold text-white/80 drop-shadow transition-all duration-500"
         >
           {{ images[currentIndex].caption }}
         </h3>
@@ -130,28 +130,28 @@ import Carousel2Code from "../../../data/codes/slidercarousel/carousel/Carousel2
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-    caption: "Amanecer en la costa",
+    src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+    caption: "Innovación en la nube",
   },
   {
-    src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
-    caption: "Olas poderosas",
+    src: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80",
+    caption: "Inteligencia artificial",
   },
   {
-    src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
-    caption: "Montañas lejanas",
+    src: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80",
+    caption: "Redes globales",
   },
   {
-    src: "https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=800&q=80",
-    caption: "Bosque mágico",
+    src: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
+    caption: "Robótica avanzada",
   },
   {
-    src: "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=800&q=80",
-    caption: "Luz dorada",
+    src: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80",
+    caption: "Data centers modernos",
   },
   {
-    src: "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80",
-    caption: "Cielo infinito",
+    src: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+    caption: "Tecnología portátil",
   },
 ];
 

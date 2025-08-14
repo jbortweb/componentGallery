@@ -146,31 +146,30 @@ import Carousel3Code from "../../../data/codes/slidercarousel/carousel/Carousel3
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-    caption: "Amanecer en la costa",
+    src: "https://plus.unsplash.com/premium_photo-1661335303340-89e5b9c3b63e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y3JlYXRpdmlkYWQlMjBkaWdpdGFsfGVufDB8MHwwfHx8MA%3D%3D",
+    caption: "Creatividad digital",
   },
   {
-    src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
-    caption: "Olas poderosas",
+    src: "https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=800&q=80",
+    caption: "Arte abstracto",
   },
   {
-    src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
-    caption: "Montañas lejanas",
+    src: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80",
+    caption: "Colores en movimiento",
   },
   {
-    src: "https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=800&q=80",
-    caption: "Bosque mágico",
+    src: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
+    caption: "Inspiración visual",
   },
   {
-    src: "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=800&q=80",
-    caption: "Luz dorada",
+    src: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80",
+    caption: "Diseño moderno",
   },
   {
-    src: "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80",
-    caption: "Cielo infinito",
+    src: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80",
+    caption: "Imaginación sin límites",
   },
 ];
-
 const currentIndex = ref(2);
 const flipping = ref(false);
 const animating = ref(false);
