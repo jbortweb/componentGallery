@@ -1,28 +1,7 @@
-
+export default `
 <template>
   <div class="relative">
-    <!-- Botón de código -->
-    <button
-      @click="showCode"
-      class="absolute top-4 right-4 z-50 w-10 h-10 bg-blue-600/90 hover:bg-blue-500 rounded-lg flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-200 backdrop-blur-sm shadow-lg border border-blue-400/30 cursor-pointer"
-      title="Ver código del componente"
-      aria-label="Ver código del componente"
-    >
-      <svg
-        class="w-5 h-5 text-white pointer-events-none"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        />
-      </svg>
-    </button>
-
+    
     <!-- Contenedor principal con fondo y medidas globales -->
     <div
       class="relative bg-transparentoverflow-hidden max-w-7xl mx-auto py-12 select-none flex flex-col items-center justify-center min-h-[600px]"
@@ -123,21 +102,13 @@
           "
         ></button>
       </div>
-      <!-- Modal de código -->
-      <CodeModal
-        ref="codeModal"
-        cardType="Carousel Card"
-        cardVariant="Diseño minimalista"
-        :codeContent="cardCode"
-      />
+      
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from "vue";
-import CodeModal from "../../CodeModal.vue";
-import Carousel1Code from "../../../data/codes/slidercarousel/carousel/Carousel1.js";
 
 const images = [
   {
@@ -169,8 +140,6 @@ const images = [
 const currentIndex = ref(0);
 const hovered = ref(null);
 
-const codeModal = ref(null);
-const cardCode = Carousel1Code;
 
 const prevIndex = computed(() =>
   currentIndex.value > 0 ? currentIndex.value - 1 : images.length - 1
@@ -200,12 +169,6 @@ function getSlideClass(i) {
     return "z-0 scale-75 opacity-0 pointer-events-none left-1/2 -translate-x-1/2";
   }
 }
-
-function showCode() {
-  if (codeModal.value) {
-    codeModal.value.openModal();
-  }
-}
 </script>
 
 <style scoped>
@@ -226,3 +189,4 @@ function showCode() {
   transform: rotateY(-12deg) scale(0.9);
 }
 </style>
+`;

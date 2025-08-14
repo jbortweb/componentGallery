@@ -182,7 +182,7 @@
 <script setup>
 import { computed } from "vue";
 import { useRoute } from "vue-router";
-import CardCarousel from "../components/carousel/CardCarousel.vue";
+import CardCarousel from "../components/cardCarousel/CardCarousel.vue";
 import ComponentInstructions from "../components/ComponentInstructions.vue";
 import ArticleCard1 from "../components/cards/articles/ArticleCard1.vue";
 import ArticleCard2 from "../components/cards/articles/ArticleCard2.vue";

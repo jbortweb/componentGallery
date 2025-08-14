@@ -181,7 +181,7 @@
 
 <script setup>
 import { computed } from "vue";
-import CardCarousel from "../components/carousel/CardCarousel.vue";
+import CardCarousel from "../components/cardCarousel/CardCarousel.vue";
 import ComponentInstructions from "../components/ComponentInstructions.vue";
 import ProfileCard1 from "../components/cards/profiles/ProfileCard1.vue";
 import ProfileCard2 from "../components/cards/profiles/ProfileCard2.vue";
