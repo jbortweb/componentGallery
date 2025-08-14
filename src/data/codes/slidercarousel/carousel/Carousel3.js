@@ -1,26 +1,6 @@
+export default `
 <template>
   <div class="relative">
-    <!-- Botón de código -->
-    <button
-      @click="showCode"
-      class="absolute top-4 right-4 z-50 w-10 h-10 bg-pink-500/90 hover:bg-pink-400 rounded-lg flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-200 backdrop-blur-sm border border-pink-400/30 cursor-pointer"
-      title="Ver código del componente"
-      aria-label="Ver código del componente"
-    >
-      <svg
-        class="w-5 h-5 text-white pointer-events-none"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        />
-      </svg>
-    </button>
 
     <!-- Contenedor principal transparente y sin sombra -->
     <div
@@ -114,7 +94,7 @@
       </div>
       <!-- Indicadores -->
       <div
-        class="absolute left-0 right-0 bottom-10 flex justify-center items-center z-20"
+        class="fixed left-0 right-0 bottom-10 flex justify-center items-center z-20"
       >
         <div
           v-for="(img, i) in images"
@@ -128,21 +108,12 @@
           ]"
         />
       </div>
-      <!-- Modal de código -->
-      <CodeModal
-        ref="codeModal"
-        cardType="Carousel Card"
-        cardVariant="Artístico transparente"
-        :codeContent="cardCode"
-      />
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import CodeModal from "../../CodeModal.vue";
-import Carousel3Code from "../../../data/codes/slidercarousel/carousel/Carousel3.js";
 
 const images = [
   {
@@ -174,8 +145,6 @@ const images = [
 const currentIndex = ref(2);
 const flipping = ref(false);
 const animating = ref(false);
-const codeModal = ref(null);
-const cardCode = Carousel3Code;
 
 function goTo(i) {
   if (!animating.value && i !== currentIndex.value) {
@@ -258,12 +227,6 @@ function getCardStyle(i) {
     };
   }
 }
-
-function showCode() {
-  if (codeModal.value) {
-    codeModal.value.openModal();
-  }
-}
 </script>
 
 <style scoped>
@@ -276,4 +239,4 @@ function showCode() {
 .font-orbitron {
   font-family: "Orbitron", "Inter", "Segoe UI", Arial, sans-serif;
 }
-</style>
+</style>`

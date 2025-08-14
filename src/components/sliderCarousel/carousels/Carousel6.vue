@@ -1,90 +1,122 @@
 <template>
-  <div
-    class="w-screen min-h-screen flex flex-col items-center justify-start overflow-hidden bg-gradient-to-br from-[#232526] via-[#414345] to-[#232526]"
-  >
+  <div class="relative">
+    <!-- Botón de código -->
+    <button
+      @click="showCode"
+      class="absolute top-4 right-4 z-50 w-10 h-10 bg-gray-800/90 hover:bg-gray-700 rounded-lg flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-200 backdrop-blur-sm border border-gray-400/30 cursor-pointer"
+      title="Ver código del componente"
+      aria-label="Ver código del componente"
+    >
+      <svg
+        class="w-5 h-5 text-white pointer-events-none"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+        />
+      </svg>
+    </button>
+
+    <!-- Contenedor principal transparente y sin sombra -->
     <div
-      class="flex flex-col items-center justify-start w-full max-w-5xl z-10 mt-12"
+      class="relative bg-transparent overflow-visible max-w-7xl mx-auto py-12 select-none flex flex-col items-center justify-center min-h-[600px]"
     >
       <!-- Carrusel 3D tipo spinning -->
       <div
-        class="relative flex items-center justify-center h-[300px] w-full"
-        style="perspective: 1200px; perspective-origin: 50% 30%"
+        class="flex flex-col items-center justify-start w-full max-w-5xl z-10 mt-12"
       >
         <div
-          v-for="(img, i) in images"
-          :key="img.src"
-          class="absolute transition-all duration-700 ease-[cubic-bezier(.4,1.2,.3,1)] cursor-pointer"
-          :style="get3DStyle(i)"
+          class="relative flex items-center justify-center h-[300px] w-full"
+          style="perspective: 1200px; perspective-origin: 50% 30%"
         >
           <div
-            class="relative w-[260px] h-[360px] rounded-3xl shadow-2xl overflow-hidden group"
+            v-for="(img, i) in images"
+            :key="img.src"
+            class="absolute transition-all duration-700 ease-[cubic-bezier(.4,1.2,.3,1)] cursor-pointer"
+            :style="get3DStyle(i)"
+          >
+            <div
+              class="relative w-[260px] h-[360px] rounded-3xl overflow-hidden group"
+            >
+              <img
+                :src="img.src"
+                :alt="img.caption"
+                class="w-full h-full object-cover rounded-3xl"
+                draggable="false"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-tr from-[#fff6] via-[#fcb69f99] to-[#d7266099] backdrop-blur-md flex items-end justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              >
+                <span class="text-xl font-bold text-white drop-shadow-lg">{{
+                  img.caption
+                }}</span>
+              </div>
+            </div>
+          </div>
+          <!-- Flechas -->
+          <button
+            @click="prev"
+            class="absolute left-0 top-1/2 -translate-y-1/2 bg-[#232526]/80 hover:bg-[#414345] text-white hover:text-[#c2c2c2] rounded-full w-16 h-16 flex items-center justify-center z-20 transition-all duration-300 border-2 border-white"
+          >
+            <svg width="36" height="36" viewBox="0 0 24 24">
+              <path
+                d="M15 19l-7-7 7-7"
+                stroke="currentColor"
+                stroke-width="2.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <button
+            @click="next"
+            class="absolute right-0 top-1/2 -translate-y-1/2 bg-[#232526]/80 hover:bg-[#414345] text-white hover:text-[#c2c2c2] rounded-full w-16 h-16 flex items-center justify-center z-20 transition-all duration-300 border-2 border-white"
+          >
+            <svg width="36" height="36" viewBox="0 0 24 24">
+              <polyline
+                points="9 5 15 12 9 19"
+                stroke="currentColor"
+                stroke-width="2.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <!-- Miniaturas -->
+        <div class="flex items-center justify-center gap-3 mt-60">
+          <button
+            v-for="(img, i) in images"
+            :key="i"
+            @click="goTo(i)"
+            class="w-16 h-16 rounded-xl overflow-hidden border-2 transition-all duration-300 group relative"
+            :class="
+              i === currentIndex
+                ? 'border-white scale-110 ring-2 ring-[#232526]'
+                : 'border-white opacity-60 hover:opacity-100'
+            "
           >
             <img
               :src="img.src"
               :alt="img.caption"
-              class="w-full h-full object-cover rounded-3xl"
-              draggable="false"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
-            <div
-              class="absolute inset-0 bg-gradient-to-tr from-[#fff6] via-[#fcb69f99] to-[#d7266099] backdrop-blur-md flex items-end justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            >
-              <span class="text-xl font-bold text-white drop-shadow-lg">{{
-                img.caption
-              }}</span>
-            </div>
-          </div>
+          </button>
         </div>
-        <!-- Flechas -->
-        <button
-          @click="prev"
-          class="absolute left-0 top-1/2 -translate-y-1/2 bg-[#232526]/80 hover:bg-[#414345] text-white hover:text-[#c2c2c2] rounded-full shadow-2xl w-16 h-16 flex items-center justify-center z-20 transition-all duration-300 border-2 border-white backdrop-blur-md"
-        >
-          <svg width="36" height="36" viewBox="0 0 24 24">
-            <path
-              d="M15 19l-7-7 7-7"
-              stroke="currentColor"
-              stroke-width="2.5"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-        <button
-          @click="next"
-          class="absolute right-0 top-1/2 -translate-y-1/2 bg-[#232526]/80 hover:bg-[#414345] text-white hover:text-[#c2c2c2] rounded-full shadow-2xl w-16 h-16 flex items-center justify-center z-20 transition-all duration-300 border-2 border-white backdrop-blur-md"
-        >
-          <svg width="36" height="36" viewBox="0 0 24 24">
-            <polyline
-              points="9 5 15 12 9 19"
-              stroke="currentColor"
-              stroke-width="2.5"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-      </div>
-      <!-- Miniaturas -->
-      <div class="flex items-center justify-center gap-3 mt-60">
-        <button
-          v-for="(img, i) in images"
-          :key="i"
-          @click="goTo(i)"
-          class="w-16 h-16 rounded-xl overflow-hidden border-2 transition-all duration-300 shadow-md group relative"
-          :class="
-            i === currentIndex
-              ? 'border-white scale-110 ring-2 ring-[#232526]'
-              : 'border-white opacity-60 hover:opacity-100'
-          "
-        >
-          <img
-            :src="img.src"
-            :alt="img.caption"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-        </button>
+        <!-- Modal de código -->
+        <CodeModal
+          ref="codeModal"
+          cardType="Carousel Card"
+          cardVariant="Espacial transparente"
+          :codeContent="cardCode"
+        />
       </div>
     </div>
   </div>
@@ -92,6 +124,8 @@
 
 <script setup>
 import { ref } from "vue";
+import CodeModal from "../../CodeModal.vue";
+import Carousel6Code from "../../../data/codes/slidercarousel/carousel/Carousel6.js";
 
 const images = [
   {
@@ -121,6 +155,8 @@ const images = [
 ];
 
 const currentIndex = ref(0);
+const codeModal = ref(null);
+const cardCode = Carousel6Code;
 
 function prev() {
   currentIndex.value = (currentIndex.value - 1 + images.length) % images.length;
@@ -137,7 +173,6 @@ function get3DStyle(i) {
   const baseAngle = 360 / total;
   const angle = baseAngle * idx;
   const radius = 320;
-  // Zonas para z-index y opacidad
   let scale = 1;
   let opacity = 1;
   let zIndex = 1;
@@ -167,23 +202,13 @@ function get3DStyle(i) {
     transition: "all 0.7s cubic-bezier(.4,1.2,.3,1)",
   };
 }
+
+function showCode() {
+  if (codeModal.value) {
+    codeModal.value.openModal();
+  }
+}
 </script>
 
 <style>
-/* Estilos globales para el cuerpo */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Asegura que el componente ocupe toda la pantalla */
-html,
-body,
-#app {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
 </style>

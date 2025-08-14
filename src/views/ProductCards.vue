@@ -181,7 +181,7 @@
 
 <script setup>
 import { computed } from "vue";
-import CardCarousel from "../components/carousel/CardCarousel.vue";
+import CardCarousel from "../components/cardCarousel/CardCarousel.vue";
 import ComponentInstructions from "../components/ComponentInstructions.vue";
 import ProductCard1 from "../components/cards/products/ProductCard1.vue";
 import ProductCard2 from "../components/cards/products/ProductCard2.vue";

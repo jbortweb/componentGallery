@@ -1,28 +1,8 @@
+export default `
 
 <template>
   <div class="relative">
-    <!-- Botón de código -->
-    <button
-      @click="showCode"
-      class="absolute top-4 right-4 z-50 w-10 h-10 bg-pink-500/90 hover:bg-pink-400 rounded-lg flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-200 backdrop-blur-sm border border-pink-400/30 cursor-pointer"
-      title="Ver código del componente"
-      aria-label="Ver código del componente"
-    >
-      <svg
-        class="w-5 h-5 text-white pointer-events-none"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        />
-      </svg>
-    </button>
-
+    
     <!-- Contenedor principal transparente y sin sombra -->
     <div
       class="relative bg-transparent overflow-visible max-w-7xl mx-auto py-12 select-none flex flex-col items-center justify-center min-h-[600px]"
@@ -108,13 +88,6 @@
             </svg>
           </button>
         </div>
-        <!-- Modal de código -->
-        <CodeModal
-          ref="codeModal"
-          cardType="Carousel Card"
-          cardVariant="Glassmorphism transparente"
-          :codeContent="cardCode"
-        />
       </div>
     </div>
   </div>
@@ -122,8 +95,6 @@
 
 <script setup>
 import { ref } from "vue";
-import CodeModal from "../../CodeModal.vue";
-import Carousel4Code from "../../../data/codes/slidercarousel/carousel/Carousel4.js";
 
 const images = [
   {
@@ -153,8 +124,6 @@ const images = [
 ];
 
 const currentIndex = ref(2);
-const codeModal = ref(null);
-const cardCode = Carousel4Code;
 
 function prev() {
   currentIndex.value = (currentIndex.value - 1 + images.length) % images.length;
@@ -171,4 +140,4 @@ function showCode() {
     codeModal.value.openModal();
   }
 }
-</script>
+</script>`
