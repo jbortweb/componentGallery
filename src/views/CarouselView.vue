@@ -1,7 +1,7 @@
 <template>
   <div class="transparent-headers">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <!-- Sección de Carouseles -->
+      <!-- Sección de Carousels -->
       <div class="space-y-16">
         <div
           v-for="(carousel, index) in carouselData"
@@ -14,9 +14,10 @@
               {{ carousel.name }}
             </h3>
             <div
-              class="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"
+              class="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto rounded-full"
             ></div>
           </div>
+
           <!-- Componente carousel -->
           <div
             class="w-[95%] mx-auto backdrop-blur-lg bg-white/10 border border-white/20 rounded-xl shadow-2xl overflow-hidden"
@@ -27,7 +28,7 @@
       </div>
 
       <!-- Instructions -->
-      <ComponentInstructions theme="blue" />
+      <ComponentInstructions theme="purple" />
 
       <!-- Casos de Uso Recomendados -->
       <div
@@ -36,10 +37,11 @@
         <h2 class="text-2xl font-bold text-white mb-6 text-center">
           Casos de Uso Recomendados
         </h2>
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="text-center">
             <div
-              class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
+              class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
             >
               <svg
                 class="w-6 h-6 text-white"
@@ -55,14 +57,15 @@
                 />
               </svg>
             </div>
-            <h3 class="font-semibold text-white">Portfolios Creativos</h3>
+            <h3 class="font-semibold text-white">Sitios Web</h3>
             <p class="text-sm text-gray-300 mt-1">
-              Presentación visual de proyectos y galerías
+              Páginas corporativas y portfolios
             </p>
           </div>
+
           <div class="text-center">
             <div
-              class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
+              class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
             >
               <svg
                 class="w-6 h-6 text-white"
@@ -78,14 +81,15 @@
                 />
               </svg>
             </div>
-            <h3 class="font-semibold text-white">Landing Pages</h3>
+            <h3 class="font-semibold text-white">Aplicaciones Web</h3>
             <p class="text-sm text-gray-300 mt-1">
-              Promoción de productos y servicios visuales
+              SaaS, dashboards y plataformas
             </p>
           </div>
+
           <div class="text-center">
             <div
-              class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
+              class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
             >
               <svg
                 class="w-6 h-6 text-white"
@@ -103,12 +107,13 @@
             </div>
             <h3 class="font-semibold text-white">E-commerce</h3>
             <p class="text-sm text-gray-300 mt-1">
-              Catálogo de productos y galerías de imágenes
+              Tiendas online y marketplaces
             </p>
           </div>
+
           <div class="text-center">
             <div
-              class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
+              class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
             >
               <svg
                 class="w-6 h-6 text-white"
@@ -124,9 +129,9 @@
                 />
               </svg>
             </div>
-            <h3 class="font-semibold text-white">Blogs Visuales</h3>
+            <h3 class="font-semibold text-white">Blogs</h3>
             <p class="text-sm text-gray-300 mt-1">
-              Galerías de fotos y contenido multimedia
+              Sitios de contenido y noticias
             </p>
           </div>
         </div>
@@ -160,13 +165,14 @@
 
 <script setup>
 import ComponentInstructions from "../components/ComponentInstructions.vue";
-import Carousel1 from "../components/slider&carousel/Carousel1.vue";
-import Carousel2 from "../components/slider&carousel/Carousel2.vue";
-import Carousel3 from "../components/slider&carousel/Carousel3.vue";
-import Carousel4 from "../components/slider&carousel/Carousel4.vue";
-import Carousel5 from "../components/slider&carousel/Carousel5.vue";
-import Carousel6 from "../components/slider&carousel/Carousel6.vue";
+import Carousel1 from "../components/sliderCarousel/carousels/Carousel1.vue";
+import Carousel2 from "../components/sliderCarousel/carousels/Carousel2.vue";
+import Carousel3 from "../components/sliderCarousel/carousels/Carousel3.vue";
+import Carousel4 from "../components/sliderCarousel/carousels/Carousel4.vue";
+import Carousel5 from "../components/sliderCarousel/carousels/Carousel5.vue";
+import Carousel6 from "../components/sliderCarousel/carousels/Carousel6.vue";
 
+// Componentes de Carousels
 const carouselComponents = [
   Carousel1,
   Carousel2,
@@ -176,19 +182,17 @@ const carouselComponents = [
   Carousel6,
 ];
 
+// Datos de headers
 const carouselData = [
-  { id: 1, name: "Carousel Perspectiva 3D", component: "Carousel1" },
-  { id: 2, name: "Carousel Coverflow 3D", component: "Carousel2" },
-  { id: 3, name: "Carousel Flip Card Radial", component: "Carousel3" },
-  {
-    id: 4,
-    name: "Carousel Minimalista con Miniaturas",
-    component: "Carousel4",
-  },
-  { id: 5, name: "Carousel Redondo con Hover", component: "Carousel5" },
-  { id: 6, name: "Carousel Spinning 3D", component: "Carousel6" },
+  { id: 1, name: "Carousel Minimalista", component: "Carousel1" },
+  { id: 2, name: "Carousel Gaming Cyberpunk", component: "Carousel2" },
+  { id: 3, name: "Carousel Artístico", component: "Carousel3" },
+  { id: 4, name: "Carousel Glassmorphism", component: "Carousel4" },
+  { id: 5, name: "Carousel Terminal", component: "Carousel5" },
+  { id: 6, name: "Carousel Espacial", component: "Carousel6" },
 ];
 
+// Función para obtener el componente correcto
 const getCarouselComponent = (index) => {
   return carouselComponents[index] || Carousel1;
 };
@@ -200,20 +204,27 @@ const getCarouselComponent = (index) => {
   min-height: 100vh;
   position: relative;
 }
+
+/* Animación de rotación lateral como moneda */
 .coin-flip {
   transform-style: preserve-3d;
   transition: transform 0.5s linear;
 }
+
 .coin-flip:hover {
   transform: rotateY(360deg);
 }
+
+/* Responsive */
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2rem;
   }
+
   .hero-subtitle {
     font-size: 1rem;
   }
+
   .hero-image-section {
     margin: 0 1rem 3rem 1rem;
   }
