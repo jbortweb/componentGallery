@@ -184,12 +184,12 @@ const carouselComponents = [
 
 // Datos de headers
 const carouselData = [
-  { id: 1, name: "Carousel Minimalista", component: "Carousel1" },
-  { id: 2, name: "Carousel Gaming Cyberpunk", component: "Carousel2" },
-  { id: 3, name: "Carousel Artístico", component: "Carousel3" },
-  { id: 4, name: "Carousel Glassmorphism", component: "Carousel4" },
-  { id: 5, name: "Carousel Terminal", component: "Carousel5" },
-  { id: 6, name: "Carousel Espacial", component: "Carousel6" },
+  { id: 1, name: "Carousel 3D", component: "Carousel1" },
+  { id: 2, name: "Carousel 5D", component: "Carousel2" },
+  { id: 3, name: "Carousel Cartas", component: "Carousel3" },
+  { id: 4, name: "Carousel Perruno", component: "Carousel4" },
+  { id: 5, name: "Carousel Burritos", component: "Carousel5" },
+  { id: 6, name: "Carousel Paisajes", component: "Carousel6" },
 ];
 
 // Función para obtener el componente correcto
