@@ -146,27 +146,27 @@ import Carousel3Code from "../../../data/codes/slidercarousel/carousel/Carousel3
 
 const images = [
   {
-    src: "https://plus.unsplash.com/premium_photo-1661335303340-89e5b9c3b63e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y3JlYXRpdmlkYWQlMjBkaWdpdGFsfGVufDB8MHwwfHx8MA%3D%3D",
-    caption: "Creatividad digital",
+    src: "https://images.unsplash.com/photo-1545989253-02cc26577f88?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGFydGV8ZW58MHwwfDB8fHww",
+    caption: "Autorretrato",
   },
   {
-    src: "https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=800&q=80",
-    caption: "Arte abstracto",
+    src: "https://images.unsplash.com/photo-1456086272160-b28b0645b729?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGFydGV8ZW58MHwwfDB8fHww",
+    caption: "Colores mezclados",
   },
   {
-    src: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80",
-    caption: "Colores en movimiento",
+    src: "https://images.unsplash.com/photo-1493210977798-4f655ac200a9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njd8fGFydGV8ZW58MHwwfDB8fHww",
+    caption: "Colores en puertas",
   },
   {
-    src: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
+    src: "https://images.unsplash.com/photo-1559102877-4a2cc0e37fce?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODZ8fGFydGV8ZW58MHwwfDB8fHww",
     caption: "Inspiración visual",
   },
   {
-    src: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80",
+    src: "https://images.unsplash.com/photo-1626243048879-51f8d9818566?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIwfHxhcnRlfGVufDB8MHwwfHx8MA%3D%3D",
     caption: "Diseño moderno",
   },
   {
-    src: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80",
+    src: "https://images.unsplash.com/photo-1599723332446-bdb4726eded6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjAwfHxhcnRlfGVufDB8MHwwfHx8MA%3D%3D",
     caption: "Imaginación sin límites",
   },
 ];

@@ -131,27 +131,27 @@ import Carousel2Code from "../../../data/codes/slidercarousel/carousel/Carousel2
 const images = [
   {
     src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
-    caption: "Innovación en la nube",
+    caption: "Coworking",
   },
   {
     src: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80",
-    caption: "Inteligencia artificial",
+    caption: "Vistas al mar",
   },
   {
     src: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80",
-    caption: "Redes globales",
+    caption: "El universo",
   },
   {
     src: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
-    caption: "Robótica avanzada",
+    caption: "Jornada laboral",
   },
   {
     src: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80",
-    caption: "Data centers modernos",
+    caption: "Picando código",
   },
   {
     src: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
-    caption: "Tecnología portátil",
+    caption: "Oficina",
   },
 ];
 
