@@ -209,7 +209,7 @@
                     </div>
                   </router-link>
                   <router-link
-                    to="/slider"
+                    to="/"
                     class="flex items-center space-x-3 px-4 py-3 rounded-lg hover:bg-white/10 transition-colors duration-200"
                   >
                     <div
