@@ -7,6 +7,8 @@ const ProfileCards = () => import('../views/ProfileCards.vue')
 const ArticleCards = () => import('../views/ArticleCards.vue')
 const Headers = () => import('../views/Headers.vue')
 const Footers = () => import('../views/Footers.vue')
+const Carousels = () => import('../views/CarouselView.vue')
+const Sliders = () => import('../views/SliderView.vue')
 
 const routes = [
   {
@@ -55,6 +57,22 @@ const routes = [
     component: Footers,
     meta: {
       title: 'Footers'
+    }
+  },
+  {
+    path: '/carousel',
+    name: 'Carousels',
+    component: Carousels,
+    meta: {
+      title: 'Carousels'
+    }
+  },
+  {
+    path: '/slider',
+    name: 'Sliders',
+    component: Sliders,
+    meta: {
+      title: 'Sliders'
     }
   }
 ]
