@@ -235,7 +235,7 @@
                 class="flex items-center justify-between text-sm cursor-pointer hover:text-pink-300 hover:bg-pink-500/10 hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300 rounded-lg p-3 border border-transparent hover:border-pink-500/40"
                 @click.stop
               >
-                <span class="text-pink-400 font-medium">Carouseles</span>
+                <span class="text-pink-400 font-medium">Carousels</span>
                 <span class="text-gray-400 group-hover:text-gray-300"
                   >6 componentes</span
                 >

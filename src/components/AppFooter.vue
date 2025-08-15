@@ -40,56 +40,84 @@
           >
             Enlaces Rápidos
           </h3>
-          <ul class="space-y-2">
-            <li>
-              <router-link
-                to="/"
-                class="text-gray-400 hover:text-white transition-colors"
-              >
-                Inicio
-              </router-link>
-            </li>
-            <li>
-              <router-link
-                to="/cards/productos"
-                class="text-gray-400 hover:text-white transition-colors"
-              >
-                Productos
-              </router-link>
-            </li>
-            <li>
-              <router-link
-                to="/cards/perfiles"
-                class="text-gray-400 hover:text-white transition-colors"
-              >
-                Perfiles
-              </router-link>
-            </li>
-            <li>
-              <router-link
-                to="/cards/articulos"
-                class="text-gray-400 hover:text-white transition-colors"
-              >
-                Artículos
-              </router-link>
-            </li>
-            <li>
-              <router-link
-                to="/headers"
-                class="text-gray-400 hover:text-white transition-colors"
-              >
-                Headers
-              </router-link>
-            </li>
-            <li>
-              <router-link
-                to="/footers"
-                class="text-gray-400 hover:text-white transition-colors"
-              >
-                Footers
-              </router-link>
-            </li>
-          </ul>
+          <div class="flex flex-row gap-6">
+            <ul class="space-y-2 min-w-[120px]">
+              <li>
+                <router-link
+                  to="/"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  target="_blank"
+                >
+                  Inicio
+                </router-link>
+              </li>
+              <li>
+                <router-link
+                  to="/cards/productos"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  target="_blank"
+                >
+                  Productos
+                </router-link>
+              </li>
+              <li>
+                <router-link
+                  to="/cards/perfiles"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  target="_blank"
+                >
+                  Perfiles
+                </router-link>
+              </li>
+              <li>
+                <router-link
+                  to="/cards/articulos"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  target="_blank"
+                >
+                  Artículos
+                </router-link>
+              </li>
+            </ul>
+            <ul class="space-y-2 min-w-[120px]">
+              <li>
+                <router-link
+                  to="/headers"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  target="_blank"
+                >
+                  Headers
+                </router-link>
+              </li>
+              <li>
+                <router-link
+                  to="/footers"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  target="_blank"
+                >
+                  Footers
+                </router-link>
+              </li>
+              <li>
+                <router-link
+                  to="/carousel"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  target="_blank"
+                >
+                  Carousels
+                </router-link>
+              </li>
+              <li>
+                <router-link
+                  to="/"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  target="_blank"
+                >
+                  Sliders
+                </router-link>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <!-- Información del desarrollador -->
