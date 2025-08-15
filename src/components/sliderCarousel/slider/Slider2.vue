@@ -74,12 +74,12 @@
 import { ref, onMounted, onUnmounted } from "vue";
 
 const images = [
-  "https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-2.jpg",
-  "https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-3.jpg",
-  "https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-4.jpg",
-  "https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-1.jpg",
+  "https://plus.unsplash.com/premium_photo-1668024966086-bd66ba04262f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFpc2FqZXN8ZW58MHwwfDB8fHww",
+  "https://images.unsplash.com/photo-1454372182658-c712e4c5a1db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBhaXNhamVzfGVufDB8MHwwfHx8MA%3D%3D",
+  "https://images.unsplash.com/photo-1614586125858-e695dd97d1b6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHBhaXNhamVzfGVufDB8MHwwfHx8MA%3D%3D",
+  "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fHBhaXNhamVzfGVufDB8MHwwfHx8MA%3D%3D",
 ];
-const texts = ["Canyon", "Desert", "Erosion", "Shape"];
+const texts = ["Lago", "Puente", "Nieve", "Prado"];
 const current = ref(0);
 let interval = null;
 
