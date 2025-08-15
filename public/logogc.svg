@@ -1,0 +1,19 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Etiquetas -->
+  <g color="#0F4C5C" stroke="currentColor" stroke-width="28" stroke-linecap="butt" stroke-linejoin="miter">
+    <path d="M140 200 L80 256 L140 312"></path>
+    <path d="M372 200 L432 256 L372 312"></path>
+  </g>
+
+  <!-- Marco cuadrado -->
+  <rect x="172" y="172" width="168" height="168" rx="20" fill="currentColor" stroke="none"></rect>
+
+  <!-- Fondo interior blanco -->
+  <rect x="192" y="192" width="128" height="128" rx="12" fill="#FFFFFF" stroke="none"></rect>
+
+  <!-- Montañas -->
+  <path d="M192 320 L232 264 L256 288 L288 240 L320 280 L320 320 Z" fill="#0F4C5C"></path>
+  
+  <!-- Sol -->
+  <circle cx="220" cy="220" r="14" fill="#0F4C5C"></circle>
+</svg>
