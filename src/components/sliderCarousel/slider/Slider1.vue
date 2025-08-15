@@ -59,7 +59,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
 
 const images = [
   {
@@ -80,6 +80,9 @@ const images = [
 ];
 
 const current = ref(0);
+const prev = computed(() => {
+  return current.value === 0 ? images.length - 1 : current.value - 1;
+});
 let interval = null;
 
 onMounted(() => {

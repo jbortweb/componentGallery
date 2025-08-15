@@ -167,14 +167,16 @@
 import ComponentInstructions from "../components/ComponentInstructions.vue";
 import Slider1 from "../components/sliderCarousel/slider/Slider1.vue";
 import Slider2 from "../components/sliderCarousel/slider/Slider2.vue";
+import Slider3 from "../components/sliderCarousel/slider/Slider3.vue";
 
 // Componentes de sliders
-const sliderComponents = [Slider1, Slider2];
+const sliderComponents = [Slider1, Slider2, Slider3];
 
 // Datos de sliders
 const sliderData = [
   { id: 1, name: "Slider Minimalista", component: "Slider1" },
-  { id: 2, name: "Slider Cortina", component: "Slider2" },
+  { id: 2, name: "Slider Separado", component: "Slider2" },
+  { id: 3, name: "Slider Círculo", component: "Slider3" },
 ];
 
 // Función para obtener el componente correcto
