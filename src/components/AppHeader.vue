@@ -34,7 +34,7 @@
               <p
                 class="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300"
               >
-                30 Componentes Únicos
+                Galería de Componentes Únicos
               </p>
             </div>
           </router-link>
@@ -395,9 +395,7 @@
             class="text-lg sm:text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto"
           >
             Una colección espectacular de
-            <span class="text-cyan-400 font-semibold"
-              >30 componentes únicos</span
-            >
+            <span class="text-cyan-400 font-semibold">componentes únicos</span>
             construidos con
             <span class="text-blue-400 font-semibold">Vue 3</span>,
             <span class="text-purple-400 font-semibold">Vite</span> y
@@ -541,7 +539,7 @@ const typeWriter = () => {
 
 // Animar estadísticas
 const animateStats = () => {
-  const targets = { components: 30, categories: 5, styles: 100 };
+  const targets = { components: 36, categories: 6, styles: 100 };
   const duration = 2000;
   const steps = 60;
   const increment = {

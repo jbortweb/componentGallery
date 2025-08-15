@@ -68,7 +68,7 @@
 
       <!-- Cards de características -->
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <!-- Característica de Cards -->
           <router-link
             to="/cards/productos"
@@ -196,6 +196,63 @@
             </div>
           </router-link>
 
+          <!-- Carouseles & Sliders -->
+          <router-link
+            to="/carousel"
+            target="_blank"
+            class="feature-card group cursor-pointer hover:shadow-2xl hover:shadow-pink-500/20 hover:border-pink-500/40 transition-all duration-500 block"
+          >
+            <div
+              class="feature-icon bg-gradient-to-r from-pink-500 to-cyan-500 group-hover:from-pink-400 group-hover:to-cyan-400 group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-xl group-hover:shadow-pink-500/50 transition-all duration-500"
+            >
+              <svg
+                class="w-8 h-8 text-white group-hover:rotate-12 transition-all duration-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 17V7a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2zm2-10v10m12-10v10M8 7v10m8-10v10"
+                />
+              </svg>
+            </div>
+            <h3
+              class="text-2xl font-bold text-white mb-4 group-hover:text-pink-300 transition-colors"
+            >
+              12 Carouseles & Sliders
+            </h3>
+            <p class="text-gray-300 mb-6 leading-relaxed">
+              Galería de carouseles y sliders con efectos visuales, animaciones
+              y navegación avanzada para mostrar contenido dinámico.
+            </p>
+            <div class="space-y-2">
+              <router-link
+                to="/carousel"
+                target="_blank"
+                class="flex items-center justify-between text-sm cursor-pointer hover:text-pink-300 hover:bg-pink-500/10 hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300 rounded-lg p-3 border border-transparent hover:border-pink-500/40"
+                @click.stop
+              >
+                <span class="text-pink-400 font-medium">Carouseles</span>
+                <span class="text-gray-400 group-hover:text-gray-300"
+                  >6 componentes</span
+                >
+              </router-link>
+              <router-link
+                to="/"
+                target="_blank"
+                class="flex items-center justify-between text-sm cursor-pointer hover:text-cyan-300 hover:bg-cyan-500/10 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 rounded-lg p-3 border border-transparent hover:border-cyan-500/40"
+                @click.stop
+              >
+                <span class="text-cyan-400 font-medium">Sliders</span>
+                <span class="text-gray-400 group-hover:text-gray-300"
+                  >Próximamente</span
+                >
+              </router-link>
+            </div>
+          </router-link>
           <!-- Código Visible -->
           <div
             class="feature-card group hover:shadow-2xl hover:shadow-green-500/20 hover:border-green-500/40 transition-all duration-500"
@@ -286,7 +343,7 @@
               </h3>
               <p class="text-gray-300">
                 Navega por las diferentes categorías (Productos, Perfiles,
-                Artículos) y encuentra el diseño que más te guste.
+                Artículos, etc) y encuentra el diseño que más te guste.
               </p>
             </div>
           </div>
