@@ -169,9 +169,11 @@ import Slider1 from "../components/sliderCarousel/slider/Slider1.vue";
 import Slider2 from "../components/sliderCarousel/slider/Slider2.vue";
 import Slider3 from "../components/sliderCarousel/slider/Slider3.vue";
 import Slider4 from "../components/sliderCarousel/slider/Slider4.vue";
+import Slider5 from "../components/sliderCarousel/slider/Slider5.vue";
+import Slider6 from "../components/sliderCarousel/slider/Slider6.vue";
 
 // Componentes de sliders
-const sliderComponents = [Slider1, Slider2, Slider3, Slider4];
+const sliderComponents = [Slider1, Slider2, Slider3, Slider4, Slider5, Slider6];
 
 // Datos de sliders
 const sliderData = [
@@ -179,6 +181,8 @@ const sliderData = [
   { id: 2, name: "Slider Separado", component: "Slider2" },
   { id: 3, name: "Slider Círculo", component: "Slider3" },
   { id: 4, name: "Slider Cortina", component: "Slider4" },
+  { id: 5, name: "Slider difuminado", component: "Slider5" },
+  { id: 6, name: "Slider lego", component: "Slider6" },
 ];
 
 // Función para obtener el componente correcto

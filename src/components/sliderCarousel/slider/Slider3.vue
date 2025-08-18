@@ -120,23 +120,23 @@ import { ref, onMounted, onUnmounted } from "vue";
 const items = [
   // URLs aumentadas a w=2000 para buena resolución en pantallas grandes
   {
-    src: "https://plus.unsplash.com/premium_photo-1739831741835-39e5d6c49daf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGZyYXNjbyUyMGRlJTIwcGVyZnVtZXxlbnwwfDB8MHx8fDA%3D",
-    title: "DAISY D'OR",
+    src: "https://perfumedubai.com/cdn/shop/articles/dior_sauvage_960x.jpg?v=1652439946",
+    title: "SAUVAGE",
     price: "29.99",
   },
   {
-    src: "https://images.unsplash.com/photo-1716978499366-d5a84bf1fe70?w=2000&auto=format&fit=crop&q=80",
+    src: "https://www.lancome.cl/dw/image/v2/AATL_PRD/on/demandware.static/-/Sites-lancome-latam-hub-Library/es_CL/dwcab43319/seo_landings/fragancia/Imagen%20Cuerpo%201%20Fragancia.jpg?sw=1910&sh=1074&sm=cut&q=70",
     title: "AQUA BASADE",
     price: "24.99",
   },
   {
     src: "https://images.unsplash.com/photo-1558710347-d8257f52e427?w=2000&auto=format&fit=crop&q=80",
-    title: "MARILIGHT",
+    title: "VANIGLIA",
     price: "19.99",
   },
   {
-    src: "https://images.unsplash.com/photo-1700382080516-730193076f37?w=2000&auto=format&fit=crop&q=80",
-    title: "BLOS PARÍS",
+    src: "https://hips.hearstapps.com/hmg-prod/images/perfumes-vainilla-6459484490104.jpg",
+    title: "AQUA D'OR",
     price: "22.99",
   },
 ];

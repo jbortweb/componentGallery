@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative w-full h-[70vh] flex items-center justify-center overflow-hidden"
+    class="relative w-full h-[80vh] flex items-center justify-center overflow-hidden"
   >
     <!-- 8 partes verticales con flip escalonado -->
     <div
@@ -11,7 +11,7 @@
       <div
         v-for="(img, idx) in images"
         :key="'img-' + idx + '-' + part"
-        class="absolute w-full h-full"
+        class="absolute w-full h-auto"
         :style="{
           clipPath: `inset(0 ${(8 - part) * 12.5}% 0 ${(part - 1) * 12.5}%)`,
           zIndex: idx === current ? 2 : 1,
@@ -19,7 +19,7 @@
         }"
       >
         <div
-          class="w-full h-full"
+          class="w-full h-auto"
           :style="{
             transform:
               idx === current
@@ -33,7 +33,7 @@
             transformOrigin: 'center left',
           }"
         >
-          <img :src="img" class="w-full h-full object-cover backface-hidden" />
+          <img :src="img" class="w-full h-auto object-cover backface-hidden" />
         </div>
       </div>
     </div>
