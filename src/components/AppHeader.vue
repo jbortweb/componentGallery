@@ -201,7 +201,7 @@
                     </div>
                   </router-link>
                   <router-link
-                    to="/"
+                    to="/slider"
                     class="flex items-center space-x-3 px-4 py-3 rounded-lg hover:bg-white/10 transition-colors duration-200"
                   >
                     <div
@@ -223,7 +223,7 @@
                     </div>
                     <div>
                       <div class="text-white font-medium">Sliders</div>
-                      <div class="text-gray-400 text-sm">Próximamente</div>
+                      <div class="text-gray-400 text-sm">6 componentes</div>
                     </div>
                   </router-link>
                 </div>
@@ -477,7 +477,9 @@ const galleryTitle = computed(() => {
   } else if (path.includes("/footers")) {
     return "Footers";
   } else if (path.includes("/carousel")) {
-    return "Carousel";
+    return "Carousels";
+  } else if (path.includes("/slider")) {
+    return "Sliders";
   } else {
     return "Component";
   }

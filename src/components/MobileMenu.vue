@@ -222,7 +222,7 @@
             <span>Carouseles</span>
           </router-link>
           <router-link
-            to="/"
+            to="/slider"
             class="flex items-center space-x-3 py-2 text-gray-300 hover:text-white transition-colors"
             @click="closeMenu"
           >
