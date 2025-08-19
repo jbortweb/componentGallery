@@ -354,10 +354,15 @@
         </div>
       </div>
     </nav>
+    <!-- Animación del cohete -->
+    <div class="rocket-animation mt-24">
+      <div class="rocket">🚀</div>
+      <div class="rocket-trail"></div>
+    </div>
 
     <!-- Contenido principal del hero -->
     <div
-      class="relative z-40 flex items-center justify-center min-h-[calc(100vh-5rem)] px-4 pt-16"
+      class="relative z-40 flex items-center justify-center min-h-[calc(100vh-5rem)] px-4 pt-4"
     >
       <div class="text-center max-w-5xl mx-auto">
         <!-- Título principal con efectos -->
@@ -677,5 +682,161 @@ onUnmounted(() => {
 .transparent-header {
   background: transparent;
   backdrop-filter: none;
+}
+
+/* Animación del cohete */
+.rocket-animation {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.rocket {
+  position: absolute;
+  font-size: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: rocket-flight 8s linear infinite;
+  z-index: 2;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.rocket-trail {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 3px;
+  background: linear-gradient(
+    to left,
+    transparent,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: trail-follow 8s linear infinite;
+  z-index: 1;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+}
+
+@keyframes rocket-flight {
+  0% {
+    left: -60px;
+    transform: translateY(-50%) rotate(35deg);
+  }
+  25% {
+    left: 25%;
+    transform: translateY(-50%) rotate(40deg);
+  }
+  50% {
+    left: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  75% {
+    left: 75%;
+    transform: translateY(-50%) rotate(50deg);
+  }
+  100% {
+    left: calc(100% + 60px);
+    transform: translateY(-50%) rotate(55deg);
+  }
+}
+
+@keyframes trail-follow {
+  0% {
+    left: -60px;
+    width: 0;
+    opacity: 0;
+  }
+  20% {
+    left: calc(20% - 80px);
+    width: 80px;
+    opacity: 1;
+  }
+  40% {
+    left: calc(40% - 100px);
+    width: 100px;
+    opacity: 1;
+  }
+  60% {
+    left: calc(60% - 120px);
+    width: 120px;
+    opacity: 1;
+  }
+  80% {
+    left: calc(80% - 140px);
+    width: 140px;
+    opacity: 1;
+  }
+  100% {
+    left: calc(100% - 160px);
+    width: 160px;
+    opacity: 0;
+  }
+}
+
+/* Efectos adicionales para el cohete */
+@keyframes rocket-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.8));
+  }
+}
+
+.rocket:hover {
+  animation: rocket-flight 8s ease-in-out infinite,
+    rocket-glow 2s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .rocket {
+    font-size: 1.5rem;
+  }
+
+  .rocket-animation {
+    height: 40px;
+  }
+
+  @keyframes trail-follow {
+    0% {
+      left: -40px;
+      width: 0;
+      opacity: 0;
+    }
+    20% {
+      left: calc(20% - 60px);
+      width: 60px;
+      opacity: 1;
+    }
+    40% {
+      left: calc(40% - 70px);
+      width: 70px;
+      opacity: 1;
+    }
+    60% {
+      left: calc(60% - 80px);
+      width: 80px;
+      opacity: 1;
+    }
+    80% {
+      left: calc(80% - 90px);
+      width: 90px;
+      opacity: 1;
+    }
+    100% {
+      left: calc(100% - 100px);
+      width: 100px;
+      opacity: 0;
+    }
+  }
 }
 </style>
