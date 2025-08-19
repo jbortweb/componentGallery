@@ -1,4 +1,32 @@
 <template>
+  <!-- Modal de código -->
+  <CodeModal
+    ref="codeModal"
+    cardType="Slider Card"
+    cardVariant="Slider1"
+    :codeContent="codeContent"
+  />
+  <!-- Botón de código arriba a la derecha (idéntico a carousel) -->
+  <button
+    @click="openCodeModal"
+    class="absolute top-4 right-4 z-50 w-10 h-10 bg-gray-800/90 hover:bg-gray-700 rounded-lg flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-200 backdrop-blur-sm border border-gray-400/30 cursor-pointer"
+    title="Ver código del componente"
+    aria-label="Ver código del componente"
+  >
+    <svg
+      class="w-5 h-5 text-white pointer-events-none"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+      />
+    </svg>
+  </button>
   <div
     class="slider-fade relative w-full h-[70vh] overflow-hidden rounded-xl shadow-xl"
   >
@@ -59,6 +87,16 @@
 </template>
 
 <script setup>
+import CodeModal from "../../CodeModal.vue";
+import sliderCode from "../../../data/codes/slidercarousel/slider/Slider1.js";
+
+const codeContent = sliderCode.default || sliderCode;
+const codeModal = ref(null);
+function openCodeModal() {
+  if (codeModal.value && codeModal.value.openModal) {
+    codeModal.value.openModal();
+  }
+}
 import { ref, computed, onMounted, onUnmounted } from "vue";
 
 const images = [

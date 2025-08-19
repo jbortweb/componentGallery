@@ -2,6 +2,34 @@
   <div
     class="relative w-full h-[80vh] flex items-center justify-center overflow-hidden"
   >
+    <!-- Botón de código arriba a la derecha (idéntico a carousel) -->
+    <button
+      @click="openCodeModal"
+      class="absolute top-4 right-4 z-50 w-10 h-10 bg-gray-800/90 hover:bg-gray-700 rounded-lg flex items-center justify-center opacity-90 hover:opacity-100 transition-all duration-200 backdrop-blur-sm border border-gray-400/30 cursor-pointer"
+      title="Ver código del componente"
+      aria-label="Ver código del componente"
+    >
+      <svg
+        class="w-5 h-5 text-white pointer-events-none"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+        />
+      </svg>
+    </button>
+    <!-- Modal de código -->
+    <CodeModal
+      ref="codeModal"
+      cardType="Slider"
+      cardVariant="Slider6"
+      :codeContent="codeContent"
+    />
     <!-- Slide principal de fondo -->
     <div class="absolute inset-0 w-full h-auto">
       <transition name="grow-fade" mode="out-in">
@@ -44,6 +72,16 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from "vue";
+import CodeModal from "../../CodeModal.vue";
+import sliderCode from "../../../data/codes/slidercarousel/slider/Slider6.js";
+
+const codeContent = sliderCode.default || sliderCode;
+const codeModal = ref(null);
+function openCodeModal() {
+  if (codeModal.value && codeModal.value.openModal) {
+    codeModal.value.openModal();
+  }
+}
 
 const slides = [
   {
@@ -90,7 +128,8 @@ onUnmounted(() => {
 function miniatureStyle(idx) {
   return {
     opacity: 1,
-    transform: `translateY(-${idx * 10}px) scale(${1 - idx * 0.08})`,
+    transform:
+      "translateY(-" + idx * 10 + "px) scale(" + (1 - idx * 0.08) + ")",
     transition: "transform 0.7s cubic-bezier(.77,0,.18,1), opacity 0.7s",
   };
 }
