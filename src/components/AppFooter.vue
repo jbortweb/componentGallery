@@ -109,7 +109,7 @@
               </li>
               <li>
                 <router-link
-                  to="/"
+                  to="/slider"
                   class="text-gray-400 hover:text-white transition-colors"
                   target="_blank"
                 >
