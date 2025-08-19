@@ -23,8 +23,8 @@
           >
             <p class="text-lg sm:text-xl text-gray-200 leading-relaxed">
               Explora nuestra colección de
-              <span class="text-cyan-400 font-semibold"
-                >30 componentes únicos</span
+              <span class="text-cyan-400 font-semibold">
+                componentes únicos</span
               >
               organizados por categorías, cada uno con su
               <span class="text-blue-400 font-semibold"
@@ -241,14 +241,14 @@
                 >
               </router-link>
               <router-link
-                to="/"
+                to="/slider"
                 target="_blank"
                 class="flex items-center justify-between text-sm cursor-pointer hover:text-cyan-300 hover:bg-cyan-500/10 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 rounded-lg p-3 border border-transparent hover:border-cyan-500/40"
                 @click.stop
               >
                 <span class="text-cyan-400 font-medium">Sliders</span>
                 <span class="text-gray-400 group-hover:text-gray-300"
-                  >Próximamente</span
+                  >6 componentes</span
                 >
               </router-link>
             </div>
