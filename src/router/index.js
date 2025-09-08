@@ -9,6 +9,7 @@ const Headers = () => import('../views/Headers.vue')
 const Footers = () => import('../views/Footers.vue')
 const Carousels = () => import('../views/CarouselView.vue')
 const Sliders = () => import('../views/SliderView.vue')
+const ImageEffects = () => import('../views/ImageEffectView.vue')
 
 const routes = [
   {
@@ -73,6 +74,14 @@ const routes = [
     component: Sliders,
     meta: {
       title: 'Sliders'
+    }
+  },
+  {
+    path: '/effects/image-effects',
+    name: 'ImageEffects',
+    component: ImageEffects,
+    meta: {
+      title: 'Image Effects'
     }
   }
 ]

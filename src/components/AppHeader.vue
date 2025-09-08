@@ -2,7 +2,12 @@
   <header class="relative min-h-screen transparent-header">
     <!-- Navegación mejorada -->
     <nav
-      class="relative z-50 backdrop-blur-lg bg-white/10 border-b border-white/20"
+      :class="[
+        'fixed top-0 left-0 right-0 z-50 border-b border-white/20 transition-all duration-300',
+        isScrolled
+          ? 'backdrop-blur-lg bg-white/5 shadow-lg'
+          : 'backdrop-blur-lg bg-white/10',
+      ]"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
@@ -230,6 +235,87 @@
               </div>
             </div>
 
+            <!-- Effects Dropdown -->
+            <div class="relative group">
+              <button
+                class="flex items-center px-4 py-2 text-gray-300 hover:text-white transition-all duration-300"
+              >
+                <span>Effects</span>
+                <svg
+                  class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+
+              <!-- Effects Dropdown -->
+              <div
+                class="absolute top-full left-0 mt-2 w-64 bg-slate-800/95 backdrop-blur-lg border border-white/20 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2"
+              >
+                <div class="p-2">
+                  <router-link
+                    to="/effects/image-effects"
+                    class="flex items-center space-x-3 px-4 py-3 rounded-lg hover:bg-white/10 transition-colors duration-200"
+                  >
+                    <div
+                      class="w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center"
+                    >
+                      <svg
+                        class="w-4 h-4 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="text-white font-medium">Image Effects</div>
+                      <div class="text-gray-400 text-sm">1 componente</div>
+                    </div>
+                  </router-link>
+                  <div
+                    class="flex items-center space-x-3 px-4 py-3 rounded-lg opacity-50 cursor-not-allowed"
+                  >
+                    <div
+                      class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center"
+                    >
+                      <svg
+                        class="w-4 h-4 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="text-white font-medium">Text Effects</div>
+                      <div class="text-gray-400 text-sm">Próximamente</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <!-- Head & Foot Dropdown -->
             <div class="relative group">
               <button
@@ -355,14 +441,14 @@
       </div>
     </nav>
     <!-- Animación del cohete -->
-    <div class="rocket-animation mt-24">
+    <div class="rocket-animation mt-32">
       <div class="rocket">🚀</div>
       <div class="rocket-trail"></div>
     </div>
 
     <!-- Contenido principal del hero -->
     <div
-      class="relative z-40 flex items-center justify-center min-h-[calc(100vh-5rem)] px-4 pt-4"
+      class="relative z-40 flex items-center justify-center min-h-[calc(100vh-8rem)] px-4 pt-4"
     >
       <div class="text-center max-w-5xl mx-auto">
         <!-- Título principal con efectos -->
@@ -451,6 +537,9 @@ const route = useRoute();
 // Estado del menú móvil
 const isMobileMenuOpen = ref(false);
 
+// Estado del scroll para el header fijo
+const isScrolled = ref(false);
+
 // Funciones para el menú móvil
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value;
@@ -480,6 +569,8 @@ const galleryTitle = computed(() => {
     return "Carousels";
   } else if (path.includes("/slider")) {
     return "Sliders";
+  } else if (path.includes("/effects/image-effects")) {
+    return "Image Effects";
   } else {
     return "Component";
   }
@@ -580,17 +671,28 @@ const animateStats = () => {
 let typeInterval;
 let animationFrame;
 
+// Función para manejar el scroll
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 50;
+};
+
 onMounted(() => {
   // Iniciar typewriter
   typeInterval = setInterval(typeWriter, typeSpeed.value);
 
   // Iniciar animación de estadísticas
   setTimeout(animateStats, 500);
+
+  // Agregar listener para el scroll
+  window.addEventListener("scroll", handleScroll);
 });
 
 onUnmounted(() => {
   if (typeInterval) clearInterval(typeInterval);
   if (animationFrame) cancelAnimationFrame(animationFrame);
+
+  // Limpiar listener del scroll
+  window.removeEventListener("scroll", handleScroll);
 });
 </script>
 

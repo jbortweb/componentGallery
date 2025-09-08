@@ -247,6 +247,78 @@
           </router-link>
         </div>
       </div>
+
+      <!-- Effects Section -->
+      <div>
+        <button
+          @click="toggleSubmenu('effects')"
+          class="w-full flex items-center justify-between py-2 text-white font-semibold text-lg mb-3"
+        >
+          <span>Effects</span>
+          <svg
+            :class="{ 'rotate-180': openSubmenu === 'effects' }"
+            class="w-5 h-5 transition-transform duration-300"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+        <div v-if="openSubmenu === 'effects'" class="space-y-2 pl-4">
+          <router-link
+            to="/effects/image-effects"
+            class="flex items-center space-x-3 py-2 text-gray-300 hover:text-white transition-colors"
+            @click="closeMenu"
+          >
+            <div
+              class="w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center"
+            >
+              <svg
+                class="w-4 h-4 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <span>Image Effects</span>
+          </router-link>
+          <div
+            class="flex items-center space-x-3 py-2 text-gray-500 opacity-50 cursor-not-allowed"
+          >
+            <div
+              class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center"
+            >
+              <svg
+                class="w-4 h-4 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                />
+              </svg>
+            </div>
+            <span>Text Effects</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
