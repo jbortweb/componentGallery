@@ -90,21 +90,21 @@ export default `<template>
           </svg>
         </a>
         <a
-          href="https://twitter.com/"
+          href="https://x.com/"
           target="_blank"
           rel="noopener noreferrer"
           class="w-12 h-12 rounded-full bg-gray-50 hover:bg-indigo-50 border border-gray-200 hover:border-indigo-200 flex items-center justify-center text-gray-600 hover:text-indigo-600 transition-all duration-300 hover:scale-110 group/social cursor-pointer"
-          aria-label="Conectar en twitter"
+          aria-label="Conectar en X (Twitter)"
           @click.stop
         >
-          <!-- Twitter Icon -->
+          <!-- X Icon -->
           <svg
             class="w-5 h-5 pointer-events-none"
             fill="currentColor"
-            viewBox="0 0 20 20"
+            viewBox="0 0 24 24"
           >
             <path
-              d="M6.29 18.25c7.55 0 11.67-6.25 11.67-11.67v-.53c.8-.59 1.49-1.3 2.04-2.13-.75.33-1.54.55-2.36.65a4.12 4.12 0 001.8-2.27c-.8.48-1.68.81-2.6 1a4.1 4.1 0 00-7 3.74 11.65 11.65 0 01-8.45-4.3 4.1 4.1 0 001.27 5.49A4.07 4.07 0 01.8 7.7v.05a4.1 4.1 0 003.3 4.03 4.1 4.1 0 01-1.86.07 4.1 4.1 0 003.83 2.85A8.23 8.23 0 010 16.4a11.62 11.62 0 006.29 1.84"
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
             />
           </svg>
         </a>

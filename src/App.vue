@@ -31,7 +31,7 @@
     <AppHeader />
 
     <!-- Main Content -->
-    <main class="flex-1 relative" style="z-index: var(--z-content)">
+    <main class="flex-1 relative pt-20" style="z-index: var(--z-content)">
       <router-view />
     </main>
 
