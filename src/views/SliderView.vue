@@ -31,111 +31,10 @@
       <ComponentInstructions theme="purple" />
 
       <!-- Casos de Uso Recomendados -->
-      <div
-        class="mt-12 backdrop-blur-lg bg-white/5 border border-white/10 rounded-xl p-8 shadow-2xl"
-      >
-        <h2 class="text-2xl font-bold text-white mb-6 text-center">
-          Casos de Uso Recomendados
-        </h2>
+      <RecommendedUseCases type="sliders" />
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="text-center">
-            <div
-              class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
-            >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0 9c-5 0-9-4-9-9m9 9c5 0 9-4 9-9m-9 9V3m0 9H3"
-                />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-white">Sitios Web</h3>
-            <p class="text-sm text-gray-300 mt-1">
-              Páginas corporativas y portfolios
-            </p>
-          </div>
-
-          <div class="text-center">
-            <div
-              class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
-            >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-white">Aplicaciones Web</h3>
-            <p class="text-sm text-gray-300 mt-1">
-              SaaS, dashboards y plataformas
-            </p>
-          </div>
-
-          <div class="text-center">
-            <div
-              class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
-            >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-                />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-white">E-commerce</h3>
-            <p class="text-sm text-gray-300 mt-1">
-              Tiendas online y marketplaces
-            </p>
-          </div>
-
-          <div class="text-center">
-            <div
-              class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
-            >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
-                />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-white">Blogs</h3>
-            <p class="text-sm text-gray-300 mt-1">
-              Sitios de contenido y noticias
-            </p>
-          </div>
-        </div>
-      </div>
+      <!-- Tecnologías Utilizadas -->
+      <TechnologiesUsed type="interactions" title="Tecnologías de Slider" />
 
       <!-- Back to Categories -->
       <div class="mt-12 text-center">
@@ -165,6 +64,8 @@
 
 <script setup>
 import ComponentInstructions from "../components/ComponentInstructions.vue";
+import RecommendedUseCases from "../components/RecommendedUseCases.vue";
+import TechnologiesUsed from "../components/TechnologiesUsed.vue";
 import Slider1 from "../components/sliderCarousel/slider/Slider1.vue";
 import Slider2 from "../components/sliderCarousel/slider/Slider2.vue";
 import Slider3 from "../components/sliderCarousel/slider/Slider3.vue";

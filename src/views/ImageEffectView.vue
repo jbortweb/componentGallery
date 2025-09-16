@@ -29,156 +29,18 @@
       <ComponentInstructions theme="purple" />
 
       <!-- Casos de Uso Recomendados -->
-      <div
-        class="mt-12 backdrop-blur-lg bg-white/5 border border-white/10 rounded-xl p-8 shadow-2xl"
-      >
-        <h2 class="text-2xl font-bold text-white mb-6 text-center">
-          Casos de Uso Recomendados
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="text-center">
-            <div
-              class="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
-            >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-white">Portfolios Creativos</h3>
-            <p class="text-sm text-gray-300 mt-1">
-              Galerías de arte y diseño digital
-            </p>
-          </div>
-
-          <div class="text-center">
-            <div
-              class="w-12 h-12 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
-            >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
-                />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-white">Landing Pages</h3>
-            <p class="text-sm text-gray-300 mt-1">
-              Páginas de aterrizaje impactantes
-            </p>
-          </div>
-
-          <div class="text-center">
-            <div
-              class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
-            >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-                />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-white">Blogs y Revistas</h3>
-            <p class="text-sm text-gray-300 mt-1">
-              Contenido editorial moderno
-            </p>
-          </div>
-
-          <div class="text-center">
-            <div
-              class="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
-            >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-                />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-white">E-commerce</h3>
-            <p class="text-sm text-gray-300 mt-1">
-              Tarjetas de producto elegantes
-            </p>
-          </div>
-        </div>
-      </div>
+      <RecommendedUseCases type="effects" />
 
       <!-- Tecnologías Utilizadas -->
-      <div
-        class="mt-12 backdrop-blur-lg bg-white/5 border border-white/10 rounded-xl p-8 shadow-2xl"
-      >
-        <h2 class="text-2xl font-bold text-white mb-6 text-center">
-          Tecnologías y Efectos
-        </h2>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div
-            class="flex flex-col items-center p-4 rounded-lg bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 hover:scale-105 transition-transform duration-300"
-          >
-            <span class="text-2xl mb-2">🎨</span>
-            <span class="text-white font-medium text-sm">CSS Transforms</span>
-          </div>
-
-          <div
-            class="flex flex-col items-center p-4 rounded-lg bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 hover:scale-105 transition-transform duration-300"
-          >
-            <span class="text-2xl mb-2">⚡</span>
-            <span class="text-white font-medium text-sm">Transitions</span>
-          </div>
-
-          <div
-            class="flex flex-col items-center p-4 rounded-lg bg-gradient-to-r from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 hover:scale-105 transition-transform duration-300"
-          >
-            <span class="text-2xl mb-2">🌈</span>
-            <span class="text-white font-medium text-sm">Gradients</span>
-          </div>
-
-          <div
-            class="flex flex-col items-center p-4 rounded-lg bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-500/30 hover:scale-105 transition-transform duration-300"
-          >
-            <span class="text-2xl mb-2">✨</span>
-            <span class="text-white font-medium text-sm">Hover Effects</span>
-          </div>
-        </div>
-      </div>
+      <TechnologiesUsed type="effects" title="Tecnologías y Efectos" />
     </div>
   </div>
 </template>
 
 <script setup>
 import ComponentInstructions from "../components/ComponentInstructions.vue";
+import RecommendedUseCases from "../components/RecommendedUseCases.vue";
+import TechnologiesUsed from "../components/TechnologiesUsed.vue";
 
 // Importación de componentes de image effects
 import ImageEffect1 from "../components/effects/imageEffect/imageEffect1.vue";

@@ -47,111 +47,10 @@
       <ComponentInstructions theme="green" />
 
       <!-- Casos de Uso Recomendados -->
-      <div
-        class="mt-12 backdrop-blur-lg bg-white/5 border border-white/10 rounded-xl p-8 shadow-2xl"
-      >
-        <h2 class="text-2xl font-bold text-white mb-6 text-center">
-          Casos de Uso Recomendados
-        </h2>
+      <RecommendedUseCases type="articles" />
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="text-center">
-            <div
-              class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
-            >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
-                />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-white">Artículos de Blog</h3>
-            <p class="text-sm text-gray-300 mt-1">
-              Posts, tutoriales y guías técnicas
-            </p>
-          </div>
-
-          <div class="text-center">
-            <div
-              class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
-            >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-white">Noticias</h3>
-            <p class="text-sm text-gray-300 mt-1">
-              Artículos de actualidad e información
-            </p>
-          </div>
-
-          <div class="text-center">
-            <div
-              class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
-            >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-white">Revistas</h3>
-            <p class="text-sm text-gray-300 mt-1">
-              Contenido editorial y publicaciones
-            </p>
-          </div>
-
-          <div class="text-center">
-            <div
-              class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer coin-flip"
-            >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-white">Documentación</h3>
-            <p class="text-sm text-gray-300 mt-1">
-              Guías, manuales y recursos técnicos
-            </p>
-          </div>
-        </div>
-      </div>
+      <!-- Tecnologías Utilizadas -->
+      <TechnologiesUsed type="frameworks" title="Tecnologías de Contenido" />
 
       <!-- Back to Categories -->
       <div class="mt-12 text-center">
@@ -184,6 +83,8 @@ import { computed } from "vue";
 import { useRoute } from "vue-router";
 import CardCarousel from "../components/cardCarousel/CardCarousel.vue";
 import ComponentInstructions from "../components/ComponentInstructions.vue";
+import RecommendedUseCases from "../components/RecommendedUseCases.vue";
+import TechnologiesUsed from "../components/TechnologiesUsed.vue";
 import ArticleCard1 from "../components/cards/articles/ArticleCard1.vue";
 import ArticleCard2 from "../components/cards/articles/ArticleCard2.vue";
 import ArticleCard3 from "../components/cards/articles/ArticleCard3.vue";
