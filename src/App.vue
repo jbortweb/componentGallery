@@ -43,6 +43,10 @@
 <script setup>
 import AppHeader from "./components/AppHeader.vue";
 import AppFooter from "./components/AppFooter.vue";
+import { usePerformance } from "./data/usePerformance.js";
+
+// Aplicar optimizaciones de rendimiento globalmente
+usePerformance();
 
 // Función para generar estilos de partículas globales
 const getGlobalParticleStyle = (index) => {

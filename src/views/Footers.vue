@@ -64,6 +64,7 @@
 
 <script setup>
 import ComponentInstructions from "../components/ComponentInstructions.vue";
+import { useSEO, seoConfigs } from "../data/useSEO.js";
 import RecommendedUseCases from "../components/RecommendedUseCases.vue";
 import TechnologiesUsed from "../components/TechnologiesUsed.vue";
 import Footer1 from "../components/headfoot/footers/Footer1.vue";
@@ -72,6 +73,9 @@ import Footer3 from "../components/headfoot/footers/Footer3.vue";
 import Footer4 from "../components/headfoot/footers/Footer4.vue";
 import Footer5 from "../components/headfoot/footers/Footer5.vue";
 import Footer6 from "../components/headfoot/footers/Footer6.vue";
+
+// SEO para la página de footers
+useSEO(seoConfigs.footers);
 
 // Componentes de footers
 const footerComponents = [Footer1, Footer2, Footer3, Footer4, Footer5, Footer6];

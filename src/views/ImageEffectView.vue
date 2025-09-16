@@ -38,16 +38,21 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
+import { useSEO, seoConfigs } from "../composables/useSEO.js";
 import ComponentInstructions from "../components/ComponentInstructions.vue";
 import RecommendedUseCases from "../components/RecommendedUseCases.vue";
 import TechnologiesUsed from "../components/TechnologiesUsed.vue";
 
 // Importación de componentes de image effects
-import ImageEffect1 from "../components/effects/imageEffect/imageEffect1.vue";
-import ImageEffect2 from "../components/effects/imageEffect/imageEffect2.vue";
+import imageEffect1 from "../components/effects/imageEffect/imageEffect1.vue";
+import imageEffect2 from "../components/effects/imageEffect/imageEffect2.vue";
 
-// Componentes de image effects (por ahora solo uno, se pueden agregar más)
-const imageEffectComponents = [ImageEffect1, ImageEffect2];
+// SEO para la página de efectos de imagen
+useSEO(seoConfigs.effects);
+
+// Componentes de efectos de imagen
+const imageEffectComponents = [imageEffect1, imageEffect2];
 
 // Datos de image effects
 const imageEffectData = [
@@ -57,7 +62,7 @@ const imageEffectData = [
 
 // Función para obtener el componente correcto
 const getImageEffectComponent = (index) => {
-  return imageEffectComponents[index] || ImageEffect1;
+  return imageEffectComponents[index] || imageEffect1;
 };
 </script>
 

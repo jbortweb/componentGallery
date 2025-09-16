@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://component-gallery.netlify.app/sitemap.xml
+
+# Disallow common crawlers from unnecessary paths
+Disallow: /assets/
+Disallow: /_redirects
+
+# Allow all image indexing
+User-agent: Googlebot-Image
+Allow: /img/
+
+# Crawl delay for good behavior
+Crawl-delay: 1

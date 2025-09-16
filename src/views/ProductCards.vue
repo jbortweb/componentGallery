@@ -80,6 +80,7 @@
 
 <script setup>
 import { computed } from "vue";
+import { useSEO, seoConfigs } from "../composables/useSEO.js";
 import CardCarousel from "../components/cardCarousel/CardCarousel.vue";
 import ComponentInstructions from "../components/ComponentInstructions.vue";
 import RecommendedUseCases from "../components/RecommendedUseCases.vue";
@@ -90,6 +91,9 @@ import ProductCard3 from "../components/cards/products/ProductCard3.vue";
 import ProductCard4 from "../components/cards/products/ProductCard4.vue";
 import ProductCard5 from "../components/cards/products/ProductCard5.vue";
 import ProductCard6 from "../components/cards/products/ProductCard6.vue";
+
+// SEO para la página de productos
+useSEO(seoConfigs.products);
 
 // Componentes de productos
 const productComponents = [

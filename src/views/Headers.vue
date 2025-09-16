@@ -64,6 +64,7 @@
 
 <script setup>
 import ComponentInstructions from "../components/ComponentInstructions.vue";
+import { useSEO, seoConfigs } from "../data/useSEO.js";
 import RecommendedUseCases from "../components/RecommendedUseCases.vue";
 import TechnologiesUsed from "../components/TechnologiesUsed.vue";
 import Header1 from "../components/headfoot/headers/Header1.vue";
@@ -72,6 +73,9 @@ import Header3 from "../components/headfoot/headers/Header3.vue";
 import Header4 from "../components/headfoot/headers/Header4.vue";
 import Header5 from "../components/headfoot/headers/Header5.vue";
 import Header6 from "../components/headfoot/headers/Header6.vue";
+
+// SEO para la página de headers
+useSEO(seoConfigs.headers);
 
 // Componentes de headers
 const headerComponents = [Header1, Header2, Header3, Header4, Header5, Header6];

@@ -521,6 +521,11 @@
 </template>
 
 <script setup>
+import { useSEO, seoConfigs } from "../composables/useSEO.js";
+
+// SEO para la página principal
+useSEO(seoConfigs.home);
+
 // Función para generar estilos de partículas sobre la imagen
 const getImageParticleStyle = (index) => {
   const size = Math.random() * 6 + 4;

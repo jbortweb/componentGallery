@@ -80,6 +80,7 @@
 
 <script setup>
 import { computed } from "vue";
+import { useSEO, seoConfigs } from "../composables/useSEO.js";
 import CardCarousel from "../components/cardCarousel/CardCarousel.vue";
 import ComponentInstructions from "../components/ComponentInstructions.vue";
 import RecommendedUseCases from "../components/RecommendedUseCases.vue";
@@ -90,6 +91,9 @@ import ProfileCard3 from "../components/cards/profiles/ProfileCard3.vue";
 import ProfileCard4 from "../components/cards/profiles/ProfileCard4.vue";
 import ProfileCard5 from "../components/cards/profiles/ProfileCard5.vue";
 import ProfileCard6 from "../components/cards/profiles/ProfileCard6.vue";
+
+// SEO para la página de perfiles
+useSEO(seoConfigs.profiles);
 
 // Componentes de perfiles
 const profileComponents = [

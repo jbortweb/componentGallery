@@ -64,6 +64,7 @@
 
 <script setup>
 import ComponentInstructions from "../components/ComponentInstructions.vue";
+import { useSEO, seoConfigs } from "../data/useSEO.js";
 import RecommendedUseCases from "../components/RecommendedUseCases.vue";
 import TechnologiesUsed from "../components/TechnologiesUsed.vue";
 import Carousel1 from "../components/sliderCarousel/carousels/Carousel1.vue";

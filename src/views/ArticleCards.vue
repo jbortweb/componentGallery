@@ -81,6 +81,7 @@
 <script setup>
 import { computed } from "vue";
 import { useRoute } from "vue-router";
+import { useSEO, seoConfigs } from "../data/useSEO.js";
 import CardCarousel from "../components/cardCarousel/CardCarousel.vue";
 import ComponentInstructions from "../components/ComponentInstructions.vue";
 import RecommendedUseCases from "../components/RecommendedUseCases.vue";
@@ -91,6 +92,9 @@ import ArticleCard3 from "../components/cards/articles/ArticleCard3.vue";
 import ArticleCard4 from "../components/cards/articles/ArticleCard4.vue";
 import ArticleCard5 from "../components/cards/articles/ArticleCard5.vue";
 import ArticleCard6 from "../components/cards/articles/ArticleCard6.vue";
+
+// SEO para la página de artículos
+useSEO(seoConfigs.articles);
 
 const route = useRoute();
 

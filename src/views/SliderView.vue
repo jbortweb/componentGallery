@@ -64,6 +64,7 @@
 
 <script setup>
 import ComponentInstructions from "../components/ComponentInstructions.vue";
+import { useSEO, seoConfigs } from "../data/useSEO.js";
 import RecommendedUseCases from "../components/RecommendedUseCases.vue";
 import TechnologiesUsed from "../components/TechnologiesUsed.vue";
 import Slider1 from "../components/sliderCarousel/slider/Slider1.vue";
@@ -72,6 +73,9 @@ import Slider3 from "../components/sliderCarousel/slider/Slider3.vue";
 import Slider4 from "../components/sliderCarousel/slider/Slider4.vue";
 import Slider5 from "../components/sliderCarousel/slider/Slider5.vue";
 import Slider6 from "../components/sliderCarousel/slider/Slider6.vue";
+
+// SEO para la página de sliders
+useSEO(seoConfigs.sliders);
 
 // Componentes de sliders
 const sliderComponents = [Slider1, Slider2, Slider3, Slider4, Slider5, Slider6];
