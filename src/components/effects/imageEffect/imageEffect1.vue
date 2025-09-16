@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative w-full max-w-sm mx-auto h-72 perspective-1000 cursor-pointer"
+    class="relative w-full max-w-xl mx-auto h-96 perspective-1000 cursor-pointer"
   >
     <!-- Botón de código -->
     <button

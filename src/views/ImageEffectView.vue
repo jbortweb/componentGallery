@@ -182,16 +182,15 @@ import ComponentInstructions from "../components/ComponentInstructions.vue";
 
 // Importación de componentes de image effects
 import ImageEffect1 from "../components/effects/imageEffect/imageEffect1.vue";
+import ImageEffect2 from "../components/effects/imageEffect/imageEffect2.vue";
 
 // Componentes de image effects (por ahora solo uno, se pueden agregar más)
-const imageEffectComponents = [ImageEffect1];
+const imageEffectComponents = [ImageEffect1, ImageEffect2];
 
 // Datos de image effects
 const imageEffectData = [
   { id: 1, name: "Efecto Hover Moderno", component: "ImageEffect1" },
-  // Se pueden agregar más efectos aquí en el futuro:
-  // { id: 2, name: "Efecto Parallax", component: "ImageEffect2" },
-  // { id: 3, name: "Efecto Glassmorphism", component: "ImageEffect3" },
+  { id: 2, name: "Efecto Lupa", component: "ImageEffect2" },
 ];
 
 // Función para obtener el componente correcto
