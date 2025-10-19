@@ -284,7 +284,7 @@
                     </div>
                     <div>
                       <div class="text-white font-medium">Image Effects</div>
-                      <div class="text-gray-400 text-sm">2 componente</div>
+                      <div class="text-gray-400 text-sm">4 componente</div>
                     </div>
                   </router-link>
                   <div
@@ -637,7 +637,7 @@ const typeWriter = () => {
 
 // Animar estadísticas
 const animateStats = () => {
-  const targets = { components: 44, categories: 8, styles: 100 };
+  const targets = { components: 46, categories: 8, styles: 100 };
   const duration = 2000;
   const steps = 60;
   const increment = {
