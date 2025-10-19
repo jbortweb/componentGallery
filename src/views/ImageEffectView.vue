@@ -20,7 +20,7 @@
 
           <!-- Componente image effect centrado -->
           <div class="flex justify-center items-center min-h-[400px] p-8">
-            <component :is="getImageEffectComponent(index)" />
+            <component :is="getImageEffectComponent(index)" class="mb-10" />
           </div>
         </div>
       </div>
@@ -48,18 +48,25 @@ import TechnologiesUsed from "../components/TechnologiesUsed.vue";
 import imageEffect1 from "../components/effects/imageEffect/imageEffect1.vue";
 import imageEffect2 from "../components/effects/imageEffect/imageEffect2.vue";
 import imageEffect3 from "../components/effects/imageEffect/imageEffect3.vue";
+import imageEffect4 from "../components/effects/imageEffect/imageEffect4.vue";
 
 // SEO para la página de efectos de imagen
 useSEO(seoConfigs.effects);
 
 // Componentes de efectos de imagen
-const imageEffectComponents = [imageEffect1, imageEffect2, imageEffect3];
+const imageEffectComponents = [
+  imageEffect1,
+  imageEffect2,
+  imageEffect3,
+  imageEffect4,
+];
 
 // Datos de image effects
 const imageEffectData = [
   { id: 1, name: "Efecto Hover Moderno", component: "ImageEffect1" },
   { id: 2, name: "Efecto Lupa", component: "ImageEffect2" },
   { id: 3, name: "Efecto Mask", component: "ImageEffect3" },
+  { id: 4, name: "Prisma 3D Rotatorio", component: "ImageEffect4" },
 ];
 
 // Función para obtener el componente correcto
