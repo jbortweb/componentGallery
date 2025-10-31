@@ -73,7 +73,7 @@
     <CodeModal
       ref="codeModal"
       cardType="Image Effect"
-      cardVariant="Efecto Page Flip 3D"
+      cardVariant="Efecto Lupa"
       :codeContent="cardCode"
     />
   </div>

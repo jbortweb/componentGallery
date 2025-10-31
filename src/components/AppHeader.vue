@@ -284,7 +284,7 @@
                     </div>
                     <div>
                       <div class="text-white font-medium">Image Effects</div>
-                      <div class="text-gray-400 text-sm">4 componente</div>
+                      <div class="text-gray-400 text-sm">5 componente</div>
                     </div>
                   </router-link>
                   <div

@@ -49,6 +49,7 @@ import imageEffect1 from "../components/effects/imageEffect/imageEffect1.vue";
 import imageEffect2 from "../components/effects/imageEffect/imageEffect2.vue";
 import imageEffect3 from "../components/effects/imageEffect/imageEffect3.vue";
 import imageEffect4 from "../components/effects/imageEffect/imageEffect4.vue";
+import imageEffect5 from "../components/effects/imageEffect/imageEffect5.vue";
 
 // SEO para la página de efectos de imagen
 useSEO(seoConfigs.effects);
@@ -59,14 +60,16 @@ const imageEffectComponents = [
   imageEffect2,
   imageEffect3,
   imageEffect4,
+  imageEffect5,
 ];
 
 // Datos de image effects
 const imageEffectData = [
-  { id: 1, name: "Efecto Hover Moderno", component: "ImageEffect1" },
+  { id: 1, name: "Efecto Page Flip 3D", component: "ImageEffect1" },
   { id: 2, name: "Efecto Lupa", component: "ImageEffect2" },
-  { id: 3, name: "Efecto Mask", component: "ImageEffect3" },
+  { id: 3, name: "SVG Zoom Overlay", component: "ImageEffect3" },
   { id: 4, name: "Prisma 3D Rotatorio", component: "ImageEffect4" },
+  { id: 5, name: "Efecto texto", component: "ImageEffect5" },
 ];
 
 // Función para obtener el componente correcto
