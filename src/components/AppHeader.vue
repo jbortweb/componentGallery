@@ -51,7 +51,7 @@
               <button
                 class="flex items-center px-4 py-2 text-gray-300 hover:text-white transition-all duration-300"
               >
-                <span>Cards</span>
+                <span>Tarjetas</span>
                 <svg
                   class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-300"
                   fill="none"
@@ -160,7 +160,7 @@
               <button
                 class="flex items-center px-4 py-2 text-gray-300 hover:text-white transition-all duration-300"
               >
-                <span>Slider & Carousel</span>
+                <span>Sliders y Carruseles</span>
                 <svg
                   class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-300"
                   fill="none"
@@ -201,7 +201,7 @@
                       </svg>
                     </div>
                     <div>
-                      <div class="text-white font-medium">Carousels</div>
+                      <div class="text-white font-medium">Carruseles</div>
                       <div class="text-gray-400 text-sm">6 componentes</div>
                     </div>
                   </router-link>
@@ -240,7 +240,7 @@
               <button
                 class="flex items-center px-4 py-2 text-gray-300 hover:text-white transition-all duration-300"
               >
-                <span>Effects</span>
+                <span>Efectos</span>
                 <svg
                   class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-300"
                   fill="none"
@@ -283,12 +283,13 @@
                       </svg>
                     </div>
                     <div>
-                      <div class="text-white font-medium">Image Effects</div>
-                      <div class="text-gray-400 text-sm">5 componente</div>
+                      <div class="text-white font-medium">Efectos de Imagen</div>
+                      <div class="text-gray-400 text-sm">6 componentes</div>
                     </div>
                   </router-link>
-                  <div
-                    class="flex items-center space-x-3 px-4 py-3 rounded-lg opacity-50 cursor-not-allowed"
+                  <router-link
+                    to="/effects/text-effects"
+                    class="flex items-center space-x-3 px-4 py-3 rounded-lg hover:bg-white/10 transition-colors duration-200"
                   >
                     <div
                       class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center"
@@ -308,10 +309,10 @@
                       </svg>
                     </div>
                     <div>
-                      <div class="text-white font-medium">Text Effects</div>
-                      <div class="text-gray-400 text-sm">Próximamente</div>
+                      <div class="text-white font-medium">Efectos de Texto</div>
+                      <div class="text-gray-400 text-sm">6 componentes</div>
                     </div>
-                  </div>
+                  </router-link>
                 </div>
               </div>
             </div>
@@ -321,7 +322,7 @@
               <button
                 class="flex items-center px-4 py-2 text-gray-300 hover:text-white transition-all duration-300"
               >
-                <span>Head & Foot</span>
+                <span>Header y Footer</span>
                 <svg
                   class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-300"
                   fill="none"
@@ -571,6 +572,8 @@ const galleryTitle = computed(() => {
     return "Sliders";
   } else if (path.includes("/effects/image-effects")) {
     return "Image Effects";
+  } else if (path.includes("/effects/text-effects")) {
+    return "Text Effects";
   } else {
     return "Component";
   }
@@ -637,7 +640,7 @@ const typeWriter = () => {
 
 // Animar estadísticas
 const animateStats = () => {
-  const targets = { components: 46, categories: 8, styles: 100 };
+  const targets = { components: 53, categories: 8, styles: 100 };
   const duration = 2000;
   const steps = 60;
   const increment = {

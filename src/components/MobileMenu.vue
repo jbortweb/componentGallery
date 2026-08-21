@@ -10,7 +10,7 @@
           @click="toggleSubmenu('cards')"
           class="w-full flex items-center justify-between py-2 text-white font-semibold text-lg mb-3"
         >
-          <span>Cards</span>
+          <span>Tarjetas</span>
           <svg
             :class="{ 'rotate-180': openSubmenu === 'cards' }"
             class="w-5 h-5 transition-transform duration-300"
@@ -107,7 +107,7 @@
           @click="toggleSubmenu('headfoot')"
           class="w-full flex items-center justify-between py-2 text-white font-semibold text-lg mb-3"
         >
-          <span>Head & Foot</span>
+          <span>Header y Footer</span>
           <svg
             :class="{ 'rotate-180': openSubmenu === 'headfoot' }"
             class="w-5 h-5 transition-transform duration-300"
@@ -180,7 +180,7 @@
           @click="toggleSubmenu('slider')"
           class="w-full flex items-center justify-between py-2 text-white font-semibold text-lg mb-3"
         >
-          <span>Slider & Carousel</span>
+          <span>Sliders y Carruseles</span>
           <svg
             :class="{ 'rotate-180': openSubmenu === 'slider' }"
             class="w-5 h-5 transition-transform duration-300"
@@ -219,7 +219,7 @@
                 />
               </svg>
             </div>
-            <span>Carouseles</span>
+            <span>Carruseles</span>
           </router-link>
           <router-link
             to="/slider"
@@ -254,7 +254,7 @@
           @click="toggleSubmenu('effects')"
           class="w-full flex items-center justify-between py-2 text-white font-semibold text-lg mb-3"
         >
-          <span>Effects</span>
+          <span>Efectos</span>
           <svg
             :class="{ 'rotate-180': openSubmenu === 'effects' }"
             class="w-5 h-5 transition-transform duration-300"
@@ -293,10 +293,12 @@
                 />
               </svg>
             </div>
-            <span>Image Effects</span>
+            <span>Efectos de Imagen</span>
           </router-link>
-          <div
-            class="flex items-center space-x-3 py-2 text-gray-500 opacity-50 cursor-not-allowed"
+          <router-link
+            to="/effects/text-effects"
+            class="flex items-center space-x-3 py-2 text-gray-300 hover:text-white transition-colors"
+            @click="closeMenu"
           >
             <div
               class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center"
@@ -315,8 +317,8 @@
                 />
               </svg>
             </div>
-            <span>Text Effects</span>
-          </div>
+            <span>Efectos de Texto</span>
+          </router-link>
         </div>
       </div>
     </div>
