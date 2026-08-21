@@ -253,15 +253,17 @@
               </router-link>
             </div>
           </router-link>
-          <!-- Código Visible -->
-          <div
-            class="feature-card group hover:shadow-2xl hover:shadow-green-500/20 hover:border-green-500/40 transition-all duration-500"
+          <!-- Efectos -->
+          <router-link
+            to="/effects/image-effects"
+            target="_blank"
+            class="feature-card group cursor-pointer hover:shadow-2xl hover:shadow-amber-500/20 hover:border-amber-500/40 transition-all duration-500 block"
           >
             <div
-              class="feature-icon bg-gradient-to-r from-green-500 to-emerald-600 group-hover:from-green-400 group-hover:to-emerald-500 group-hover:scale-110 group-hover:rotate-18 group-hover:shadow-xl group-hover:shadow-green-500/50 transition-all duration-500"
+              class="feature-icon bg-gradient-to-r from-amber-500 to-orange-600 group-hover:from-amber-400 group-hover:to-orange-500 group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-xl group-hover:shadow-amber-500/50 transition-all duration-500"
             >
               <svg
-                class="w-8 h-8 text-white group-hover:rotate-18 transition-all duration-500"
+                class="w-8 h-8 text-white group-hover:rotate-6 transition-all duration-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -270,35 +272,104 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                  d="M12 3l1.9 5.8L19.7 10l-5.8 1.9L12 17.7l-1.9-5.8L4.3 10l5.8-1.9L12 3z"
                 ></path>
               </svg>
             </div>
             <h3
-              class="text-2xl font-bold text-white mb-4 group-hover:text-green-300 transition-colors"
+              class="text-2xl font-bold text-white mb-4 group-hover:text-amber-300 transition-colors"
             >
-              Código Visible
+              18 Efectos
             </h3>
             <p class="text-gray-300 mb-6 leading-relaxed">
+              Efectos visuales para imágenes, textos y botones con animaciones
+              modernas, interactivas y listas para usar.
+            </p>
+            <div class="space-y-2">
+              <router-link
+                to="/effects/image-effects"
+                target="_blank"
+                class="flex items-center justify-between text-sm cursor-pointer hover:text-yellow-300 hover:bg-yellow-500/10 hover:shadow-lg hover:shadow-yellow-500/20 transition-all duration-300 rounded-lg p-3 border border-transparent hover:border-yellow-500/40"
+                @click.stop
+              >
+                <span class="text-yellow-400 font-medium">Efectos de Imagen</span>
+                <span class="text-gray-400 group-hover:text-gray-300"
+                  >6 componentes</span
+                >
+              </router-link>
+              <router-link
+                to="/effects/text-effects"
+                target="_blank"
+                class="flex items-center justify-between text-sm cursor-pointer hover:text-purple-300 hover:bg-purple-500/10 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 rounded-lg p-3 border border-transparent hover:border-purple-500/40"
+                @click.stop
+              >
+                <span class="text-purple-400 font-medium">Efectos de Texto</span>
+                <span class="text-gray-400 group-hover:text-gray-300"
+                  >6 componentes</span
+                >
+              </router-link>
+              <router-link
+                to="/effects/button-effects"
+                target="_blank"
+                class="flex items-center justify-between text-sm cursor-pointer hover:text-blue-300 hover:bg-blue-500/10 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 rounded-lg p-3 border border-transparent hover:border-blue-500/40"
+                @click.stop
+              >
+                <span class="text-blue-400 font-medium">Efectos de Botones</span>
+                <span class="text-gray-400 group-hover:text-gray-300"
+                  >6 componentes</span
+                >
+              </router-link>
+            </div>
+          </router-link>
+        </div>
+      </div>
+
+      <!-- Código Visible (horizontal) -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
+        <div
+          class="backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-6 hover:border-green-500/40 transition-colors duration-500"
+        >
+          <div
+            class="w-14 h-14 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 flex items-center justify-center shadow-lg flex-shrink-0"
+          >
+            <svg
+              class="w-7 h-7 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+              ></path>
+            </svg>
+          </div>
+          <div class="flex-1 text-center sm:text-left">
+            <h3 class="text-xl font-bold text-white mb-1">Código Visible</h3>
+            <p class="text-gray-300 leading-relaxed">
               Cada componente incluye un botón para ver y copiar su código
               fuente completo. Listo para usar en tus proyectos.
             </p>
-            <div class="flex items-center text-green-400 font-medium">
-              <svg
-                class="w-5 h-5 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"
-                ></path>
-              </svg>
-              Listo para usar
-            </div>
+          </div>
+          <div
+            class="flex items-center text-green-400 font-medium whitespace-nowrap"
+          >
+            <svg
+              class="w-5 h-5 mr-2 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"
+              ></path>
+            </svg>
+            Listo para usar
           </div>
         </div>
       </div>

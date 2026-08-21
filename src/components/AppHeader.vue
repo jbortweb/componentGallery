@@ -668,7 +668,7 @@ const typeWriter = () => {
 
 // Animar estadísticas
 const animateStats = () => {
-  const targets = { components: 59, categories: 10, styles: 100 };
+  const targets = { components: 60, categories: 10, styles: 100 };
   const duration = 2000;
   const steps = 60;
   const increment = {
