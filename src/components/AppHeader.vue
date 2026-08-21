@@ -593,15 +593,15 @@ const galleryTitle = computed(() => {
   } else if (path.includes("/footers")) {
     return "Footers";
   } else if (path.includes("/carousel")) {
-    return "Carousels";
+    return "Carruseles";
   } else if (path.includes("/slider")) {
     return "Sliders";
   } else if (path.includes("/effects/image-effects")) {
-    return "Image Effects";
+    return "Efectos de Imagen";
   } else if (path.includes("/effects/text-effects")) {
-    return "Text Effects";
+    return "Efectos de Texto";
   } else if (path.includes("/effects/button-effects")) {
-    return "Button Effects";
+    return "Efectos de Botones";
   } else {
     return "Component";
   }

@@ -67,7 +67,7 @@ const routes = [
     name: 'Carousels',
     component: Carousels,
     meta: {
-      title: 'Carousels'
+      title: 'Carruseles'
     }
   },
   {
@@ -83,7 +83,7 @@ const routes = [
     name: 'ImageEffects',
     component: ImageEffects,
     meta: {
-      title: 'Image Effects'
+      title: 'Efectos de Imagen'
     }
   },
   {
@@ -91,7 +91,7 @@ const routes = [
     name: 'TextEffects',
     component: TextEffects,
     meta: {
-      title: 'Text Effects'
+      title: 'Efectos de Texto'
     }
   },
   {
@@ -99,7 +99,7 @@ const routes = [
     name: 'ButtonEffects',
     component: ButtonEffects,
     meta: {
-      title: 'Button Effects'
+      title: 'Efectos de Botones'
     }
   }
 ]
