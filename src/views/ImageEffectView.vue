@@ -50,6 +50,7 @@ import imageEffect2 from "../components/effects/imageEffect/imageEffect2.vue";
 import imageEffect3 from "../components/effects/imageEffect/imageEffect3.vue";
 import imageEffect4 from "../components/effects/imageEffect/imageEffect4.vue";
 import imageEffect5 from "../components/effects/imageEffect/imageEffect5.vue";
+import imageEffect6 from "../components/effects/imageEffect/imageEffect6.vue";
 
 // SEO para la página de efectos de imagen
 useSEO(seoConfigs.effects);
@@ -61,6 +62,7 @@ const imageEffectComponents = [
   imageEffect3,
   imageEffect4,
   imageEffect5,
+  imageEffect6,
 ];
 
 // Datos de image effects
@@ -70,6 +72,7 @@ const imageEffectData = [
   { id: 3, name: "SVG Zoom Overlay", component: "ImageEffect3" },
   { id: 4, name: "Prisma 3D Rotatorio", component: "ImageEffect4" },
   { id: 5, name: "Efecto texto", component: "ImageEffect5" },
+  { id: 6, name: "Efecto Tilt 3D con brillo", component: "ImageEffect6" },
 ];
 
 // Función para obtener el componente correcto
