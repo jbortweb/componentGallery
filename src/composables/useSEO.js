@@ -227,5 +227,18 @@ export const seoConfigs = {
       "description": "Colección de efectos interactivos para imágenes",
       "numberOfItems": 2
     }
+  },
+
+  textEffects: {
+    title: 'Efectos de Texto - Tipografías Animadas Vue 3 | Component Gallery',
+    description: '6 efectos de texto creativos: neón, máquina de escribir, volumen 3D, contorno, reflejo y ondas con Vue 3 y CSS avanzado.',
+    keywords: 'text effects vue, typography effects, neon text css, typewriter effect, reflect text, css animations',
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Efectos de Texto",
+      "description": "Colección de 6 efectos de texto creativos",
+      "numberOfItems": 6
+    }
   }
 }
