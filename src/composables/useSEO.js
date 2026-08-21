@@ -240,5 +240,18 @@ export const seoConfigs = {
       "description": "Colección de 6 efectos de texto creativos",
       "numberOfItems": 6
     }
+  },
+
+  buttonEffects: {
+    title: 'Efectos de Botones - Microinteracciones Vue 3 | Component Gallery',
+    description: '6 efectos de botones interactivos: ripple, shine, magnético, fill, borde animado y 3D con Vue 3 y CSS avanzado.',
+    keywords: 'button effects vue, button hover css, ripple effect, magnetic button, animated border, css interactions',
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Efectos de Botones",
+      "description": "Colección de 6 efectos de botones interactivos",
+      "numberOfItems": 6
+    }
   }
 }

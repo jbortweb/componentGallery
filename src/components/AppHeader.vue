@@ -313,6 +313,32 @@
                       <div class="text-gray-400 text-sm">6 componentes</div>
                     </div>
                   </router-link>
+                  <router-link
+                    to="/effects/button-effects"
+                    class="flex items-center space-x-3 px-4 py-3 rounded-lg hover:bg-white/10 transition-colors duration-200"
+                  >
+                    <div
+                      class="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center"
+                    >
+                      <svg
+                        class="w-4 h-4 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M15 15l-2 5L9 9l11 4-5 2z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="text-white font-medium">Efectos de Botones</div>
+                      <div class="text-gray-400 text-sm">6 componentes</div>
+                    </div>
+                  </router-link>
                 </div>
               </div>
             </div>
@@ -574,6 +600,8 @@ const galleryTitle = computed(() => {
     return "Image Effects";
   } else if (path.includes("/effects/text-effects")) {
     return "Text Effects";
+  } else if (path.includes("/effects/button-effects")) {
+    return "Button Effects";
   } else {
     return "Component";
   }
@@ -640,7 +668,7 @@ const typeWriter = () => {
 
 // Animar estadísticas
 const animateStats = () => {
-  const targets = { components: 53, categories: 8, styles: 100 };
+  const targets = { components: 59, categories: 10, styles: 100 };
   const duration = 2000;
   const steps = 60;
   const increment = {

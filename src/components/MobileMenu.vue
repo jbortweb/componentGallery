@@ -319,6 +319,30 @@
             </div>
             <span>Efectos de Texto</span>
           </router-link>
+          <router-link
+            to="/effects/button-effects"
+            class="flex items-center space-x-3 py-2 text-gray-300 hover:text-white transition-colors"
+            @click="closeMenu"
+          >
+            <div
+              class="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center"
+            >
+              <svg
+                class="w-4 h-4 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 15l-2 5L9 9l11 4-5 2z"
+                />
+              </svg>
+            </div>
+            <span>Efectos de Botones</span>
+          </router-link>
         </div>
       </div>
     </div>

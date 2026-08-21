@@ -11,6 +11,7 @@ const Carousels = () => import('../views/CarouselView.vue')
 const Sliders = () => import('../views/SliderView.vue')
 const ImageEffects = () => import('../views/ImageEffectView.vue')
 const TextEffects = () => import('../views/TextEffectView.vue')
+const ButtonEffects = () => import('../views/ButtonEffectView.vue')
 
 const routes = [
   {
@@ -91,6 +92,14 @@ const routes = [
     component: TextEffects,
     meta: {
       title: 'Text Effects'
+    }
+  },
+  {
+    path: '/effects/button-effects',
+    name: 'ButtonEffects',
+    component: ButtonEffects,
+    meta: {
+      title: 'Button Effects'
     }
   }
 ]
